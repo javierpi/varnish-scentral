@@ -1,0 +1,15 @@
+name = Cepal Base
+description = Provides base functionality for Cepal sites (ie: taxonomy).
+core = 7.x
+package = Cepal
+dependencies[] = features
+dependencies[] = number
+dependencies[] = taxonomy
+dependencies[] = text
+features[features_api][] = api:2
+features[field_base][] = field_unbis_level
+features[field_base][] = field_unbis_number
+features[field_instance][] = taxonomy_term-unbis-field_unbis_level
+features[field_instance][] = taxonomy_term-unbis-field_unbis_number
+features[taxonomy][] = topics
+features[taxonomy][] = unbis

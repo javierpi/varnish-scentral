@@ -1,0 +1,73 @@
+name = Cepal Distro
+description = Install with commonly used modules and features for build a Cepal website.
+version = VERSION
+core = 7.x
+dependencies[] = block
+dependencies[] = comment
+dependencies[] = contextual
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = taxonomy
+dependencies[] = dblog
+dependencies[] = search
+;dependencies[] = shortcut
+dependencies[] = overlay
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = rdf
+
+; Contrib
+dependencies[] = admin_menu
+dependencies[] = admin_menu_toolbar
+dependencies[] = chosen
+dependencies[] = ckeditor
+dependencies[] = ctools
+dependencies[] = diff
+dependencies[] = date
+dependencies[] = date_api
+dependencies[] = date_popup
+dependencies[] = devel
+;dependencies[] = devel_image_provider
+dependencies[] = entity
+dependencies[] = entityreference
+dependencies[] = features
+dependencies[] = field_group
+dependencies[] = file_entity
+;dependencies[] = globalredirect
+dependencies[] = jquery_update
+dependencies[] = libraries
+dependencies[] = l10n_update
+dependencies[] = link
+dependencies[] = media
+dependencies[] = media_internet
+dependencies[] = module_filter
+dependencies[] = pathauto
+dependencies[] = speedy
+dependencies[] = strongarm
+dependencies[] = token
+dependencies[] = transliteration
+dependencies[] = views
+dependencies[] = views_ui
+dependencies[] = workbench
+
+; Features
+; Add a list of common used features
+dependencies[] = commons_wysiwyg
+dependencies[] = cepal_base
+dependencies[] = cepal_articles
+dependencies[] = cepal_gi
+dependencies[] = cepal_news
+dependencies[] = cepal_pages
+dependencies[] = cepal_pr
+dependencies[] = cepal_speech
+
+; Themes
+; Add some custom or base theme for the distribution
+; theme = example
+
+files[] = cepal.profile
+

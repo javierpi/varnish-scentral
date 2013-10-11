@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the cepal_speech feature.
+ */
+
+include_once 'cepal_speech.features.inc';

@@ -1,0 +1,108 @@
+<?php
+
+
+/**
+ * Implementacion del hook_menu
+ */
+function coordinate_content_menu(){
+  $items['coordinar_contenidos/export'] = array(
+    'page callback'    => 'coordinate_content_test_page_export',
+    'title'            => 'Test de coordinacion de sitios',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  
+  
+  $items['coordinar_contenidos/import'] = array(
+    'page callback'    => 'coordinate_content_test_page_import',
+    'title'            => 'Test de coordinacion de sitios',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  
+  return $items;
+}
+
+
+
+/**
+ * Devuelve los nodos que han sido actualizados en un periodo de tiempo.
+ *
+ * @param integer $stmp_inicio
+ *  - Timestamp de inicio del intervalo de tiempo.
+ * 
+ * @param integer $stmp_fin
+ *  - Timestamp de fin del intervalo de tiempo.
+ * 
+ * @return array
+ *  - Arreglo con los nodos que hay que actualizar.
+ */
+function _coordinate_content_get_nodes($stmp_inicio = 0, $stmp_fin = false){
+  $stmp_fin === false ? $stmp_fin = time() : $stmp_fin = (int)$stmp_fin;
+  
+  $query = new EntityFieldQuery();
+  $entities = $query->entityCondition('entity_type', 'node')
+  ->propertyCondition('status', 1)
+  ->execute();
+
+  $nodes = array();
+  
+  foreach ($entities['node'] as $row){
+    $nodes[] = node_load($row->nid, $row->vid);
+  }
+  
+  return $nodes;
+}
+
+
+
+/**
+ * Menu callback that outputs nodes for update on client side sites.
+ * 
+ * @see function _coordinate_content_get_nodes()
+ *
+ */
+function coordinate_content_test_page_export(){
+  $nodes = _coordinate_content_get_nodes();
+  print json_encode($nodes);
+  //drupal_json_output($nodes);
+}
+
+
+function coordinate_content_test_page_import(){
+  /**
+   * @todo parametrizar la url
+   */
+  $url = "http://cepaldev.cepal.org/basedev/coordinar_contenidos/export";
+  $contents = coordinate_content_import_content($url);
+  
+  foreach ($contents as $node_new){
+    $node_old = node_load($node_new->nid, $node_new->vid);
+    $node_exists = (is_numeric($node_old->nid));
+    $is_node_created = ($node_new->created > $node_old->created);
+    $is_node_updated = ($node_new->changed > $node_old->changed);
+    $node_newer  = ( $is_node_updated || $is_node_created);
+    
+    if($node_newer){
+      $node_to_save = coordinate_content_populate_node($node_new);
+      node_save($node_to_save);
+    }
+  }
+  
+  return "hola";
+}
+
+
+
+function coordinate_content_import_content($url){
+  $json = file_get_contents($url);
+  $contents = json_decode($json);
+  
+  return $contents;
+}
+
+
+
+function coordinate_content_populate_node($data){
+  print_r($data);
+}
