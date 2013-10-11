@@ -11,5 +11,6 @@ features[field_base][] = field_unbis_level
 features[field_base][] = field_unbis_number
 features[field_instance][] = taxonomy_term-unbis-field_unbis_level
 features[field_instance][] = taxonomy_term-unbis-field_unbis_number
+features[taxonomy][] = special_topics
 features[taxonomy][] = topics
 features[taxonomy][] = unbis

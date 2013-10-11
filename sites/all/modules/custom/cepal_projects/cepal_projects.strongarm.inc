@@ -71,7 +71,7 @@ function cepal_projects_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '4',
+          'weight' => '7',
         ),
       ),
       'display' => array(),

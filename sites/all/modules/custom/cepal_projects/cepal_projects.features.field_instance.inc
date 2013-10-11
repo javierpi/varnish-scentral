@@ -180,7 +180,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 3,
     ),
   );
 
@@ -410,7 +410,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -451,7 +451,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -535,7 +535,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 22,
+      'weight' => 23,
     ),
   );
 
@@ -575,7 +575,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 9,
+      'weight' => 5,
     ),
   );
 
@@ -640,7 +640,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 3,
+      'weight' => 6,
     ),
   );
 
@@ -695,7 +695,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 23,
+      'weight' => 25,
     ),
   );
 
@@ -778,6 +778,53 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
       ),
       'type' => 'text_textfield',
       'weight' => 15,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_project-field_project_protrack_id'
+  $field_instances['node-cepal_project-field_project_protrack_id'] = array(
+    'bundle' => 'cepal_project',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'CAMPO TEMPORAL, define ID Protrack',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 28,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_project_protrack_id',
+    'label' => 'Protrack ID',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => 0,
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 26,
     ),
   );
 
@@ -866,6 +913,46 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
     ),
   );
 
+  // Exported field_instance: 'node-cepal_project-field_project_special_topic'
+  $field_instances['node-cepal_project-field_project_special_topic'] = array(
+    'bundle' => 'cepal_project',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Select a Special Topic for classificatation if needed.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 29,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_project_special_topic',
+    'label' => 'Special Topic',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 21,
+    ),
+  );
+
   // Exported field_instance: 'node-cepal_project-field_project_status'
   $field_instances['node-cepal_project-field_project_status'] = array(
     'bundle' => 'cepal_project',
@@ -906,7 +993,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 4,
     ),
   );
 
@@ -986,7 +1073,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 21,
+      'weight' => 22,
     ),
   );
 
@@ -1050,6 +1137,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
   t('Abstract');
   t('An abstract about this <em>Project</em>.');
   t('Budget');
+  t('CAMPO TEMPORAL, define ID Protrack');
   t('Contact Person');
   t('Country');
   t('Date');
@@ -1070,11 +1158,13 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
   t('Outputs planned for this project.');
   t('Please insert the aproval date of the project and the estimated end date.');
   t('Project URL');
+  t('Protrack ID');
   t('Refereces');
   t('Seleccione el área de trabajo del proyecto.
 TEMPORAL, debe ser reemplazado con una referencia a otra entidad.');
   t('Seleccione la división ejecutora del proyecto.
 TEMPORAL, debe ser reemplazado con una referencia a otra entidad.');
+  t('Select a Special Topic for classificatation if needed.');
   t('Select a country associated with this project.');
   t('Select a representative image for this <em>Project</em>.');
   t('Select a type of financing for the project.');
@@ -1082,6 +1172,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.');
   t('Select associated topics for this <em>Project</em>.');
   t('Select the status for this <em>Project</em>.');
   t('Short Title');
+  t('Special Topic');
   t('Status');
   t('Symbol');
   t('TEMPORAL, contact details.');
