@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GetProyectos records="4" error="false" timerExec="00:00:00.5030288">
+  <proyecto>
+    <id_protrack>2914</id_protrack>
+    <titulo>Social inclusion of youth in the context of increasing violence and insecurity with a focus on Central America</titulo>
+    <titulo_corto>12/13 AX: Social inclusion of youth in the context of increasing violence and insecurity with a focus on Central America</titulo_corto>
+    <body>
+    </body>
+    <simbolo>ROA 254-8-A</simbolo>
+    <id_estado>2</id_estado>
+    <des_estado>Execution</des_estado>
+    <contacto>
+    </contacto>
+    <tipo_proyecto>1</tipo_proyecto>
+    <presupuesto>500000</presupuesto>
+    <fecha_aprobacion>15-07-2013 0:00:00</fecha_aprobacion>
+    <fecha_fin_estimada>31-12-2015 0:00:00</fecha_fin_estimada>
+    <fecha_fin>31-12-2015 0:00:00</fecha_fin>
+    <duracion_meses>3</duracion_meses>
+    <division>DDS</division>
+    <division_id>6</division_id>
+    <subprograma>Social development and equity</subprograma>
+    <donante>United Nations Department of Economic and Social Affairs (DESA)</donante>
+    <id_donante>205</id_donante>
+    <objetivos>
+      <objetivo>
+        <id_protrack>2914</id_protrack>
+        <orden>0</orden>
+        <descripcion>This project aims at strengthening the capacity of Latin American and Caribbean countries, particularly in Central America, to promote effective social inclusion of youth in the context of violence and insecurity.</descripcion>
+      </objetivo>
+    </objetivos>
+    <resultados>
+      <resultado>
+        <id_protrack>2914</id_protrack>
+        <orden>1</orden>
+        <descripcion>EA 1: Strengthened capacity of Central American governments to assess and design more effective policies to confront youth exclusion and violence.</descripcion>
+      </resultado>
+      <resultado>
+        <id_protrack>2914</id_protrack>
+        <orden>2</orden>
+        <descripcion>EA 2: Enhanced sharing of data and information on critical economic and social challenges for youth in Latin America and the Caribbean to support national and regional decision-making.</descripcion>
+      </resultado>
+    </resultados>
+    <outputs>
+    </outputs>
+    <countries>
+      <country>
+        <id_protrack>2914</id_protrack>
+        <id_country>COS</id_country>
+        <descripcion>Costa Rica</descripcion>
+      </country>
+      <country>
+        <id_protrack>2914</id_protrack>
+        <id_country>ELS</id_country>
+        <descripcion>El Salvador</descripcion>
+      </country>
+      <country>
+        <id_protrack>2914</id_protrack>
+        <id_country>GUA</id_country>
+        <descripcion>Guatemala</descripcion>
+      </country>
+      <country>
+        <id_protrack>2914</id_protrack>
+        <id_country>HON</id_country>
+        <descripcion>Honduras</descripcion>
+      </country>
+      <country>
+        <id_protrack>2914</id_protrack>
+        <id_country>NIC</id_country>
+        <descripcion>Nicaragua</descripcion>
+      </country>
+      <country>
+        <id_protrack>2914</id_protrack>
+        <id_country>PAN</id_country>
+        <descripcion>Panama</descripcion>
+      </country>
+    </countries>
+    <terminosUNBIS>
+    </terminosUNBIS>
+    <productosSADE>
+    </productosSADE>
+  </proyecto>
+  <proyecto>
+    <id_protrack>2890</id_protrack>
+    <titulo>12/13AE Time for Equality: Strengthening the Institutional Framework of Social Policies </titulo>
+    <titulo_corto>12/13AE Time for Equality</titulo_corto>
+    <body>This project aims at promoting social protection policies and institutional arrangements that contribute to reduce poverty, inequality and social exclusion, in accordance with the first Millennium Development Goal (MDG 1). Through the development of a toolkit of policy and programme options, knowledge sharing and the provision of technical advice, the project will strengthen the capacity of governments to implement and sustain effective and long-term social policies as part of inclusive social protection systems, which are based on social rights and are politically supported by fiscal or social covenants. It will also enhance knowledge and cooperation on tools for the monitoring and evaluation of social policy/social protection systems reforms and institutionalized support required for such reforms, through the exchange of experiences and good practices among countries of the Latin American and Caribbean region, as well as selected countries in the Western Asia and the Asia-Pacific regions.  </body>
+    <simbolo>ROA 235-8</simbolo>
+    <id_estado>2</id_estado>
+    <des_estado>Execution</des_estado>
+    <contacto>
+    </contacto>
+    <tipo_proyecto>1</tipo_proyecto>
+    <presupuesto>661000</presupuesto>
+    <fecha_aprobacion>01-01-1900 0:00:00</fecha_aprobacion>
+    <fecha_fin_estimada>01-01-1900 0:00:00</fecha_fin_estimada>
+    <fecha_fin>31-12-2015 0:00:00</fecha_fin>
+    <duracion_meses>1365</duracion_meses>
+    <division>DDS</division>
+    <division_id>6</division_id>
+    <subprograma>Social development and equity</subprograma>
+    <donante>United Nations Department of Economic and Social Affairs (DESA)</donante>
+    <id_donante>205</id_donante>
+    <objetivos>
+      <objetivo>
+        <id_protrack>2890</id_protrack>
+        <orden>0</orden>
+        <descripcion>To promote social protection policies and institutional arrangements in countries of the Latin America and Caribbean, the Western Asia and the Asia-Pacific regions, aimed at reducing poverty, inequality and social exclusion in accordance with Millennium Development Goal 1.</descripcion>
+      </objetivo>
+    </objetivos>
+    <resultados>
+      <resultado>
+        <id_protrack>2890</id_protrack>
+        <orden>0</orden>
+        <descripcion>EA1	Strengthened capacity of governments to institutionalize and sustain effective and long-term social policies as part of rights-based inclusive social protection systems</descripcion>
+      </resultado>
+      <resultado>
+        <id_protrack>2890</id_protrack>
+        <orden>0</orden>
+        <descripcion>EA2 	Enhanced knowledge and cooperation on monitoring and evaluation of social policy/social protection systems reforms.</descripcion>
+      </resultado>
+    </resultados>
+    <outputs>
+    </outputs>
+    <countries>
+    </countries>
+    <terminosUNBIS>
+    </terminosUNBIS>
+    <productosSADE>
+    </productosSADE>
+  </proyecto>
+  <proyecto>
+    <id_protrack>2844</id_protrack>
+    <titulo>10/11E - Facilitating climate change adaptation in transport through addressing the energy-enviroment linkage</titulo>
+    <titulo_corto>10/11E - Facilitating climate change adaptation in transport through addressing the energy-enviroment linkage</titulo_corto>
+    <body>
+    </body>
+    <simbolo>ROA/143-7</simbolo>
+    <id_estado>2</id_estado>
+    <des_estado>Execution</des_estado>
+    <contacto>
+    </contacto>
+    <tipo_proyecto>1</tipo_proyecto>
+    <presupuesto>84000</presupuesto>
+    <fecha_aprobacion>03-12-2012 0:00:00</fecha_aprobacion>
+    <fecha_fin_estimada>31-12-2013 0:00:00</fecha_fin_estimada>
+    <fecha_fin>31-12-2013 0:00:00</fecha_fin>
+    <duracion_meses>10</duracion_meses>
+    <division>DDSAH</division>
+    <division_id>10</division_id>
+    <subprograma>Environmental sustainability and natural resources</subprograma>
+    <donante>United Nations Department of Economic and Social Affairs (DESA)</donante>
+    <id_donante>205</id_donante>
+    <objetivos>
+    </objetivos>
+    <resultados>
+    </resultados>
+    <outputs>
+    </outputs>
+    <countries>
+    </countries>
+    <terminosUNBIS>
+    </terminosUNBIS>
+    <productosSADE>
+    </productosSADE>
+  </proyecto>
+  <proyecto>
+    <id_protrack>2813</id_protrack>
+    <titulo>Carta solicitud de Cooperación en el marco del Acuerdo de Cooperación Interinstitucional entre la Comisón económica para América Latina y el Caribe de las Naciones Unidas y el Banco Interamericano de Desarrollo - </titulo>
+    <titulo_corto>Impresión del Estudio de Economía del Cambio Climático en Bolivia.</titulo_corto>
+    <body>
+    </body>
+    <simbolo>BID/12/001</simbolo>
+    <id_estado>2</id_estado>
+    <des_estado>Execution</des_estado>
+    <contacto>
+    </contacto>
+    <tipo_proyecto>1</tipo_proyecto>
+    <presupuesto>60000</presupuesto>
+    <fecha_aprobacion>25-07-2012 0:00:00</fecha_aprobacion>
+    <fecha_fin_estimada>15-11-2012 0:00:00</fecha_fin_estimada>
+    <fecha_fin>31-07-2014 0:00:00</fecha_fin>
+    <duracion_meses>15</duracion_meses>
+    <division>DDSAH</division>
+    <division_id>10</division_id>
+    <subprograma>Environmental sustainability and natural resources</subprograma>
+    <donante>Banco Interamericano de Desarrollo (BID)</donante>
+    <id_donante>47</id_donante>
+    <objetivos>
+      <objetivo>
+        <id_protrack>2813</id_protrack>
+        <orden>0</orden>
+        <descripcion>Sensibilizar y estimular a los tomadores de decisiones de los sectores público y privado de los Países frente a la necesidad de adelantar acciones de mitigación y adaptación al Cambio Climático, tomando particularmente en cuenta la necesidad que existe en los países de contar con una plataforma para alentar a la opinión pública sobre el sentido de urgencia del desafío presentado por el cambio climático.</descripcion>
+      </objetivo>
+    </objetivos>
+    <resultados>
+    </resultados>
+    <outputs>
+    </outputs>
+    <countries>
+      <country>
+        <id_protrack>2813</id_protrack>
+        <id_country>BOL</id_country>
+        <descripcion>Bolivia</descripcion>
+      </country>
+    </countries>
+    <terminosUNBIS>
+      <unbis>
+        <id_protrack>2813</id_protrack>
+        <descripcion>MEDIO AMBIENTE</descripcion>
+        <primary_key>1605</primary_key>
+      </unbis>
+    </terminosUNBIS>
+    <productosSADE>
+    </productosSADE>
+  </proyecto>
+</GetProyectos>

@@ -1,0 +1,14 @@
+name = "Test migracion"
+description = "Test migracion proyectos Cepal"
+package = "CEPAL"
+core = 7.x
+
+dependencies[] = migrate
+dependencies[] = "date_migrate"
+
+files[] = migrar.module
+files[] = proyecto.inc
+
+version = "7.x-dev"
+core = "7.x"
+project = "migrar"
