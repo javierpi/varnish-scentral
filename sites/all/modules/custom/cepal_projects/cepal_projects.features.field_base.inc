@@ -486,7 +486,7 @@ function cepal_projects_field_default_field_bases() {
   // Exported field_base: 'field_project_objectives'
   $field_bases['field_project_objectives'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_project_objectives',
@@ -506,10 +506,10 @@ function cepal_projects_field_default_field_bases() {
     'locked' => 0,
     'module' => 'text',
     'settings' => array(
-      'entity_translation_sync' => FALSE,
+      'max_length' => 1000,
     ),
     'translatable' => 0,
-    'type' => 'text_long',
+    'type' => 'text',
   );
 
   // Exported field_base: 'field_project_outputs_planned'
