@@ -173,6 +173,52 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
     ),
   );
 
+  // Exported field_instance: 'node-cepal_news-field_news_id_sade'
+  $field_instances['node-cepal_news-field_news_id_sade'] = array(
+    'bundle' => 'cepal_news',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_news_id_sade',
+    'label' => 'Id Sade',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => 0,
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 12,
+    ),
+  );
+
   // Exported field_instance: 'node-cepal_news-field_news_image'
   $field_instances['node-cepal_news-field_news_image'] = array(
     'bundle' => 'cepal_news',
@@ -435,6 +481,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
   t('Body');
   t('Country');
   t('Files');
+  t('Id Sade');
   t('Imagen');
   t('Insert a teaser text for this content.');
   t('Insert the body text for this content.');
