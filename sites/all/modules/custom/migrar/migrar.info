@@ -8,6 +8,10 @@ dependencies[] = "date_migrate"
 
 files[] = migrar.module
 files[] = proyecto.inc
+files[] = comunicado.inc
+files[] = noticia.inc
+files[] = BaseMigracion.php
+files[] = BaseMigracionInterface.php
 
 version = "7.x-dev"
 core = "7.x"

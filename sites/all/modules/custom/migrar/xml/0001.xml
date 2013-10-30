@@ -1,217 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GetProyectos records="4" error="false" timerExec="00:00:00.5030288">
-  <proyecto>
-    <id_protrack>2914</id_protrack>
-    <titulo>Social inclusion of youth in the context of increasing violence and insecurity with a focus on Central America</titulo>
-    <titulo_corto>12/13 AX: Social inclusion of youth in the context of increasing violence and insecurity with a focus on Central America</titulo_corto>
-    <body>
-    </body>
-    <simbolo>ROA 254-8-A</simbolo>
-    <id_estado>2</id_estado>
-    <des_estado>Execution</des_estado>
-    <contacto>
-    </contacto>
-    <tipo_proyecto>1</tipo_proyecto>
-    <presupuesto>500000</presupuesto>
-    <fecha_aprobacion>15-07-2013 0:00:00</fecha_aprobacion>
-    <fecha_fin_estimada>31-12-2015 0:00:00</fecha_fin_estimada>
-    <fecha_fin>31-12-2015 0:00:00</fecha_fin>
-    <duracion_meses>3</duracion_meses>
-    <division>DDS</division>
-    <division_id>6</division_id>
-    <subprograma>Social development and equity</subprograma>
-    <donante>United Nations Department of Economic and Social Affairs (DESA)</donante>
-    <id_donante>205</id_donante>
-    <objetivos>
-      <objetivo>
-        <id_protrack>2914</id_protrack>
-        <orden>0</orden>
-        <descripcion>This project aims at strengthening the capacity of Latin American and Caribbean countries, particularly in Central America, to promote effective social inclusion of youth in the context of violence and insecurity.</descripcion>
-      </objetivo>
-    </objetivos>
-    <resultados>
-      <resultado>
-        <id_protrack>2914</id_protrack>
-        <orden>1</orden>
-        <descripcion>EA 1: Strengthened capacity of Central American governments to assess and design more effective policies to confront youth exclusion and violence.</descripcion>
-      </resultado>
-      <resultado>
-        <id_protrack>2914</id_protrack>
-        <orden>2</orden>
-        <descripcion>EA 2: Enhanced sharing of data and information on critical economic and social challenges for youth in Latin America and the Caribbean to support national and regional decision-making.</descripcion>
-      </resultado>
-    </resultados>
-    <outputs>
-    </outputs>
-    <countries>
-      <country>
-        <id_protrack>2914</id_protrack>
-        <id_country>COS</id_country>
-        <descripcion>Costa Rica</descripcion>
-      </country>
-      <country>
-        <id_protrack>2914</id_protrack>
-        <id_country>ELS</id_country>
-        <descripcion>El Salvador</descripcion>
-      </country>
-      <country>
-        <id_protrack>2914</id_protrack>
-        <id_country>GUA</id_country>
-        <descripcion>Guatemala</descripcion>
-      </country>
-      <country>
-        <id_protrack>2914</id_protrack>
-        <id_country>HON</id_country>
-        <descripcion>Honduras</descripcion>
-      </country>
-      <country>
-        <id_protrack>2914</id_protrack>
-        <id_country>NIC</id_country>
-        <descripcion>Nicaragua</descripcion>
-      </country>
-      <country>
-        <id_protrack>2914</id_protrack>
-        <id_country>PAN</id_country>
-        <descripcion>Panama</descripcion>
-      </country>
-    </countries>
-    <terminosUNBIS>
-    </terminosUNBIS>
-    <productosSADE>
-    </productosSADE>
-  </proyecto>
-  <proyecto>
-    <id_protrack>2890</id_protrack>
-    <titulo>12/13AE Time for Equality: Strengthening the Institutional Framework of Social Policies </titulo>
-    <titulo_corto>12/13AE Time for Equality</titulo_corto>
-    <body>This project aims at promoting social protection policies and institutional arrangements that contribute to reduce poverty, inequality and social exclusion, in accordance with the first Millennium Development Goal (MDG 1). Through the development of a toolkit of policy and programme options, knowledge sharing and the provision of technical advice, the project will strengthen the capacity of governments to implement and sustain effective and long-term social policies as part of inclusive social protection systems, which are based on social rights and are politically supported by fiscal or social covenants. It will also enhance knowledge and cooperation on tools for the monitoring and evaluation of social policy/social protection systems reforms and institutionalized support required for such reforms, through the exchange of experiences and good practices among countries of the Latin American and Caribbean region, as well as selected countries in the Western Asia and the Asia-Pacific regions.  </body>
-    <simbolo>ROA 235-8</simbolo>
-    <id_estado>2</id_estado>
-    <des_estado>Execution</des_estado>
-    <contacto>
-    </contacto>
-    <tipo_proyecto>1</tipo_proyecto>
-    <presupuesto>661000</presupuesto>
-    <fecha_aprobacion>01-01-1900 0:00:00</fecha_aprobacion>
-    <fecha_fin_estimada>01-01-1900 0:00:00</fecha_fin_estimada>
-    <fecha_fin>31-12-2015 0:00:00</fecha_fin>
-    <duracion_meses>1365</duracion_meses>
-    <division>DDS</division>
-    <division_id>6</division_id>
-    <subprograma>Social development and equity</subprograma>
-    <donante>United Nations Department of Economic and Social Affairs (DESA)</donante>
-    <id_donante>205</id_donante>
-    <objetivos>
-      <objetivo>
-        <id_protrack>2890</id_protrack>
-        <orden>0</orden>
-        <descripcion>To promote social protection policies and institutional arrangements in countries of the Latin America and Caribbean, the Western Asia and the Asia-Pacific regions, aimed at reducing poverty, inequality and social exclusion in accordance with Millennium Development Goal 1.</descripcion>
-      </objetivo>
-    </objetivos>
-    <resultados>
-      <resultado>
-        <id_protrack>2890</id_protrack>
-        <orden>0</orden>
-        <descripcion>EA1	Strengthened capacity of governments to institutionalize and sustain effective and long-term social policies as part of rights-based inclusive social protection systems</descripcion>
-      </resultado>
-      <resultado>
-        <id_protrack>2890</id_protrack>
-        <orden>0</orden>
-        <descripcion>EA2 	Enhanced knowledge and cooperation on monitoring and evaluation of social policy/social protection systems reforms.</descripcion>
-      </resultado>
-    </resultados>
-    <outputs>
-    </outputs>
-    <countries>
-    </countries>
-    <terminosUNBIS>
-    </terminosUNBIS>
-    <productosSADE>
-    </productosSADE>
-  </proyecto>
-  <proyecto>
-    <id_protrack>2844</id_protrack>
-    <titulo>10/11E - Facilitating climate change adaptation in transport through addressing the energy-enviroment linkage</titulo>
-    <titulo_corto>10/11E - Facilitating climate change adaptation in transport through addressing the energy-enviroment linkage</titulo_corto>
-    <body>
-    </body>
-    <simbolo>ROA/143-7</simbolo>
-    <id_estado>2</id_estado>
-    <des_estado>Execution</des_estado>
-    <contacto>
-    </contacto>
-    <tipo_proyecto>1</tipo_proyecto>
-    <presupuesto>84000</presupuesto>
-    <fecha_aprobacion>03-12-2012 0:00:00</fecha_aprobacion>
-    <fecha_fin_estimada>31-12-2013 0:00:00</fecha_fin_estimada>
-    <fecha_fin>31-12-2013 0:00:00</fecha_fin>
-    <duracion_meses>10</duracion_meses>
-    <division>DDSAH</division>
-    <division_id>10</division_id>
-    <subprograma>Environmental sustainability and natural resources</subprograma>
-    <donante>United Nations Department of Economic and Social Affairs (DESA)</donante>
-    <id_donante>205</id_donante>
-    <objetivos>
-    </objetivos>
-    <resultados>
-    </resultados>
-    <outputs>
-    </outputs>
-    <countries>
-    </countries>
-    <terminosUNBIS>
-    </terminosUNBIS>
-    <productosSADE>
-    </productosSADE>
-  </proyecto>
-  <proyecto>
-    <id_protrack>2813</id_protrack>
-    <titulo>Carta solicitud de Cooperación en el marco del Acuerdo de Cooperación Interinstitucional entre la Comisón económica para América Latina y el Caribe de las Naciones Unidas y el Banco Interamericano de Desarrollo - </titulo>
-    <titulo_corto>Impresión del Estudio de Economía del Cambio Climático en Bolivia.</titulo_corto>
-    <body>
-    </body>
-    <simbolo>BID/12/001</simbolo>
-    <id_estado>2</id_estado>
-    <des_estado>Execution</des_estado>
-    <contacto>
-    </contacto>
-    <tipo_proyecto>1</tipo_proyecto>
-    <presupuesto>60000</presupuesto>
-    <fecha_aprobacion>25-07-2012 0:00:00</fecha_aprobacion>
-    <fecha_fin_estimada>15-11-2012 0:00:00</fecha_fin_estimada>
-    <fecha_fin>31-07-2014 0:00:00</fecha_fin>
-    <duracion_meses>15</duracion_meses>
-    <division>DDSAH</division>
-    <division_id>10</division_id>
-    <subprograma>Environmental sustainability and natural resources</subprograma>
-    <donante>Banco Interamericano de Desarrollo (BID)</donante>
-    <id_donante>47</id_donante>
-    <objetivos>
-      <objetivo>
-        <id_protrack>2813</id_protrack>
-        <orden>0</orden>
-        <descripcion>Sensibilizar y estimular a los tomadores de decisiones de los sectores público y privado de los Países frente a la necesidad de adelantar acciones de mitigación y adaptación al Cambio Climático, tomando particularmente en cuenta la necesidad que existe en los países de contar con una plataforma para alentar a la opinión pública sobre el sentido de urgencia del desafío presentado por el cambio climático.</descripcion>
-      </objetivo>
-    </objetivos>
-    <resultados>
-    </resultados>
-    <outputs>
-    </outputs>
-    <countries>
-      <country>
-        <id_protrack>2813</id_protrack>
-        <id_country>BOL</id_country>
-        <descripcion>Bolivia</descripcion>
-      </country>
-    </countries>
-    <terminosUNBIS>
-      <unbis>
-        <id_protrack>2813</id_protrack>
-        <descripcion>MEDIO AMBIENTE</descripcion>
-        <primary_key>1605</primary_key>
-      </unbis>
-    </terminosUNBIS>
-    <productosSADE>
-    </productosSADE>
-  </proyecto>
-</GetProyectos>
+<GetNoticias records="10" error="false" timerExec="00:00:00.1180068">
+  <noticia>
+    <id_sade>51416</id_sade>
+    <titulo>Últimas publicaciones de nuestra división</titulo>
+    <bajada>Septiembre Octubre 2013 - DDS, CEPAL</bajada>
+    <epigrafe>
+    </epigrafe>
+    <fecha>29-10-2013 0:00:00</fecha>
+    <fecha_actualizacion>29-10-2013 15:53:59</fecha_actualizacion>
+    <cuerpo><![CDATA[<table width="100%" cellPadding="5" cellSpacing="0" border="0"><tbody><tr><td width="50%" vAlign="top"><div id="destacadas"><img height="60" width="50" src="http://www.cepal.org/publicaciones/xml/1/51361/port_bolivia_esp.jpg" alt="Sistemas de protecci&amp;oacute;n social en Am&amp;eacute;rica Latina y el Caribe: Estado Plurinacional de Bolivia" border="0" /> <a href="http://www.cepal.org/cgi-bin/getProd.asp?xml=/publicaciones/xml/1/51361/P51361.xml&amp;amp;xsl=/tpl/p9f.xsl&amp;amp;base=/dds/tpl/top-bottom.xsl">Sistemas de protecci&amp;oacute;n social en Am&amp;eacute;rica Latina y el Caribe: Estado Plurinacional de Bolivia</a><br /></div></td><td width="50%" vAlign="top"><div id="destacadas"><img height="60" width="50" src="http://www.cepal.org/publicaciones/xml/6/51366/port_proteccionsocial.jpg" alt="Protecci&amp;oacute;n social para la infancia y la adolescencia en la Argentina: retos cr&amp;iacute;ticos para un sistema integral" border="0" /> <a href="http://www.cepal.org/cgi-bin/getProd.asp?xml=/publicaciones/xml/6/51366/P51366.xml&amp;amp;xsl=/tpl/p9f.xsl&amp;amp;base=/dds/tpl/top-bottom.xsl">Protecci&amp;oacute;n social para la infancia y la adolescencia en la Argentina: retos cr&amp;iacute;ticos para un sistema integral</a><br /></div></td></tr><tr><td width="50%" vAlign="top"><div id="destacadas"><img height="60" width="50" src="http://www.cepal.org/publicaciones/xml/2/51222/port_desarrollotlesalud.jpg" alt="Desarrollo de la telesalud en Am&amp;eacute;rica Latina: aspectos conceptuales y estado actual" border="0" /> <a href="http://www.cepal.org/cgi-bin/getProd.asp?xml=/publicaciones/xml/2/51222/P51222.xml&amp;amp;xsl=/tpl/p9f.xsl&amp;amp;base=/dds/tpl/top-bottom.xsl">Desarrollo de la telesalud en Am&amp;eacute;rica Latina: aspectos conceptuales y estado actual</a><br /></div></td><td width="50%" vAlign="top"><div id="destacadas"><img height="60" width="50" src="http://www.cepal.org/dds/noticias/desafios/6/51326/desafios_nro16_esp_chica.jpg" alt="Bolet&amp;iacute;n Desaf&amp;iacute;os 16. Los derechos de la infancia urbana" border="0" /> <a href="http://www.cepal.org/cgi-bin/getProd.asp?xml=/dds/noticias/desafios/6/51326/P51326.xml&amp;amp;xsl=/dds/tpl/p27f.xsl&amp;amp;base=/dds/tpl/top-bottom.xsl">Bolet&amp;iacute;n Desaf&amp;iacute;os 16. Los derechos de la infancia urbana</a><br /></div></td></tr><tr><td width="50%" vAlign="top"><div id="destacadas"><img height="60" width="50" src="http://www.cepal.org/publicaciones/xml/0/51220/politicas_sociales.gif" alt="La construcci&amp;oacute;n de pactos y consensos en materia de pol&amp;iacute;tica social: el caso de la Ley General de Desarrollo Social de M&amp;eacute;xico, 2000-2008" border="0" /> <a href="http://www.cepal.org/cgi-bin/getProd.asp?xml=/publicaciones/xml/0/51220/P51220.xml&amp;amp;xsl=/tpl/p9f.xsl&amp;amp;base=/dds/tpl/top-bottom.xsl">La construcci&amp;oacute;n de pactos y consensos en materia de pol&amp;iacute;tica social: el caso de la Ley General de Desarrollo Social de M&amp;eacute;xico, 2000-2008</a><br /></div></td><td width="50%" vAlign="top"><div id="destacadas"><img height="60" width="50" src="http://www.cepal.org/dds/noticias/desafios/6/51326/ehealth-handbook-managers-healthcare.jpg" alt="eHealth handbook for managers of healthcare services and systems" border="0" /> <a href="http://www.cepal.org/cgi-bin/getProd.asp?xml=/publicaciones/xml/2/47652/P47652.xml&amp;amp;xsl=/tpl/p9f.xsl&amp;amp;base=/dds/tpl/top-bottom.xsl">eHealth handbook for managers of healthcare services and systems</a></div></td></tr></tbody></table><br /><h3><a href="http://www.cepal.org/dds/publicaciones/">VER TODAS LAS PUBLICACIONES &amp;raquo; </a></h3>]]></cuerpo>
+    <idioma>es</idioma>
+    <minisitio>
+    </minisitio>
+    <area_de_trabajo>
+    </area_de_trabajo>
+    <user_id>338</user_id>
+    <migrable>1</migrable>
+  </noticia>
+  <noticia>
+    <id_sade>51407</id_sade>
+    <titulo>Derechos de acceso a la información, participación y justicia en materia ambiental se discutirán en Lima</titulo>
+    <bajada>
+    </bajada>
+    <epigrafe>
+    </epigrafe>
+    <fecha>29-10-2013 0:00:00</fecha>
+    <fecha_actualizacion>29-10-2013 10:44:45</fecha_actualizacion>
+    <cuerpo><![CDATA[<p align="justify">Una nueva oportunidad para avanzar en la implementaci&amp;oacute;n del Principio 10 de la Declaraci&amp;oacute;n de R&amp;iacute;o sobre el Medio Ambiente y el Desarrollo, que promueve el acceso a la informaci&amp;oacute;n, participaci&amp;oacute;n y justicia en asuntos ambientales en Am&amp;eacute;rica Latina y el Caribe, tendr&amp;aacute;n esta semana en Lima, Per&amp;uacute;, los pa&amp;iacute;ses de la regi&amp;oacute;n que participan en esta iniciativa. </p><p align="justify">El mi&amp;eacute;rcoles 30 y jueves 31 se realizar&amp;aacute; en la capital peruana la <a href="http://www.cepal.org/cgi-bin/getProd.asp?xml=/rio20/noticias/noticias/1/50791/P50791.xml&amp;amp;xsl=/rio20/tpl/p1f.xsl&amp;amp;base=/rio20/tpl/top-bottom-10.xsl"><b>Tercera reuni&amp;oacute;n de los puntos focales designados por los gobiernos de los pa&amp;iacute;ses signatarios de la Declaraci&amp;oacute;n sobre la aplicaci&amp;oacute;n del principio 10 de la Declaraci&amp;oacute;n de R&amp;iacute;o sobre el Medio Ambiente y el Desarrollo en Am&amp;eacute;rica Latina y el Caribe</b></a>, quienes revisar&amp;aacute;n el estado de los derechos de acceso en asuntos ambientales en la regi&amp;oacute;n y las medidas adoptadas por los pa&amp;iacute;ses en esta materia, entre otros temas. </p><p align="justify">Hasta ahora 15 pa&amp;iacute;ses de Am&amp;eacute;rica Latina y el Caribe han suscrito la <a href="http://www2.eclac.cl/rio20/noticias/paginas/5/48585/Decalracion-esp-N1244046.pdf">Declaraci&amp;oacute;n sobre la aplicaci&amp;oacute;n del principio 10</a>: Argentina, Brasil, Chile, Colombia, Costa Rica, Ecuador, Honduras, Jamaica, M&amp;eacute;xico, Panam&amp;aacute;, Paraguay, Per&amp;uacute;, Rep&amp;uacute;blica Dominicana, Trinidad y Tabago y Uruguay.</p><p align="justify">La segunda reuni&amp;oacute;n de los puntos focales tuvo lugar en abril de este a&amp;ntilde;o en Guadalajara, M&amp;eacute;xico, y la primera en noviembre de 2012 en Santiago, Chile.</p><p align="justify">En Guadalajara los pa&amp;iacute;ses aprobaron un Plan de Acci&amp;oacute;n hasta 2014 para avanzar hacia la firma de un convenio regional u otro instrumento que permita la implementaci&amp;oacute;n cabal de los derechos de acceso a la informaci&amp;oacute;n, participaci&amp;oacute;n y justicia en asuntos ambientales para el desarrollo sostenible en la regi&amp;oacute;n.</p><p align="justify">All&amp;iacute; tambi&amp;eacute;n se crearon dos grupos de trabajo, uno sobre fortalecimiento de capacidades y cooperaci&amp;oacute;n, y otro sobre derechos de acceso e instrumento regional.</p><p align="justify">Previo a la reuni&amp;oacute;n, los d&amp;iacute;as 28 y 29 de octubre, se realizar&amp;aacute; un <strong>Taller de capacitaci&amp;oacute;n sobre la implementaci&amp;oacute;n del Principio 10 en Am&amp;eacute;rica Latina y el Caribe</strong>, organizado conjuntamente por la <strong>CEPAL</strong>, el Programa de las Naciones Unidas para el Medio Ambiente (PNUMA), el Instituto de las Naciones Unidas para Formaci&amp;oacute;n Profesional e Investigaciones (UNITAR), la Sociedad Peruana de Derecho Ambiental y The Access Initiative-World Resources Institute (WRI-TAI). </p><p align="justify"><strong></strong></p><p align="justify">El martes 29, en tanto, se llevar&amp;aacute; a cabo la <strong>Tercera reuni&amp;oacute;n de los Grupos de Trabajo definidos en el Plan de Acci&amp;oacute;n hasta 2014</strong>.</p><p align="justify">Todas estas actividades, que han recibido el apoyo del Gobierno de Per&amp;uacute;, a trav&amp;eacute;s del Ministerio de Relaciones Exteriores y el Ministerio del Ambiente, ser&amp;aacute;n transmitidas en directo por internet en <a href="http://gaussvideo.com/envivo/">http://gaussvideo.com/envivo/</a> </p><p align="justify">Ver programas de las actividades <a href="http://www.cepal.org/cgi-bin/getProd.asp?xml=/rio20/noticias/noticias/1/50791/P50791.xml&amp;amp;xsl=/rio20/tpl/p1f.xsl&amp;amp;base=/rio20/tpl/top-bottom-10.xsl">aqu&amp;iacute;</a>. </p><p align="justify"><b>Contacto de Prensa: </b></p><p align="justify">Secci&amp;oacute;n de Informaci&amp;oacute;n P&amp;uacute;blica y Servicios Web de la <b>CEPAL</b>. <br />Sede de la <b>CEPAL</b>: Av. Dag Hammarskjold 3477, Vitacura, Santiago.<br />Correo electr&amp;oacute;nico: <a href="mailto:prensa@cepal.org">prensa@cepal.org</a>, tel&amp;eacute;fono: (562) 2210 2040.<br /><br />S&amp;iacute;ganos en: <a href="http://twitter.com/cepal_onu">Twitter</a>, <a href="http://www.facebook.com/cepal.onu">Facebook</a>, <a href="http://www.flickr.com/photos/cepal/">Flickr</a> y <a href="http://www.youtube.com/cepalonu">YouTube</a></p><p align="justify">&amp;nbsp;</p>]]></cuerpo>
+    <idioma>es</idioma>
+    <minisitio>
+    </minisitio>
+    <area_de_trabajo>
+    </area_de_trabajo>
+    <user_id>335</user_id>
+    <migrable>1</migrable>
+  </noticia>
+  <noticia>
+    <id_sade>51405</id_sade>
+    <titulo>CEPAL promueve pactos sociales por la igualdad como herramientas para la seguridad en la región</titulo>
+    <bajada>Alicia Bárcena destaca que un gran desafío en América Latina y el Caribe es lograr una seguridad multidimensional, "legítima para todos".<br></br><br></br></bajada>
+    <epigrafe>Durante la Conmemoración del Décimo Aniversario de la Declaración sobre Seguridad en las Américas:</epigrafe>
+    <fecha>28-10-2013 0:00:00</fecha>
+    <fecha_actualizacion>28-10-2013 19:19:23</fecha_actualizacion>
+    <cuerpo><![CDATA[<p align="justify"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000"><b>(28 de octubre, 2013)</b> La Secretaria Ejecutiva de la Comisi&amp;oacute;n Econ&amp;oacute;mica para Am&amp;eacute;rica Latina y el Caribe (<strong>CEPAL</strong>), <strong>Alicia B&amp;aacute;rcena</strong>,  se&amp;ntilde;al&amp;oacute; este lunes que ante el desaf&amp;iacute;o de la inseguridad es  indispensable promover pactos sociales para la igualdad con iniciativas  que reconozcan en los ciudadanos a sujetos aut&amp;oacute;nomos, pero tambi&amp;eacute;n  vulnerables, porque dependen de otros para la concreci&amp;oacute;n de su plan de  vida.&amp;nbsp;</font></p><p align="justify"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">La  alta funcionaria de Naciones Unidas transmiti&amp;oacute; este mensaje al  participar en la Conmemoraci&amp;oacute;n del D&amp;eacute;cimo Aniversario de la&amp;nbsp;declaraci&amp;oacute;n  sobre Seguridad en las Am&amp;eacute;ricas, que se celebr&amp;oacute; en la sede de la  Organizaci&amp;oacute;n de Estados Americanos (OEA), en&amp;nbsp;Washington, con la  asistencia del secretario general de ese organismo, <strong>Jos&amp;eacute; Miguel Insulza</strong>.</font></p><p align="justify"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">&amp;quot;Para la <strong>CEPAL</strong>,  el gran desaf&amp;iacute;o de la regi&amp;oacute;n es garantizar una seguridad &amp;acute;leg&amp;iacute;tima para  todos&amp;acute;, donde el Estado recupere su rol central, monop&amp;oacute;lico, y con ello  disminuya las brechas de desigualdad en esta &amp;aacute;rea&amp;quot;, manifest&amp;oacute; durante  su discurso la m&amp;aacute;xima representante del organismo regional de Naciones  Unidas.&amp;nbsp;</font></p><p align="justify"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">&amp;nbsp;&amp;quot;La inseguridad es otra brecha en la region que debe ser reducida para lograr el desarrollo&amp;quot;, a&amp;ntilde;adi&amp;oacute; <strong>Alicia B&amp;aacute;rcena</strong>,  quien destac&amp;oacute; que Am&amp;eacute;rica Latina ha logrado en los &amp;uacute;ltimos a&amp;ntilde;os un  constante crecimiento, una reducci&amp;oacute;n de la pobreza y, en algunos pa&amp;iacute;ses,  incluso una<br />disminuci&amp;oacute;n de la desigualdad.&amp;nbsp;</font></p><p align="justify"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">Sin  embargo, estos cambios macroecon&amp;oacute;micos no tienen un efecto directo  sobre los valores y conductas delictivas y, en ese proceso de lucha  contra la inseguridad, &amp;quot;la presencia del Estado es esencial&amp;quot;, subray&amp;oacute;.&amp;nbsp;&amp;nbsp;</font></p><p align="justify"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">La  Secretaria Ejecutiva abog&amp;oacute; por &amp;quot;detener la privatizaci&amp;oacute;n de la  seguridad&amp;quot; y &amp;quot;promover la seguridad como un bien p&amp;uacute;blico&amp;quot;. &amp;quot;La  privatizaci&amp;oacute;n de la seguridad, parad&amp;oacute;jicamente, conduce a mayores  niveles de inseguridad general. La seguridad de unos pocos siempre es  inseguridad para los excluidos&amp;quot;, subray&amp;oacute;.&amp;nbsp;</font></p><p align="justify"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">En  Am&amp;eacute;rica Latina la seguridad privada ha ido en ascenso y en Chile, por  ejemplo, ya hay m&amp;aacute;s de 2 guardias privados por cada polic&amp;iacute;a.</font></p><p align="justify"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">&amp;nbsp;&amp;quot;Desde la <strong>CEPAL</strong>  creemos que los pa&amp;iacute;ses de Am&amp;eacute;rica Latina y el Caribe con grandes  desigualdades de ingresos tienen m&amp;aacute;s probabilidades de ser afectados por  delitos violentos que las sociedades m&amp;aacute;s equitativas&amp;quot;, apunt&amp;oacute;. Por el  contrario, el crecimiento econ&amp;oacute;mico, una mejor<br />distribuci&amp;oacute;n del ingreso, as&amp;iacute; como una mayor transparencia, contribuyen a evitar los cr&amp;iacute;menes violentos.&amp;nbsp;&amp;nbsp;</font></p><p align="justify"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">El  Programa de Naciones Unidas para el Desarrollo (PNUD) ha estimado que  los costos de la inseguridad superan el 5% del PIB anual para la mayor&amp;iacute;a  de los pa&amp;iacute;ses, con diferencias notables que van desde 2% en Chile hasta  11% en El Salvador (se considera el gasto en seguridad del Estado y los  costos que recaen directamente sobre los ciudadanos).</font></p><p align="justify"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">Estas  estimaciones arrojan cifras similares a las que la CEPAL ha calculado  para Centroam&amp;eacute;rica (Guatemala, El Salvador, Honduras, Nicaragua y Costa  Rica). En base a la informaci&amp;oacute;n disponible de 2006, CEPAL estim&amp;oacute; que los  costos econ&amp;oacute;micos de la violencia alcanzan 7.7% del PIB subregional. En  estos costos se consider&amp;oacute; las p&amp;eacute;rdidas en salud, costos  institucionales, seguridad p&amp;uacute;blica, justicia, gastos privados en  seguridad y p&amp;eacute;rdidas materiales.&amp;nbsp;</font></p><p align="justify"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">De acuerdo a <strong>CEPAL</strong>,  entre 2007-2010 el gasto p&amp;uacute;blico en defensa, seguridad y justicia de  Centroam&amp;eacute;rica, en su conjunto, creci&amp;oacute; de manera leve pero sostenida,  tanto en t&amp;eacute;rminos nominales como en porcentajes del PIB. El gasto en  defensa, seguridad y justicia en Centroam&amp;eacute;rica, en 2010, fluctu&amp;oacute; entre  1,7% y 3,3% del PIB.&amp;nbsp;</font></p><p align="justify"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">Am&amp;eacute;rica  Latina y el Caribe -de acuerdo a informaci&amp;oacute;n disponible en Naciones  Unidas- presenta algunos de los &amp;iacute;ndices m&amp;aacute;s altos del mundo de cr&amp;iacute;menes y  violencias, con cerca de un tercio de los homicidios del mundo con tan  s&amp;oacute;lo 8% de la poblaci&amp;oacute;n mundial y un promedio de 25.6 homicidios cada  100.000 habitantes en comparaci&amp;oacute;n con los 8.9 de Europa.</font></p><p align="justify"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">Las  principales v&amp;iacute;ctimas, directas e indirectas, de la situaci&amp;oacute;n de  inseguridad en la regi&amp;oacute;n son las mujeres, los ni&amp;ntilde;os y ni&amp;ntilde;as y los  j&amp;oacute;venes.&amp;nbsp;&amp;nbsp; </font></p><table cellpadding="0" cellspacing="0" border="1"> <tbody><tr><td valign="top" width="638"><p align="center"><br />&amp;nbsp; Para consultas, contactar a la Secci&amp;oacute;n de Informaci&amp;oacute;n P&amp;uacute;blica y Servicios Web de<br />&amp;nbsp; la <b>CEPAL</b>. </p><p align="center">Correo electr&amp;oacute;nico: <a href="javascript:nospam('prensa','cepal.org');">prensa<img border="0" src="http://www.cepal.org/img/arobva.gif" />cepal.org</a>; tel&amp;eacute;fono: (56 2) 2210 2040. </p><p align="center">S&amp;iacute;ganos&amp;nbsp;en: <a href="http://twitter.com/cepal_onu">Twitter</a>, <a href="http://www.facebook.com/cepal.onu">Facebook</a>, <a href="http://www.flickr.com/photos/cepal/">Flickr</a> y <a href="http://www.youtube.com/cepalonu">YouTube</a>.&amp;nbsp; </p></td></tr></tbody></table>]]></cuerpo>
+    <idioma>es</idioma>
+    <minisitio>
+    </minisitio>
+    <area_de_trabajo>
+    </area_de_trabajo>
+    <user_id>342</user_id>
+    <migrable>1</migrable>
+  </noticia>
+  <noticia>
+    <id_sade>51392</id_sade>
+    <titulo>Sigue la Tercera Reunión de Puntos Focales de los Países Signatarios de la Declaración sobre la aplicación del Principio 10 en América Latina y el Caribe y Taller de Capacitación sobre Implementación del Principio 10 por webcast.</titulo>
+    <bajada>
+    </bajada>
+    <epigrafe>
+    </epigrafe>
+    <fecha>28-10-2013 0:00:00</fecha>
+    <fecha_actualizacion>28-10-2013 10:18:14</fecha_actualizacion>
+    <cuerpo><![CDATA[]]></cuerpo>
+    <idioma>es</idioma>
+    <minisitio>
+    </minisitio>
+    <area_de_trabajo>
+    </area_de_trabajo>
+    <user_id>340</user_id>
+    <migrable>1</migrable>
+  </noticia>
+  <noticia>
+    <id_sade>51376</id_sade>
+    <titulo>Estudiantes de la universidad CEIPA visitan CEPAL</titulo>
+    <bajada>Alumnos de Administración de la Business School de Medellín asistieron a una serie de charlas organizadas por el ILPES como parte de una pasantía sobre la realidad económica de Chile, Perú y Colombia.</bajada>
+    <epigrafe>
+    </epigrafe>
+    <fecha>23-10-2013 0:00:00</fecha>
+    <fecha_actualizacion>23-10-2013 17:47:16</fecha_actualizacion>
+    <cuerpo><![CDATA[<p align="justify"><font face="arial,helvetica,sans-serif" size="2" color="#808080"><img height="100" width="150" src="/ilpes/noticias/noticias/6/51376/noticia3.jpg" align="left" hspace="7" />El pasado 22 de octubre la sede de la CEPAL en Santiago recibi&amp;oacute; la visita de un grupo de estudiantes de Administraci&amp;oacute;n provenientes de la universidad <a target="_blank" href="http://www.ceipa.edu.co/sitio/">CEIPA Business School</a> de Medell&amp;iacute;n, Colombia. La visita se centr&amp;oacute; en una jornada de reflexi&amp;oacute;n sobre la coyuntura econ&amp;oacute;mica de Am&amp;eacute;rica Latina y el Caribe. </font></p><p align="justify"><font face="arial,helvetica,sans-serif" size="2" color="#808080">El programa de actividades contempl&amp;oacute; una serie de charlas organizadas por el ILPES e impartidas por funcionarios de la CEPAL, y abarcaron temas como el panorama regional de las econom&amp;iacute;as latinoamericanas, el panorama del desarrollo territorial, el desarrollo sostenible y el cambio clim&amp;aacute;tico. Dichas presentaciones estuvieron a cargo de Luis Felipe Jim&amp;eacute;nez, de la <a target="_blank" href="http://www.cepal.org/de/">Divisi&amp;oacute;n de Desarrollo Econ&amp;oacute;mico</a>; Orly Winer, de la <a target="_blank" href="http://www.cepal.org/celade/">Divisi&amp;oacute;n de Poblaci&amp;oacute;n</a>; Sergio Gonz&amp;aacute;lez, investigador del ILPES; Jos&amp;eacute; Eduardo Alatorre, de la <a target="_blank" href="http://www.cepal.org/dmaah/">Divisi&amp;oacute;n de Desarrollo Sostenible y Asentamientos Humanos</a>, y Claudia Vilches, de la Bibli<a target="_blank" href="http://www.cepal.org/biblioteca/default.asp">oteca Hern&amp;aacute;n Santa Cruz de la CEPAL</a>. Luego, los estudiantes hicieron un recorrido por las instalaciones de la CEPAL y conocieron de primera mano los recursos bibliotecarios que la casa pone a disposici&amp;oacute;n de investigadores y profesionales de toda la regi&amp;oacute;n. </font></p><p align="justify"><font face="arial,helvetica,sans-serif" size="2" color="#808080">La visita fue parte de la actividad de CEIPA denominada &amp;ldquo;Pasant&amp;iacute;a MILA, Mercado Integrado Latinoamericano&amp;rdquo;, en que los estudiantes recorren Chile, Per&amp;uacute; y Colombia para integrar sus conocimientos acad&amp;eacute;micos con la realidad econ&amp;oacute;mica de los tres pa&amp;iacute;ses.</font></p><p align="justify"><font face="Arial" size="2" color="#ffffff">.</font></p><p align="justify"><table align="center" cellPadding="7" border="0"><tbody><tr><td style="background-color: #b7b7b7"><img height="232" width="350" src="/ilpes/noticias/noticias/6/51376/noticia2.jpg" /></td><td>&amp;nbsp;</td><td style="background-color: #b7b7b7"><img height="232" width="350" src="/ilpes/noticias/noticias/6/51376/noticia1.jpg" /></td></tr></tbody></table></p>]]></cuerpo>
+    <idioma>es</idioma>
+    <minisitio>
+    </minisitio>
+    <area_de_trabajo>
+    </area_de_trabajo>
+    <user_id>179</user_id>
+    <migrable>1</migrable>
+  </noticia>
+  <noticia>
+    <id_sade>51364</id_sade>
+    <titulo>ILPES y autoridades diplomáticas presentan nuevo libro sobre desarrollo inclusivo en el Paraguay</titulo>
+    <bajada>En el lanzamiento del libro sobre el trabajo de cooperación internacional impulsado por Japón que redundó en importantes avances en la economía paraguaya, se hizo hincapié en proponer un modelo de desarrollo que involucre a varios sectores productivos, articulándolos y apuntándolos a conseguir un objetivo de mutuo beneficio.</bajada>
+    <epigrafe>
+    </epigrafe>
+    <fecha>22-10-2013 0:00:00</fecha>
+    <fecha_actualizacion>22-10-2013 17:19:47</fecha_actualizacion>
+    <cuerpo><![CDATA[<p align="justify"><font face="arial,helvetica,sans-serif" size="2" color="#808080"><img height="133" width="200" src="/ilpes/noticias/noticias/4/51364/noticialibro4.jpg" align="left" hspace="8" />Con la presencia de Jorge M&amp;aacute;ttar, director del ILPES; Hidenori Murakami, Embajador de Jap&amp;oacute;n en Chile, y Terumi Matsuo, Embajadora de Paraguay en Chile, fue lanzado hoy el libro <strong>&amp;ldquo;Estudio sobre el desarrollo inclusivo del Paraguay: experiencias de una cooperaci&amp;oacute;n internacional&amp;rdquo;</strong>, edici&amp;oacute;n conjunta de la CEPAL, con participaci&amp;oacute;n del ILPES, y la Agencia de Cooperaci&amp;oacute;n Internacional del Jap&amp;oacute;n (<a target="_blank" href="http://www.jica.go.jp/spanish/"><strong>JICA</strong></a>). </font></p><p align="justify"><font face="arial,helvetica,sans-serif" size="2" color="#808080">La publicaci&amp;oacute;n relata, desde distintas perspectivas, la historia de la implementaci&amp;oacute;n de la Estrategia de Desarrollo Econ&amp;oacute;mico del Paraguay (EDEP), que JICA elabor&amp;oacute; para esa naci&amp;oacute;n en el a&amp;ntilde;o 2000. Se abordan temas como de qu&amp;eacute; manera el EDEP se enfoca a la competitividad y al desarrollo econ&amp;oacute;mico, las pol&amp;iacute;ticas de articulaci&amp;oacute;n productiva del Paraguay y los desaf&amp;iacute;os del &amp;aacute;rea agr&amp;iacute;cola del pa&amp;iacute;s. </font></p><p align="justify"><font face="arial,helvetica,sans-serif" size="2" color="#808080">Entre los autores del libro se encuentra Rudolf Buitelaar, jefe del Area de Gesti&amp;oacute;n del Desarrollo Local y Regional del ILPES, quien en la occasion particip&amp;oacute; en un panel de discusi&amp;oacute;n junto con Kazuo Fujishiro, director de la Divisi&amp;oacute;n de Centroam&amp;eacute;rica y el Caribe de JICA; Sergio Gonz&amp;aacute;lez, investigador del ILPES, y Akio Hosono, consejero superior de investigaci&amp;oacute;n del Instituto de Investigaci&amp;oacute;n de JICA. </font></p><p align="justify"><font face="arial,helvetica,sans-serif" size="2" color="#808080">Para la CEPAL, el estudio de caso de Paraguay presentado provee respuestas a la pregunta de c&amp;oacute;mo promover el cambio estructural para la igualdad en Am&amp;eacute;rica Latina y el Caribe. En esta l&amp;iacute;nea surge una nueva propuesta fortalecida de JICA, despu&amp;eacute;s de una d&amp;eacute;cada del EDEP, que apunta al desarrollo inclusivo en los territorios rurales y que toma forma a trav&amp;eacute;s del Estudio de Desarrollo Rural Integral Dirigido al Peque&amp;ntilde;o Productor (EDRIPP). Esta nueva propuesta apunta a un desarrollo multidimensional, ya no enfocado solamente en la competitividad de las empresas, sino que preocup&amp;aacute;ndose de incorporar al modelo el concepto de &amp;ldquo;Creaci&amp;oacute;n del valor compartido&amp;rdquo;, que articula actores sociales y empresas en la b&amp;uacute;squeda de un mismo objetivo, de mutuo beneficio, y que genera sinergias y efectos positivos sobre el agregado de la econom&amp;iacute;a. </font></p><p align="justify"><font face="arial,helvetica,sans-serif" size="2" color="#808080">En su intervenci&amp;oacute;n, Jorge Matt&amp;aacute;r expres&amp;oacute; que es de suma importancia agregar valor a la producci&amp;oacute;n primaria y destac&amp;oacute; el rol de la planificaci&amp;oacute;n para enfrentar el desaf&amp;iacute;o de proyectar din&amp;aacute;micas exitosas en el largo plazo, lo cual exige de la aplicaci&amp;oacute;n de modelos productivos que sean sustentables desde el punto de vista medioambiental. &amp;ldquo;La meta de la igualdad en Am&amp;eacute;rica Latina se lograr&amp;aacute; por la v&amp;iacute;a del cambio estructural, utilizando una amplia gama de pol&amp;iacute;ticas p&amp;uacute;blicas de articulaci&amp;oacute;n productiva, que apunten al aprendizaje, colaboraci&amp;oacute;n e incorporaci&amp;oacute;n de conocimiento en los patrones de producci&amp;oacute;n&amp;rdquo;, declar&amp;oacute;. </font></p><p align="justify"><font face="arial,helvetica,sans-serif" size="2" color="#808080">Por su parte, la embajadora Matsuo destac&amp;oacute; que el crecimiento reciente de Paraguay, de 5% promedio en los primeros a&amp;ntilde;os de la d&amp;eacute;cada pasada, sirva de modelo para otras naciones de la regi&amp;oacute;n y celebr&amp;oacute; la publicaci&amp;oacute;n del libro que habla de esta experiencia por parte de la CEPAL y JICA, &amp;ldquo;ante su escaso conocimiento y difusi&amp;oacute;n&amp;rdquo;. Luego, el embajador Murakami resalt&amp;oacute; que la alianza entre CEPAL y JICA se haya convertido en un aporte para Am&amp;eacute;rica Latina, as&amp;iacute; como la existencia de la cooperaci&amp;oacute;n Sur-Sur y la evoluci&amp;oacute;n que ha representado. </font></p><p align="justify"><font face="arial,helvetica,sans-serif" size="2" color="#808080">El libro ya est&amp;aacute; <a target="_blank" href="http://www.eclac.cl/cgi-bin/getProd.asp?xml=%20/publicaciones/xml/3/51343/P51343.xml&amp;amp;xsl=/tpl/p9f.xsl%20&amp;amp;base=/tpl/top-bottom.xslt"><strong><em>disponible para descarga gratuita</em></strong></a><strong><em>.</em></strong></font></p><p align="justify"><strong><em><font face="Arial" size="2" color="#ffffff">.</font></em></strong></p><p align="justify"><table align="center" cellPadding="8" border="0"><tbody><tr><td style="background-color: #b7b7b7"><img height="133" width="200" src="/ilpes/noticias/noticias/4/51364/noticialibro3.jpg" /></td><td></td><td style="background-color: #b7b7b7"><img height="133" width="200" src="/ilpes/noticias/noticias/4/51364/noticialibro1.jpg" /></td><td></td><td style="background-color: #b7b7b7"><img height="133" width="200" src="/ilpes/noticias/noticias/4/51364/noticialibro2.jpg" /></td></tr></tbody></table></p><p align="justify"><font color="#ffffff">.</font></p>]]></cuerpo>
+    <idioma>es</idioma>
+    <minisitio>
+    </minisitio>
+    <area_de_trabajo>
+    </area_de_trabajo>
+    <user_id>179</user_id>
+    <migrable>1</migrable>
+  </noticia>
+  <noticia>
+    <id_sade>51362</id_sade>
+    <titulo>La banda de 450 MHz para LTE en América Latina</titulo>
+    <bajada>Este estudio de Omar de León, presentado en un seminario internacional en Barcelona, analiza la situación actual del uso de esta banda e incluye recomendaciones de política para su utilización.</bajada>
+    <epigrafe>
+    </epigrafe>
+    <fecha>22-10-2013 0:00:00</fecha>
+    <fecha_actualizacion>23-10-2013 14:56:26</fecha_actualizacion>
+    <cuerpo><![CDATA[<p>El consultor Omar de Le&amp;oacute;n elabor&amp;oacute; un documento sobre la situaci&amp;oacute;n actual del uso de la banda de 450 MHz para LTE en Am&amp;eacute;rica Latina, que incluye recomendaciones de pol&amp;iacute;tica para su utilizaci&amp;oacute;n, con el objetivo de extender la cobertura a zonas marginadas. </p><p>Este estudio fue presentado durante el seminario internacional <a href="http://www.cepal.org/cgi-bin/getProd.asp?xml=/socinfo/noticias/noticias/9/51189/P51189.xml&amp;amp;xsl=/socinfo/tpl/p1f.xsl&amp;amp;base=/socinfo/tpl/top-bottom.xsl">Innovaci&amp;oacute;n y regulaci&amp;oacute;n en las TIC. Una perspectiva comparada entre Europa y Am&amp;eacute;rica Latina</a>, organizado por la CEPAL junto al Institut Barcelona d'Estudis Internacionals (IBEI), llevado a cabo en Barcelona, Espa&amp;ntilde;a, los d&amp;iacute;as 30 de septiembre y 1 de octubre de 2013. </p>]]></cuerpo>
+    <idioma>es</idioma>
+    <minisitio>
+    </minisitio>
+    <area_de_trabajo>
+    </area_de_trabajo>
+    <user_id>300</user_id>
+    <migrable>1</migrable>
+  </noticia>
+  <noticia>
+    <id_sade>51357</id_sade>
+    <titulo>Innovación, diversificación y una logística mejorada son clave para un crecimiento sostenible e incluyente, según nuevo informe</titulo>
+    <bajada>OCDE, CEPAL y CAF presentaron el documento Perspectivas Económicas de América Latina 2014, durante la XXIII Cumbre Iberoamericana<br></br><br></br></bajada>
+    <epigrafe>En Ciudad de Panamá:</epigrafe>
+    <fecha>21-10-2013 0:00:00</fecha>
+    <fecha_actualizacion>21-10-2013 16:45:20</fecha_actualizacion>
+    <cuerpo><![CDATA[<p align="justify"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000"><b>(18 de octubre, 2013) </b>Despu&amp;eacute;s  de una d&amp;eacute;cada de un crecimiento relativamente fuerte, Am&amp;eacute;rica Latina  experimenta actualmente vientos en contra, como una menor demanda  externa, la moderaci&amp;oacute;n de los precios de las materias primas y la  incertidumbre creciente acerca de las condiciones financieras externas. </font></p><p align="justify"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">As&amp;iacute; lo explica el documento <a href="http://www.latameconomy.org/es/outlook/"><b><i>Perspectivas Econ&amp;oacute;micas de Am&amp;eacute;rica Latina 2014: </i></b><b><i>Log&amp;iacute;sticas y Competitividad para el Desarrollo</i></b></a><b><i>,</i></b> publicado de manera conjunta por el Centro de Desarrollo de la Organizaci&amp;oacute;n para la Cooperaci&amp;oacute;n y el Desarrollo Econ&amp;oacute;micos (<b>OCDE</b>), la Comisi&amp;oacute;n Econ&amp;oacute;mica para Am&amp;eacute;rica Latina y el Caribe (<b>CEPAL</b>),  y el Banco de Desarrollo de Am&amp;eacute;rica Latina (CAF), que fue presentado  hoy durante la XXIII Cumbre Iberoamericana, en Ciudad de Panam&amp;aacute;. </font></p><p align="justify"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">Seg&amp;uacute;n  el informe, factores como un d&amp;eacute;bil desempe&amp;ntilde;o econ&amp;oacute;mico en la zona euro,  la desaceleraci&amp;oacute;n de algunas econom&amp;iacute;as emergentes, y la&amp;nbsp;incertidumbre  sobre la pol&amp;iacute;tica monetaria y de presupuesto de Estados Unidos influyen  en que las perspectivas de Am&amp;eacute;rica Latina sean m&amp;aacute;s d&amp;eacute;biles. </font></p><p align="justify"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">&amp;nbsp;&amp;quot;Am&amp;eacute;rica  Latina todav&amp;iacute;a puede alcanzar un crecimiento sostenible e incluyente,  pero la ventana de oportunidades se est&amp;aacute; cerrando&amp;quot;, asegur&amp;oacute; el  Secretario General de la OCDE, <b>Angel Gurr&amp;iacute;a</b>. </font></p><p align="justify"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">&amp;quot;Para  poder afrontar los nuevos retos y oportunidades que se derivan de una  econom&amp;iacute;a global cada vez m&amp;aacute;s interconectada, los pa&amp;iacute;ses de la regi&amp;oacute;n  deben aumentar la competitividad mediante la diversificaci&amp;oacute;n de la  econom&amp;iacute;a, un major desempe&amp;ntilde;o log&amp;iacute;stico y posicionarse dentro de las  cadenas de valor hacia actividades de mayor valor agregado&amp;quot;, dijo. </font></p><p align="justify"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000"><b>Alicia B&amp;aacute;rcena</b>, Secretaria Ejecutiva de la <b>CEPAL</b>,  manifest&amp;oacute; que &amp;quot;es necesario adoptar reformas destinadas a mejorar la  productividad y a reforzar la capacidad de los gobiernos para dar  respuesta a las exigencias de una &amp;lsquo;emergente clase media', mientras  multiplican sus esfuerzos para reducir los niveles de pobreza y la  desigualdad&amp;quot;. </font></p><p align="justify"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">El  documento afirma que la innovaci&amp;oacute;n tecnol&amp;oacute;gica y la diversificaci&amp;oacute;n  econ&amp;oacute;mica ser&amp;aacute;n esenciales para estimular la productividad y  el&amp;nbsp;crecimiento potencial, que contin&amp;uacute;a siendo bajo en comparaci&amp;oacute;n con  otras regiones. La contribuci&amp;oacute;n de Am&amp;eacute;rica Latina al crecimiento del PIB  global no ha sufrido variaciones (entre 7% y 9%) desde principios de  1990, mientras que la de los pa&amp;iacute;ses emergentes de Asia se ha  multiplicado por dos durante el mismo periodo.</font></p><p align="justify"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">Muchas  econom&amp;iacute;as de Am&amp;eacute;rica Latina se mantienen muy focalizadas en los  recursos naturales. Las materias primas representan 60% de las  exportaciones de bienes de la regi&amp;oacute;n, mientras que a principios de la  d&amp;eacute;cada pasada representaban 40%. </font></p><p align="justify"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">El  estudio sugiere a los pa&amp;iacute;ses que usen sus riquezas naturales como una  plataforma para efectuar la transici&amp;oacute;n hacia procesos de producci&amp;oacute;n&amp;nbsp;  basados en la tecnolog&amp;iacute;a y el conocimiento.&amp;nbsp; </font></p><p align="justify"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">As&amp;iacute;  mismo, aboga por que las econom&amp;iacute;as de Am&amp;eacute;rica Latina diversifiquen las  exportaciones, en especial del sector servicios, que ofrece m&amp;aacute;s  oportunidades a mediano y largo plazo. La profundizaci&amp;oacute;n del mercado  regional se traducir&amp;iacute;a en mayores oportunidades de crecimiento para el  sector servicios y en una mayor diversificaci&amp;oacute;n para fortalecer las  econom&amp;iacute;as.</font></p><p align="justify"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">Las  infraestructuras en transporte siguen siendo deficientes y la inversi&amp;oacute;n  en &amp;nbsp;carreteras, v&amp;iacute;as f&amp;eacute;rreas, puertos y aeropuertos es debe ser una  prioridad. Destinar el 5.2% del PIB anual a proyectos de infraestructura  contribuir&amp;iacute;a a que Am&amp;eacute;rica Latina redujera el margen que existe con  otras regiones emergentes y podr&amp;iacute;a aumentar el crecimiento del PIB en  aproximadamente 2 puntos porcentuales anuales.&amp;nbsp; </font></p><p align="justify"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">En  el corto plazo se puede trabajar para mejorar el transporte de bienes y  servicios mediante el uso de infraestructuras ya existentes, de  pol&amp;iacute;ticas de log&amp;iacute;stica integrada, de instalaciones de almacenamiento  modernas, de reg&amp;iacute;menes aduaneros eficaces, y de la promoci&amp;oacute;n de la  competencia en el sector del transporte. </font></p><p align="justify"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000"><b>Enrique Garc&amp;iacute;a</b>,  Presidente y Consejero Delegado de CAF, dijo que &amp;quot;es necesario que se  lleve a cabo una inversi&amp;oacute;n adicional en las infraestructuras de  transporte y mejorar el desempe&amp;ntilde;o de la log&amp;iacute;stica en general&amp;quot;.&amp;nbsp; </font></p><p align="justify"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">&amp;quot;La  estructura productiva de Am&amp;eacute;rica Latina es m&amp;aacute;s sensible a la log&amp;iacute;stica  que la de los pa&amp;iacute;ses de la OCDE. La parte de exportaciones sensibles al  tiempo en Am&amp;eacute;rica Latina es tres veces la de los pa&amp;iacute;ses de la OCDE, lo  cual pone de relieve la importancia de mejorar la log&amp;iacute;stica para  fortalecer el desempe&amp;ntilde;o econ&amp;oacute;mico en su conjunto&amp;quot;, a&amp;ntilde;adi&amp;oacute;.</font></p><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">&amp;nbsp;&amp;nbsp; <table cellpadding="0" cellspacing="0" border="1"> <tbody><tr><td valign="top" width="638"><br />&amp;nbsp; Para&amp;nbsp;consultas, contactar a la Secci&amp;oacute;n de Informaci&amp;oacute;n P&amp;uacute;blica y Servicios Web de&amp;nbsp;la <b>CEPAL</b>. <p align="center">Correo electr&amp;oacute;nico: <a href="javascript:nospam('prensa','cepal.org');">prensa<img border="0" src="http://www.eclac.cl/img/arobva.gif" />cepal.org</a>; tel&amp;eacute;fono: (56 2) 2210 2040.</p><p align="center">S&amp;iacute;ganos en: <a href="http://twitter.com/cepal_onu">Twitter</a>, <a href="http://www.facebook.com/cepal.onu">Facebook</a>, <a href="http://www.flickr.com/photos/cepal/">Flickr</a> y <a href="http://www.youtube.com/cepalonu">YouTube</a>.</p><p align="center">&amp;nbsp;</p><p align="center">Centro de Desarrollo de la OCDE</p><p align="center">Correo&amp;nbsp;electr&amp;oacute;nico:&amp;nbsp;<a href="javascript:nospam('Bochra.Kriout','oecd.org');">Bochra.Kriout<img border="0" src="http://www.eclac.cl/img/arobva.gif" />oecd.org</a>,&amp;nbsp;tel&amp;eacute;fono (33 0) 626 74 04 03</p><p align="center">CAF</p><p align="center">Correo electr&amp;oacute;nico: <a href="javascript:nospam('sluengo','caf.com');">sluengo<img border="0" src="http://www.eclac.cl/img/arobva.gif" />caf.com</a>, tel&amp;eacute;fono (582) 12 2092353&amp;nbsp;&amp;nbsp;&amp;nbsp; </p></td> </tr></tbody></table><p>&amp;nbsp;</p></font>]]></cuerpo>
+    <idioma>es</idioma>
+    <minisitio>
+    </minisitio>
+    <area_de_trabajo>
+    </area_de_trabajo>
+    <user_id>342</user_id>
+    <migrable>1</migrable>
+  </noticia>
+  <noticia>
+    <id_sade>51355</id_sade>
+    <titulo>Lanzan base de datos para analizar impactos del cambio climático en las costas de la región</titulo>
+    <bajada>
+    </bajada>
+    <epigrafe>Santiago, 2 de octubre, 2013</epigrafe>
+    <fecha>21-10-2013 0:00:00</fecha>
+    <fecha_actualizacion>21-10-2013 16:23:57</fecha_actualizacion>
+    <cuerpo><![CDATA[<p align="center">I<b>niciativa del Ministerio de Agricultura, Alimentaci&amp;oacute;n y Medio Ambiente de Espa&amp;ntilde;a, la Universidad de Cantabria y la CEPAL.</b></p><p align="justify"><b>(Santiago, 2 de octubre, 2013) </b>Los pa&amp;iacute;ses de<b> </b>Am&amp;eacute;rica Latina y el Caribe podr&amp;aacute;n mejorar su planificaci&amp;oacute;n costera y desarrollar medidas preventivas para adaptarse a los efectos del cambio clim&amp;aacute;tico en estas zonas utilizando la base de datos liberada hoy por el Ministerio de Agricultura, Alimentaci&amp;oacute;n y Medio Ambiente de Espa&amp;ntilde;a, la Universidad de Cantabria y la Comisi&amp;oacute;n Econ&amp;oacute;mica para Am&amp;eacute;rica Latina y el Caribe (<b>CEPAL</b>).</p><p align="justify">La base contiene informaci&amp;oacute;n sobre las din&amp;aacute;micas costeras en Am&amp;eacute;rica Latina y el Caribe, la variabilidad clim&amp;aacute;tica, la vulnerabilidad y exposici&amp;oacute;n de las costas frente al cambio clim&amp;aacute;tico, los impactos derivados de este fen&amp;oacute;meno en la zona y la evaluaci&amp;oacute;n de riesgos previsibles en el futuro. </p><p align="justify">Los resultados permiten dimensionar, por ejemplo, los potenciales efectos de la subida del nivel del mar en las costas de la regi&amp;oacute;n, considerando informaci&amp;oacute;n hist&amp;oacute;rica satelital y de boyas desde 1950, con proyecciones para el siglo XXI. </p><p align="justify">Para ello se deben combinar variables como la subida anual del nivel del mar, los cambios en la direcci&amp;oacute;n de los vientos, el cambio en la altura de la ola significante, la erosi&amp;oacute;n y los cambios en las din&amp;aacute;micas de sedimentaci&amp;oacute;n. El instrumento permite georreferenciar los impactos en un espacio detallado de cinco kil&amp;oacute;metros de ancho por 30 kil&amp;oacute;metros de largo en toda la franja costera de la regi&amp;oacute;n.</p><p align="justify">La base de datos es parte del proyecto <a href="http://www.cepal.org/id.asp?id=48025"><b>Efectos del cambio clim&amp;aacute;tico en la costa de Am&amp;eacute;rica Latina y el Caribe</b></a>, ejecutado por el Ministerio de Agricultura, Alimentaci&amp;oacute;n y Medio Ambiente de Espa&amp;ntilde;a, la Universidad de Cantabria y la <b>CEPAL</b>. El Rector de la Universidad de Cantabria, D. Jos&amp;eacute; Carlos G&amp;oacute;mez Sal, y el Subdirector General de Coordinaci&amp;oacute;n de Acciones frente al Cambio Clim&amp;aacute;tico, del Ministerio de Agricultura, Alimentaci&amp;oacute;n y Medio Ambiente, Sr. Eduardo Gonz&amp;aacute;lez Fern&amp;aacute;ndez, as&amp;iacute; como el Sr. Joseluis Samaniego, Director de la Divisi&amp;oacute;n de Desarrollo Sostenible y Asentamientos Humanos de la CEPAL se reunieron para potenciar la colaboraci&amp;oacute;n conjunta en la regi&amp;oacute;n, alcanzando un acuerdo para llevar a cabo la transferencia, aplicaci&amp;oacute;n y actualizaci&amp;oacute;n de los resultados de la iniciativa.</p><p align="justify">El proyecto consta de una serie de documentos y una base de datos de respaldo, que incluye un <a href="http://www.c3a.ihcantabria.com/"><b>visor web</b></a>. A partir de hoy esta base de datos, que constituye un importante bien p&amp;uacute;blico para la regi&amp;oacute;n, se encuentra a disposici&amp;oacute;n de todos los usuarios interesados en el tema.</p><p align="justify">Las potencialidades de esta herramienta son relevantes para el ordenamiento territorial, los requerimientos de ingenier&amp;iacute;a y los procedimientos de evaluaci&amp;oacute;n de impacto ambiental. Tambi&amp;eacute;n es &amp;uacute;til para el sector de infraestructura, considerando los ajustes que es necesario realizar en las obras existentes y los requerimientos futuros. </p><p align="justify">La base de datos fue presentada durante el <b>X Encuentro Anual de la Red Iberom&amp;eacute;ricana de Oficinas de Cambio Clim&amp;aacute;tico (RIOCC)</b>, inaugurado el lunes 1 de octubre y<b> </b>concluy&amp;oacute; el jueves 3 en la sede de la <b>CEPAL</b> en Santiago, Chile. </p><p align="justify">El evento congreg&amp;oacute; a representantes de las oficinas de cambio clim&amp;aacute;tico de los pa&amp;iacute;ses iberoamericanos, as&amp;iacute; como de diferentes organismos internacionales y regionales que desarrollan proyectos y actividades de adaptaci&amp;oacute;n al cambio clim&amp;aacute;tico.</p><p align="justify">Seg&amp;uacute;n el quinto informe del Panel Intergubernamental sobre el Cambio Clim&amp;aacute;tico (IPCC), presentado recientemente, los impactos de este fen&amp;oacute;meno clim&amp;aacute;tico son inequ&amp;iacute;vocos en todo el mundo, siendo Am&amp;eacute;rica Latina y el Caribe una de las regiones m&amp;aacute;s vulnerables, en particular las zonas costeras que concentran una gran cantidad de poblaci&amp;oacute;n y actividades. </p><p align="justify">&amp;nbsp;<b>M&amp;aacute;s informaci&amp;oacute;n sobre el proyecto Efectos del cambio clim&amp;aacute;tico en la costa de Am&amp;eacute;rica Latina y el Caribe y el visor web disponible en el siguiente </b><a href="http://www.cepal.org/cgi-bin/getprod.asp?xml=/dmaah/noticias/paginas/5/48025/P48025.xml&amp;amp;xsl=/dmaah/tpl/p18f-st.xsl&amp;amp;base=/dmaah/tpl/top-bottom.xsl"><b>enlace</b></a><b>.<br /><br /><br /><table align="center" border="0"><tbody><tr><td>&amp;nbsp;<img height="200" width="300" src="/dmaah/noticias/noticias/5/51355/_MG_6459.JPG" /></td><td>&amp;nbsp;<img height="215" width="300" src="/dmaah/noticias/noticias/5/51355/_MG_6500.JPG" /></td><td>&amp;nbsp;<img height="200" width="300" src="/dmaah/noticias/noticias/5/51355/_MG_6508.JPG" /></td></tr></tbody></table></b></p>]]></cuerpo>
+    <idioma>es</idioma>
+    <minisitio>
+    </minisitio>
+    <area_de_trabajo>
+    </area_de_trabajo>
+    <user_id>304</user_id>
+    <migrable>1</migrable>
+  </noticia>
+  <noticia>
+    <id_sade>51354</id_sade>
+    <titulo>Curso internacional sobre desarrollo territorial inicia hoy en ILPES</titulo>
+    <bajada>"Plan, estrategia y gestión para el desarrollo territorial" reúne durante diez días a casi 40 alumnos de once países de América Latina, quienes profundizarán sus conocimientos de diseño de políticas públicas para el desarrollo.</bajada>
+    <epigrafe>
+    </epigrafe>
+    <fecha>21-10-2013 0:00:00</fecha>
+    <fecha_actualizacion>21-10-2013 17:23:13</fecha_actualizacion>
+    <cuerpo><![CDATA[<p align="justify"><font face="arial,helvetica,sans-serif" size="2" color="#808080"><img height="108" width="150" src="/ilpes/noticias/noticias/4/51354/noticia1.jpg" align="left" hspace="10" />Hoy se dio inicio a la decimosexta version del curso internacional &amp;ldquo;Plan, estrategia y gesti&amp;oacute;n para el desarrollo territorial&amp;rdquo;, organizado por el ILPES y que se extender&amp;aacute; hasta el 31 de octubre. En &amp;eacute;l, cerca de 40 profesionales de la regi&amp;oacute;n aprender&amp;aacute;n a reconocer la relevancia que tienen los mecanismos de gobernanza multinivel en los procesos de planificaci&amp;oacute;n para el desarrollo y a identificar los factores que potencian el pensamiento estrat&amp;eacute;gico en un dise&amp;ntilde;ador o ejecutor de pol&amp;iacute;ticas p&amp;uacute;blicas, </font></p><p align="justify"><font face="arial,helvetica,sans-serif" size="2" color="#808080">Otros objetivos son conocer los componentes de una estrategia de desarrollo regional, identificar mecanismos de monitoreo y evaluaci&amp;oacute;n de una estrategia de desarrollo y reconocer c&amp;uacute;ales son las instancias de planificaci&amp;oacute;n que derivan de la existencia de una estrategia de desarrollo. En los diez d&amp;iacute;as del curso, se instar&amp;aacute; a una reflexi&amp;oacute;n sobre c&amp;oacute;mo los procesos de globalizaci&amp;oacute;n plantean desaf&amp;iacute;os al desarrollo territorial latinoamericano y se abordar&amp;aacute; el tema de c&amp;oacute;mo la participaci&amp;oacute;n ciudadana puede incidir en la construcci&amp;oacute;n de pol&amp;iacute;ticas y programas de desarrollo, entre otras actividades acad&amp;eacute;micas. </font></p><p align="justify"><font face="arial,helvetica,sans-serif" size="2" color="#808080">Esta version del curso incluye una visita a la ciudad de Valpara&amp;iacute;so, en&amp;nbsp;donde las autoridades del Gobierno Regional&amp;nbsp;har&amp;aacute;n una presentaci&amp;oacute;n sobre el plan de desarrollo para esa regi&amp;oacute;n chilena. </font></p><p align="justify"><font face="arial,helvetica,sans-serif" size="2" color="#808080">Los alumnos provienen de pa&amp;iacute;ses como Per&amp;uacute;, Ecuador, Colombia, M&amp;eacute;xico y Panam&amp;aacute;, y ejercen en los sectores p&amp;uacute;blico, privado y acad&amp;eacute;mico.</font> </p><p align="justify"><font color="#ffffff">.</font></p><p align="justify"><table align="center" width="650" cellPadding="6" cellSpacing="0" border="0"><tbody><tr><td style="background-color: #b7b7b7"><img height="199" width="300" src="/ilpes/noticias/noticias/4/51354/noticia2.jpg" /></td><td style="width: 10px"></td><td style="background-color: #b7b7b7"><img height="199" width="300" src="/ilpes/noticias/noticias/4/51354/noticia3.jpg" /></td></tr></tbody></table></p>]]></cuerpo>
+    <idioma>es</idioma>
+    <minisitio>
+    </minisitio>
+    <area_de_trabajo>
+    </area_de_trabajo>
+    <user_id>179</user_id>
+    <migrable>1</migrable>
+  </noticia>
+</GetNoticias>

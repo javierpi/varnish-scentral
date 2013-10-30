@@ -7,7 +7,7 @@
  * loaded - thus, you don't need to implement your hook in the .module file.
  */
 
-/*
+/**
  * You must implement hook_migrate_api(), setting the API level to 2, if you are
  * implementing any migration classes. As of Migrate 2.5, you should also
  * register your migration and handler classes explicitly here - the former
@@ -18,7 +18,9 @@ function migrar_migrate_api() {
   $api = array(
     'api' => 2,
     'migrations' => array(
-      'ProyectoXML' => array('class_name' => 'ProyectoXMLMigration'),
+      'ProyectoXML'   => array('class_name' => 'ProyectoXMLMigration'),
+      'ComunicadoXML' => array('class_name' => 'ComunicadoXMLMigration'),
+      'NoticiaXML'    => array('class_name' => 'NoticiaXMLMigration'),
     ),
   );
   return $api;
