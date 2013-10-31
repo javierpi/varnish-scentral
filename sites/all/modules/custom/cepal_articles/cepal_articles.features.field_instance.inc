@@ -229,6 +229,52 @@ function cepal_articles_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-cepal_article-field_article_id_sade'
+  $field_instances['node-cepal_article-field_article_id_sade'] = array(
+    'bundle' => 'cepal_article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 12,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_article_id_sade',
+    'label' => 'Id Sade',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => 0,
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 13,
+    ),
+  );
+
   // Exported field_instance: 'node-cepal_article-field_article_image'
   $field_instances['node-cepal_article-field_article_image'] = array(
     'bundle' => 'cepal_article',
@@ -518,6 +564,7 @@ function cepal_articles_field_default_field_instances() {
   t('Country');
   t('Date');
   t('Files');
+  t('Id Sade');
   t('Image');
   t('Insert URL references where this column has been published.');
   t('Insert a teaser for this <em>Article</em>.');
