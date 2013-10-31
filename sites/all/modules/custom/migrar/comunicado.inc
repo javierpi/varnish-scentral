@@ -138,6 +138,7 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
       'field_pr_contact_person' => array('field' => 'contacto_nombre_2', 'callback' => 'buildContactInfo2'),
       'field_pr_contact_intitutional:language' => array('field' => 'idioma'),
       'field_pr_contact_person:language' => array('field' => 'idioma'),
+      'field_pr_id_sade' => array('field' => 'id_sade'),
     );
   }
 

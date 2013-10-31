@@ -21,6 +21,7 @@ function migrar_migrate_api() {
       'ProyectoXML'   => array('class_name' => 'ProyectoXMLMigration'),
       'ComunicadoXML' => array('class_name' => 'ComunicadoXMLMigration'),
       'NoticiaXML'    => array('class_name' => 'NoticiaXMLMigration'),
+      'ArticuloXML'   => array('class_name' => 'ArticuloXMLMigration'),
     ),
   );
   return $api;

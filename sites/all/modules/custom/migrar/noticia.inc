@@ -39,7 +39,6 @@ class NoticiaXMLMigration extends BaseMigracion implements BaseMigracionInterfac
    * @param mixed $current_row
    * @return boolean
    */
-
   public function prepareRow($current_row) {
     $aux = explode(" ", $current_row->xml->fecha);
     $pieces = explode("-", $aux[0]);
@@ -58,6 +57,7 @@ class NoticiaXMLMigration extends BaseMigracion implements BaseMigracionInterfac
   }
 
 
+
  /**
   * Funcion que describe los campos del xml.
   *
@@ -73,8 +73,8 @@ class NoticiaXMLMigration extends BaseMigracion implements BaseMigracionInterfac
       'fecha_actualizacion' => t('updated'),
       'cuerpo'              => t('body'),
       'idioma'              => t('Idioma'),
-      'minisitio'           => t('url de minisitio(si existiera)'),
-      'area_de_trabajo'     => t('?'),
+      'minisitio'           => t('url de minisitio(si existiera)??'),
+      'area_de_trabajo'     => t('field_news_area_ref?'),
     );
   }
 
@@ -126,12 +126,13 @@ class NoticiaXMLMigration extends BaseMigracion implements BaseMigracionInterfac
       'language'        => array('field' => 'idioma', 'callback' => ''),
       'field_news_body'   => array('field' => 'cuerpo', 'callback' => 'filterHTML'),
       'field_news_body:language'   => array('field' => 'idioma'),
-      'field_news_area_ref'   => array('field' => 'area_de_trabajo'),
+      //'field_news_area_ref'   => array('field' => 'area_de_trabajo'),
       'field_news_teaser' => array('field' => 'bajada', 'callback' => 'filterHTML'),
       'field_news_teaser:language' => array('field' => 'idioma'),
 
       'title_field' => array('field' => 'titulo'),
       'title_field:language' => array('field' => 'idioma'),
+      'field_news_id_sade' => array('field' => 'id_sade'),
     );
   }
 
@@ -154,31 +155,12 @@ class NoticiaXMLMigration extends BaseMigracion implements BaseMigracionInterfac
     );
   }
 
-  protected function getXMLFeed() {
-
-  }
 
 /*
   protected function getXMLFeed() {
 
   }
 */
-
-
-  /**
-   * Callback para que el contenido html del body coincida con los permitidos.
-   *
-   * @param string $body
-   * @return string
-   */
-  protected function filterHTML($html){
-    /*
-     * @todo preguntar cual va a ser el filtro por defecto.
-     */
-    $html = check_markup($html, 'filtered_html');
-
-    return $html;
-  }
 
 
 

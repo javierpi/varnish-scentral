@@ -10,6 +10,7 @@ files[] = migrar.module
 files[] = proyecto.inc
 files[] = comunicado.inc
 files[] = noticia.inc
+files[] = articulo.inc
 files[] = BaseMigracion.php
 files[] = BaseMigracionInterface.php
 

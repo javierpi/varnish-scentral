@@ -391,7 +391,23 @@ abstract class BaseMigracion extends XMLMigration {
     /*
      * @todo preguntar cual va a ser el filtro por defecto.
      */
-    $html = check_markup($html, 'filtered_html');
+    $html_filtered = check_markup($html, 'filtered_html');
+    /*
+    $search_tilde = array(
+      '&amp;aacute;','&amp;eacute;','&amp;iacute;','&amp;oacute;','&amp;uacute;',
+      '&amp;Aacute;','&amp;Eacute;','&amp;Iacute;','&amp;Oacute;','&amp;Uacute;',
+    );
+    $replace_tilde = array(
+      'á'           ,'é'           ,'í'           ,'ó'           ,'ú'           ,
+      'Á'           ,'É'           ,'Í'           ,'Ó'           ,'Ú'           ,
+    );
+    $html_tilde = str_replace($search_tilde, $replace_tilde, $html_filtered);
+
+    $html = $html_tilde;
+*/
+    $html_amp = str_replace("&amp;", "&", $html_filtered);
+
+    $html = $html_amp;
 
     return $html;
   }
