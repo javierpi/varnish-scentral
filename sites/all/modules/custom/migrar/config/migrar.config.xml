@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
+    <!--
     <proyecto>
         <destination_node>cepal_project</destination_node>
         <xml_file_path>/home/francort/xml/proyecto.xml</xml_file_path>
@@ -57,7 +58,7 @@
     </noticia>
     <articulo>
         <destination_node>cepal_article</destination_node>
-        <xml_file_path>/home/francort/public_html/migradev/sites/all/modules/custom/migrar/xml/0001.xml</xml_file_path>
+        <xml_file_path>/home/francort/xml/noticia.xml</xml_file_path>
         <x_path>/GetArticulos/articulo</x_path>
         <id_x_path>id_sade</id_x_path>
         <service_endpoint>http://10.0.17.152/sade_ws/service1.asmx/GetArticulos</service_endpoint>
@@ -68,4 +69,5 @@
             </service_parameter>
         </service_parameters>
     </articulo>
+    -->
 </config>
