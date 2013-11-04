@@ -1,0 +1,11 @@
+name = Cepal Common
+description = Base feature for shared fields
+core = 7.x
+package = Cepal
+version = 7.x-1.0-beta1
+project = cepal_common
+dependencies[] = features
+dependencies[] = number
+features[features_api][] = api:2
+features[field_base][] = field_id_sade
+project path = sites/all/modules/custom/
