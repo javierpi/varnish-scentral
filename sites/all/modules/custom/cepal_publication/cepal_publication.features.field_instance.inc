@@ -10,9 +10,9 @@
 function cepal_publication_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-publication-field_publication_abstract'
-  $field_instances['node-publication-field_publication_abstract'] = array(
-    'bundle' => 'publication',
+  // Exported field_instance: 'node-cepal_publication-field_publication_abstract'
+  $field_instances['node-cepal_publication-field_publication_abstract'] = array(
+    'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'An abstract about this <em>Publication</em>.',
@@ -51,9 +51,9 @@ function cepal_publication_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_publication_alt_title'
-  $field_instances['node-publication-field_publication_alt_title'] = array(
-    'bundle' => 'publication',
+  // Exported field_instance: 'node-cepal_publication-field_publication_alt_title'
+  $field_instances['node-cepal_publication-field_publication_alt_title'] = array(
+    'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Insert an alternative title for this publication.',
@@ -92,9 +92,9 @@ function cepal_publication_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_publication_area_ref'
-  $field_instances['node-publication-field_publication_area_ref'] = array(
-    'bundle' => 'publication',
+  // Exported field_instance: 'node-cepal_publication-field_publication_area_ref'
+  $field_instances['node-cepal_publication-field_publication_area_ref'] = array(
+    'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Seleccione el área de trabajo del proyecto.
@@ -133,9 +133,9 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_publication_author'
-  $field_instances['node-publication-field_publication_author'] = array(
-    'bundle' => 'publication',
+  // Exported field_instance: 'node-cepal_publication-field_publication_author'
+  $field_instances['node-cepal_publication-field_publication_author'] = array(
+    'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
@@ -174,9 +174,9 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_publication_coordinator'
-  $field_instances['node-publication-field_publication_coordinator'] = array(
-    'bundle' => 'publication',
+  // Exported field_instance: 'node-cepal_publication-field_publication_coordinator'
+  $field_instances['node-cepal_publication-field_publication_coordinator'] = array(
+    'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'TEMPORAL, debe ser reemplazado con una referencia a otra entidad autor.',
@@ -215,9 +215,9 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_publication_country'
-  $field_instances['node-publication-field_publication_country'] = array(
-    'bundle' => 'publication',
+  // Exported field_instance: 'node-cepal_publication-field_publication_country'
+  $field_instances['node-cepal_publication-field_publication_country'] = array(
+    'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Select a country associated with this publication.',
@@ -255,9 +255,9 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_publication_date'
-  $field_instances['node-publication-field_publication_date'] = array(
-    'bundle' => 'publication',
+  // Exported field_instance: 'node-cepal_publication-field_publication_date'
+  $field_instances['node-cepal_publication-field_publication_date'] = array(
+    'bundle' => 'cepal_publication',
     'deleted' => 0,
     'description' => 'Insert the publication date.',
     'display' => array(
@@ -309,9 +309,9 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_publication_director'
-  $field_instances['node-publication-field_publication_director'] = array(
-    'bundle' => 'publication',
+  // Exported field_instance: 'node-cepal_publication-field_publication_director'
+  $field_instances['node-cepal_publication-field_publication_director'] = array(
+    'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'TEMPORAL, debe ser reemplazado con una referencia a otra entidad autor.',
@@ -350,9 +350,9 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_publication_dspace'
-  $field_instances['node-publication-field_publication_dspace'] = array(
-    'bundle' => 'publication',
+  // Exported field_instance: 'node-cepal_publication-field_publication_dspace'
+  $field_instances['node-cepal_publication-field_publication_dspace'] = array(
+    'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'URL reference for DSpace repository.',
@@ -405,9 +405,9 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_publication_editor'
-  $field_instances['node-publication-field_publication_editor'] = array(
-    'bundle' => 'publication',
+  // Exported field_instance: 'node-cepal_publication-field_publication_editor'
+  $field_instances['node-cepal_publication-field_publication_editor'] = array(
+    'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
@@ -446,9 +446,9 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_publication_event_rel'
-  $field_instances['node-publication-field_publication_event_rel'] = array(
-    'bundle' => 'publication',
+  // Exported field_instance: 'node-cepal_publication-field_publication_event_rel'
+  $field_instances['node-cepal_publication-field_publication_event_rel'] = array(
+    'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'TEMPORAL, debe ser reemplazado con una referencia a otra entidad de tipo evento.
@@ -488,9 +488,9 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_publication_files'
-  $field_instances['node-publication-field_publication_files'] = array(
-    'bundle' => 'publication',
+  // Exported field_instance: 'node-cepal_publication-field_publication_files'
+  $field_instances['node-cepal_publication-field_publication_files'] = array(
+    'bundle' => 'cepal_publication',
     'deleted' => 0,
     'description' => 'Is possible to add some attached files to this <em>publication</em> as a complementary information.',
     'display' => array(
@@ -531,9 +531,9 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_publication_image'
-  $field_instances['node-publication-field_publication_image'] = array(
-    'bundle' => 'publication',
+  // Exported field_instance: 'node-cepal_publication-field_publication_image'
+  $field_instances['node-cepal_publication-field_publication_image'] = array(
+    'bundle' => 'cepal_publication',
     'deleted' => 0,
     'description' => 'Select a representative image for this <em>Publication</em>.',
     'display' => array(
@@ -596,9 +596,9 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_publication_inst_author'
-  $field_instances['node-publication-field_publication_inst_author'] = array(
-    'bundle' => 'publication',
+  // Exported field_instance: 'node-cepal_publication-field_publication_inst_author'
+  $field_instances['node-cepal_publication-field_publication_inst_author'] = array(
+    'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
@@ -637,9 +637,9 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_publication_isbn'
-  $field_instances['node-publication-field_publication_isbn'] = array(
-    'bundle' => 'publication',
+  // Exported field_instance: 'node-cepal_publication-field_publication_isbn'
+  $field_instances['node-cepal_publication-field_publication_isbn'] = array(
+    'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Please insert the ISBN code for this publication if exists.',
@@ -678,9 +678,9 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_publication_issn'
-  $field_instances['node-publication-field_publication_issn'] = array(
-    'bundle' => 'publication',
+  // Exported field_instance: 'node-cepal_publication-field_publication_issn'
+  $field_instances['node-cepal_publication-field_publication_issn'] = array(
+    'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Please insert the ISSN code if exists.',
@@ -719,9 +719,9 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_publication_links'
-  $field_instances['node-publication-field_publication_links'] = array(
-    'bundle' => 'publication',
+  // Exported field_instance: 'node-cepal_publication-field_publication_links'
+  $field_instances['node-cepal_publication-field_publication_links'] = array(
+    'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Is possible to add link references for this <em>publication</em>.',
@@ -774,9 +774,9 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_publication_number'
-  $field_instances['node-publication-field_publication_number'] = array(
-    'bundle' => 'publication',
+  // Exported field_instance: 'node-cepal_publication-field_publication_number'
+  $field_instances['node-cepal_publication-field_publication_number'] = array(
+    'bundle' => 'cepal_publication',
     'default_value' => array(
       0 => array(
         'value' => 0,
@@ -825,9 +825,9 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_publication_pages'
-  $field_instances['node-publication-field_publication_pages'] = array(
-    'bundle' => 'publication',
+  // Exported field_instance: 'node-cepal_publication-field_publication_pages'
+  $field_instances['node-cepal_publication-field_publication_pages'] = array(
+    'bundle' => 'cepal_publication',
     'default_value' => array(
       0 => array(
         'value' => 0,
@@ -876,9 +876,9 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_publication_project_rel'
-  $field_instances['node-publication-field_publication_project_rel'] = array(
-    'bundle' => 'publication',
+  // Exported field_instance: 'node-cepal_publication-field_publication_project_rel'
+  $field_instances['node-cepal_publication-field_publication_project_rel'] = array(
+    'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'TEMPORAL, debe ser reemplazado con una referencia a otra entidad de tipo Proyecto.
@@ -918,9 +918,9 @@ Campo condicional, si es publicación de tipo proyecto.',
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_publication_refereces'
-  $field_instances['node-publication-field_publication_refereces'] = array(
-    'bundle' => 'publication',
+  // Exported field_instance: 'node-cepal_publication-field_publication_refereces'
+  $field_instances['node-cepal_publication-field_publication_refereces'] = array(
+    'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Is possible to add references to another content on this site.',
@@ -962,9 +962,9 @@ Campo condicional, si es publicación de tipo proyecto.',
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_publication_special_topic'
-  $field_instances['node-publication-field_publication_special_topic'] = array(
-    'bundle' => 'publication',
+  // Exported field_instance: 'node-cepal_publication-field_publication_special_topic'
+  $field_instances['node-cepal_publication-field_publication_special_topic'] = array(
+    'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Select a <em>Special Topic</em> for classificatation if needed.',
@@ -1002,9 +1002,9 @@ Campo condicional, si es publicación de tipo proyecto.',
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_publication_toc'
-  $field_instances['node-publication-field_publication_toc'] = array(
-    'bundle' => 'publication',
+  // Exported field_instance: 'node-cepal_publication-field_publication_toc'
+  $field_instances['node-cepal_publication-field_publication_toc'] = array(
+    'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Insert the <em>table of contents</em> for this <em>publication</em>.',
@@ -1043,9 +1043,9 @@ Campo condicional, si es publicación de tipo proyecto.',
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_publication_topic'
-  $field_instances['node-publication-field_publication_topic'] = array(
-    'bundle' => 'publication',
+  // Exported field_instance: 'node-cepal_publication-field_publication_topic'
+  $field_instances['node-cepal_publication-field_publication_topic'] = array(
+    'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Select associated topics for this <em>Publication</em>.',
@@ -1083,9 +1083,9 @@ Campo condicional, si es publicación de tipo proyecto.',
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_publication_type'
-  $field_instances['node-publication-field_publication_type'] = array(
-    'bundle' => 'publication',
+  // Exported field_instance: 'node-cepal_publication-field_publication_type'
+  $field_instances['node-cepal_publication-field_publication_type'] = array(
+    'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Select the <em>publication</em> type.',
@@ -1129,9 +1129,9 @@ Campo condicional, si es publicación de tipo proyecto.',
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_publication_unbis'
-  $field_instances['node-publication-field_publication_unbis'] = array(
-    'bundle' => 'publication',
+  // Exported field_instance: 'node-cepal_publication-field_publication_unbis'
+  $field_instances['node-cepal_publication-field_publication_unbis'] = array(
+    'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Select an UNBIS classification for this <em>Publication</em>.',
@@ -1169,9 +1169,9 @@ Campo condicional, si es publicación de tipo proyecto.',
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_publication_unsymbol'
-  $field_instances['node-publication-field_publication_unsymbol'] = array(
-    'bundle' => 'publication',
+  // Exported field_instance: 'node-cepal_publication-field_publication_unsymbol'
+  $field_instances['node-cepal_publication-field_publication_unsymbol'] = array(
+    'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'The code indentifier for this <em>Publication</em>.',

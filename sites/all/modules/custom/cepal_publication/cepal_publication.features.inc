@@ -18,12 +18,12 @@ function cepal_publication_ctools_plugin_api($module = NULL, $api = NULL) {
  */
 function cepal_publication_node_info() {
   $items = array(
-    'publication' => array(
+    'cepal_publication' => array(
       'name' => t('Publication'),
       'base' => 'node_content',
       'description' => t('Use this content type to create a generic <em>Publication</em>.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Título'),
       'help' => '',
     ),
   );
