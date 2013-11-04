@@ -10,6 +10,53 @@
 function cepal_news_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-cepal_news-field_id_sade'
+  $field_instances['node-cepal_news-field_id_sade'] = array(
+    'bundle' => 'cepal_news',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Migration field.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_id_sade',
+    'label' => 'ID SADE',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => 0,
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 13,
+    ),
+  );
+
   // Exported field_instance: 'node-cepal_news-field_news_area_ref'
   $field_instances['node-cepal_news-field_news_area_ref'] = array(
     'bundle' => 'cepal_news',
@@ -170,52 +217,6 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
       ),
       'type' => 'file_generic',
       'weight' => 7,
-    ),
-  );
-
-  // Exported field_instance: 'node-cepal_news-field_news_id_sade'
-  $field_instances['node-cepal_news-field_news_id_sade'] = array(
-    'bundle' => 'cepal_news',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
-        'weight' => 10,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_news_id_sade',
-    'label' => 'Id Sade',
-    'required' => 0,
-    'settings' => array(
-      'max' => '',
-      'min' => 0,
-      'prefix' => '',
-      'suffix' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 12,
     ),
   );
 
@@ -481,11 +482,12 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
   t('Body');
   t('Country');
   t('Files');
-  t('Id Sade');
+  t('ID SADE');
   t('Imagen');
   t('Insert a teaser text for this content.');
   t('Insert the body text for this content.');
   t('Is possible to add attached files files to this content as a complement.');
+  t('Migration field.');
   t('Seleccione el área de origen de la noticia.
 TEMPORAL, debe ser reemplazado con una referencia a otra entidad.');
   t('Select a country asociated with this content.');

@@ -229,52 +229,6 @@ function cepal_articles_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-cepal_article-field_article_id_sade'
-  $field_instances['node-cepal_article-field_article_id_sade'] = array(
-    'bundle' => 'cepal_article',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
-        'weight' => 12,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_article_id_sade',
-    'label' => 'Id Sade',
-    'required' => 0,
-    'settings' => array(
-      'max' => '',
-      'min' => 0,
-      'prefix' => '',
-      'suffix' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 13,
-    ),
-  );
-
   // Exported field_instance: 'node-cepal_article-field_article_image'
   $field_instances['node-cepal_article-field_article_image'] = array(
     'bundle' => 'cepal_article',
@@ -557,6 +511,53 @@ function cepal_articles_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-cepal_article-field_id_sade'
+  $field_instances['node-cepal_article-field_id_sade'] = array(
+    'bundle' => 'cepal_article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Migration Field',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 12,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_id_sade',
+    'label' => 'ID SADE',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => 0,
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 14,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Author');
@@ -564,12 +565,13 @@ function cepal_articles_field_default_field_instances() {
   t('Country');
   t('Date');
   t('Files');
-  t('Id Sade');
+  t('ID SADE');
   t('Image');
   t('Insert URL references where this column has been published.');
   t('Insert a teaser for this <em>Article</em>.');
   t('Insert the body text for this <em>Article</em>.');
   t('Is possible to add attached files files to this <em>Article</em>.');
+  t('Migration Field');
   t('Referenced');
   t('Select a country asociated with this content.');
   t('Select a image asociated to this <em>Article</em>. This image could be showed in the press releases lists and front pages.');

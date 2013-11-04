@@ -10,6 +10,53 @@
 function cepal_pr_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-cepal_pr-field_id_sade'
+  $field_instances['node-cepal_pr-field_id_sade'] = array(
+    'bundle' => 'cepal_pr',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Migration field.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 11,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_id_sade',
+    'label' => 'ID SADE',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => 0,
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 12,
+    ),
+  );
+
   // Exported field_instance: 'node-cepal_pr-field_pr_body'
   $field_instances['node-cepal_pr-field_pr_body'] = array(
     'bundle' => 'cepal_pr',
@@ -270,52 +317,6 @@ function cepal_pr_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-cepal_pr-field_pr_id_sade'
-  $field_instances['node-cepal_pr-field_pr_id_sade'] = array(
-    'bundle' => 'cepal_pr',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
-        'weight' => 11,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_pr_id_sade',
-    'label' => 'Id Sade',
-    'required' => 0,
-    'settings' => array(
-      'max' => '',
-      'min' => 0,
-      'prefix' => '',
-      'suffix' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 12,
-    ),
-  );
-
   // Exported field_instance: 'node-cepal_pr-field_pr_image'
   $field_instances['node-cepal_pr-field_pr_image'] = array(
     'bundle' => 'cepal_pr',
@@ -510,11 +511,12 @@ function cepal_pr_field_default_field_instances() {
   t('Country');
   t('Date');
   t('Files');
-  t('Id Sade');
+  t('ID SADE');
   t('Image');
   t('Insert a teaser for this <em>press release</em>');
   t('Insert the body text for this <em>Press Release</em>.');
   t('Is possible to add attached files files to this <em>Press Release</em>.');
+  t('Migration field.');
   t('Select a country asociated with this press release.');
   t('Select a image asociated to this <em>Press Releases</em>. This image could be showed in the press releases lists and front pages.');
   t('Select an UNBIS classification for this <em>Press Release</em>.');
