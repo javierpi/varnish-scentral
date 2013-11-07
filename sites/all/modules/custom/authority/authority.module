@@ -1,0 +1,11 @@
+<?php
+
+/**
+ * Implements hook_ctools_plugin_directory() to let the system know
+ * where our property_behavior plugins are.
+ */
+function authority_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'eck' && $plugin_type == 'property_behavior') {
+    return 'plugins/' . $plugin_type;
+  }
+}
