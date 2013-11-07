@@ -10,6 +10,50 @@
 function cepal_person_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-cepal_person-field_person_authority'
+  $field_instances['node-cepal_person-field_person_authority'] = array(
+    'bundle' => 'cepal_person',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 13,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_person_authority',
+    'label' => 'Associated Author',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete_tags',
+      'weight' => 9,
+    ),
+  );
+
   // Exported field_instance: 'node-cepal_person-field_person_biography'
   $field_instances['node-cepal_person-field_person_biography'] = array(
     'bundle' => 'cepal_person',
@@ -47,7 +91,7 @@ function cepal_person_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
+      'weight' => 8,
     ),
   );
 
@@ -112,7 +156,89 @@ function cepal_person_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 4,
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_person-field_person_lastname'
+  $field_instances['node-cepal_person-field_person_lastname'] = array(
+    'bundle' => 'cepal_person',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'The person last name(s).',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 12,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_person_lastname',
+    'label' => 'Last Name',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_person-field_person_name'
+  $field_instances['node-cepal_person-field_person_name'] = array(
+    'bundle' => 'cepal_person',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'The person name(s).',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 11,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_person_name',
+    'label' => 'Name',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
     ),
   );
 
@@ -153,7 +279,7 @@ function cepal_person_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 6,
     ),
   );
 
@@ -194,7 +320,7 @@ function cepal_person_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => 5,
     ),
   );
 
@@ -234,20 +360,25 @@ function cepal_person_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 3,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('A portrait image for this person.');
+  t('Associated Author');
   t('Biography');
   t('Image');
+  t('Last Name');
+  t('Name');
   t('Organization');
   t('Position');
   t('Select the kind of person for this information.');
   t('The biography of this person.');
   t('The organization that this person belongs.');
+  t('The person last name(s).');
+  t('The person name(s).');
   t('The position of this <em>person</em> in the organization.');
   t('Type');
 

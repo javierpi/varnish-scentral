@@ -23,7 +23,7 @@ function cepal_person_node_info() {
       'base' => 'node_content',
       'description' => t('The personal information from a <em>Person</em>. Includes biography and image.'),
       'has_title' => '1',
-      'title_label' => t('Name'),
+      'title_label' => t('Full Name'),
       'help' => '',
     ),
   );
