@@ -39,88 +39,48 @@ function cepal_pr_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_pr_contact_intitutional'
-  $field_bases['field_pr_contact_intitutional'] = array(
+  // Exported field_base: 'field_pr_contact_org'
+  $field_bases['field_pr_contact_org'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_pr_contact_intitutional',
+    'field_name' => 'field_pr_contact_org',
     'foreign keys' => array(
-      'format' => array(
+      'node' => array(
         'columns' => array(
-          'format' => 'format',
+          'target_id' => 'nid',
         ),
-        'table' => 'filter_format',
+        'table' => 'node',
       ),
     ),
     'indexes' => array(
-      'format' => array(
-        0 => 'format',
+      'target_id' => array(
+        0 => 'target_id',
       ),
     ),
     'locked' => 0,
-    'module' => 'text',
+    'module' => 'entityreference',
     'settings' => array(
       'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'text_long',
-  );
-
-  // Exported field_base: 'field_pr_contact_person'
-  $field_bases['field_pr_contact_person'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_pr_contact_person',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
         ),
-        'table' => 'filter_format',
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'cepal_organization' => 'cepal_organization',
+        ),
       ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
+      'target_type' => 'node',
     ),
     'translatable' => 0,
-    'type' => 'text_long',
-  );
-
-  // Exported field_base: 'field_pr_country'
-  $field_bases['field_pr_country'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_pr_country',
-    'foreign keys' => array(),
-    'indexes' => array(
-      'iso2' => array(
-        0 => 'iso2',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'countries',
-    'settings' => array(
-      'continents' => array(),
-      'countries' => array(),
-      'enabled' => 1,
-      'entity_translation_sync' => FALSE,
-      'size' => 5,
-    ),
-    'translatable' => 0,
-    'type' => 'country',
+    'type' => 'entityreference',
   );
 
   // Exported field_base: 'field_pr_date'
@@ -221,6 +181,79 @@ function cepal_pr_field_default_field_bases() {
     'type' => 'image',
   );
 
+  // Exported field_base: 'field_pr_link'
+  $field_bases['field_pr_link'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_pr_link',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'link',
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'rel' => '',
+        'target' => 'default',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'entity_translation_sync' => FALSE,
+      'title' => 'optional',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+    ),
+    'translatable' => 0,
+    'type' => 'link_field',
+  );
+
+  // Exported field_base: 'field_pr_related'
+  $field_bases['field_pr_related'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_pr_related',
+    'foreign keys' => array(
+      'node' => array(
+        'columns' => array(
+          'target_id' => 'nid',
+        ),
+        'table' => 'node',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(),
+      ),
+      'target_type' => 'node',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
   // Exported field_base: 'field_pr_teaser'
   $field_bases['field_pr_teaser'] = array(
     'active' => 1,
@@ -248,78 +281,6 @@ function cepal_pr_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text_long',
-  );
-
-  // Exported field_base: 'field_pr_topic'
-  $field_bases['field_pr_topic'] = array(
-    'active' => 1,
-    'cardinality' => 2,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_pr_topic',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'topics',
-          'parent' => 0,
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-      'options_list_callback' => 'i18n_taxonomy_allowed_values',
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
-  );
-
-  // Exported field_base: 'field_pr_unbis'
-  $field_bases['field_pr_unbis'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_pr_unbis',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'unbis',
-          'parent' => 0,
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-      'options_list_callback' => 'i18n_taxonomy_allowed_values',
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
   );
 
   return $field_bases;

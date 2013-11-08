@@ -12,6 +12,7 @@ dependencies[] = taxonomy
 features[features_api][] = api:2
 features[field_base][] = field_country
 features[field_base][] = field_id_sade
+features[field_base][] = field_id_sade_maestro
 features[field_base][] = field_special_topic
 features[field_base][] = field_topic
 features[field_base][] = field_unbis

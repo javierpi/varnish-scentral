@@ -54,6 +54,24 @@ function cepal_common_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
+  // Exported field_base: 'field_id_sade_maestro'
+  $field_bases['field_id_sade_maestro'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_id_sade_maestro',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'number_integer',
+  );
+
   // Exported field_base: 'field_special_topic'
   $field_bases['field_special_topic'] = array(
     'active' => 1,

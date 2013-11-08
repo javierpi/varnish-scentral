@@ -73,6 +73,9 @@ function cepal_pr_strongarm() {
         'path' => array(
           'weight' => '1',
         ),
+        'language' => array(
+          'weight' => '6',
+        ),
       ),
       'display' => array(),
     ),
@@ -83,7 +86,7 @@ function cepal_pr_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_cepal_pr';
-  $strongarm->value = '0';
+  $strongarm->value = '4';
   $export['language_content_type_cepal_pr'] = $strongarm;
 
   $strongarm = new stdClass();
