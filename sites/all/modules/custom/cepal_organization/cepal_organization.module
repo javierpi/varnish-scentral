@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Cepal Organization feature.
+ */
+
+include_once 'cepal_organization.features.inc';
