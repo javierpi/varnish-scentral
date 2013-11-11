@@ -46,7 +46,7 @@ function cepal_news_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 10,
     ),
   );
 
@@ -93,7 +93,7 @@ function cepal_news_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 13,
+      'weight' => 15,
     ),
   );
 
@@ -140,7 +140,7 @@ function cepal_news_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -149,8 +149,8 @@ function cepal_news_field_default_field_instances() {
     'bundle' => 'cepal_news',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Seleccione el área de origen de la noticia.
-TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
+    'description' => 'Select the work area for this content.
+MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update to workgroup.',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -222,7 +222,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 9,
     ),
   );
 
@@ -265,7 +265,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 12,
+      'weight' => 14,
     ),
   );
 
@@ -316,7 +316,88 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_news-field_news_observatories'
+  $field_instances['node-cepal_news-field_news_observatories'] = array(
+    'bundle' => 'cepal_news',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'MIGRACION. Seleccione un observatorio si la noticia pertenece a alguno.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 17,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_news_observatories',
+    'label' => 'Observatories',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
       'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_news-field_news_subsidiary_bodies'
+  $field_instances['node-cepal_news-field_news_subsidiary_bodies'] = array(
+    'bundle' => 'cepal_news',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'MIGRATION.
+Seleccione un órgano subsidiario si corresponde.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 16,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_news_subsidiary_bodies',
+    'label' => 'Subsidiary Bodies',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 4,
     ),
   );
 
@@ -357,7 +438,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 6,
+      'weight' => 8,
     ),
   );
 
@@ -437,7 +518,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 12,
     ),
   );
 
@@ -477,7 +558,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 9,
+      'weight' => 11,
     ),
   );
 
@@ -517,7 +598,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 11,
+      'weight' => 13,
     ),
   );
 
@@ -577,17 +658,22 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
   t('Insert a teaser text for this content.');
   t('Insert the body text for this content.');
   t('Is possible to add attached files files to this content as a complement.');
+  t('MIGRACION. Seleccione un observatorio si la noticia pertenece a alguno.');
+  t('MIGRATION.
+Seleccione un órgano subsidiario si corresponde.');
   t('Migration field.');
   t('Migration field. DON\'t touch.');
-  t('Seleccione el área de origen de la noticia.
-TEMPORAL, debe ser reemplazado con una referencia a otra entidad.');
+  t('Observatories');
   t('Select a "special topic" if is needed.');
   t('Select a country asociated with this <em>content</em>.');
   t('Select a image asociated to this <em>New</em>. This image could be showed in the press releases lists and front pages.');
   t('Select an UNBIS classification for this content.');
   t('Select associated topics for this content.');
   t('Select the <em>News type</em> to add.');
+  t('Select the work area for this content.
+MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update to workgroup.');
   t('Special Topic');
+  t('Subsidiary Bodies');
   t('Teaser');
   t('Title');
   t('Topic');
