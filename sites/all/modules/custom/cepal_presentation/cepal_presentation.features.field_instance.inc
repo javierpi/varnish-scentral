@@ -46,7 +46,7 @@ function cepal_presentation_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 9,
     ),
   );
 
@@ -90,7 +90,7 @@ function cepal_presentation_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete_tags',
-      'weight' => 15,
+      'weight' => 6,
     ),
   );
 
@@ -186,6 +186,49 @@ function cepal_presentation_field_default_field_instances() {
       ),
       'type' => 'date_popup',
       'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_presentation-field_presentation_event'
+  $field_instances['node-cepal_presentation-field_presentation_event'] = array(
+    'bundle' => 'cepal_presentation',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Ingrese el nombre del evento relacionado con esta presentación.
+TEMPORAL. TODO: Update with reference to event.
+',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 20,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_presentation_event',
+    'label' => 'Event',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 7,
     ),
   );
 
@@ -394,6 +437,47 @@ function cepal_presentation_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-cepal_presentation-field_presentation_workarea'
+  $field_instances['node-cepal_presentation-field_presentation_workarea'] = array(
+    'bundle' => 'cepal_presentation',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Select the work area for this content.
+MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update to workgroup.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 19,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_presentation_workarea',
+    'label' => 'Work Area',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 8,
+    ),
+  );
+
   // Exported field_instance: 'node-cepal_presentation-field_special_topic'
   $field_instances['node-cepal_presentation-field_special_topic'] = array(
     'bundle' => 'cepal_presentation',
@@ -521,8 +605,12 @@ function cepal_presentation_field_default_field_instances() {
   t('Body');
   t('Country');
   t('Date');
+  t('Event');
   t('Files');
   t('Image');
+  t('Ingrese el nombre del evento relacionado con esta presentación.
+TEMPORAL. TODO: Update with reference to event.
+');
   t('Insert URL references where this column has been published.');
   t('Insert a description text for this <em>Presentation</em>.');
   t('Insert a teaser for this <em>Presentation</em>.');
@@ -534,10 +622,13 @@ function cepal_presentation_field_default_field_instances() {
   t('Select an UNBIS classification for this <em>Presentation</em>.');
   t('Select associated topics for this <em>Presentation</em>.');
   t('Select the date and time of publication for this <em>Presentation</em>.');
+  t('Select the work area for this content.
+MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update to workgroup.');
   t('Special Topic');
   t('Teaser');
   t('Topic');
   t('UNBIS');
+  t('Work Area');
 
   return $field_instances;
 }

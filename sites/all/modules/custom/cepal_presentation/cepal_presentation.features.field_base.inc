@@ -114,6 +114,36 @@ function cepal_presentation_field_default_field_bases() {
     'type' => 'date',
   );
 
+  // Exported field_base: 'field_presentation_event'
+  $field_bases['field_presentation_event'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_presentation_event',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
   // Exported field_base: 'field_presentation_files'
   $field_bases['field_presentation_files'] = array(
     'active' => 1,
@@ -239,6 +269,49 @@ function cepal_presentation_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'link_field',
+  );
+
+  // Exported field_base: 'field_presentation_workarea'
+  $field_bases['field_presentation_workarea'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_presentation_workarea',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        1 => 'Economic Development - División de Desarrollo Económico',
+        2 => 'Social Development - División de Desarrollo Social',
+        3 => 'Statistics - División de Estadísticas',
+        4 => 'CELADE-Population Division - CELADE - División de Población',
+        5 => 'International Trade and Integration - División de Comercio Internacional e Integración',
+        6 => 'Economic and Social Planning (ILPES) - Instituto Latinoamericano y del Caribe de Planificación Económica y Social (ILPES)',
+        7 => 'Production, Productivity and Management - División de Desarrollo Productivo y Empresarial',
+        8 => 'Sustainable Development and Human Settlements - División de Desarrollo Sostenible y Asentamientos Humanos',
+        9 => 'Natural Resources and Infrastructure  - División de Recursos Naturales e Infraestructura',
+        10 => 'Gender Affairs - División de Asuntos de Género',
+        11 => 'Financing for Development - División de Financiamiento para el Desarrollo',
+        12 => 'ECLAC Subregional Headquarters in Mexico, Mexico, D.F. - Sede Subregional de la CEPAL en México - México, D.F.',
+        13 => 'ECLAC Subregional Headquarters for the Caribbean, Port of Spain, Trinidad and Tobago - Sede Subregional de la CEPAL para el Caribe - Puerto España',
+        14 => 'ECLAC Office in Bogota - Oficina de la CEPAL en Bogotá',
+        15 => 'ECLAC Office in Brasilia - Oficina de la CEPAL en Brasilia',
+        16 => 'ECLAC Office in Buenos Aires - Oficina de la CEPAL en Buenos Aires',
+        17 => 'ECLAC Office in Montevideo - Oficina de la CEPAL en Montevideo',
+        18 => 'ECLAC Office in Washington, D.C. - Oficina de la CEPAL en Washington',
+      ),
+      'allowed_values_function' => '',
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_integer',
   );
 
   return $field_bases;
