@@ -10,6 +10,46 @@
 function cepal_news_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-cepal_news-field_country'
+  $field_instances['node-cepal_news-field_country'] = array(
+    'bundle' => 'cepal_news',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Select a country asociated with this <em>content</em>.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'countries',
+        'settings' => array(),
+        'type' => 'country_default',
+        'weight' => 11,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_country',
+    'label' => 'Country',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 1,
+      ),
+      'type' => 'options_select',
+      'weight' => 8,
+    ),
+  );
+
   // Exported field_instance: 'node-cepal_news-field_id_sade'
   $field_instances['node-cepal_news-field_id_sade'] = array(
     'bundle' => 'cepal_news',
@@ -57,6 +97,53 @@ function cepal_news_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-cepal_news-field_id_sade_maestro'
+  $field_instances['node-cepal_news-field_id_sade_maestro'] = array(
+    'bundle' => 'cepal_news',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Migration field. DON\'t touch.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 15,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_id_sade_maestro',
+    'label' => 'ID SADE Maestro',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => 0,
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 15,
+    ),
+  );
+
   // Exported field_instance: 'node-cepal_news-field_news_area_ref'
   $field_instances['node-cepal_news-field_news_area_ref'] = array(
     'bundle' => 'cepal_news',
@@ -94,7 +181,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -135,45 +222,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-cepal_news-field_news_country'
-  $field_instances['node-cepal_news-field_news_country'] = array(
-    'bundle' => 'cepal_news',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Select a country asociated with this content.',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'countries',
-        'settings' => array(),
-        'type' => 'country_default',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_news_country',
-    'label' => 'Country',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'countries',
-      'settings' => array(),
-      'type' => 'countries_continent',
-      'weight' => 9,
+      'weight' => 7,
     ),
   );
 
@@ -216,7 +265,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 7,
+      'weight' => 12,
     ),
   );
 
@@ -267,7 +316,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -308,47 +357,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'node-cepal_news-field_news_topic'
-  $field_instances['node-cepal_news-field_news_topic'] = array(
-    'bundle' => 'cepal_news',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Select associated topics for this content.',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_news_topic',
-    'label' => 'Topic',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => 0,
-      ),
-      'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 6,
     ),
   );
 
@@ -392,19 +401,19 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
     ),
   );
 
-  // Exported field_instance: 'node-cepal_news-field_news_unbis'
-  $field_instances['node-cepal_news-field_news_unbis'] = array(
+  // Exported field_instance: 'node-cepal_news-field_special_topic'
+  $field_instances['node-cepal_news-field_special_topic'] = array(
     'bundle' => 'cepal_news',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Select an UNBIS classification for this content.',
+    'description' => 'Select a "special topic" if is needed.',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 5,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -414,8 +423,8 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_news_unbis',
-    'label' => 'UNBIS',
+    'field_name' => 'field_special_topic',
+    'label' => 'Special Topic',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -426,6 +435,86 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
       'module' => 'options',
       'settings' => array(
         'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_news-field_topic'
+  $field_instances['node-cepal_news-field_topic'] = array(
+    'bundle' => 'cepal_news',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Select associated topics for this content.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 12,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_topic',
+    'label' => 'Topic',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 1,
+      ),
+      'type' => 'options_select',
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_news-field_unbis'
+  $field_instances['node-cepal_news-field_unbis'] = array(
+    'bundle' => 'cepal_news',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Select an UNBIS classification for this content.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 14,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_unbis',
+    'label' => 'UNBIS',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 1,
       ),
       'type' => 'options_select',
       'weight' => 11,
@@ -483,18 +572,22 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
   t('Country');
   t('Files');
   t('ID SADE');
+  t('ID SADE Maestro');
   t('Imagen');
   t('Insert a teaser text for this content.');
   t('Insert the body text for this content.');
   t('Is possible to add attached files files to this content as a complement.');
   t('Migration field.');
+  t('Migration field. DON\'t touch.');
   t('Seleccione el área de origen de la noticia.
 TEMPORAL, debe ser reemplazado con una referencia a otra entidad.');
-  t('Select a country asociated with this content.');
+  t('Select a "special topic" if is needed.');
+  t('Select a country asociated with this <em>content</em>.');
   t('Select a image asociated to this <em>New</em>. This image could be showed in the press releases lists and front pages.');
   t('Select an UNBIS classification for this content.');
   t('Select associated topics for this content.');
   t('Select the <em>News type</em> to add.');
+  t('Special Topic');
   t('Teaser');
   t('Title');
   t('Topic');

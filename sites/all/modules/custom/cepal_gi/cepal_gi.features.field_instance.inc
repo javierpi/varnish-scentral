@@ -10,6 +10,46 @@
 function cepal_gi_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-cepal_graphic_info-field_country'
+  $field_instances['node-cepal_graphic_info-field_country'] = array(
+    'bundle' => 'cepal_graphic_info',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Select a country asociated with this <em>content</em>.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'countries',
+        'settings' => array(),
+        'type' => 'country_default',
+        'weight' => 11,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_country',
+    'label' => 'Country',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 1,
+      ),
+      'type' => 'options_select',
+      'weight' => 7,
+    ),
+  );
+
   // Exported field_instance: 'node-cepal_graphic_info-field_gi_body'
   $field_instances['node-cepal_graphic_info-field_gi_body'] = array(
     'bundle' => 'cepal_graphic_info',
@@ -48,46 +88,6 @@ function cepal_gi_field_default_field_instances() {
       ),
       'type' => 'text_textarea',
       'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'node-cepal_graphic_info-field_gi_country'
-  $field_instances['node-cepal_graphic_info-field_gi_country'] = array(
-    'bundle' => 'cepal_graphic_info',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Select a country asociated with this content.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'countries',
-        'settings' => array(),
-        'type' => 'country_default',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_gi_country',
-    'label' => 'Country',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => 1,
-      ),
-      'type' => 'options_select',
-      'weight' => 7,
     ),
   );
 
@@ -184,7 +184,7 @@ function cepal_gi_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 10,
+      'weight' => 13,
     ),
   );
 
@@ -336,46 +336,6 @@ function cepal_gi_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-cepal_graphic_info-field_gi_topic'
-  $field_instances['node-cepal_graphic_info-field_gi_topic'] = array(
-    'bundle' => 'cepal_graphic_info',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Select associated topics for this content.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_gi_topic',
-    'label' => 'Topic',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => 1,
-      ),
-      'type' => 'options_select',
-      'weight' => 8,
-    ),
-  );
-
   // Exported field_instance: 'node-cepal_graphic_info-field_gi_type'
   $field_instances['node-cepal_graphic_info-field_gi_type'] = array(
     'bundle' => 'cepal_graphic_info',
@@ -416,19 +376,19 @@ function cepal_gi_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-cepal_graphic_info-field_gi_unbis'
-  $field_instances['node-cepal_graphic_info-field_gi_unbis'] = array(
+  // Exported field_instance: 'node-cepal_graphic_info-field_special_topic'
+  $field_instances['node-cepal_graphic_info-field_special_topic'] = array(
     'bundle' => 'cepal_graphic_info',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Select an UNBIS classification for this content.',
+    'description' => 'Select a "special topic" if is needed.',
     'display' => array(
       'default' => array(
         'label' => 'above',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 6,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -438,9 +398,49 @@ function cepal_gi_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_gi_unbis',
-    'label' => 'UNBIS',
+    'field_name' => 'field_special_topic',
+    'label' => 'Special Topic',
     'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_graphic_info-field_topic'
+  $field_instances['node-cepal_graphic_info-field_topic'] = array(
+    'bundle' => 'cepal_graphic_info',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Select associated topics for this content.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 12,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_topic',
+    'label' => 'Topic',
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
@@ -456,6 +456,46 @@ function cepal_gi_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-cepal_graphic_info-field_unbis'
+  $field_instances['node-cepal_graphic_info-field_unbis'] = array(
+    'bundle' => 'cepal_graphic_info',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Select an UNBIS classification for this content.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 14,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_unbis',
+    'label' => 'UNBIS',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 1,
+      ),
+      'type' => 'options_select',
+      'weight' => 11,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
@@ -468,12 +508,14 @@ function cepal_gi_field_default_field_instances() {
   t('Insert the body text for this content.');
   t('Is possible to add attached files files to this content.');
   t('Is possible to add some highlighted text for this content.');
-  t('Select a country asociated with this content.');
+  t('Select a "special topic" if is needed.');
+  t('Select a country asociated with this <em>content</em>.');
   t('Select a kind of <em>Graphic Information</em> to create.');
   t('Select an UNBIS classification for this content.');
   t('Select an image associated to this <em>Graphic Information</em>.');
   t('Select associated topics for this content.');
   t('Select the date and time of publication for this content.');
+  t('Special Topic');
   t('Teaser');
   t('Topic');
   t('Type');

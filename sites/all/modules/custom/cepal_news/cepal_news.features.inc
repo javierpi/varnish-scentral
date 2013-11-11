@@ -23,7 +23,7 @@ function cepal_news_node_info() {
       'base' => 'node_content',
       'description' => t('Use <em>news</em> to publish some note in a division or sitewide.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Título'),
       'help' => '',
     ),
   );

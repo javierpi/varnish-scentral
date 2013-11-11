@@ -19,11 +19,11 @@ function cepal_articles_ctools_plugin_api($module = NULL, $api = NULL) {
 function cepal_articles_node_info() {
   $items = array(
     'cepal_article' => array(
-      'name' => t('Article'),
+      'name' => t('Artículo'),
       'base' => 'node_content',
       'description' => t('Use this content type to create an <em>Opinion Columns</em> or <em>Messages</em> from authorities.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Título'),
       'help' => '',
     ),
   );

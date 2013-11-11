@@ -71,7 +71,7 @@ function cepal_speech_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '11',
+          'weight' => '14',
         ),
       ),
       'display' => array(),

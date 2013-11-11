@@ -69,32 +69,6 @@ function cepal_articles_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_article_country'
-  $field_bases['field_article_country'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_article_country',
-    'foreign keys' => array(),
-    'indexes' => array(
-      'iso2' => array(
-        0 => 'iso2',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'countries',
-    'settings' => array(
-      'continents' => array(),
-      'countries' => array(),
-      'enabled' => 1,
-      'entity_translation_sync' => FALSE,
-      'size' => 5,
-    ),
-    'translatable' => 0,
-    'type' => 'country',
-  );
-
   // Exported field_base: 'field_article_date'
   $field_bases['field_article_date'] = array(
     'active' => 1,
@@ -222,42 +196,6 @@ function cepal_articles_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_article_topic'
-  $field_bases['field_article_topic'] = array(
-    'active' => 1,
-    'cardinality' => 2,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_article_topic',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'topics',
-          'parent' => 0,
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-      'options_list_callback' => 'i18n_taxonomy_allowed_values',
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
-  );
-
   // Exported field_base: 'field_article_type'
   $field_bases['field_article_type'] = array(
     'active' => 1,
@@ -283,42 +221,6 @@ function cepal_articles_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'list_integer',
-  );
-
-  // Exported field_base: 'field_article_unbis'
-  $field_bases['field_article_unbis'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_article_unbis',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'unbis',
-          'parent' => 0,
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-      'options_list_callback' => 'i18n_taxonomy_allowed_values',
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
   );
 
   // Exported field_base: 'field_article_url_reference'

@@ -10,6 +10,86 @@
 function cepal_speech_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-cepal_speech-field_country'
+  $field_instances['node-cepal_speech-field_country'] = array(
+    'bundle' => 'cepal_speech',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Select a country asociated with this <em>content</em>.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'countries',
+        'settings' => array(),
+        'type' => 'country_default',
+        'weight' => 14,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_country',
+    'label' => 'Country',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 1,
+      ),
+      'type' => 'options_select',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_speech-field_special_topic'
+  $field_instances['node-cepal_speech-field_special_topic'] = array(
+    'bundle' => 'cepal_speech',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Select a special topic for classifcation if needed.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 16,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_special_topic',
+    'label' => 'Special Topic',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 1,
+      ),
+      'type' => 'options_select',
+      'weight' => 8,
+    ),
+  );
+
   // Exported field_instance: 'node-cepal_speech-field_speech_author'
   $field_instances['node-cepal_speech-field_speech_author'] = array(
     'bundle' => 'cepal_speech',
@@ -47,7 +127,7 @@ function cepal_speech_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 12,
+      'weight' => 15,
     ),
   );
 
@@ -129,7 +209,7 @@ function cepal_speech_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 10,
+      'weight' => 13,
     ),
   );
 
@@ -170,47 +250,7 @@ function cepal_speech_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 9,
-    ),
-  );
-
-  // Exported field_instance: 'node-cepal_speech-field_speech_country'
-  $field_instances['node-cepal_speech-field_speech_country'] = array(
-    'bundle' => 'cepal_speech',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Select a country asociated with this Speech.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'countries',
-        'settings' => array(),
-        'type' => 'country_default',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_speech_country',
-    'label' => 'Country',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => 1,
-      ),
-      'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 12,
     ),
   );
 
@@ -305,7 +345,7 @@ function cepal_speech_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 14,
+      'weight' => 17,
     ),
   );
 
@@ -455,7 +495,7 @@ function cepal_speech_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 13,
+      'weight' => 16,
     ),
   );
 
@@ -500,8 +540,8 @@ function cepal_speech_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-cepal_speech-field_speech_topic'
-  $field_instances['node-cepal_speech-field_speech_topic'] = array(
+  // Exported field_instance: 'node-cepal_speech-field_topic'
+  $field_instances['node-cepal_speech-field_topic'] = array(
     'bundle' => 'cepal_speech',
     'default_value' => NULL,
     'deleted' => 0,
@@ -512,7 +552,7 @@ function cepal_speech_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 6,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -522,7 +562,7 @@ function cepal_speech_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_speech_topic',
+    'field_name' => 'field_topic',
     'label' => 'Topic',
     'required' => 1,
     'settings' => array(
@@ -540,8 +580,8 @@ function cepal_speech_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-cepal_speech-field_speech_unbis'
-  $field_instances['node-cepal_speech-field_speech_unbis'] = array(
+  // Exported field_instance: 'node-cepal_speech-field_unbis'
+  $field_instances['node-cepal_speech-field_unbis'] = array(
     'bundle' => 'cepal_speech',
     'default_value' => NULL,
     'deleted' => 0,
@@ -552,7 +592,7 @@ function cepal_speech_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 7,
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -562,7 +602,7 @@ function cepal_speech_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_speech_unbis',
+    'field_name' => 'field_unbis',
     'label' => 'UNBIS',
     'required' => 0,
     'settings' => array(
@@ -576,7 +616,7 @@ function cepal_speech_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -595,11 +635,13 @@ function cepal_speech_field_default_field_instances() {
   t('Insert the body text for this <em>Speech</em>.');
   t('Is possible to add attached files files to this <em>Speech</em>.');
   t('Place');
-  t('Select a country asociated with this Speech.');
+  t('Select a country asociated with this <em>content</em>.');
   t('Select a image asociated to this <em>Speechs</em>. This image could be showed in the Speeches lists and front pages.');
+  t('Select a special topic for classifcation if needed.');
   t('Select an UNBIS classification for this <em>Speech</em>.');
   t('Select associated topics for this <em>Speech</em>.');
   t('Select the date and time of publication for this <em>Speech</em>.');
+  t('Special Topic');
   t('TEMPORAL, contact details.');
   t('TEMPORAL, debe ser reemplazado con una referencia a otra entidad (eventos).');
   t('TEMPORAL, debe ser reemplazado con una referencia a otra entidad (lugar).');

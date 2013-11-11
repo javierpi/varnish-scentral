@@ -71,7 +71,7 @@ function cepal_presentation_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '12',
+          'weight' => '1',
         ),
       ),
       'display' => array(),
