@@ -3,6 +3,8 @@ description = A entity to manage a list of publication authorities
 package = ECK
 core = 7.x
 dependencies[] = eck
+dependencies[] = entityreference
+dependencies[] = views
 core = "7.x"
 project = "eck"
 
