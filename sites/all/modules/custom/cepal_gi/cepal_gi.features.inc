@@ -23,7 +23,7 @@ function cepal_gi_node_info() {
       'base' => 'node_content',
       'description' => t('Use this content type to create the content for a <em>Infography</em> or <em>Information Sheet</em>.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Título'),
       'help' => '',
     ),
   );

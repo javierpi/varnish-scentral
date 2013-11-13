@@ -23,7 +23,7 @@ function cepal_presentation_node_info() {
       'base' => 'node_content',
       'description' => t('Use this content type to create a <em>Presentation</em> from authorities ir highlighted speakers.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Título'),
       'help' => '',
     ),
   );

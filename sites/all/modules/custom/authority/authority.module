@@ -9,3 +9,14 @@ function authority_ctools_plugin_directory($owner, $plugin_type) {
     return 'plugins/' . $plugin_type;
   }
 }
+
+/**
+ * Implements hook_views_api().
+ */
+//function authorities_views_api($module = NULL, $api = NULL) {
+function authority_views_api() {
+  return array(
+  	'api' => 3,
+  	'path' => drupal_get_path('module', 'authority') . '/views',
+  	);
+}

@@ -46,7 +46,7 @@ function cepal_pr_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 11,
     ),
   );
 
@@ -93,7 +93,7 @@ function cepal_pr_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 15,
+      'weight' => 18,
     ),
   );
 
@@ -140,7 +140,7 @@ function cepal_pr_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 16,
+      'weight' => 19,
     ),
   );
 
@@ -322,7 +322,7 @@ function cepal_pr_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 9,
+      'weight' => 15,
     ),
   );
 
@@ -442,7 +442,47 @@ function cepal_pr_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 14,
+      'weight' => 17,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_pr-field_pr_observatories'
+  $field_instances['node-cepal_pr-field_pr_observatories'] = array(
+    'bundle' => 'cepal_pr',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'MIGRACION. Seleccione un observatorio si el comunicado pertenece a alguno.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 21,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_pr_observatories',
+    'label' => 'Observatories',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 10,
     ),
   );
 
@@ -486,7 +526,48 @@ function cepal_pr_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete_tags',
-      'weight' => 13,
+      'weight' => 16,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_pr-field_pr_subsidiary_bodies'
+  $field_instances['node-cepal_pr-field_pr_subsidiary_bodies'] = array(
+    'bundle' => 'cepal_pr',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'MIGRATION.
+Seleccione un órgano subsidiario si corresponde.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 22,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_pr_subsidiary_bodies',
+    'label' => 'Subsidiary Bodies',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 9,
     ),
   );
 
@@ -531,6 +612,47 @@ function cepal_pr_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-cepal_pr-field_pr_workarea'
+  $field_instances['node-cepal_pr-field_pr_workarea'] = array(
+    'bundle' => 'cepal_pr',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Select the work area for this content.
+MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update to workgroup.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 23,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_pr_workarea',
+    'label' => 'Work Area',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 8,
+    ),
+  );
+
   // Exported field_instance: 'node-cepal_pr-field_special_topic'
   $field_instances['node-cepal_pr-field_special_topic'] = array(
     'bundle' => 'cepal_pr',
@@ -567,7 +689,7 @@ function cepal_pr_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 12,
+      'weight' => 14,
     ),
   );
 
@@ -607,7 +729,7 @@ function cepal_pr_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 12,
     ),
   );
 
@@ -647,7 +769,7 @@ function cepal_pr_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 11,
+      'weight' => 13,
     ),
   );
 
@@ -709,8 +831,12 @@ function cepal_pr_field_default_field_instances() {
   t('Is possible to add attached files files to this <em>Press Release</em>.');
   t('Is possible to add external link references about this <em>press release</em>.');
   t('Is possible to add references to another content on this site.');
+  t('MIGRACION. Seleccione un observatorio si el comunicado pertenece a alguno.');
+  t('MIGRATION.
+Seleccione un órgano subsidiario si corresponde.');
   t('Migration field.');
   t('Migration field. DON\'t touch.');
+  t('Observatories');
   t('Related Content');
   t('Related Links');
   t('Select a country asociated with this <em>press release</em>.');
@@ -720,11 +846,15 @@ function cepal_pr_field_default_field_instances() {
   t('Select an UNBIS classification for this <em>Press Release</em>.');
   t('Select associated topics for this <em>press release</em>.');
   t('Select the date and time of publication for this <em>Press Release</em>.');
+  t('Select the work area for this content.
+MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update to workgroup.');
   t('Special Topic');
+  t('Subsidiary Bodies');
   t('Teaser');
   t('Title');
   t('Topic');
   t('UNBIS');
+  t('Work Area');
 
   return $field_instances;
 }

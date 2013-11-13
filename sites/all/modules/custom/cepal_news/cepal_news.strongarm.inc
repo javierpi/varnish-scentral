@@ -93,10 +93,10 @@ function cepal_news_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '3',
+          'weight' => '6',
         ),
         'language' => array(
-          'weight' => '8',
+          'weight' => '2',
         ),
       ),
       'display' => array(),
