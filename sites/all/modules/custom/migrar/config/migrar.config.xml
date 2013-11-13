@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
-    <!--
     <proyecto>
         <destination_node>cepal_project</destination_node>
         <xml_file_path>/home/francort/xml/proyecto.xml</xml_file_path>
@@ -25,17 +24,21 @@
     <comunicado>
         <destination_node>cepal_pr</destination_node>
         <xml_file_path>/home/francort/xml/comunicado.xml</xml_file_path>
-        <x_path>/GetComunicados/noticia</x_path>
+        <x_path>/GetPressReleases/pressrelease</x_path>
         <id_x_path>id_sade</id_x_path>
-        <service_endpoint>http://10.0.17.152/sade_ws/service1.asmx/GetComunicados</service_endpoint>
+        <service_endpoint>http://10.0.17.152/sade_ws/service1.asmx/GetPressReleases</service_endpoint>
         <service_parameters>
             <service_parameter>
                 <name>num_records</name>
-                <value>200</value>
+                <value></value>
             </service_parameter>
             <service_parameter>
                 <name>id_sade</name>
                 <value></value>
+            </service_parameter>
+            <service_parameter>
+                <name>solo_ids</name>
+                <value>false</value>
             </service_parameter>
         </service_parameters>
     </comunicado>
@@ -69,5 +72,21 @@
             </service_parameter>
         </service_parameters>
     </articulo>
-    -->
+    <imagen>
+        <destination_node>image</destination_node>
+        <xml_file_path>/home/francort/xml/imagenes_comunicados.xml</xml_file_path>
+        <x_path>/GetPressReleaseImage/image</x_path>
+        <id_x_path>id_foto</id_x_path>
+        <service_endpoint>http://10.0.17.152/sade_ws/service1.asmx/GetPressReleaseImage</service_endpoint>
+        <service_parameters>
+            <service_parameter>
+                <name>id_sade</name>
+                <value></value>
+            </service_parameter>
+            <service_parameter>
+                <name>num_records</name>
+                <value></value>
+            </service_parameter>
+        </service_parameters>
+    </imagen>
 </config>

@@ -109,6 +109,7 @@ abstract class BaseMigracion extends XMLMigration {
    * datos de migracion por otro de origen inmediato.
    */
   protected function getXMLFeed() {
+    if($this->type !== "comunicado") return;
     $url = $this->getWebServiceQuery();
 
     $xml = file_get_contents($url);
@@ -147,7 +148,6 @@ abstract class BaseMigracion extends XMLMigration {
       'sticky',
       'revision',
       'log',
-      'language',
       'tnid',
       'is_new',
       'comment',
@@ -391,24 +391,159 @@ abstract class BaseMigracion extends XMLMigration {
     /*
      * @todo preguntar cual va a ser el filtro por defecto.
      */
+    $html = $this->quitarCDATA($html);
     $html_filtered = check_markup($html, 'filtered_html');
-    /*
-    $search_tilde = array(
-      '&amp;aacute;','&amp;eacute;','&amp;iacute;','&amp;oacute;','&amp;uacute;',
-      '&amp;Aacute;','&amp;Eacute;','&amp;Iacute;','&amp;Oacute;','&amp;Uacute;',
-    );
-    $replace_tilde = array(
-      'á'           ,'é'           ,'í'           ,'ó'           ,'ú'           ,
-      'Á'           ,'É'           ,'Í'           ,'Ó'           ,'Ú'           ,
-    );
-    $html_tilde = str_replace($search_tilde, $replace_tilde, $html_filtered);
 
-    $html = $html_tilde;
-*/
     $html_amp = str_replace("&amp;", "&", $html_filtered);
 
     $html = $html_amp;
 
     return $html;
   }
+
+
+  protected function loadNodeByIdSade($id_sade, $fieldName){
+    $node_type = $this->getDestinationNode();
+    $query = new EntityFieldQuery();
+    $query
+      ->entityCondition('entity_type', 'node')
+      ->propertyCondition('type', $node_type)
+      ->fieldCondition($fieldName, 'value', $id_sade)
+      ;
+    $result = $query->execute();
+
+    if (!empty($result['node'])) {
+      $nodes = entity_load('node', array_keys($result['node']));
+      $node = array_pop($nodes);
+
+      return $node;
+    }
+    return FALSE;
+  }
+
+
+
+  protected function setNodeTitle($node, $idioma, $title){
+    $node->title_field[$idioma][0]['value'] = $title;;
+    $node->title_field[$idioma][0]['save_value'] = $title;;
+    $node->title_field[$idioma][0]['input_format'] = 'plain_text';;
+  }
+
+
+
+  protected function setNodeBody($node, $idioma, $body, $fieldName, $teaserField=false){
+    $body = $this->quitarCDATA($body);
+    $node->{$fieldName}[$idioma][0]['value']        = $body;
+    $node->{$fieldName}[$idioma][0]['save_value']   = $body;
+    $node->{$fieldName}[$idioma][0]['format'] = 'filtered_html';
+
+    if($teaserField){
+      $teaser_text = strip_tags(text_summary($body, 'plain_text'));
+      $node->{$teaserField}[$idioma][0]['value']        = $teaser_text;
+      $node->{$teaserField}[$idioma][0]['save_value']   = $teaser_text;
+      $node->{$teaserField}[$idioma][0]['format'] = 'plain_text';
+    }
+  }
+
+
+
+  protected function setNodeTeaser($node, $idioma, $teaser, $teaserField){
+    $teaser_text = strip_tags(text_summary($teaser, 'plain_text'));
+    $node->{$teaserField}[$idioma][0]['value']        = $teaser_text;
+    $node->{$teaserField}[$idioma][0]['save_value']   = $teaser_text;
+    $node->{$teaserField}[$idioma][0]['format'] = 'plain_text';
+  }
+
+
+
+  protected function insertEntityTranslation($node, $language){
+    $translation_values = array(
+        'entity_type' => 'node',
+        'entity_id'   => $node->nid,
+        'language'    => $language,
+        'source'      => $node->language,
+        'status'      => $node->status,
+        'translate'   => 0,
+        'uid'         => $node->uid,
+        'created'     => REQUEST_TIME,
+        'changed'     => REQUEST_TIME,
+      );
+
+    db_insert('entity_translation')
+      ->fields($translation_values)
+      ->execute();
+  }
+
+
+  protected function insertarImagen($imagen){
+    $fileName = $imagen['fileName'];
+    $source = "/home/francort/imagenes_comunicados/" . $fileName;
+    $destination = "public://pr/images/" . $fileName;
+    //drush_print_r($source);
+    if(file_exists($source)){
+      $data = file_get_contents($source);
+      //$final_source = file_unmanaged_save_data($data, $destination);
+      $file = file_save_data($data, array(), $destination);
+      file_move($file, $destination);
+      $file->uri = $destination;
+      $file->filename = $fileName;
+
+      file_save($file);
+      //image_style_create_derivative($style, $source, $destination)
+
+      return $file;
+    }
+    $wd_type = "pr_image";
+    $wd_message = "No existe el archivo: %source";
+    $wd_variables = array('%source' => $source);
+    $wd_severity = WATCHDOG_ERROR;
+    watchdog($wd_type, $wd_message, $wd_variables, $wd_severity);
+
+    return FALSE;
+  }
+
+
+  protected function agregarCampoImagen($entity, $row){
+    
+    /*
+    $image = $row->imagen;
+    $image_field_values = array(
+      'entity_type'           => 'node',
+      'bundle'                => 'cepal_pr',
+      'deleted'               => 0,
+      'entity_id'             => $entity->nid,
+      'revision_id'           => $entity->vid,
+      'language'              => $entity->language,
+      'delta'                 => 0,
+      'field_pr_image_fid'    => $image->fid,
+      'field_pr_image_alt'    => 'alt imagen',
+      'field_pr_image_title'  => 'title imagen',
+      'field_pr_image_width'  => $image->metadata['width'],
+      'field_pr_image_height' => $image->metadata['height'],
+    );
+    db_insert('field_revision_field_pr_image')
+        ->fields($image_field_values)
+        ->execute();
+
+    db_insert('field_data_field_pr_image')
+        ->fields($image_field_values)
+        ->execute();
+     *
+     */
+  }
+
+
+
+  protected function quitarCDATA($texto){
+
+    if(strpos($texto, "<![CDATA[") === FALSE){
+      return $texto;
+    }
+    preg_match_all("/<!\[CDATA\[(.*?)\]\]>/", $texto, $matches);
+    $texto = $matches[1][0];
+
+    return $texto;
+  }
+
+
 }

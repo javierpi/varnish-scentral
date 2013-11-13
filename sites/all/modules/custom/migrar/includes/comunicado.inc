@@ -8,7 +8,6 @@
  */
 class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInterface {
 
-
   /**
   * Constructor sin parametros.
   */
@@ -17,17 +16,16 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
     $this->init();
     $this->description = t('Importar comunicados desde archivo XML');
 
+
     $this->addFieldMapping('created', 'fecha');
     $this->addFieldMapping('changed', 'fecha_actualizacion');
+
+    //$this->addFieldMapping('field_pr_image', 'imagen');
 
     $arguments = DateMigrateFieldHandler::arguments('America/Santiago');
     $this->addFieldMapping('field_pr_date', 'fecha_actualizacion')
       ->xpath('fecha_actualizacion')
       ->arguments($arguments);
-    //$this->addFieldMapping('created')->defaultValue(mktime(0, 0, 0, 7, 29, 1980));
-    //$this->addFieldMapping('changed')->defaultValue(mktime(0, 0, 0, 7, 29, 1980));
-    //$this->addFieldMapping('field_pr_date')->defaultValue(mktime(0, 0, 0, 7, 29, 1980));
-
   }
 
 
@@ -42,8 +40,12 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
    * @param mixed $current_row
    * @return boolean
    */
-
   public function prepareRow($current_row) {
+    $id_sade = (int) $current_row->xml->id_sade;
+    $imagesComunicado = new ImagenesComunicado();
+    $imagenes = $imagesComunicado->getImagenesByIdSade($id_sade);
+    unset($imagesComunicado);
+
     $aux = explode(" ", $current_row->xml->fecha);
     $pieces = explode("-", $aux[0]);
     $created = mktime(0, 0, 0, $pieces[1], $pieces[0], $pieces[2]);
@@ -56,9 +58,45 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
 
     $current_row->fecha_actualizacion = $changed;
 
+    if(is_numeric(trim($current_row->xml->id_sade_maestro))){
+      $this->insertarTraduccion($current_row);
+
+      return FALSE;
+    }
+    else{
+      $current_row->xml->id_sade_maestro = 0;
+    }
+
+    if(count($imagenes) > 0){
+      /* Solo se inserta una imagen */
+      $imagen = array_shift($imagenes);
+      $current_imagen = $this->insertarImagen($imagen);
+      if($current_imagen !== FALSE){
+        $current_row->imagen = $current_imagen;
+      }
+    }
+
     return TRUE;
   }
 
+
+
+  public function complete($entity, stdClass $row) {
+    $lng = LANGUAGE_NONE;
+    $file = $row->imagen;
+    $field = array($lng => array('0' => (array)$file));
+    //drush_print_r($field);
+    $entity->field_pr_image = $field;
+
+    node_save($entity);
+  }
+
+ /*
+ public function prepareRollback($entity_id) {
+    parent::prepareRollback();
+
+  }
+ */
 
  /**
   * Funcion que describe los campos del xml.
@@ -68,24 +106,15 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
   static public function getXMLFields() {
     return array(
       'id_sade'             => t('Identificador de SADE'),
+      'id_sade_maestro'     => t('Identificador de traduccion de SADE'),
       'titulo'              => t('Titulo del comunicado'),
       'bajada'              => t('Summary de body'),
-      'epigrafe'            => t('Fecha y hora?'),
       'fecha'               => t('created'),
       'fecha_actualizacion' => t('updated'),
-      'contacto_nombre'     => t('Nombre contacto 1'),
-      'contacto_email'      => t('Email contacto 1'),
-      'contacto_fono'       => t('Fono contacto 1'),
-      'contacto_nombre_2'   => t('Nombre contacto 2'),
-      'contacto_email_2'    => t('Email contacto 2'),
-      'contacto_fono_2'     => t('Fono contacto 2'),
-      'contacto_nombre_3'   => t('Nombre contacto 3'),
-      'contacto_email_3'    => t('Email contacto 3'),
-      'contacto_fono_3'     => t('Fono contacto 3'),
       'cuerpo'              => t('body'),
       'idioma'              => t('Idioma'),
-      'minisitio'           => t('url de minisitio(si existiera)'),
-      'area_de_trabajo'     => t('?'),
+      'mail_grupo_usuarios' => t('Email de contacto'),
+      'id_division'         => t('Id de la division'),
     );
   }
 
@@ -102,12 +131,14 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
     $unmgtDests += parent::getUnmigratedDestinations();
 
     self::fileFieldUnmigrated('field_pr_files', $unmgtDests);
-    self::imageFieldUnmigrated('field_pr_image', $unmgtDests);
+    //self::imageFieldUnmigrated('field_pr_image', $unmgtDests);
     self::taxonomyFieldUnmigrated('field_pr_topic', $unmgtDests);
     self::taxonomyFieldUnmigrated('field_pr_unbis', $unmgtDests);
 
     unset($unmgtDests[array_search ( 'created' , $unmgtDests )]);
     unset($unmgtDests[array_search ( 'changed' , $unmgtDests )]);
+
+    $unmgtDests[] = 'field_pr_country';
 
     return $unmgtDests;
   }
@@ -129,16 +160,20 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
 
     return array(
       'title'           => array('field' => 'titulo', 'callback' => ''),
-      'language'        => array('field' => 'idioma', 'callback' => ''),
+      'title_field'          => array('field' => 'titulo'),
+      'title_field:language' => array('field' => 'idioma'),
+      'language'        => array('field' => 'idioma'),
       'field_pr_body'   => array('field' => 'cuerpo', 'callback' => 'filterHTML'),
       'field_pr_body:language'   => array('field' => 'idioma'),
       'field_pr_teaser' => array('field' => 'bajada', 'callback' => 'filterHTML'),
       'field_pr_teaser:language' => array('field' => 'idioma'),
-      'field_pr_contact_intitutional' => array('field' => 'contacto_nombre', 'callback' => 'buildContactInfo1'),
-      'field_pr_contact_person' => array('field' => 'contacto_nombre_2', 'callback' => 'buildContactInfo2'),
+      'field_pr_contact_person' => array('field' => 'mail_grupo_usuarios'),
+      'field_pr_contact_intitutional' => array('field' => 'mail_grupo_usuarios'),
       'field_pr_contact_intitutional:language' => array('field' => 'idioma'),
       'field_pr_contact_person:language' => array('field' => 'idioma'),
       'field_pr_id_sade' => array('field' => 'id_sade'),
+      'field_id_sade_maestro' => array('field' => 'id_sade_maestro'),
+      //'field_pr_image' => array('field' => 'images'),
     );
   }
 
@@ -161,57 +196,35 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
   }
 
 
-/*
+
   protected function getXMLFeed() {
 
   }
-*/
 
 
 
-  protected function buildContactInfo1($nombre){
-    $xml = $this->sourceValues->xml;
+  protected function insertarTraduccion($currentRow){
 
-    $additions = array();
-    if(!empty($xml->contacto_email)) {
-       $additions[] = (string)$xml->contacto_email;
-    }
-    if(!empty($xml->contacto_fono)) {
-       $additions[] = (string)$xml->contacto_fono;
-    }
-    array_unshift($additions, $nombre);
+    $id_sade = $currentRow->xml->id_sade_maestro;
+    $field_name = "field_pr_id_sade";
+    $node = $this->loadNodeByIdSade($id_sade, $field_name);
+    if(!$node) return FALSE;
 
-    return self::formatterContactInfo($additions);
-  }
+    $teaser = check_plain($currentRow->xml->bajada);
+    $body   = $this->filterHTML($currentRow->xml->cuerpo);
+    $title  = check_plain($currentRow->xml->titulo);
 
+    $idioma = (string)$currentRow->xml->idioma;
 
+    /* Se guarda cada uno de los campos traducidos para el nodo padre */
+    $this->setNodeTitle($node, $idioma, $title);
+    $this->setNodeBody($node, $idioma, $body, 'field_pr_body');
+    $this->setNodeTeaser($node, $idioma, $teaser, 'field_pr_teaser');
 
-  protected function buildContactInfo2($nombre){
-    $xml = $this->sourceValues->xml;
+    node_save($node);
 
-    $additions = array();
-    if(!empty($xml->contacto_email_2)) {
-       $additions[] = (string)$xml->contacto_email_2;
-    }
-    if(!empty($xml->contacto_fono_2)) {
-       $additions[] = (string)$xml->contacto_fono_2;
-    }
-    array_unshift($additions, $nombre);
-
-    return self::formatterContactInfo($additions);
-  }
-
-
-
-  protected static function formatterContactInfo($additions){
-    /*
-     * @todo mejorar formato
-     */
-    if (empty($additions)) return "";
-
-    $output = implode("\n", $additions) ;
-
-    return $output;
+    /* se inserta la nueva traduccion como "hecha" */
+    $this->insertEntityTranslation($node, $idioma);
   }
 
 }
