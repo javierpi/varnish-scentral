@@ -13,7 +13,7 @@ function cepal_common_field_default_field_bases() {
   // Exported field_base: 'field_country'
   $field_bases['field_country'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => 20,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_country',
