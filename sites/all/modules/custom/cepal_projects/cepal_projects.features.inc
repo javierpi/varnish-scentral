@@ -23,7 +23,7 @@ function cepal_projects_node_info() {
       'base' => 'node_content',
       'description' => t('Use this content to create de definition of a <em>Project</em>.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Título'),
       'help' => '',
     ),
   );
