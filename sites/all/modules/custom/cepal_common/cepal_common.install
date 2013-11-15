@@ -21,10 +21,10 @@ function cepal_common_install() {
     'OC' => t('Oceania'), # DEFAULT
 
     //  'AN' => t('Antarctica'), # DEFAULT
-    'LA' => t('Latin America'); #
-    'LC' => t('Latina America and the Caribbean'), #
-    'IA' => t('Iberoamerica'), #
-    '3U' => t('European Union'), #
+    'LA' => t('Latin America'), 
+    'LC' => t('Latina America and the Caribbean'), 
+    'IA' => t('Iberoamerica'), 
+    '3U' => t('European Union'), 
 
     'UN' => t('Unknown', array(), array('context' => 'countries')), # DEFAULT
   ));
