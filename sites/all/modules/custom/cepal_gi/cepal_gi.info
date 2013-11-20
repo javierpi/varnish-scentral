@@ -6,6 +6,7 @@ version = 7.x-1.0-beta4
 project = cepal_gi
 dependencies[] = cepal_base
 dependencies[] = cepal_common
+dependencies[] = cepal_news
 dependencies[] = countries
 dependencies[] = ctools
 dependencies[] = date
