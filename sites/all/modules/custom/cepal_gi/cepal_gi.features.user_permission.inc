@@ -35,6 +35,7 @@ function cepal_gi_user_default_permissions() {
     'name' => 'delete own cepal_graphic_info content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -44,7 +45,6 @@ function cepal_gi_user_default_permissions() {
     'name' => 'edit any cepal_graphic_info content',
     'roles' => array(
       'administrator' => 'administrator',
-      'editor' => 'editor',
     ),
     'module' => 'node',
   );

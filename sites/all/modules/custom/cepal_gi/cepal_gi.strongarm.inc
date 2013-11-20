@@ -62,6 +62,46 @@ function cepal_gi_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_hide_translation_links_cepal_graphic_info';
+  $strongarm->value = 0;
+  $export['entity_translation_hide_translation_links_cepal_graphic_info'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_node_metadata_cepal_graphic_info';
+  $strongarm->value = '0';
+  $export['entity_translation_node_metadata_cepal_graphic_info'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_settings_node__cepal_graphic_info';
+  $strongarm->value = array(
+    'default_language' => 'xx-et-current',
+    'hide_language_selector' => 0,
+    'exclude_language_none' => 1,
+    'lock_language' => 1,
+    'shared_fields_original_only' => 1,
+  );
+  $export['entity_translation_settings_node__cepal_graphic_info'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_settings_node__cepal_pr';
+  $strongarm->value = array(
+    'default_language' => 'und',
+    'hide_language_selector' => 0,
+    'exclude_language_none' => 0,
+    'lock_language' => 0,
+    'shared_fields_original_only' => 0,
+  );
+  $export['entity_translation_settings_node__cepal_pr'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__cepal_graphic_info';
   $strongarm->value = array(
     'view_modes' => array(),
@@ -71,7 +111,10 @@ function cepal_gi_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '14',
+          'weight' => '10',
+        ),
+        'language' => array(
+          'weight' => '1',
         ),
       ),
       'display' => array(),
@@ -82,11 +125,25 @@ function cepal_gi_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'language_content_type_cepal_graphic_info';
+  $strongarm->value = '4';
+  $export['language_content_type_cepal_graphic_info'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_cepal_graphic_info';
   $strongarm->value = array(
     0 => 'main-menu',
   );
   $export['menu_options_cepal_graphic_info'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_cepal_graphic_info';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_cepal_graphic_info'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -110,6 +167,34 @@ function cepal_gi_strongarm() {
   $strongarm->name = 'node_submitted_cepal_graphic_info';
   $strongarm->value = 0;
   $export['node_submitted_cepal_graphic_info'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_cepal_graphic_info_en_pattern';
+  $strongarm->value = 'informationsheet/[node:created:custom:Y]/[node:created:custom:d]/[node:created:custom:m]/[node:title_field]';
+  $export['pathauto_node_cepal_graphic_info_en_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_cepal_graphic_info_es_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_cepal_graphic_info_es_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_cepal_graphic_info_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_cepal_graphic_info_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_cepal_graphic_info_und_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_cepal_graphic_info_und_pattern'] = $strongarm;
 
   return $export;
 }
