@@ -50,7 +50,7 @@ function cepal_common_field_default_field_bases() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'number_integer',
   );
 

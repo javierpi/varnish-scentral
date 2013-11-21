@@ -53,7 +53,6 @@ features[variable][] = comment_subject_field_cepal_graphic_info
 features[variable][] = entity_translation_hide_translation_links_cepal_graphic_info
 features[variable][] = entity_translation_node_metadata_cepal_graphic_info
 features[variable][] = entity_translation_settings_node__cepal_graphic_info
-features[variable][] = entity_translation_settings_node__cepal_pr
 features[variable][] = field_bundle_settings_node__cepal_graphic_info
 features[variable][] = language_content_type_cepal_graphic_info
 features[variable][] = menu_options_cepal_graphic_info
