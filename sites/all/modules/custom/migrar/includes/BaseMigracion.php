@@ -40,6 +40,9 @@ abstract class BaseMigracion extends XMLMigration {
    * Si el objeto no tiene definido path entonces levanta una excepcion.
    */
   protected function init() {
+    //@todo borrar
+    //if($this->type !== "comunicado") return;
+
     /* Si no se define el atributo type, lanza una excepcion */
     if (is_null($this->type)) {
       $msje = "El valor del atributo type debe estar definido";
@@ -139,8 +142,6 @@ abstract class BaseMigracion extends XMLMigration {
    */
   static protected function getUnmigratedDestinations() {
     return array(
-      'revision_uid',
-      'uid',
       'created',
       'changed',
       'status',
@@ -277,6 +278,28 @@ abstract class BaseMigracion extends XMLMigration {
 
 
 
+  protected function getPathSourceImages() {
+    return (string)$this->config->{$this->type}->source_images;
+  }
+
+
+
+  protected function getPathDestinationImages() {
+    return (string)$this->config->{$this->type}->destination_images;
+  }
+
+
+  protected function getPathSourceFiles() {
+    return (string)$this->config->{$this->type}->source_files;
+  }
+
+
+
+  protected function getPathDestinationFiles() {
+    return (string)$this->config->{$this->type}->destination_files;
+  }
+
+
   /**
    * Dado un codigo iso3 de pais, devuelve el identificador iso2.
    *
@@ -397,6 +420,7 @@ abstract class BaseMigracion extends XMLMigration {
     $html_amp = str_replace("&amp;", "&", $html_filtered);
 
     $html = $html_amp;
+    $html = $this->quitarImagenes($html);
 
     return $html;
   }
@@ -433,12 +457,13 @@ abstract class BaseMigracion extends XMLMigration {
 
   protected function setNodeBody($node, $idioma, $body, $fieldName, $teaserField=false){
     $body = $this->quitarCDATA($body);
+    $body = $this->quitarImagenes($body);
     $node->{$fieldName}[$idioma][0]['value']        = $body;
     $node->{$fieldName}[$idioma][0]['save_value']   = $body;
     $node->{$fieldName}[$idioma][0]['format'] = 'filtered_html';
 
     if($teaserField){
-      $teaser_text = strip_tags(text_summary($body, 'plain_text'));
+      $teaser_text = htmlspecialchars_decode(strip_tags(text_summary($body, 'plain_text')));
       $node->{$teaserField}[$idioma][0]['value']        = $teaser_text;
       $node->{$teaserField}[$idioma][0]['save_value']   = $teaser_text;
       $node->{$teaserField}[$idioma][0]['format'] = 'plain_text';
@@ -448,7 +473,7 @@ abstract class BaseMigracion extends XMLMigration {
 
 
   protected function setNodeTeaser($node, $idioma, $teaser, $teaserField){
-    $teaser_text = strip_tags(text_summary($teaser, 'plain_text'));
+    $teaser_text = htmlspecialchars_decode(strip_tags(text_summary($teaser, 'plain_text')));
     $node->{$teaserField}[$idioma][0]['value']        = $teaser_text;
     $node->{$teaserField}[$idioma][0]['save_value']   = $teaser_text;
     $node->{$teaserField}[$idioma][0]['format'] = 'plain_text';
@@ -475,24 +500,28 @@ abstract class BaseMigracion extends XMLMigration {
   }
 
 
+
   protected function insertarImagen($imagen){
+    $path_source      = $this->getPathSourceImages();
+    $path_destination = $this->getPathDestinationImages();
+
     $fileName = $imagen['fileName'];
-    $source = "/home/francort/imagenes_comunicados/" . $fileName;
-    $destination = "public://pr/images/" . $fileName;
-    //drush_print_r($source);
+
+    $source      = $path_source      . "/" . $fileName;
+    $destination = $path_destination . "/" . $fileName;
+
     if(file_exists($source)){
       $data = file_get_contents($source);
-      //$final_source = file_unmanaged_save_data($data, $destination);
       $file = file_save_data($data, array(), $destination);
       file_move($file, $destination);
-      $file->uri = $destination;
-      $file->filename = $fileName;
 
+      $file->uri      = $destination;
+      $file->filename = $fileName;
       file_save($file);
-      //image_style_create_derivative($style, $source, $destination)
 
       return $file;
     }
+
     $wd_type = "pr_image";
     $wd_message = "No existe el archivo: %source";
     $wd_variables = array('%source' => $source);
@@ -503,33 +532,39 @@ abstract class BaseMigracion extends XMLMigration {
   }
 
 
-  protected function agregarCampoImagen($entity, $row){
-    
-    /*
-    $image = $row->imagen;
-    $image_field_values = array(
-      'entity_type'           => 'node',
-      'bundle'                => 'cepal_pr',
-      'deleted'               => 0,
-      'entity_id'             => $entity->nid,
-      'revision_id'           => $entity->vid,
-      'language'              => $entity->language,
-      'delta'                 => 0,
-      'field_pr_image_fid'    => $image->fid,
-      'field_pr_image_alt'    => 'alt imagen',
-      'field_pr_image_title'  => 'title imagen',
-      'field_pr_image_width'  => $image->metadata['width'],
-      'field_pr_image_height' => $image->metadata['height'],
-    );
-    db_insert('field_revision_field_pr_image')
-        ->fields($image_field_values)
-        ->execute();
+  protected function insertarArchivo($archivo){
+    $path_source      = $this->getPathSourceFiles();
+    $path_destination = $this->getPathDestinationFiles();
 
-    db_insert('field_data_field_pr_image')
-        ->fields($image_field_values)
-        ->execute();
-     *
-     */
+    $fileName = $archivo['NewFileName'];
+
+    $source      = $path_source      . "/" . $fileName;
+    $destination = $path_destination . "/" . $fileName;
+
+    if(file_exists($source)){
+      $data = file_get_contents($source);
+      $file = file_save_data($data, array(), $destination);
+      file_move($file, $destination);
+
+      $file->uri         = $destination;
+      $file->filename    = $fileName;
+      $file->description = $archivo['descripcion'];
+      $file->display = 1;
+      /* En este caso el idioma es indefinido, el campo no se traduce */
+      $file->field_file_sade_lang['und'][0]['value'] = $archivo['idioma'];
+
+      file_save($file);
+
+      return $file;
+    }
+
+    $wd_type = "pr_files";
+    $wd_message = "No existe el archivo: %source";
+    $wd_variables = array('%source' => $source);
+    $wd_severity = WATCHDOG_ERROR;
+    watchdog($wd_type, $wd_message, $wd_variables, $wd_severity);
+
+    return FALSE;
   }
 
 
@@ -545,5 +580,109 @@ abstract class BaseMigracion extends XMLMigration {
     return $texto;
   }
 
+
+
+  static public function quitarImagenes($subject){
+    if(strpos($subject, "<img") !== FALSE){
+      $subject = str_replace("\r\n", "", $subject);
+      $linea = str_replace("\n", "", $subject);
+      $result = preg_replace("/<img[^>]+\>/i", "", $linea);
+      $subject = $result;
+      if(strpos($subject, "<img") !== FALSE){
+        drush_print_r($subject);
+        die("!!!");
+      }
+    }
+    return $subject;
+  }
+
+
+
+  public function addUserToNodeByEmail($node, $row){
+    $node->uid = $this->retrieveUid($row);
+  }
+
+
+
+  public function retrieveUid($row){
+    $email = (string)$row->xml->mail_grupo_usuarios;
+    $user = user_load_by_mail($email);
+    if(!$user){
+     $user = $this->createUser($email);
+    }
+
+    return $user->uid;
+  }
+
+
+
+  protected function createUser($email){
+    //require_once DRUPAL_ROOT . '/includes/password.inc';
+    //$password = user_hash_password('123');
+
+    $fields = array(
+      'name' => $email,
+      'mail' => $email,
+      'pass' => '123',
+      'status' => 1,
+      'init' => 'email address',
+      'roles' => array(
+        DRUPAL_AUTHENTICATED_RID => 'authenticated user',
+      ),
+    );
+
+    $account = user_save('', $fields);
+
+    return $account;
+  }
+
+
+
+  protected function savePath($node, $idioma){
+    $node2 = $node;
+
+    /* truco feo, para que funcione el token_replace */
+    /* Se reemplazan todos los titulos por el idioma en el que estamos */
+    foreach($node2->title_field as $lng => $title_field){
+      if($node2->title_field[$lng] !== $idioma){
+        $node2->title_field[$lng] = $node2->title_field[$idioma];
+      }
+    }
+
+    $pattern = pathauto_pattern_load_by_entity('node', $node2->type, $idioma);
+
+    if ($pattern) {
+      module_load_include('inc', 'pathauto');
+
+      $data = array();
+      $data['node'] = $node2;
+
+      $alias = token_replace($pattern, $data, array(
+        'sanitize' => FALSE,
+        'clear' => TRUE,
+        'callback' => 'pathauto_clean_token_values',
+        'language' => (object) array('language' => $idioma),
+        'pathauto' => TRUE,
+      ));
+
+      // Check if the token replacement has not actually replaced any values. If
+      // that is the case, then stop because we should not generate an alias.
+      // @see token_scan()
+      $pattern_tokens_removed = preg_replace('/\[[^\s\]:]*:[^\s\]]*\]/', '', $pattern);
+      if ($alias !== $pattern_tokens_removed) {
+        $alias_clean = pathauto_clean_alias($alias);
+
+        $path = array(
+          'source'   => 'node/' . $node->nid,
+          'alias'    => $alias_clean,
+          'language' => $idioma,
+        );
+
+        return $path;
+      }
+    }
+
+    return FALSE;
+  }
 
 }

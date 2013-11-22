@@ -68,7 +68,6 @@ class NoticiaXMLMigration extends BaseMigracion implements BaseMigracionInterfac
       'id_sade'             => t('Identificador de SADE'),
       'titulo'              => t('Titulo del comunicado'),
       'bajada'              => t('Summary de body'),
-      'epigrafe'            => t('Fecha y hora?'),
       'fecha'               => t('created'),
       'fecha_actualizacion' => t('updated'),
       'cuerpo'              => t('body'),
@@ -90,9 +89,6 @@ class NoticiaXMLMigration extends BaseMigracion implements BaseMigracionInterfac
     $unmgtDests = array();
     $unmgtDests += parent::getUnmigratedDestinations();
 
-    self::fileFieldUnmigrated('field_news_files', $unmgtDests);
-
-    self::imageFieldUnmigrated('field_news_image', $unmgtDests);
 
     self::taxonomyFieldUnmigrated('field_news_topic', $unmgtDests);
     self::taxonomyFieldUnmigrated('field_news_unbis', $unmgtDests);

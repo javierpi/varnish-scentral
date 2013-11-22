@@ -6,11 +6,12 @@ class ImagenesComunicado {
 
 
   public function __construct() {
-    /*
-     * @todo esta ruta deberia estar en un archivo de configuracion dentro del
-     * modulo.
-     */
-    $path_xml = "/home/francort/xml/imagenes_comunicado.xml";
+    $path_module = drupal_get_path('module', 'migrar');
+
+    $config_path = "/config/migrar.config.xml";
+    $config = simplexml_load_file($path_module . $config_path);
+
+    $path_xml = (string) $config->imagenesComunicado->xml_file_path;
     $imagenes_raw = simplexml_load_file($path_xml);
 
     $imagenes = array();
@@ -20,12 +21,12 @@ class ImagenesComunicado {
       $id_foto = (int)$imagen_raw->id_foto;
 
       $imagenes[$id_sade][$id_foto] = array(
-        'id_foto'  => (int) $imagen_raw->id_foto,
+        'id_foto'  => $id_foto,
         'fileName' => (string) $imagen_raw->NewFotoFileName,
         'alt'      => (string) $imagen_raw->texto_alternativo,
         'title'    => (string) $imagen_raw->texto_alternativo,
-        'filesize' => (int) $imagen_raw->tamano_kb,
-        'credito'  => (int) $imagen_raw->credito,
+        'filesize' => (int)    $imagen_raw->tamano_kb,
+        'credito'  => (int)    $imagen_raw->credito,
       );
     }
 

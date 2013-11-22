@@ -14,6 +14,7 @@ files[] = includes/articulo.inc
 files[] = includes/BaseMigracion.php
 files[] = includes/BaseMigracionInterface.php
 files[] = includes/ImagenesComunicado.php
+files[] = includes/ArchivosComunicado.php
 
 version = "7.x-dev"
 core = "7.x"

@@ -41,10 +41,24 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
    * @return boolean
    */
   public function prepareRow($current_row) {
+    //module_load_include('inc', 'node', 'node.admin');
+
+    $is_original = is_numeric(trim($current_row->xml->id_sade_maestro));
+
     $id_sade = (int) $current_row->xml->id_sade;
     $imagesComunicado = new ImagenesComunicado();
     $imagenes = $imagesComunicado->getImagenesByIdSade($id_sade);
     unset($imagesComunicado);
+
+    $archivosComunicado = new ArchivosComunicado();
+    $archivos = $archivosComunicado->getArchivosByIdSade($id_sade);
+    if($is_original){
+      $traducciones = $this->getComunicadosTraducciones($id_sade);
+      foreach($traducciones as $id_sade_translation){
+        $archivos += $archivosComunicado->getArchivosByIdSade($id_sade_translation);
+      }
+    }
+    unset($archivosComunicado);
 
     $aux = explode(" ", $current_row->xml->fecha);
     $pieces = explode("-", $aux[0]);
@@ -58,7 +72,7 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
 
     $current_row->fecha_actualizacion = $changed;
 
-    if(is_numeric(trim($current_row->xml->id_sade_maestro))){
+    if($is_original){
       $this->insertarTraduccion($current_row);
 
       return FALSE;
@@ -76,6 +90,13 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
       }
     }
 
+    if(is_array($archivos)){
+      foreach($archivos as $archivo){
+        $current_archivo = $this->insertarArchivo($archivo);
+        $current_row->archivos[] = $current_archivo;
+      }
+    }
+
     return TRUE;
   }
 
@@ -83,10 +104,28 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
 
   public function complete($entity, stdClass $row) {
     $lng = LANGUAGE_NONE;
-    $file = $row->imagen;
-    $field = array($lng => array('0' => (array)$file));
-    //drush_print_r($field);
-    $entity->field_pr_image = $field;
+
+    $image = $row->imagen;
+    $fid = (int) $image->fid;
+
+    if($fid > 0){
+      $field_image = array($lng => array('0' => (array)$image));
+      $entity->field_pr_image = $field_image;
+    }
+    $files = $row->archivos;
+    if(count($files) > 0){
+      $entity->field_pr_files = array();
+      $entity->field_pr_files[$lng] = array();
+      $i = 0;
+      foreach($files as $file){
+        $entity->field_pr_files[$lng][$i++] = (array)$file;
+      }
+    }
+    else{
+      //drush_print("esto no tenia archivos");
+    }
+
+    $entity->uid = $this->retrieveUid($row);
 
     node_save($entity);
   }
@@ -131,9 +170,10 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
     $unmgtDests += parent::getUnmigratedDestinations();
 
     self::fileFieldUnmigrated('field_pr_files', $unmgtDests);
-    //self::imageFieldUnmigrated('field_pr_image', $unmgtDests);
-    self::taxonomyFieldUnmigrated('field_pr_topic', $unmgtDests);
-    self::taxonomyFieldUnmigrated('field_pr_unbis', $unmgtDests);
+    self::imageFieldUnmigrated('field_pr_image', $unmgtDests);
+    self::taxonomyFieldUnmigrated('field_topic', $unmgtDests);
+    self::taxonomyFieldUnmigrated('field_special_topic', $unmgtDests);
+    self::taxonomyFieldUnmigrated('field_unbis', $unmgtDests);
 
     unset($unmgtDests[array_search ( 'created' , $unmgtDests )]);
     unset($unmgtDests[array_search ( 'changed' , $unmgtDests )]);
@@ -171,9 +211,8 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
       'field_pr_contact_intitutional' => array('field' => 'mail_grupo_usuarios'),
       'field_pr_contact_intitutional:language' => array('field' => 'idioma'),
       'field_pr_contact_person:language' => array('field' => 'idioma'),
-      'field_pr_id_sade' => array('field' => 'id_sade'),
+      'field_id_sade' => array('field' => 'id_sade'),
       'field_id_sade_maestro' => array('field' => 'id_sade_maestro'),
-      //'field_pr_image' => array('field' => 'images'),
     );
   }
 
@@ -204,9 +243,9 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
 
 
   protected function insertarTraduccion($currentRow){
-
+    /****   Crear el nodo   ****/
     $id_sade = $currentRow->xml->id_sade_maestro;
-    $field_name = "field_pr_id_sade";
+    $field_name = "field_id_sade";
     $node = $this->loadNodeByIdSade($id_sade, $field_name);
     if(!$node) return FALSE;
 
@@ -221,10 +260,32 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
     $this->setNodeBody($node, $idioma, $body, 'field_pr_body');
     $this->setNodeTeaser($node, $idioma, $teaser, 'field_pr_teaser');
 
+    $this->addUserToNodeByEmail($node, $currentRow);
+
     node_save($node);
 
     /* se inserta la nueva traduccion como "hecha" */
     $this->insertEntityTranslation($node, $idioma);
+
+    /****   Crear alias para el nuevo nodo en el nuevo idioma    ****/
+    $this->savePath($node, $idioma);
   }
+
+
+  public function getComunicadosTraducciones($id_sade){
+    $path_xml = $this->getXMLFilePath();
+    $comunicados = simplexml_load_file($path_xml);
+
+    $traducciones = array();
+    foreach($comunicados as $comunicado){
+      $id_sade_comunicado = (int)$comunicado->id_sade_maestro;
+      if($id_sade == $id_sade_comunicado){
+        $traducciones[] = (int)$comunicado->id_sade;
+      }
+    }
+
+    return $traducciones;
+  }
+
 
 }
