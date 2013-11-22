@@ -7,12 +7,14 @@ dependencies[] = migrate
 dependencies[] = "date_migrate"
 
 files[] = migrar.module
-files[] = proyecto.inc
-files[] = comunicado.inc
-files[] = noticia.inc
-files[] = articulo.inc
-files[] = BaseMigracion.php
-files[] = BaseMigracionInterface.php
+files[] = includes/proyecto.inc
+files[] = includes/comunicado.inc
+files[] = includes/noticia.inc
+files[] = includes/articulo.inc
+files[] = includes/BaseMigracion.php
+files[] = includes/BaseMigracionInterface.php
+files[] = includes/ImagenesComunicado.php
+files[] = includes/ArchivosComunicado.php
 
 version = "7.x-dev"
 core = "7.x"

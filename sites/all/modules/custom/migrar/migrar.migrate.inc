@@ -18,10 +18,10 @@ function migrar_migrate_api() {
   $api = array(
     'api' => 2,
     'migrations' => array(
-      'ProyectoXML'   => array('class_name' => 'ProyectoXMLMigration'),
+      //'ProyectoXML'   => array('class_name' => 'ProyectoXMLMigration'),
       'ComunicadoXML' => array('class_name' => 'ComunicadoXMLMigration'),
-      'NoticiaXML'    => array('class_name' => 'NoticiaXMLMigration'),
-      'ArticuloXML'   => array('class_name' => 'ArticuloXMLMigration'),
+      //'NoticiaXML'    => array('class_name' => 'NoticiaXMLMigration'),
+      //'ArticuloXML'   => array('class_name' => 'ArticuloXMLMigration'),
     ),
   );
   return $api;

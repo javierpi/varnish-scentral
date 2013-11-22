@@ -1,32 +1,29 @@
 <?php
 /**
  * @file
- * Este archivo define la clase que migra comunicados de prensa
+ * Este archivo define la clase que migra noticias
  *
  * La clase se basa en BaseMigracion e implementa BaseMigracionInterface.
  * BaseMigracion extiende desde el framework que provee el modulo migrate.
  */
-class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInterface {
+class NoticiaXMLMigration extends BaseMigracion implements BaseMigracionInterface {
+
+  /*
+   * El tipo de contenido "News" tiene 3 tipos. El tipo "Noticia" es el 3
+   */
+  const ID_NOTICIA = 3;
 
 
   /**
   * Constructor sin parametros.
   */
   public function __construct() {
-    $this->type = "comunicado";
+    $this->type = "noticia";
     $this->init();
-    $this->description = t('Importar comunicados desde archivo XML');
+    $this->description = t('Importar noticias desde archivo XML');
 
     $this->addFieldMapping('created', 'fecha');
     $this->addFieldMapping('changed', 'fecha_actualizacion');
-
-    $arguments = DateMigrateFieldHandler::arguments('America/Santiago');
-    $this->addFieldMapping('field_pr_date', 'fecha_actualizacion')
-      ->xpath('fecha_actualizacion')
-      ->arguments($arguments);
-    //$this->addFieldMapping('created')->defaultValue(mktime(0, 0, 0, 7, 29, 1980));
-    //$this->addFieldMapping('changed')->defaultValue(mktime(0, 0, 0, 7, 29, 1980));
-    //$this->addFieldMapping('field_pr_date')->defaultValue(mktime(0, 0, 0, 7, 29, 1980));
 
   }
 
@@ -42,13 +39,13 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
    * @param mixed $current_row
    * @return boolean
    */
-
   public function prepareRow($current_row) {
     $aux = explode(" ", $current_row->xml->fecha);
     $pieces = explode("-", $aux[0]);
     $created = mktime(0, 0, 0, $pieces[1], $pieces[0], $pieces[2]);
 
-    $current_row->fecha = $created;
+    $current_row->fecha         = $created;
+    //$current_row->field_pr_date = $created;
 
     $aux2 = explode(" ", $current_row->xml->fecha_actualizacion);
     $pieces2 = explode("-", $aux2[0]);
@@ -58,6 +55,7 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
 
     return TRUE;
   }
+
 
 
  /**
@@ -70,22 +68,12 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
       'id_sade'             => t('Identificador de SADE'),
       'titulo'              => t('Titulo del comunicado'),
       'bajada'              => t('Summary de body'),
-      'epigrafe'            => t('Fecha y hora?'),
       'fecha'               => t('created'),
       'fecha_actualizacion' => t('updated'),
-      'contacto_nombre'     => t('Nombre contacto 1'),
-      'contacto_email'      => t('Email contacto 1'),
-      'contacto_fono'       => t('Fono contacto 1'),
-      'contacto_nombre_2'   => t('Nombre contacto 2'),
-      'contacto_email_2'    => t('Email contacto 2'),
-      'contacto_fono_2'     => t('Fono contacto 2'),
-      'contacto_nombre_3'   => t('Nombre contacto 3'),
-      'contacto_email_3'    => t('Email contacto 3'),
-      'contacto_fono_3'     => t('Fono contacto 3'),
       'cuerpo'              => t('body'),
       'idioma'              => t('Idioma'),
-      'minisitio'           => t('url de minisitio(si existiera)'),
-      'area_de_trabajo'     => t('?'),
+      'minisitio'           => t('url de minisitio(si existiera)??'),
+      'area_de_trabajo'     => t('field_news_area_ref?'),
     );
   }
 
@@ -101,13 +89,15 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
     $unmgtDests = array();
     $unmgtDests += parent::getUnmigratedDestinations();
 
-    self::fileFieldUnmigrated('field_pr_files', $unmgtDests);
-    self::imageFieldUnmigrated('field_pr_image', $unmgtDests);
-    self::taxonomyFieldUnmigrated('field_pr_topic', $unmgtDests);
-    self::taxonomyFieldUnmigrated('field_pr_unbis', $unmgtDests);
+
+    self::taxonomyFieldUnmigrated('field_news_topic', $unmgtDests);
+    self::taxonomyFieldUnmigrated('field_news_unbis', $unmgtDests);
+
+    $unmgtDests[] = 'field_news_country';
 
     unset($unmgtDests[array_search ( 'created' , $unmgtDests )]);
     unset($unmgtDests[array_search ( 'changed' , $unmgtDests )]);
+    unset($unmgtDests[array_search ( 'language' , $unmgtDests )]);
 
     return $unmgtDests;
   }
@@ -130,15 +120,15 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
     return array(
       'title'           => array('field' => 'titulo', 'callback' => ''),
       'language'        => array('field' => 'idioma', 'callback' => ''),
-      'field_pr_body'   => array('field' => 'cuerpo', 'callback' => 'filterHTML'),
-      'field_pr_body:language'   => array('field' => 'idioma'),
-      'field_pr_teaser' => array('field' => 'bajada', 'callback' => 'filterHTML'),
-      'field_pr_teaser:language' => array('field' => 'idioma'),
-      'field_pr_contact_intitutional' => array('field' => 'contacto_nombre', 'callback' => 'buildContactInfo1'),
-      'field_pr_contact_person' => array('field' => 'contacto_nombre_2', 'callback' => 'buildContactInfo2'),
-      'field_pr_contact_intitutional:language' => array('field' => 'idioma'),
-      'field_pr_contact_person:language' => array('field' => 'idioma'),
-      'field_pr_id_sade' => array('field' => 'id_sade'),
+      'field_news_body'   => array('field' => 'cuerpo', 'callback' => 'filterHTML'),
+      'field_news_body:language'   => array('field' => 'idioma'),
+      //'field_news_area_ref'   => array('field' => 'area_de_trabajo'),
+      'field_news_teaser' => array('field' => 'bajada', 'callback' => 'filterHTML'),
+      'field_news_teaser:language' => array('field' => 'idioma'),
+
+      'title_field' => array('field' => 'titulo'),
+      'title_field:language' => array('field' => 'idioma'),
+      'field_news_id_sade' => array('field' => 'id_sade'),
     );
   }
 
@@ -156,7 +146,8 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
 
     return array(
       'translate' => TRUE,
-      'field_pr_body:format' => 'filtered_html',
+      'field_news_body:format' => 'filtered_html',
+      'field_news_type' => self::ID_NOTICIA,
     );
   }
 
