@@ -46,7 +46,7 @@ function cepal_gi_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -87,61 +87,7 @@ function cepal_gi_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'node-cepal_graphic_info-field_gi_date'
-  $field_instances['node-cepal_graphic_info-field_gi_date'] = array(
-    'bundle' => 'cepal_graphic_info',
-    'deleted' => 0,
-    'description' => 'Select the date and time of publication for this content.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'long',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 2,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_gi_date',
-    'label' => 'Date',
-    'required' => 1,
-    'settings' => array(
-      'default_value' => 'now',
-      'default_value2' => 'same',
-      'default_value_code' => '',
-      'default_value_code2' => '',
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'date',
-      'settings' => array(
-        'increment' => 15,
-        'input_format' => 'm/d/Y - H:i:s',
-        'input_format_custom' => '',
-        'label_position' => 'above',
-        'text_parts' => array(),
-        'year_range' => '-3:+3',
-      ),
-      'type' => 'date_popup',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -184,48 +130,7 @@ function cepal_gi_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 13,
-    ),
-  );
-
-  // Exported field_instance: 'node-cepal_graphic_info-field_gi_highlighted'
-  $field_instances['node-cepal_graphic_info-field_gi_highlighted'] = array(
-    'bundle' => 'cepal_graphic_info',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Is possible to add some highlighted text for this content.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 10,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_gi_highlighted',
-    'label' => 'Highlighted',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 3,
+      'weight' => 5,
     ),
   );
 
@@ -255,16 +160,16 @@ function cepal_gi_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_gi_image',
     'label' => 'Image',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'alt_field' => 0,
       'default_image' => 0,
       'entity_translation_sync' => FALSE,
       'file_directory' => 'gi/images',
       'file_extensions' => 'png jpg jpeg',
-      'max_filesize' => '',
+      'max_filesize' => '520 KB',
       'max_resolution' => '',
-      'min_resolution' => '',
+      'min_resolution' => '100x100',
       'title_field' => 0,
       'user_register_form' => FALSE,
     ),
@@ -291,47 +196,6 @@ function cepal_gi_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-cepal_graphic_info-field_gi_teaser'
-  $field_instances['node-cepal_graphic_info-field_gi_teaser'] = array(
-    'bundle' => 'cepal_graphic_info',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Insert a teaser for this content.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_gi_teaser',
-    'label' => 'Teaser',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
       'weight' => 4,
     ),
   );
@@ -372,7 +236,7 @@ function cepal_gi_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -412,7 +276,7 @@ function cepal_gi_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 8,
     ),
   );
 
@@ -452,7 +316,7 @@ function cepal_gi_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 9,
+      'weight' => 7,
     ),
   );
 
@@ -492,7 +356,51 @@ function cepal_gi_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 11,
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_graphic_info-title_field'
+  $field_instances['node-cepal_graphic_info-title_field'] = array(
+    'bundle' => 'cepal_graphic_info',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'title_field',
+    'label' => 'Title',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'hide_label' => array(
+        'entity' => 'entity',
+        'page' => 0,
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 0,
     ),
   );
 
@@ -500,23 +408,18 @@ function cepal_gi_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Country');
-  t('Date');
   t('Files');
-  t('Highlighted');
   t('Image');
-  t('Insert a teaser for this content.');
   t('Insert the body text for this content.');
   t('Is possible to add attached files files to this content.');
-  t('Is possible to add some highlighted text for this content.');
   t('Select a "special topic" if is needed.');
   t('Select a country asociated with this <em>content</em>.');
   t('Select a kind of <em>Graphic Information</em> to create.');
   t('Select an UNBIS classification for this content.');
   t('Select an image associated to this <em>Graphic Information</em>.');
   t('Select associated topics for this content.');
-  t('Select the date and time of publication for this content.');
   t('Special Topic');
-  t('Teaser');
+  t('Title');
   t('Topic');
   t('Type');
   t('UNBIS');

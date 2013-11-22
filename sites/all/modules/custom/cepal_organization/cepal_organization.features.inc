@@ -23,7 +23,7 @@ function cepal_organization_node_info() {
       'base' => 'node_content',
       'description' => t('Use this content type to store the information about an <em>Organization</em>.'),
       'has_title' => '1',
-      'title_label' => t('Name'),
+      'title_label' => t('Nombre'),
       'help' => '',
     ),
   );

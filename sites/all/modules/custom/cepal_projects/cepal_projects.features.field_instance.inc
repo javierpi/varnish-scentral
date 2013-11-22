@@ -10,6 +10,46 @@
 function cepal_projects_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-cepal_project-field_country'
+  $field_instances['node-cepal_project-field_country'] = array(
+    'bundle' => 'cepal_project',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Select a country associated with this project.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'countries',
+        'settings' => array(),
+        'type' => 'country_default',
+        'weight' => 31,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_country',
+    'label' => 'Country',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 19,
+    ),
+  );
+
   // Exported field_instance: 'node-cepal_project-field_project_abstract'
   $field_instances['node-cepal_project-field_project_abstract'] = array(
     'bundle' => 'cepal_project',
@@ -222,46 +262,6 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
       ),
       'type' => 'text_textarea',
       'weight' => 18,
-    ),
-  );
-
-  // Exported field_instance: 'node-cepal_project-field_project_country'
-  $field_instances['node-cepal_project-field_project_country'] = array(
-    'bundle' => 'cepal_project',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Select a country associated with this project.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'countries',
-        'settings' => array(),
-        'type' => 'country_default',
-        'weight' => 8,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_project_country',
-    'label' => 'Country',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => 0,
-      ),
-      'type' => 'options_select',
-      'weight' => 19,
     ),
   );
 
@@ -535,7 +535,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 23,
+      'weight' => 27,
     ),
   );
 
@@ -695,7 +695,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 25,
+      'weight' => 29,
     ),
   );
 
@@ -725,6 +725,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
     'label' => 'Objectives',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -823,7 +824,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 26,
+      'weight' => 30,
     ),
   );
 
@@ -867,7 +868,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 24,
+      'weight' => 28,
     ),
   );
 
@@ -912,46 +913,6 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
     ),
   );
 
-  // Exported field_instance: 'node-cepal_project-field_project_special_topic'
-  $field_instances['node-cepal_project-field_project_special_topic'] = array(
-    'bundle' => 'cepal_project',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Select a Special Topic for classificatation if needed.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 29,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_project_special_topic',
-    'label' => 'Special Topic',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => 0,
-      ),
-      'type' => 'options_select',
-      'weight' => 21,
-    ),
-  );
-
   // Exported field_instance: 'node-cepal_project-field_project_status'
   $field_instances['node-cepal_project-field_project_status'] = array(
     'bundle' => 'cepal_project',
@@ -993,86 +954,6 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
       ),
       'type' => 'options_select',
       'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'node-cepal_project-field_project_topic'
-  $field_instances['node-cepal_project-field_project_topic'] = array(
-    'bundle' => 'cepal_project',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Select associated topics for this <em>Project</em>.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 9,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_project_topic',
-    'label' => 'Topic',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => 1,
-      ),
-      'type' => 'options_select',
-      'weight' => 20,
-    ),
-  );
-
-  // Exported field_instance: 'node-cepal_project-field_project_unbis'
-  $field_instances['node-cepal_project-field_project_unbis'] = array(
-    'bundle' => 'cepal_project',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Select an UNBIS classification for this <em>Project</em>.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 10,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_project_unbis',
-    'label' => 'UNBIS',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => 1,
-      ),
-      'type' => 'options_select',
-      'weight' => 22,
     ),
   );
 
@@ -1128,6 +1009,126 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
       'settings' => array(),
       'type' => 'link_field',
       'weight' => 17,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_project-field_special_topic'
+  $field_instances['node-cepal_project-field_special_topic'] = array(
+    'bundle' => 'cepal_project',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Select a Special Topic for classificatation if needed.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 33,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_special_topic',
+    'label' => 'Special Topic',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 21,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_project-field_topic'
+  $field_instances['node-cepal_project-field_topic'] = array(
+    'bundle' => 'cepal_project',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Select associated topics for this <em>Project</em>.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 32,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_topic',
+    'label' => 'Topic',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 20,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_project-field_unbis'
+  $field_instances['node-cepal_project-field_unbis'] = array(
+    'bundle' => 'cepal_project',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Select an UNBIS classification for this <em>Project</em>.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 34,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_unbis',
+    'label' => 'UNBIS',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 22,
     ),
   );
 

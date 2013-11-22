@@ -25,6 +25,7 @@ dependencies[] = admin_menu
 dependencies[] = admin_menu_toolbar
 dependencies[] = chosen
 dependencies[] = ckeditor
+dependencies[] = countries
 dependencies[] = ctools
 dependencies[] = diff
 dependencies[] = date
@@ -34,6 +35,7 @@ dependencies[] = devel
 ;dependencies[] = devel_image_provider
 dependencies[] = entity
 dependencies[] = entityreference
+dependencias[] = entity_translation
 dependencies[] = features
 dependencies[] = field_group
 dependencies[] = file_entity
@@ -48,6 +50,7 @@ dependencies[] = module_filter
 dependencies[] = pathauto
 dependencies[] = speedy
 dependencies[] = strongarm
+dependencies[] = title
 dependencies[] = token
 dependencies[] = transliteration
 dependencies[] = views
@@ -57,13 +60,18 @@ dependencies[] = workbench
 ; Features
 ; Add a list of common used features
 dependencies[] = commons_wysiwyg
+; define user roles
+dependencies[] = debut
+;
 dependencies[] = cepal_base
 dependencies[] = cepal_articles
 dependencies[] = cepal_gi
 dependencies[] = cepal_news
 dependencies[] = cepal_pages
 dependencies[] = cepal_pr
+dependencies[] = cepal_presentation
 dependencies[] = cepal_speech
+
 
 ; Themes
 ; Add some custom or base theme for the distribution
