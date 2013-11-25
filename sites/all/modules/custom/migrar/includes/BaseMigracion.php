@@ -685,4 +685,8 @@ abstract class BaseMigracion extends XMLMigration {
     return FALSE;
   }
 
+  public function prepareRollback() {
+  }
+
+
 }

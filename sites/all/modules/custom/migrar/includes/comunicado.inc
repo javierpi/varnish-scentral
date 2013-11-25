@@ -130,12 +130,49 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
     node_save($entity);
   }
 
- /*
+
  public function prepareRollback($entity_id) {
+
+    //parent::prepareRollback($entity_id, $field_name, $base_path);
     parent::prepareRollback();
 
+    $entity_type = "node";
+    $field_name = "field_pr_image";
+
+    $entity = entity_load_single($entity_type, $entity_id);
+    $images = field_get_items($entity_type, $entity, $field_name);
+
+    $styles = array_keys(image_styles());
+    $base_path = DRUPAL_ROOT . "/sites/default/files/styles/[style]/public/pr/images";
+
+    foreach($images as $image){
+      /*
+       * Borrar fisicamente las imagenes derivadas
+       */
+      foreach($styles  as $style){
+        $image_base_path = str_replace('[style]', $style, $base_path);
+        $image_path = $image_base_path . "/" . $image['filename'];
+        if(file_exists($image_path)){
+          if(unlink($image_path)){
+
+          }
+          else {
+            drush_print ("No se pudo borrar la imagen : " . $image_path);
+          }
+        }
+      }
+
+      /*
+       * Borrar logicamente las imagenes migradas
+       */
+      $fid = $image['fid'];
+      db_delete('file_managed')
+        ->condition('fid', $fid)
+        ->execute();
+    }
+
   }
- */
+
 
  /**
   * Funcion que describe los campos del xml.
