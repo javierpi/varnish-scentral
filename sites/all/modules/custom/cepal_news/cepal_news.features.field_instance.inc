@@ -46,7 +46,7 @@ function cepal_news_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -93,7 +93,7 @@ function cepal_news_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -140,7 +140,7 @@ function cepal_news_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -181,7 +181,7 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -222,7 +222,61 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 9,
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_news-field_news_date'
+  $field_instances['node-cepal_news-field_news_date'] = array(
+    'bundle' => 'cepal_news',
+    'deleted' => 0,
+    'description' => 'The publication date.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 18,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_news_date',
+    'label' => 'Date',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 5,
+        'input_format' => 'm/d/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => 1,
     ),
   );
 
@@ -265,7 +319,7 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -301,10 +355,10 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
       'default_image' => 0,
       'entity_translation_sync' => FALSE,
       'file_directory' => 'news/images',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
+      'file_extensions' => 'png jpg jpeg',
+      'max_filesize' => '600 KB',
       'max_resolution' => '',
-      'min_resolution' => '',
+      'min_resolution' => '100x100',
       'title_field' => 1,
       'user_register_form' => FALSE,
     ),
@@ -316,7 +370,7 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -356,7 +410,7 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -397,7 +451,7 @@ Seleccione un órgano subsidiario si corresponde.',
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -438,7 +492,7 @@ Seleccione un órgano subsidiario si corresponde.',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -478,7 +532,7 @@ Seleccione un órgano subsidiario si corresponde.',
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -518,7 +572,7 @@ Seleccione un órgano subsidiario si corresponde.',
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -558,7 +612,7 @@ Seleccione un órgano subsidiario si corresponde.',
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -598,7 +652,7 @@ Seleccione un órgano subsidiario si corresponde.',
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -651,6 +705,7 @@ Seleccione un órgano subsidiario si corresponde.',
   t('Area');
   t('Body');
   t('Country');
+  t('Date');
   t('Files');
   t('ID SADE');
   t('ID SADE Maestro');
@@ -675,6 +730,7 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
   t('Special Topic');
   t('Subsidiary Bodies');
   t('Teaser');
+  t('The publication date.');
   t('Title');
   t('Topic');
   t('Type');
