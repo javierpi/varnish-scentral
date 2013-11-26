@@ -531,17 +531,17 @@ abstract class BaseMigracion extends XMLMigration {
 
       $credit = (strlen($imagen['credito']) > 1) ? $imagen['credito'] : "";
 
-      $alt_val = check_plain(substr($imagen['alt'], 0, 59));
+      $alt_val = check_plain(substr($imagen['alt'], 0, 599));
       $image_entity->{$f_alt}[$idioma][0]['value']      = $alt_val;
       $image_entity->{$f_alt}[$idioma][0]['safe_value'] = $alt_val;
       $image_entity->{$f_alt}[$idioma][0]['format']     = 'plain_text';
 
-      $title_val = check_plain(substr($imagen['title'], 0, 59));
+      $title_val = check_plain(substr($imagen['title'], 0, 599));
       $image_entity->{$f_title}[$idioma][0]['value']      = $title_val;
       $image_entity->{$f_title}[$idioma][0]['safe_value'] = $title_val;
       $image_entity->{$f_title}[$idioma][0]['format']     = 'plain_text';
 
-      $credit_val = check_plain(substr($credit, 0, 59));
+      $credit_val = check_plain(substr($credit, 0, 599));
       $image_entity->{$f_credit}[$idioma][0]['value']      = $credit_val;
       $image_entity->{$f_credit}[$idioma][0]['safe_value'] = $credit_val;
       $image_entity->{$f_credit}[$idioma][0]['format']     = 'plain_text';

@@ -53,8 +53,6 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
     $is_original = is_numeric(trim($current_row->xml->id_sade_maestro));
     $idioma = (string)$current_row->xml->idioma;
 
-    drush_print_r($idioma);
-
     $id_sade = (int) $current_row->xml->id_sade;
     $imagesComunicado = new ImagenesComunicado();
     $imagenes = $imagesComunicado->getImagenesByIdSade($id_sade);
@@ -301,9 +299,9 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
     $this->insertEntityTranslation($node, $idioma);
 
     /****   Crear alias para el nuevo nodo en el nuevo idioma    ****/
-    $node_url = $this->generatePath($node, $idioma);
-    if($node_url){
-      path_save($node);
+    $node_path = $this->generatePath($node, $idioma);
+    if($node_path){
+      path_save($node_path);
     }
   }
 
