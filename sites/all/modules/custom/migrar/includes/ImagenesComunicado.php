@@ -26,7 +26,7 @@ class ImagenesComunicado {
         'alt'      => (string) $imagen_raw->texto_alternativo,
         'title'    => (string) $imagen_raw->texto_alternativo,
         'filesize' => (int)    $imagen_raw->tamano_kb,
-        'credito'  => (int)    $imagen_raw->credito,
+        'credito'  => (string)    $imagen_raw->credito,
       );
     }
 
