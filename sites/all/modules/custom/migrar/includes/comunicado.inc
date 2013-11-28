@@ -9,6 +9,13 @@
 class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInterface {
 
   /**
+   * Path generico de las imagenes derivativas relativo a la raiz de Drupal.
+   */
+  const PR_IMAGES_PATH = "/sites/default/files/styles/[style]/public/pr/images";
+
+
+
+  /**
   * Constructor sin parametros.
   */
   public function __construct() {
@@ -44,6 +51,7 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
     //module_load_include('inc', 'node', 'node.admin');
 
     $is_original = is_numeric(trim($current_row->xml->id_sade_maestro));
+    $idioma = (string)$current_row->xml->idioma;
 
     $id_sade = (int) $current_row->xml->id_sade;
     $imagesComunicado = new ImagenesComunicado();
@@ -84,7 +92,10 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
     if(count($imagenes) > 0){
       /* Solo se inserta una imagen */
       $imagen = array_shift($imagenes);
-      $current_imagen = $this->insertarImagen($imagen);
+      /**
+       * @todo se debe insertar la imagen con uid
+       */
+      $current_imagen = $this->insertarImagen($imagen, $idioma);
       if($current_imagen !== FALSE){
         $current_row->imagen = $current_imagen;
       }
@@ -92,6 +103,9 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
 
     if(is_array($archivos)){
       foreach($archivos as $archivo){
+      /**
+       * @todo se debe insertar el archivo con uid
+       */
         $current_archivo = $this->insertarArchivo($archivo);
         $current_row->archivos[] = $current_archivo;
       }
@@ -131,47 +145,27 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
   }
 
 
- public function prepareRollback($entity_id) {
 
-    //parent::prepareRollback($entity_id, $field_name, $base_path);
+  /**
+   * Se borran datos de imagenes y archivos.
+   *
+   * En particular los datos de imagenes tales como los archivos fisicos de las
+   * imagenes cuando se pueda y las relaciones en base de datos de las imagenes
+   * "managed".
+   *
+   * @param int $entity_id
+   */
+  public function prepareRollback($entity_id) {
     parent::prepareRollback();
 
-    $entity_type = "node";
     $field_name = "field_pr_image";
-
+    $entity_type = "node";
+    $base_path  = DRUPAL_ROOT;
+    $base_path .= self::PR_IMAGES_PATH;
     $entity = entity_load_single($entity_type, $entity_id);
-    $images = field_get_items($entity_type, $entity, $field_name);
-
-    $styles = array_keys(image_styles());
-    $base_path = DRUPAL_ROOT . "/sites/default/files/styles/[style]/public/pr/images";
-
-    foreach($images as $image){
-      /*
-       * Borrar fisicamente las imagenes derivadas
-       */
-      foreach($styles  as $style){
-        $image_base_path = str_replace('[style]', $style, $base_path);
-        $image_path = $image_base_path . "/" . $image['filename'];
-        if(file_exists($image_path)){
-          if(unlink($image_path)){
-
-          }
-          else {
-            drush_print ("No se pudo borrar la imagen : " . $image_path);
-          }
-        }
-      }
-
-      /*
-       * Borrar logicamente las imagenes migradas
-       */
-      $fid = $image['fid'];
-      db_delete('file_managed')
-        ->condition('fid', $fid)
-        ->execute();
-    }
-
+    $this->eliminarImagenes($entity, $field_name, $base_path);
   }
+
 
 
  /**
@@ -305,7 +299,10 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
     $this->insertEntityTranslation($node, $idioma);
 
     /****   Crear alias para el nuevo nodo en el nuevo idioma    ****/
-    $this->savePath($node, $idioma);
+    $node_path = $this->generatePath($node, $idioma);
+    if($node_path){
+      path_save($node_path);
+    }
   }
 
 

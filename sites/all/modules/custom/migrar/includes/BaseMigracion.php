@@ -501,7 +501,11 @@ abstract class BaseMigracion extends XMLMigration {
 
 
 
-  protected function insertarImagen($imagen){
+  protected function insertarImagen($imagen, $idioma){
+    /**
+     * @todo se debe insertar con uid
+     * @todo Hay que parametrizar $wd_type
+     */
     $path_source      = $this->getPathSourceImages();
     $path_destination = $this->getPathDestinationImages();
 
@@ -519,6 +523,36 @@ abstract class BaseMigracion extends XMLMigration {
       $file->filename = $fileName;
       file_save($file);
 
+      $image_entity = array_pop(entity_load('file', array($file->fid)));
+
+      $f_alt    = "field_file_image_alt_text";
+      $f_title  = "field_file_image_title_text";
+      $f_credit = "field_file_image_credits";
+
+      $credit = (strlen($imagen['credito']) > 1) ? $imagen['credito'] : "";
+
+      $alt_val = check_plain(substr($imagen['alt'], 0, 599));
+      $image_entity->{$f_alt}[$idioma][0]['value']      = $alt_val;
+      $image_entity->{$f_alt}[$idioma][0]['safe_value'] = $alt_val;
+      $image_entity->{$f_alt}[$idioma][0]['format']     = 'plain_text';
+
+      $title_val = check_plain(substr($imagen['title'], 0, 599));
+      $image_entity->{$f_title}[$idioma][0]['value']      = $title_val;
+      $image_entity->{$f_title}[$idioma][0]['safe_value'] = $title_val;
+      $image_entity->{$f_title}[$idioma][0]['format']     = 'plain_text';
+
+      $credit_val = check_plain(substr($credit, 0, 599));
+      $image_entity->{$f_credit}[$idioma][0]['value']      = $credit_val;
+      $image_entity->{$f_credit}[$idioma][0]['safe_value'] = $credit_val;
+      $image_entity->{$f_credit}[$idioma][0]['format']     = 'plain_text';
+
+      $image_entity->translations->original = $idioma;
+      $trans = array_pop($image_entity->translations->data);
+      $trans['language'] = $idioma;
+      $image_entity->translations->data[$idioma] = $trans;
+
+      field_attach_update('file', $image_entity);
+
       return $file;
     }
 
@@ -532,7 +566,12 @@ abstract class BaseMigracion extends XMLMigration {
   }
 
 
+
   protected function insertarArchivo($archivo){
+    /**
+     * @todo se debe insertar con uid
+     * @todo Hay que parametrizar $wd_type
+     */
     $path_source      = $this->getPathSourceFiles();
     $path_destination = $this->getPathDestinationFiles();
 
@@ -638,7 +677,7 @@ abstract class BaseMigracion extends XMLMigration {
 
 
 
-  protected function savePath($node, $idioma){
+  protected function generatePath($node, $idioma){
     $node2 = $node;
 
     /* truco feo, para que funcione el token_replace */
@@ -685,8 +724,47 @@ abstract class BaseMigracion extends XMLMigration {
     return FALSE;
   }
 
+
+
   public function prepareRollback() {
   }
 
 
+
+  protected function eliminarImagenes($entity, $field_name, $base_path){
+    $entity_type = "node";
+
+    $images = field_get_items($entity_type, $entity, $field_name);
+
+    $styles = array_keys(image_styles());
+
+    foreach($images as $image){
+      /*
+       * Borrar fisica y logicamente las imagenes derivadas
+       */
+      foreach($styles  as $style){
+        $image_base_path = str_replace('[style]', $style, $base_path);
+        $image_path = $image_base_path . "/" . $image['filename'];
+        if(file_exists($image_path)){
+          if(unlink($image_path)){
+            // Habitualmente las derivadas no se pueden borrar si se ejecuta
+            // el rollback con drush, porque el dueño es apache y al ejecutar
+            // por consola quien ejecuta es el usuario.
+            // Si no se borran las imagenes fisicas entonces tampoco de la base
+            // de datos, para poder borrarlas por interfaz.
+            /*
+            * Borrar logicamente las imagenes migradas
+            */
+           $fid = $image['fid'];
+           db_delete('file_managed')
+             ->condition('fid', $fid)
+             ->execute();
+          }
+          else {
+            drush_print ("No se pudo borrar la imagen : " . $image_path);
+          }
+        }
+      }
+    }
+  }
 }
