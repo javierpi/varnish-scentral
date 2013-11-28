@@ -23,6 +23,7 @@ class NoticiaXMLMigration extends BaseMigracion implements BaseMigracionInterfac
     $this->description = t('Importar noticias desde archivo XML');
 
     $this->addFieldMapping('created', 'fecha');
+    $this->addFieldMapping('field_news_date', 'fecha');
     $this->addFieldMapping('changed', 'fecha_actualizacion');
 
   }
@@ -40,18 +41,59 @@ class NoticiaXMLMigration extends BaseMigracion implements BaseMigracionInterfac
    * @return boolean
    */
   public function prepareRow($current_row) {
+    $is_original = is_numeric(trim($current_row->xml->id_sade_maestro));
+    $idioma = (string)$current_row->xml->idioma;
+
+    $id_sade = (int) $current_row->xml->id_sade;
+    $imagesNoticia = new Imagenes('imagenesNoticia');
+    $imagenes = $imagesNoticia->getImagenesByIdSade($id_sade);
+    unset($imagesNoticia);
+
+    $archivosNoticia = new ArchivosNoticia('archivosNoticia');
+    $archivos = $archivosNoticia->getArchivosByIdSade($id_sade);
+    if($is_original){
+      $traducciones = $this->getNoticiasTraducciones($id_sade);
+      foreach($traducciones as $id_sade_translation){
+        $archivos += $archivosNoticia->getArchivosByIdSade($id_sade_translation);
+      }
+    }
+    unset($archivosNoticia);
+
+
+
+
+
+
+
+
+
+
     $aux = explode(" ", $current_row->xml->fecha);
     $pieces = explode("-", $aux[0]);
     $created = mktime(0, 0, 0, $pieces[1], $pieces[0], $pieces[2]);
 
-    $current_row->fecha         = $created;
-    //$current_row->field_pr_date = $created;
+    $current_row->fecha           = $created;
+    $current_row->field_news_date = $pieces[2] . "-" . $pieces[1] . "-" . $pieces[0] . "T00:00:00";
 
     $aux2 = explode(" ", $current_row->xml->fecha_actualizacion);
     $pieces2 = explode("-", $aux2[0]);
     $changed = mktime(0, 0, 0, $pieces2[1], $pieces2[0], $pieces2[2]);
 
     $current_row->fecha_actualizacion = $changed;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     return TRUE;
   }
@@ -66,14 +108,16 @@ class NoticiaXMLMigration extends BaseMigracion implements BaseMigracionInterfac
   static public function getXMLFields() {
     return array(
       'id_sade'             => t('Identificador de SADE'),
+      'id_sade_maestro'     => t('Identificador de traduccion de SADE'),
       'titulo'              => t('Titulo del comunicado'),
       'bajada'              => t('Summary de body'),
       'fecha'               => t('created'),
       'fecha_actualizacion' => t('updated'),
       'cuerpo'              => t('body'),
       'idioma'              => t('Idioma'),
-      'minisitio'           => t('url de minisitio(si existiera)??'),
       'area_de_trabajo'     => t('field_news_area_ref?'),
+      'mail_grupo_usuarios' => t('Email de duenio del contenido'),
+      'id_division'         => t('Identificador de la division duenia')
     );
   }
 
@@ -90,10 +134,13 @@ class NoticiaXMLMigration extends BaseMigracion implements BaseMigracionInterfac
     $unmgtDests += parent::getUnmigratedDestinations();
 
 
-    self::taxonomyFieldUnmigrated('field_news_topic', $unmgtDests);
-    self::taxonomyFieldUnmigrated('field_news_unbis', $unmgtDests);
+    self::taxonomyFieldUnmigrated('field_topic', $unmgtDests);
+    self::taxonomyFieldUnmigrated('field_special_topic', $unmgtDests);
+    self::taxonomyFieldUnmigrated('field_unbis', $unmgtDests);
 
-    $unmgtDests[] = 'field_news_country';
+    $unmgtDests[] = 'field_country';
+    $unmgtDests[] = 'field_news_observatories';
+    $unmgtDests[] = 'field_news_subsidiary_bodies';
 
     unset($unmgtDests[array_search ( 'created' , $unmgtDests )]);
     unset($unmgtDests[array_search ( 'changed' , $unmgtDests )]);
@@ -122,13 +169,14 @@ class NoticiaXMLMigration extends BaseMigracion implements BaseMigracionInterfac
       'language'        => array('field' => 'idioma', 'callback' => ''),
       'field_news_body'   => array('field' => 'cuerpo', 'callback' => 'filterHTML'),
       'field_news_body:language'   => array('field' => 'idioma'),
-      //'field_news_area_ref'   => array('field' => 'area_de_trabajo'),
+      'field_news_area_ref'   => array('field' => 'area_de_trabajo'),
       'field_news_teaser' => array('field' => 'bajada', 'callback' => 'filterHTML'),
       'field_news_teaser:language' => array('field' => 'idioma'),
 
       'title_field' => array('field' => 'titulo'),
       'title_field:language' => array('field' => 'idioma'),
-      'field_news_id_sade' => array('field' => 'id_sade'),
+      'field_id_sade' => array('field' => 'id_sade'),
+      'field_id_sade_maestro' => array('field' => 'id_sade_maestro'),
     );
   }
 
@@ -152,57 +200,8 @@ class NoticiaXMLMigration extends BaseMigracion implements BaseMigracionInterfac
   }
 
 
-/*
+
   protected function getXMLFeed() {
 
   }
-*/
-
-
-
-  protected function buildContactInfo1($nombre){
-    $xml = $this->sourceValues->xml;
-
-    $additions = array();
-    if(!empty($xml->contacto_email)) {
-       $additions[] = (string)$xml->contacto_email;
-    }
-    if(!empty($xml->contacto_fono)) {
-       $additions[] = (string)$xml->contacto_fono;
-    }
-    array_unshift($additions, $nombre);
-
-    return self::formatterContactInfo($additions);
-  }
-
-
-
-  protected function buildContactInfo2($nombre){
-    $xml = $this->sourceValues->xml;
-
-    $additions = array();
-    if(!empty($xml->contacto_email_2)) {
-       $additions[] = (string)$xml->contacto_email_2;
-    }
-    if(!empty($xml->contacto_fono_2)) {
-       $additions[] = (string)$xml->contacto_fono_2;
-    }
-    array_unshift($additions, $nombre);
-
-    return self::formatterContactInfo($additions);
-  }
-
-
-
-  protected static function formatterContactInfo($additions){
-    /*
-     * @todo mejorar formato
-     */
-    if (empty($additions)) return "";
-
-    $output = implode("\n", $additions) ;
-
-    return $output;
-  }
-
 }

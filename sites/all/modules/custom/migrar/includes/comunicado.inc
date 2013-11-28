@@ -49,16 +49,16 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
    */
   public function prepareRow($current_row) {
     //module_load_include('inc', 'node', 'node.admin');
-
+    $uid = $this->retrieveUid($current_row);
     $is_original = is_numeric(trim($current_row->xml->id_sade_maestro));
     $idioma = (string)$current_row->xml->idioma;
 
     $id_sade = (int) $current_row->xml->id_sade;
-    $imagesComunicado = new ImagenesComunicado();
+    $imagesComunicado = new Imagenes('imagenesComunicado');
     $imagenes = $imagesComunicado->getImagenesByIdSade($id_sade);
     unset($imagesComunicado);
 
-    $archivosComunicado = new ArchivosComunicado();
+    $archivosComunicado = new Archivos('archivosComunicado');
     $archivos = $archivosComunicado->getArchivosByIdSade($id_sade);
     if($is_original){
       $traducciones = $this->getComunicadosTraducciones($id_sade);
@@ -95,7 +95,7 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
       /**
        * @todo se debe insertar la imagen con uid
        */
-      $current_imagen = $this->insertarImagen($imagen, $idioma);
+      $current_imagen = $this->insertarImagen($imagen, $idioma, $uid);
       if($current_imagen !== FALSE){
         $current_row->imagen = $current_imagen;
       }
@@ -106,7 +106,7 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
       /**
        * @todo se debe insertar el archivo con uid
        */
-        $current_archivo = $this->insertarArchivo($archivo);
+        $current_archivo = $this->insertarArchivo($archivo, $uid);
         $current_row->archivos[] = $current_archivo;
       }
     }
@@ -121,8 +121,10 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
 
     $image = $row->imagen;
     $fid = (int) $image->fid;
+    $uid = $this->retrieveUid($row);
 
     if($fid > 0){
+      $image->uid = $uid;
       $field_image = array($lng => array('0' => (array)$image));
       $entity->field_pr_image = $field_image;
     }
@@ -132,6 +134,7 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
       $entity->field_pr_files[$lng] = array();
       $i = 0;
       foreach($files as $file){
+        $file->uid = $uid;
         $entity->field_pr_files[$lng][$i++] = (array)$file;
       }
     }
@@ -139,7 +142,7 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
       //drush_print("esto no tenia archivos");
     }
 
-    $entity->uid = $this->retrieveUid($row);
+    $entity->uid = $uid;
 
     node_save($entity);
   }
@@ -156,7 +159,7 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
    * @param int $entity_id
    */
   public function prepareRollback($entity_id) {
-    parent::prepareRollback();
+    parent::prepareRollback($entity_id);
 
     $field_name = "field_pr_image";
     $entity_type = "node";
@@ -209,7 +212,7 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
     unset($unmgtDests[array_search ( 'created' , $unmgtDests )]);
     unset($unmgtDests[array_search ( 'changed' , $unmgtDests )]);
 
-    $unmgtDests[] = 'field_pr_country';
+    $unmgtDests[] = 'field_country';
 
     return $unmgtDests;
   }
@@ -275,14 +278,16 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
 
   protected function insertarTraduccion($currentRow){
     /****   Crear el nodo   ****/
-    $id_sade = $currentRow->xml->id_sade_maestro;
+    $id_sade_maestro = $currentRow->xml->id_sade_maestro;
+    $id_sade         = $currentRow->xml->id_sade;
     $field_name = "field_id_sade";
-    $node = $this->loadNodeByIdSade($id_sade, $field_name);
+    $node = $this->loadNodeByIdSade($id_sade_maestro, $field_name);
     if(!$node) return FALSE;
 
     $teaser = check_plain($currentRow->xml->bajada);
     $body   = $this->filterHTML($currentRow->xml->cuerpo);
     $title  = check_plain($currentRow->xml->titulo);
+    $date   = $currentRow->xml->fecha_actualizacion;
 
     $idioma = (string)$currentRow->xml->idioma;
 
@@ -290,6 +295,10 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
     $this->setNodeTitle($node, $idioma, $title);
     $this->setNodeBody($node, $idioma, $body, 'field_pr_body');
     $this->setNodeTeaser($node, $idioma, $teaser, 'field_pr_teaser');
+    $this->setNodeDate($node, $idioma, $date, 'field_pr_date');
+
+    $node->field_id_sade[$idioma][0]['value']         = $id_sade;
+    $node->field_id_sade_maestro[$idioma][0]['value'] = $id_sade_maestro;
 
     $this->addUserToNodeByEmail($node, $currentRow);
 

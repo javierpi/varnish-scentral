@@ -448,8 +448,9 @@ abstract class BaseMigracion extends XMLMigration {
 
 
   protected function setNodeTitle($node, $idioma, $title){
-    $node->title_field[$idioma][0]['value'] = $title;;
-    $node->title_field[$idioma][0]['save_value'] = $title;;
+    $title_text = htmlspecialchars_decode($title);
+    $node->title_field[$idioma][0]['value'] = $title_text;
+    $node->title_field[$idioma][0]['save_value'] = $title_text;
     $node->title_field[$idioma][0]['input_format'] = 'plain_text';;
   }
 
@@ -481,6 +482,24 @@ abstract class BaseMigracion extends XMLMigration {
 
 
 
+  protected function setNodeDate($node, $idioma, $date, $dateField){
+    $date_text = $this->getDateStringFromSade($date);
+    $node->{$dateField}[$idioma][0]['value'] = $date_text;
+  }
+
+
+
+  protected static function getDateStringFromSade($date){
+    $aux = explode(" ", $date);
+    $pieces = explode("-", $aux[0]);
+
+    $result = implode("-", array_reverse($pieces)) . "T" . $aux[1];
+
+    return $result;
+  }
+
+
+
   protected function insertEntityTranslation($node, $language){
     $translation_values = array(
         'entity_type' => 'node',
@@ -501,7 +520,7 @@ abstract class BaseMigracion extends XMLMigration {
 
 
 
-  protected function insertarImagen($imagen, $idioma){
+  protected function insertarImagen($imagen, $idioma, $uid = 0){
     /**
      * @todo se debe insertar con uid
      * @todo Hay que parametrizar $wd_type
@@ -520,6 +539,7 @@ abstract class BaseMigracion extends XMLMigration {
       file_move($file, $destination);
 
       $file->uri      = $destination;
+      $file->uid      = $uid;
       $file->filename = $fileName;
       file_save($file);
 
@@ -567,7 +587,7 @@ abstract class BaseMigracion extends XMLMigration {
 
 
 
-  protected function insertarArchivo($archivo){
+  protected function insertarArchivo($archivo, $uid = 0){
     /**
      * @todo se debe insertar con uid
      * @todo Hay que parametrizar $wd_type
@@ -586,6 +606,7 @@ abstract class BaseMigracion extends XMLMigration {
       file_move($file, $destination);
 
       $file->uri         = $destination;
+      $file->uid         = $uid;
       $file->filename    = $fileName;
       $file->description = $archivo['descripcion'];
       $file->display = 1;
@@ -726,7 +747,7 @@ abstract class BaseMigracion extends XMLMigration {
 
 
 
-  public function prepareRollback() {
+  public function prepareRollback($entity_id) {
   }
 
 
