@@ -448,7 +448,7 @@ abstract class BaseMigracion extends XMLMigration {
 
 
   protected function setNodeTitle($node, $idioma, $title){
-    $title_text = $title;
+    $title_text = htmlspecialchars_decode($title);
     $node->title_field[$idioma][0]['value'] = $title_text;
     $node->title_field[$idioma][0]['save_value'] = $title_text;
     $node->title_field[$idioma][0]['input_format'] = 'plain_text';;
