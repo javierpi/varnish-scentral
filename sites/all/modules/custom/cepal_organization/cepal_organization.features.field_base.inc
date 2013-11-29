@@ -170,7 +170,7 @@ function cepal_organization_field_default_field_bases() {
       'allowed_values' => array(
         1 => 'Public',
         2 => 'Private',
-        3 => 'Cepal (Eclac)',
+        3 => 'CEPAL (ECLAC)',
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
