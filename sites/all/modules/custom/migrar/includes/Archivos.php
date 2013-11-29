@@ -46,6 +46,7 @@ class Archivos {
 
 
   public function getArchivosByIdSade($id_sade){
+    if(!isset($this->archivos[$id_sade])) return array();
     return $this->archivos[$id_sade];
   }
 }
