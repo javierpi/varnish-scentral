@@ -117,6 +117,7 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
 
 
   public function complete($entity, stdClass $row) {
+    drush_print ("nid: " . $entity->nid . " -- sade_id: " . $row->xml->id_sade);
     $lng = LANGUAGE_NONE;
 
     $image = $row->imagen;
