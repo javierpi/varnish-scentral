@@ -109,7 +109,7 @@ function cepal_news_strongarm() {
           'weight' => '7',
         ),
         'language' => array(
-          'weight' => '3',
+          'weight' => '1',
         ),
       ),
       'display' => array(),
