@@ -30,7 +30,7 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
     //$this->addFieldMapping('field_pr_image', 'imagen');
 
     $arguments = DateMigrateFieldHandler::arguments('America/Santiago');
-    $this->addFieldMapping('field_pr_date', 'fecha_actualizacion')
+    $this->addFieldMapping('field_pr_date', 'fecha')
       ->xpath('fecha_actualizacion')
       ->arguments($arguments);
   }
@@ -287,7 +287,7 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
     $teaser = check_plain($currentRow->xml->bajada);
     $body   = $this->filterHTML($currentRow->xml->cuerpo);
     $title  = check_plain($currentRow->xml->titulo);
-    $date   = $currentRow->xml->fecha_actualizacion;
+    $date   = $currentRow->xml->fecha;
 
     $idioma = (string)$currentRow->xml->idioma;
 
