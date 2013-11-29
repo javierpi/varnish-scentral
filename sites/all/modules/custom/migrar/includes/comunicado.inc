@@ -92,9 +92,6 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
     if(count($imagenes) > 0){
       /* Solo se inserta una imagen */
       $imagen = array_shift($imagenes);
-      /**
-       * @todo se debe insertar la imagen con uid
-       */
       $current_imagen = $this->insertarImagen($imagen, $idioma, $uid);
       if($current_imagen !== FALSE){
         $current_row->imagen = $current_imagen;
@@ -103,9 +100,6 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
 
     if(is_array($archivos)){
       foreach($archivos as $archivo){
-      /**
-       * @todo se debe insertar el archivo con uid
-       */
         $current_archivo = $this->insertarArchivo($archivo, $uid);
         $current_row->archivos[] = $current_archivo;
       }
@@ -291,6 +285,8 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
     $date   = $currentRow->xml->fecha;
 
     $idioma = (string)$currentRow->xml->idioma;
+
+    drush_print_r("nid: " . $node->nid . " -- sade_id: " . $id_sade . " -- lang: " . $idioma);
 
     /* Se guarda cada uno de los campos traducidos para el nodo padre */
     $this->setNodeTitle($node, $idioma, $title);
