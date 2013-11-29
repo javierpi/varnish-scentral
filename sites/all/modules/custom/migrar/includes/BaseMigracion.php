@@ -490,10 +490,7 @@ abstract class BaseMigracion extends XMLMigration {
 
 
   protected static function getDateStringFromSade($date){
-    $aux = explode(" ", $date);
-    $pieces = explode("-", $aux[0]);
-
-    $result = implode("-", array_reverse($pieces)) . "T" . $aux[1];
+    $result = $date . "T00:00:00";
 
     return $result;
   }
