@@ -1,4 +1,6 @@
 <?php
+
+$comunicados_migrados = 0;
 /**
  * @file
  * Este archivo define la clase que migra comunicados de prensa
@@ -30,7 +32,7 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
     //$this->addFieldMapping('field_pr_image', 'imagen');
 
     $arguments = DateMigrateFieldHandler::arguments('America/Santiago');
-    $this->addFieldMapping('field_pr_date', 'fecha_actualizacion')
+    $this->addFieldMapping('field_pr_date', 'fecha')
       ->xpath('fecha_actualizacion')
       ->arguments($arguments);
   }
@@ -48,6 +50,8 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
    * @return boolean
    */
   public function prepareRow($current_row) {
+    global $comunicados_migrados;
+    drush_print ($comunicados_migrados++);
     //module_load_include('inc', 'node', 'node.admin');
     $uid = $this->retrieveUid($current_row);
     $is_original = is_numeric(trim($current_row->xml->id_sade_maestro));
@@ -92,9 +96,6 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
     if(count($imagenes) > 0){
       /* Solo se inserta una imagen */
       $imagen = array_shift($imagenes);
-      /**
-       * @todo se debe insertar la imagen con uid
-       */
       $current_imagen = $this->insertarImagen($imagen, $idioma, $uid);
       if($current_imagen !== FALSE){
         $current_row->imagen = $current_imagen;
@@ -103,9 +104,6 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
 
     if(is_array($archivos)){
       foreach($archivos as $archivo){
-      /**
-       * @todo se debe insertar el archivo con uid
-       */
         $current_archivo = $this->insertarArchivo($archivo, $uid);
         $current_row->archivos[] = $current_archivo;
       }
@@ -117,11 +115,15 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
 
 
   public function complete($entity, stdClass $row) {
+    drush_print ("nid: " . $entity->nid . " -- sade_id: " . $row->xml->id_sade);
     $lng = LANGUAGE_NONE;
-
-    $image = $row->imagen;
-    $fid = (int) $image->fid;
     $uid = $this->retrieveUid($row);
+
+    $fid = 0;
+    if(isset($row->imagen)){
+      $image = $row->imagen;
+      $fid = (int) $image->fid;
+    }
 
     if($fid > 0){
       $image->uid = $uid;
@@ -283,13 +285,17 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
     $field_name = "field_id_sade";
     $node = $this->loadNodeByIdSade($id_sade_maestro, $field_name);
     if(!$node) return FALSE;
+    $idioma = (string)$currentRow->xml->idioma;
+
+    if($idioma == $node->language) return FALSE;
 
     $teaser = check_plain($currentRow->xml->bajada);
     $body   = $this->filterHTML($currentRow->xml->cuerpo);
     $title  = check_plain($currentRow->xml->titulo);
-    $date   = $currentRow->xml->fecha_actualizacion;
+    $date   = $currentRow->xml->fecha;
 
-    $idioma = (string)$currentRow->xml->idioma;
+
+    drush_print_r("nid: " . $node->nid . " -- sade_id: " . $id_sade . " -- lang: " . $idioma);
 
     /* Se guarda cada uno de los campos traducidos para el nodo padre */
     $this->setNodeTitle($node, $idioma, $title);
@@ -312,7 +318,27 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
     if($node_path){
       path_save($node_path);
     }
+
+
+    //cambiar los apostrofes de titulo en la base de datos
+
+
+    $search = "&#039;";
+    $replace = "'";
+
+    db_update('field_data_title_field')
+      ->expression(
+          'title_field_value', 'replace(title_field_value, :search, :replace)',
+          array(
+            ':search'  => $search,
+            ':replace' => $replace
+          )
+        )
+      ->execute()
+      ;
+
   }
+
 
 
   public function getComunicadosTraducciones($id_sade){
