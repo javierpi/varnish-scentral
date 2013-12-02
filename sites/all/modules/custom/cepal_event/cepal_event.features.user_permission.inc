@@ -13,50 +13,35 @@ function cepal_event_user_default_permissions() {
   // Exported permission: 'create cepal_event content'.
   $permissions['create cepal_event content'] = array(
     'name' => 'create cepal_event content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'contributor' => 'contributor',
-      'editor' => 'editor',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any cepal_event content'.
   $permissions['delete any cepal_event content'] = array(
     'name' => 'delete any cepal_event content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own cepal_event content'.
   $permissions['delete own cepal_event content'] = array(
     'name' => 'delete own cepal_event content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'editor' => 'editor',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'edit any cepal_event content'.
   $permissions['edit any cepal_event content'] = array(
     'name' => 'edit any cepal_event content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'edit own cepal_event content'.
   $permissions['edit own cepal_event content'] = array(
     'name' => 'edit own cepal_event content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'contributor' => 'contributor',
-      'editor' => 'editor',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 

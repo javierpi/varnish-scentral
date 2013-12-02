@@ -23,7 +23,7 @@ function cepal_event_node_info() {
       'base' => 'node_content',
       'description' => t('Use this content type to create a specific <em>Event</em>, with a start and end date/time.'),
       'has_title' => '1',
-      'title_label' => t('Título'),
+      'title_label' => t('Title'),
       'help' => '',
     ),
   );
