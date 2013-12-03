@@ -21,12 +21,13 @@ function cepal_event_field_default_field_instances() {
         'postal_code' => '',
         'locality' => '',
         'country' => 'CL',
+        'organisation_name' => '',
       ),
     ),
     'deleted' => 0,
-    'description' => 'The postal address where this <em>event</em> is celebrated.
-Is possible to use the name of a place as "Economic Commission for Latin America" or a street address as "Dag Hammarskjold 3477".
-A second address is optional for tell more details about the place as "Room 108".
+    'description' => 'The postal address where this <em>event</em> is celebrated.<br>
+Is possible to use the name of a organization as "Economic Commission for Latin America" (optional) and a street address as "Dag Hammarskjold 3477".<br>
+A second address is optional for tell more details about the place as "Room 101".
 Postal code of the place is not mandatory.',
     'display' => array(
       'default' => array(
@@ -63,14 +64,14 @@ Postal code of the place is not mandatory.',
         'available_countries' => array(),
         'format_handlers' => array(
           'address' => 'address',
+          'organisation' => 'organisation',
           'address-hide-country' => 0,
-          'organisation' => 0,
           'name-oneline' => 0,
           'name-full' => 0,
         ),
       ),
       'type' => 'addressfield_standard',
-      'weight' => 22,
+      'weight' => 23,
     ),
   );
 
@@ -197,9 +198,13 @@ Postal code of the place is not mandatory.',
       'settings' => array(
         'match_operator' => 'CONTAINS',
         'path' => '',
+        'references_dialog_add' => 1,
+        'references_dialog_edit' => 1,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
         'size' => 60,
       ),
-      'type' => 'entityreference_autocomplete_tags',
+      'type' => 'entityreference_autocomplete',
       'weight' => 14,
     ),
   );
@@ -516,7 +521,7 @@ Postal code of the place is not mandatory.',
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 21,
+      'weight' => 22,
     ),
   );
 
@@ -653,56 +658,6 @@ TODO: Actualizar traducciones de interfaz.',
       'settings' => array(),
       'type' => 'link_field',
       'weight' => 12,
-    ),
-  );
-
-  // Exported field_instance: 'node-cepal_event-field_event_related'
-  $field_instances['node-cepal_event-field_event_related'] = array(
-    'bundle' => 'cepal_event',
-    'default_value' => NULL,
-    'default_value_function' => '',
-    'deleted' => 0,
-    'description' => 'Is possible to add references to another content on this site.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 17,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_event_related',
-    'label' => 'Related Content',
-    'required' => 0,
-    'settings' => array(
-      'behaviors' => array(
-        'prepopulate' => array(
-          'status' => 0,
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete_tags',
-      'weight' => 20,
     ),
   );
 
@@ -1032,7 +987,51 @@ Seleccione un órgano subsidiario si corresponde.',
         ),
       ),
       'type' => 'geocoder',
-      'weight' => 23,
+      'weight' => 24,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_event-field_related'
+  $field_instances['node-cepal_event-field_related'] = array(
+    'bundle' => 'cepal_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Is possible to add references to another content on this site.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 24,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_related',
+    'label' => 'Related Content',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete_tags',
+      'weight' => 21,
     ),
   );
 
@@ -1120,9 +1119,9 @@ TODO: Actualizar traducciones listado');
   t('The date and time of this <em>Event</em>.');
   t('The event URL if this <em>event</em> has a website.');
   t('The georeferenced information about where this happend.');
-  t('The postal address where this <em>event</em> is celebrated.
-Is possible to use the name of a place as "Economic Commission for Latin America" or a street address as "Dag Hammarskjold 3477".
-A second address is optional for tell more details about the place as "Room 108".
+  t('The postal address where this <em>event</em> is celebrated.<br>
+Is possible to use the name of a organization as "Economic Commission for Latin America" (optional) and a street address as "Dag Hammarskjold 3477".<br>
+A second address is optional for tell more details about the place as "Room 101".
 Postal code of the place is not mandatory.');
   t('The schedule for this <em>event</em>.');
   t('The type of audience to whom it is addressed this event.');

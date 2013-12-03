@@ -46,6 +46,7 @@ features[field_instance][] = node-cepal_presentation-field_presentation_image
 features[field_instance][] = node-cepal_presentation-field_presentation_teaser
 features[field_instance][] = node-cepal_presentation-field_presentation_url_reference
 features[field_instance][] = node-cepal_presentation-field_presentation_workarea
+features[field_instance][] = node-cepal_presentation-field_related
 features[field_instance][] = node-cepal_presentation-field_special_topic
 features[field_instance][] = node-cepal_presentation-field_topic
 features[field_instance][] = node-cepal_presentation-field_unbis

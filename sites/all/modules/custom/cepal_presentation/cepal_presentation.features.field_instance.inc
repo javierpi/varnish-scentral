@@ -194,7 +194,7 @@ function cepal_presentation_field_default_field_instances() {
     'bundle' => 'cepal_presentation',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Ingrese el nombre del evento relacionado con esta presentación.
+    'description' => 'NO USAR este campo, por favor usar el campo de arriba.
 TEMPORAL. TODO: Update with reference to event.
 ',
     'display' => array(
@@ -228,7 +228,7 @@ TEMPORAL. TODO: Update with reference to event.
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -277,7 +277,7 @@ TEMPORAL. TODO: Update with reference to event.
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 9,
+      'weight' => 8,
     ),
   );
 
@@ -527,6 +527,50 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
     ),
   );
 
+  // Exported field_instance: 'node-cepal_presentation-field_related'
+  $field_instances['node-cepal_presentation-field_related'] = array(
+    'bundle' => 'cepal_presentation',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Is possible to add references to another content on this site.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 23,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_related',
+    'label' => 'Related Content',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete_tags',
+      'weight' => 17,
+    ),
+  );
+
   // Exported field_instance: 'node-cepal_presentation-field_special_topic'
   $field_instances['node-cepal_presentation-field_special_topic'] = array(
     'bundle' => 'cepal_presentation',
@@ -703,14 +747,16 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
   t('Event');
   t('Files');
   t('Image');
-  t('Ingrese el nombre del evento relacionado con esta presentación.
-TEMPORAL. TODO: Update with reference to event.
-');
   t('Insert URL references where this column has been published.');
   t('Insert a description text for this <em>Presentation</em>.');
   t('Insert a teaser for this <em>Presentation</em>.');
   t('Is possible to add attached files files to this <em>Presentation</em>.');
+  t('Is possible to add references to another content on this site.');
+  t('NO USAR este campo, por favor usar el campo de arriba.
+TEMPORAL. TODO: Update with reference to event.
+');
   t('Referenced');
+  t('Related Content');
   t('Select a country asociated with this <em>content</em>.');
   t('Select a image asociated to this <em>Presentation</em>. This image could be showed in lists and front pages.');
   t('Select a special topic for classifcation if needed.');
