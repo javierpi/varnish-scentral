@@ -10,6 +10,70 @@
 function cepal_event_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-cepal_event-field_address'
+  $field_instances['node-cepal_event-field_address'] = array(
+    'bundle' => 'cepal_event',
+    'default_value' => array(
+      0 => array(
+        'element_key' => 'node|cepal_event|field_address|und|0',
+        'thoroughfare' => '',
+        'premise' => '',
+        'postal_code' => '',
+        'locality' => '',
+        'country' => 'CL',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'The postal address where this <em>event</em> is celebrated.
+Is possible to use the name of a place as "Economic Commission for Latin America" or a street address as "Dag Hammarskjold 3477".
+A second address is optional for tell more details about the place as "Room 108".
+Postal code of the place is not mandatory.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'addressfield',
+        'settings' => array(
+          'format_handlers' => array(
+            0 => 'address',
+          ),
+          'use_widget_handlers' => 1,
+        ),
+        'type' => 'addressfield_default',
+        'weight' => 22,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_address',
+    'label' => 'Address',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'addressfield',
+      'settings' => array(
+        'available_countries' => array(),
+        'format_handlers' => array(
+          'address' => 'address',
+          'address-hide-country' => 0,
+          'organisation' => 0,
+          'name-oneline' => 0,
+          'name-full' => 0,
+        ),
+      ),
+      'type' => 'addressfield_standard',
+      'weight' => 22,
+    ),
+  );
+
   // Exported field_instance: 'node-cepal_event-field_country'
   $field_instances['node-cepal_event-field_country'] = array(
     'bundle' => 'cepal_event',
@@ -190,7 +254,7 @@ function cepal_event_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -238,6 +302,7 @@ function cepal_event_field_default_field_instances() {
   // Exported field_instance: 'node-cepal_event-field_event_files'
   $field_instances['node-cepal_event-field_event_files'] = array(
     'bundle' => 'cepal_event',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => 'Is possible to add attached files files to this <em>event</em>.',
     'display' => array(
@@ -261,7 +326,7 @@ function cepal_event_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'description_field' => 1,
-      'entity_translation_sync' => FALSE,
+      'entity_translation_sync' => 0,
       'file_directory' => 'events/files',
       'file_extensions' => 'pdf doc docx odt ppt pptx xls xlsx',
       'max_filesize' => '8 MB',
@@ -269,11 +334,26 @@ function cepal_event_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'file',
+      'module' => 'media',
       'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'file_generic',
+      'type' => 'media_generic',
       'weight' => 19,
     ),
   );
@@ -370,7 +450,7 @@ function cepal_event_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_event_iscepal',
-    'label' => 'Is CEPAL',
+    'label' => 'Is ECLAC',
     'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -785,7 +865,7 @@ Seleccione un órgano subsidiario si corresponde.',
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -884,6 +964,78 @@ Seleccione un órgano subsidiario si corresponde.',
     ),
   );
 
+  // Exported field_instance: 'node-cepal_event-field_geo'
+  $field_instances['node-cepal_event-field_geo'] = array(
+    'bundle' => 'cepal_event',
+    'default_value' => array(),
+    'deleted' => 0,
+    'description' => 'The georeferenced information about where this happend.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'geofield_map',
+        'settings' => array(
+          'geofield_map_baselayers_hybrid' => 1,
+          'geofield_map_baselayers_map' => 1,
+          'geofield_map_baselayers_physical' => 0,
+          'geofield_map_baselayers_satellite' => 1,
+          'geofield_map_controltype' => 'default',
+          'geofield_map_draggable' => 0,
+          'geofield_map_height' => '300px',
+          'geofield_map_maptype' => 'map',
+          'geofield_map_mtc' => 'standard',
+          'geofield_map_overview' => 0,
+          'geofield_map_overview_opened' => 0,
+          'geofield_map_pancontrol' => 1,
+          'geofield_map_scale' => 0,
+          'geofield_map_scrollwheel' => 0,
+          'geofield_map_streetview_show' => 1,
+          'geofield_map_width' => '100%',
+          'geofield_map_zoom' => 14,
+        ),
+        'type' => 'geofield_map_map',
+        'weight' => 23,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_geo',
+    'label' => 'Geo Info',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'geocoder',
+      'settings' => array(
+        'delta_handling' => 'default',
+        'geocoder_field' => 'field_address',
+        'geocoder_handler' => 'google',
+        'handler_settings' => array(
+          'google' => array(
+            'all_results' => 0,
+            'geometry_type' => 'point',
+            'reject_results' => array(
+              'APPROXIMATE' => 'APPROXIMATE',
+              'GEOMETRIC_CENTER' => 0,
+              'RANGE_INTERPOLATED' => 0,
+              'ROOFTOP' => 0,
+            ),
+          ),
+        ),
+      ),
+      'type' => 'geocoder',
+      'weight' => 23,
+    ),
+  );
+
   // Exported field_instance: 'node-cepal_event-title_field'
   $field_instances['node-cepal_event-title_field'] = array(
     'bundle' => 'cepal_event',
@@ -933,6 +1085,7 @@ Seleccione un órgano subsidiario si corresponde.',
   t('A URL where to register in this event, if exist.');
   t('A brief description about this <em>event</em>.');
   t('A representative image or a logo for this <em>event</em>.');
+  t('Address');
   t('Audience Type');
   t('Contact');
   t('Country');
@@ -940,8 +1093,9 @@ Seleccione un órgano subsidiario si corresponde.',
   t('Description');
   t('Event URL');
   t('Files');
+  t('Geo Info');
   t('Image');
-  t('Is CEPAL');
+  t('Is ECLAC');
   t('Is possible to add attached files files to this <em>event</em>.');
   t('Is possible to add external link references about this <em>event</em>.');
   t('Is possible to add references to another content on this site.');
@@ -965,6 +1119,11 @@ TODO: Actualizar traducciones listado');
   t('Subsidiary Bodies');
   t('The date and time of this <em>Event</em>.');
   t('The event URL if this <em>event</em> has a website.');
+  t('The georeferenced information about where this happend.');
+  t('The postal address where this <em>event</em> is celebrated.
+Is possible to use the name of a place as "Economic Commission for Latin America" or a street address as "Dag Hammarskjold 3477".
+A second address is optional for tell more details about the place as "Room 108".
+Postal code of the place is not mandatory.');
   t('The schedule for this <em>event</em>.');
   t('The type of audience to whom it is addressed this event.');
   t('The type of this <em>event</em>.');
