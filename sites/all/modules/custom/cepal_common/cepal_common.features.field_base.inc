@@ -117,7 +117,7 @@ function cepal_common_field_default_field_bases() {
   // Exported field_base: 'field_special_topic'
   $field_bases['field_special_topic'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => 3,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_special_topic',
