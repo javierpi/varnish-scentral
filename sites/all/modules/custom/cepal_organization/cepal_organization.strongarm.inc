@@ -178,7 +178,7 @@ function cepal_organization_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_cepal_organization_pattern';
-  $strongarm->value = 'contact-org/[node:title_field]';
+  $strongarm->value = 'admin/content/contact-org/[node:title_field]';
   $export['pathauto_node_cepal_organization_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
