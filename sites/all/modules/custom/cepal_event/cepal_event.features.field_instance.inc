@@ -40,7 +40,7 @@ Postal code of the place is not mandatory.',
           'use_widget_handlers' => 1,
         ),
         'type' => 'addressfield_default',
-        'weight' => 22,
+        'weight' => 19,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -71,7 +71,7 @@ Postal code of the place is not mandatory.',
         ),
       ),
       'type' => 'addressfield_standard',
-      'weight' => 23,
+      'weight' => 24,
     ),
   );
 
@@ -87,7 +87,7 @@ Postal code of the place is not mandatory.',
         'module' => 'countries',
         'settings' => array(),
         'type' => 'country_default',
-        'weight' => 14,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -111,7 +111,7 @@ Postal code of the place is not mandatory.',
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 18,
+      'weight' => 20,
     ),
   );
 
@@ -127,7 +127,7 @@ Postal code of the place is not mandatory.',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 20,
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -155,6 +155,54 @@ Postal code of the place is not mandatory.',
     ),
   );
 
+  // Exported field_instance: 'node-cepal_event-field_event_contact_coordinator'
+  $field_instances['node-cepal_event-field_event_contact_coordinator'] = array(
+    'bundle' => 'cepal_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Is possible to add some coordinator(s) for this event.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 23,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_event_contact_coordinator',
+    'label' => 'Coordinator',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 1,
+        'references_dialog_edit' => 1,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 15,
+    ),
+  );
+
   // Exported field_instance: 'node-cepal_event-field_event_contact_org'
   $field_instances['node-cepal_event-field_event_contact_org'] = array(
     'bundle' => 'cepal_event',
@@ -170,7 +218,7 @@ Postal code of the place is not mandatory.',
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 10,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -181,7 +229,7 @@ Postal code of the place is not mandatory.',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_event_contact_org',
-    'label' => 'Contact',
+    'label' => 'Organising Organization',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -189,6 +237,54 @@ Postal code of the place is not mandatory.',
           'status' => 0,
         ),
       ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 1,
+        'references_dialog_edit' => 1,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 16,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_event-field_event_contact_person'
+  $field_instances['node-cepal_event-field_event_contact_person'] = array(
+    'bundle' => 'cepal_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'The institutional responsible for this event. The contact person.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_event_contact_person',
+    'label' => 'Institutional Responsible',
+    'required' => 0,
+    'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
@@ -226,7 +322,7 @@ Postal code of the place is not mandatory.',
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 3,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -275,7 +371,7 @@ Postal code of the place is not mandatory.',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -316,7 +412,7 @@ Postal code of the place is not mandatory.',
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 15,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -345,6 +441,7 @@ Postal code of the place is not mandatory.',
           'public' => 'public',
         ),
         'allowed_types' => array(
+          0 => 0,
           'audio' => 0,
           'document' => 0,
           'image' => 'image',
@@ -359,7 +456,7 @@ Postal code of the place is not mandatory.',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 19,
+      'weight' => 21,
     ),
   );
 
@@ -377,7 +474,7 @@ Postal code of the place is not mandatory.',
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 6,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -444,7 +541,7 @@ Postal code of the place is not mandatory.',
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 9,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -482,7 +579,7 @@ Postal code of the place is not mandatory.',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 16,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -521,7 +618,7 @@ Postal code of the place is not mandatory.',
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 22,
+      'weight' => 23,
     ),
   );
 
@@ -537,7 +634,7 @@ Postal code of the place is not mandatory.',
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 13,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -561,7 +658,7 @@ Postal code of the place is not mandatory.',
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 17,
+      'weight' => 19,
     ),
   );
 
@@ -578,7 +675,7 @@ TODO: Actualizar traducciones de interfaz.',
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 19,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -618,7 +715,7 @@ TODO: Actualizar traducciones de interfaz.',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 7,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -673,7 +770,7 @@ TODO: Actualizar traducciones de interfaz.',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -715,7 +812,7 @@ TODO: Actualizar traducciones listado',
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 18,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -756,7 +853,7 @@ Seleccione un órgano subsidiario si corresponde.',
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 12,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -780,7 +877,7 @@ Seleccione un órgano subsidiario si corresponde.',
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 16,
+      'weight' => 18,
     ),
   );
 
@@ -796,7 +893,7 @@ Seleccione un órgano subsidiario si corresponde.',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 21,
+        'weight' => 18,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -836,7 +933,7 @@ Seleccione un órgano subsidiario si corresponde.',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 8,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -891,7 +988,7 @@ Seleccione un órgano subsidiario si corresponde.',
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 11,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -915,7 +1012,7 @@ Seleccione un órgano subsidiario si corresponde.',
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 15,
+      'weight' => 17,
     ),
   );
 
@@ -949,7 +1046,7 @@ Seleccione un órgano subsidiario si corresponde.',
           'geofield_map_zoom' => 14,
         ),
         'type' => 'geofield_map_map',
-        'weight' => 23,
+        'weight' => 20,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -987,7 +1084,7 @@ Seleccione un órgano subsidiario si corresponde.',
         ),
       ),
       'type' => 'geocoder',
-      'weight' => 24,
+      'weight' => 25,
     ),
   );
 
@@ -1005,7 +1102,7 @@ Seleccione un órgano subsidiario si corresponde.',
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 24,
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1031,7 +1128,7 @@ Seleccione un órgano subsidiario si corresponde.',
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete_tags',
-      'weight' => 21,
+      'weight' => 22,
     ),
   );
 
@@ -1046,7 +1143,7 @@ Seleccione un órgano subsidiario si corresponde.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 22,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1086,7 +1183,7 @@ Seleccione un órgano subsidiario si corresponde.',
   t('A representative image or a logo for this <em>event</em>.');
   t('Address');
   t('Audience Type');
-  t('Contact');
+  t('Coordinator');
   t('Country');
   t('Date');
   t('Description');
@@ -1094,15 +1191,18 @@ Seleccione un órgano subsidiario si corresponde.',
   t('Files');
   t('Geo Info');
   t('Image');
+  t('Institutional Responsible');
   t('Is ECLAC');
   t('Is possible to add attached files files to this <em>event</em>.');
   t('Is possible to add external link references about this <em>event</em>.');
   t('Is possible to add references to another content on this site.');
+  t('Is possible to add some coordinator(s) for this event.');
   t('Is this a ECLAC event?');
   t('MIGRACION. Seleccione un evento si el comunicado pertenece a alguno.');
   t('MIGRATION.
 Seleccione un órgano subsidiario si corresponde.');
   t('Observatories');
+  t('Organising Organization');
   t('Participation');
   t('Registration URL');
   t('Related Content');
@@ -1119,6 +1219,7 @@ TODO: Actualizar traducciones listado');
   t('The date and time of this <em>Event</em>.');
   t('The event URL if this <em>event</em> has a website.');
   t('The georeferenced information about where this happend.');
+  t('The institutional responsible for this event. The contact person.');
   t('The postal address where this <em>event</em> is celebrated.<br>
 Is possible to use the name of a organization as "Economic Commission for Latin America" (optional) and a street address as "Dag Hammarskjold 3477".<br>
 A second address is optional for tell more details about the place as "Room 101".

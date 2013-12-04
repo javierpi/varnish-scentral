@@ -46,10 +46,54 @@ function cepal_event_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
+  // Exported field_base: 'field_event_contact_coordinator'
+  $field_bases['field_event_contact_coordinator'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_event_contact_coordinator',
+    'foreign keys' => array(
+      'node' => array(
+        'columns' => array(
+          'target_id' => 'nid',
+        ),
+        'table' => 'node',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'cepal_contact' => 'cepal_contact',
+        ),
+      ),
+      'target_type' => 'node',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
   // Exported field_base: 'field_event_contact_org'
   $field_bases['field_event_contact_org'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_event_contact_org',
@@ -82,6 +126,50 @@ function cepal_event_field_default_field_bases() {
         ),
         'target_bundles' => array(
           'cepal_organization' => 'cepal_organization',
+        ),
+      ),
+      'target_type' => 'node',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'field_event_contact_person'
+  $field_bases['field_event_contact_person'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_event_contact_person',
+    'foreign keys' => array(
+      'node' => array(
+        'columns' => array(
+          'target_id' => 'nid',
+        ),
+        'table' => 'node',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'cepal_contact' => 'cepal_contact',
         ),
       ),
       'target_type' => 'node',
@@ -153,7 +241,7 @@ function cepal_event_field_default_field_bases() {
   // Exported field_base: 'field_event_files'
   $field_bases['field_event_files'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_event_files',
@@ -247,7 +335,7 @@ function cepal_event_field_default_field_bases() {
   // Exported field_base: 'field_event_link'
   $field_bases['field_event_link'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_event_link',
@@ -323,7 +411,7 @@ function cepal_event_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         1 => 'Cerrado - Closed',
-        2 => 'Abierto con inivitación - Open with invitation',
+        2 => 'Abierto con invitación - Open with invitation',
         3 => 'Abierto con registro - Open with registration',
         4 => 'Abierto - Open',
       ),
