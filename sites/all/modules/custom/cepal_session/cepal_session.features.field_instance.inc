@@ -36,6 +36,7 @@ function cepal_session_field_default_field_instances() {
     'label' => 'Country',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -75,6 +76,7 @@ function cepal_session_field_default_field_instances() {
     'label' => 'Area',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -123,6 +125,7 @@ function cepal_session_field_default_field_instances() {
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
+      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -168,6 +171,7 @@ function cepal_session_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'display_summary' => 0,
+      'entity_translation_sync' => FALSE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -211,6 +215,7 @@ function cepal_session_field_default_field_instances() {
     'label' => 'Presentation',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -252,6 +257,7 @@ function cepal_session_field_default_field_instances() {
     'label' => 'Room',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -295,6 +301,7 @@ function cepal_session_field_default_field_instances() {
     'label' => 'Speakers',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -345,6 +352,7 @@ function cepal_session_field_default_field_instances() {
         'url_cutoff' => 80,
       ),
       'enable_tokens' => 1,
+      'entity_translation_sync' => FALSE,
       'rel_remove' => 'default',
       'title' => 'none',
       'title_maxlength' => 255,
@@ -399,6 +407,7 @@ function cepal_session_field_default_field_instances() {
         'url_cutoff' => 80,
       ),
       'enable_tokens' => 1,
+      'entity_translation_sync' => FALSE,
       'rel_remove' => 'default',
       'title' => 'none',
       'title_maxlength' => 128,
@@ -442,6 +451,7 @@ function cepal_session_field_default_field_instances() {
     'label' => 'Special Topic',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -481,6 +491,7 @@ function cepal_session_field_default_field_instances() {
     'label' => 'Topic',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -520,6 +531,7 @@ function cepal_session_field_default_field_instances() {
     'label' => 'UNBIS',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -558,6 +570,7 @@ function cepal_session_field_default_field_instances() {
     'label' => 'Session\'s Title',
     'required' => 1,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'hide_label' => array(
         'entity' => 0,
         'page' => 0,

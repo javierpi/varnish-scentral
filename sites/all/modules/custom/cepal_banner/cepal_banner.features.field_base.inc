@@ -1,22 +1,22 @@
 <?php
 /**
  * @file
- * cepal_session.features.field_base.inc
+ * cepal_banner.features.field_base.inc
  */
 
 /**
  * Implements hook_field_default_field_bases().
  */
-function cepal_session_field_default_field_bases() {
+function cepal_banner_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_session_area'
-  $field_bases['field_session_area'] = array(
+  // Exported field_base: 'field_banner_area_ref'
+  $field_bases['field_banner_area_ref'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_session_area',
+    'field_name' => 'field_banner_area_ref',
     'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
@@ -53,73 +53,107 @@ function cepal_session_field_default_field_bases() {
     'type' => 'list_integer',
   );
 
-  // Exported field_base: 'field_session_date'
-  $field_bases['field_session_date'] = array(
+  // Exported field_base: 'field_banner_external_url'
+  $field_bases['field_banner_external_url'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_session_date',
+    'field_name' => 'field_banner_external_url',
     'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
-    'module' => 'date',
+    'module' => 'link',
     'settings' => array(
-      'cache_count' => 4,
-      'cache_enabled' => 0,
-      'entity_translation_sync' => FALSE,
-      'granularity' => array(
-        'day' => 'day',
-        'hour' => 'hour',
-        'minute' => 'minute',
-        'month' => 'month',
-        'second' => 0,
-        'year' => 'year',
+      'attributes' => array(
+        'class' => '',
+        'rel' => '',
+        'target' => 'default',
       ),
-      'timezone_db' => 'UTC',
-      'todate' => 'required',
-      'tz_handling' => 'site',
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'entity_translation_sync' => FALSE,
+      'title' => 'optional',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
     ),
-    'translatable' => 0,
-    'type' => 'date',
+    'translatable' => 1,
+    'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_session_description'
-  $field_bases['field_session_description'] = array(
+  // Exported field_base: 'field_banner_image'
+  $field_bases['field_banner_image'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_session_description',
+    'field_name' => 'field_banner_image',
     'foreign keys' => array(
-      'format' => array(
+      'fid' => array(
         'columns' => array(
-          'format' => 'format',
+          'fid' => 'fid',
         ),
-        'table' => 'filter_format',
+        'table' => 'file_managed',
       ),
     ),
     'indexes' => array(
-      'format' => array(
-        0 => 'format',
+      'fid' => array(
+        0 => 'fid',
       ),
     ),
     'locked' => 0,
-    'module' => 'text',
+    'module' => 'image',
     'settings' => array(
-      'entity_translation_sync' => FALSE,
+      'default_image' => 0,
+      'entity_translation_sync' => array(
+        0 => 'fid',
+      ),
+      'uri_scheme' => 'public',
     ),
     'translatable' => 0,
-    'type' => 'text_with_summary',
+    'type' => 'image',
   );
 
-  // Exported field_base: 'field_session_presentation'
-  $field_bases['field_session_presentation'] = array(
+  // Exported field_base: 'field_banner_observatory'
+  $field_bases['field_banner_observatory'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_session_presentation',
+    'field_name' => 'field_banner_observatory',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        1 => 'OFILAC',
+        2 => 'RISALC',
+        3 => 'OIG',
+        4 => 'ASIA-PACIFICO',
+        5 => 'BANDA ANCHA',
+      ),
+      'allowed_values_function' => '',
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_integer',
+  );
+
+  // Exported field_base: 'field_banner_related_content'
+  $field_bases['field_banner_related_content'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_banner_related_content',
     'foreign keys' => array(
       'node' => array(
         'columns' => array(
@@ -150,22 +184,30 @@ function cepal_session_field_default_field_bases() {
           'type' => 'property',
         ),
         'target_bundles' => array(
+          'cepal_article' => 'cepal_article',
+          'cepal_event' => 'cepal_event',
+          'cepal_news' => 'cepal_news',
+          'cepal_page' => 'cepal_page',
+          'cepal_pr' => 'cepal_pr',
           'cepal_presentation' => 'cepal_presentation',
+          'cepal_project' => 'cepal_project',
+          'cepal_speech' => 'cepal_speech',
+          'session' => 'session',
         ),
       ),
       'target_type' => 'node',
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_session_room'
-  $field_bases['field_session_room'] = array(
+  // Exported field_base: 'field_banner_short_text'
+  $field_bases['field_banner_short_text'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_session_room',
+    'field_name' => 'field_banner_short_text',
     'foreign keys' => array(
       'format' => array(
         'columns' => array(
@@ -183,65 +225,49 @@ function cepal_session_field_default_field_bases() {
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'max_length' => 255,
     ),
-    'translatable' => 0,
-    'type' => 'text',
+    'translatable' => 1,
+    'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_session_speakers'
-  $field_bases['field_session_speakers'] = array(
+  // Exported field_base: 'field_banner_subsidiary_bodies'
+  $field_bases['field_banner_subsidiary_bodies'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_session_speakers',
-    'foreign keys' => array(
-      'eck_authority' => array(
-        'columns' => array(
-          'target_id' => 'id',
-        ),
-        'table' => 'eck_authority',
-      ),
-    ),
+    'field_name' => 'field_banner_subsidiary_bodies',
+    'foreign keys' => array(),
     'indexes' => array(
-      'target_id' => array(
-        0 => 'target_id',
+      'value' => array(
+        0 => 'value',
       ),
     ),
     'locked' => 0,
-    'module' => 'entityreference',
+    'module' => 'list',
     'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'handler' => 'base',
-      'handler_settings' => array(
-        'behaviors' => array(
-          'views-select-list' => array(
-            'status' => 0,
-          ),
-        ),
-        'sort' => array(
-          'direction' => 'ASC',
-          'property' => 'lastname',
-          'type' => 'property',
-        ),
-        'target_bundles' => array(
-          'authority_bundle' => 'authority_bundle',
-        ),
+      'allowed_values' => array(
+        1 => 'Comité Plenario',
+        2 => 'Conferencia Estadística de las Américas',
+        3 => 'Conferencia Regional sobre la mujer de América Latina y el Caribe',
+        4 => 'Comité de Desarrollo y Cooperación del Caribe',
+        5 => 'Conferencia Regional sobre Población y Desarrollo de ALC',
+        6 => 'Consejo Regional de Planificación',
       ),
-      'target_type' => 'authority',
+      'allowed_values_function' => '',
+      'entity_translation_sync' => FALSE,
     ),
     'translatable' => 0,
-    'type' => 'entityreference',
+    'type' => 'list_integer',
   );
 
-  // Exported field_base: 'field_session_url_streaming'
-  $field_bases['field_session_url_streaming'] = array(
+  // Exported field_base: 'field_banner_url'
+  $field_bases['field_banner_url'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_session_url_streaming',
+    'field_name' => 'field_banner_url',
     'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
@@ -262,38 +288,7 @@ function cepal_session_field_default_field_bases() {
       'title_value' => '',
       'url' => 0,
     ),
-    'translatable' => 0,
-    'type' => 'link_field',
-  );
-
-  // Exported field_base: 'field_session_url_video'
-  $field_bases['field_session_url_video'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_session_url_video',
-    'foreign keys' => array(),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'link',
-    'settings' => array(
-      'attributes' => array(
-        'class' => '',
-        'rel' => '',
-        'target' => 'default',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'entity_translation_sync' => FALSE,
-      'title' => 'optional',
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
-    ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'link_field',
   );
 
