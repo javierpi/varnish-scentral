@@ -1,0 +1,15 @@
+name = Cepal Geo
+description = Base feature for shared georeferenced fields.
+core = 7.x
+package = Cepal
+version = 7.x-1.0-beta1
+project = cepal_geo
+dependencies[] = addressfield
+dependencies[] = features
+dependencies[] = geocoder
+dependencies[] = geofield
+dependencies[] = geofield_map
+features[features_api][] = api:2
+features[field_base][] = field_address
+features[field_base][] = field_geo
+project path = sites/all/modules/custom
