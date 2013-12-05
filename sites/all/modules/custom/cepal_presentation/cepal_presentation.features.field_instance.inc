@@ -118,7 +118,7 @@ function cepal_presentation_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_presentation_body',
     'label' => 'Body',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'text_processing' => 1,
