@@ -138,7 +138,8 @@ function cepal_contact_person_field_default_field_instances() {
     'default_value' => NULL,
     'default_value_function' => '',
     'deleted' => 0,
-    'description' => 'The organization that this contact person belongs.',
+    'description' => 'The organization that this contact person belongs. <br>
+Is possible create an organization from this page, is recommended to create it in the current language, later is posible to translate it in the "Organization" edition page.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -278,7 +279,8 @@ function cepal_contact_person_field_default_field_instances() {
   t('Organization');
   t('Position');
   t('Telephone');
-  t('The organization that this contact person belongs.');
+  t('The organization that this contact person belongs. <br>
+Is possible create an organization from this page, is recommended to create it in the current language, later is posible to translate it in the "Organization" edition page.');
   t('The person last name(s).');
   t('The person name(s).');
   t('The position of this <em>contact person</em> in the organization.');
