@@ -71,7 +71,7 @@ Postal code of the place is not mandatory.',
         ),
       ),
       'type' => 'addressfield_standard',
-      'weight' => 24,
+      'weight' => 27,
     ),
   );
 
@@ -456,7 +456,7 @@ Postal code of the place is not mandatory.',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 21,
+      'weight' => 24,
     ),
   );
 
@@ -618,7 +618,7 @@ Postal code of the place is not mandatory.',
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 23,
+      'weight' => 26,
     ),
   );
 
@@ -1084,7 +1084,7 @@ Seleccione un órgano subsidiario si corresponde.',
         ),
       ),
       'type' => 'geocoder',
-      'weight' => 25,
+      'weight' => 28,
     ),
   );
 
@@ -1128,7 +1128,127 @@ Seleccione un órgano subsidiario si corresponde.',
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete_tags',
+      'weight' => 25,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_event-field_special_topic'
+  $field_instances['node-cepal_event-field_special_topic'] = array(
+    'bundle' => 'cepal_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Select a special topic for classifcation if needed.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 25,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_special_topic',
+    'label' => 'Special Topic',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 1,
+      ),
+      'type' => 'options_select',
       'weight' => 22,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_event-field_topic'
+  $field_instances['node-cepal_event-field_topic'] = array(
+    'bundle' => 'cepal_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Select associated topics for this <em>event</em>.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 24,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_topic',
+    'label' => 'Topic',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 1,
+      ),
+      'type' => 'options_select',
+      'weight' => 21,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_event-field_unbis'
+  $field_instances['node-cepal_event-field_unbis'] = array(
+    'bundle' => 'cepal_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Select an UNBIS classification for this <em>event</em>.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 26,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_unbis',
+    'label' => 'UNBIS',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 23,
     ),
   );
 
@@ -1211,10 +1331,14 @@ Seleccione un órgano subsidiario si corresponde.');
   t('Scope');
   t('Select a country asociated with this <em>event</em>.');
   t('Select a organization to be the contact (as organizer) for this <em>event</em>.');
+  t('Select a special topic for classifcation if needed.');
+  t('Select an UNBIS classification for this <em>event</em>.');
+  t('Select associated topics for this <em>event</em>.');
   t('Select the kind of participation for this <em>event</em>.
 TODO: Actualizar traducciones de interfaz.');
   t('Select the scope of the audience of this <em>event</em>.
 TODO: Actualizar traducciones listado');
+  t('Special Topic');
   t('Subsidiary Bodies');
   t('The date and time of this <em>Event</em>.  If the event lasts more than one day the start time should be from the first day and the end time from the last day.');
   t('The event URL if this <em>event</em> has a website.');
@@ -1228,7 +1352,9 @@ Postal code of the place is not mandatory.');
   t('The type of audience to whom it is addressed this event.');
   t('The type of this <em>event</em>.');
   t('Title');
+  t('Topic');
   t('Type');
+  t('UNBIS');
   t('Work Area');
 
   return $field_instances;
