@@ -284,6 +284,7 @@ TEMPORAL. TODO: Update with reference to event.
   // Exported field_instance: 'node-cepal_presentation-field_presentation_files'
   $field_instances['node-cepal_presentation-field_presentation_files'] = array(
     'bundle' => 'cepal_presentation',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => 'Is possible to add attached files files to this <em>Presentation</em>.',
     'display' => array(
@@ -307,7 +308,7 @@ TEMPORAL. TODO: Update with reference to event.
     'required' => 0,
     'settings' => array(
       'description_field' => 1,
-      'entity_translation_sync' => FALSE,
+      'entity_translation_sync' => 0,
       'file_directory' => 'presentation/files',
       'file_extensions' => 'pdf doc docx odt ppt pptx xls xlsx epub mobi',
       'max_filesize' => '',
@@ -315,11 +316,26 @@ TEMPORAL. TODO: Update with reference to event.
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'file',
+      'module' => 'media',
       'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'file_generic',
+      'type' => 'media_generic',
       'weight' => 15,
     ),
   );
@@ -436,7 +452,7 @@ TEMPORAL. TODO: Update with reference to event.
     'bundle' => 'cepal_presentation',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Insert URL references where this column has been published.',
+    'description' => 'Insert URL references where this <em>presentation</em> has been published or useful links on the Internet related to the <em>presentation</em>.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -747,7 +763,7 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
   t('Event');
   t('Files');
   t('Image');
-  t('Insert URL references where this column has been published.');
+  t('Insert URL references where this <em>presentation</em> has been published or useful links on the Internet related to the <em>presentation</em>.');
   t('Insert a description text for this <em>Presentation</em>.');
   t('Insert a teaser for this <em>Presentation</em>.');
   t('Is possible to add attached files files to this <em>Presentation</em>.');

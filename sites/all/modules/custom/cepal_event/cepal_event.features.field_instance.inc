@@ -309,7 +309,7 @@ Postal code of the place is not mandatory.',
   $field_instances['node-cepal_event-field_event_date'] = array(
     'bundle' => 'cepal_event',
     'deleted' => 0,
-    'description' => 'The date and time of this <em>Event</em>.',
+    'description' => 'The date and time of this <em>Event</em>.  If the event lasts more than one day the start time should be from the first day and the end time from the last day.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1216,7 +1216,7 @@ TODO: Actualizar traducciones de interfaz.');
   t('Select the scope of the audience of this <em>event</em>.
 TODO: Actualizar traducciones listado');
   t('Subsidiary Bodies');
-  t('The date and time of this <em>Event</em>.');
+  t('The date and time of this <em>Event</em>.  If the event lasts more than one day the start time should be from the first day and the end time from the last day.');
   t('The event URL if this <em>event</em> has a website.');
   t('The georeferenced information about where this happend.');
   t('The institutional responsible for this event. The contact person.');
