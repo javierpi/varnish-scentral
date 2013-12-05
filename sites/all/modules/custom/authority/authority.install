@@ -27,6 +27,7 @@ function authority_install(){
   $entity_type->addProperty('name', 'Name', 'text', 'labeled_text');
   $entity_type->addProperty('created', 'Created', 'integer', 'created');
   $entity_type->addProperty('changed', 'Changed', 'integer', 'changed');
+  $entity_type->addProperty('uuid', 'uuid', 'uuid', 'uuid');
 
   // If you look at the method in eck.classes.inc, you will notice that it takes
   // 3 arguments and 1 optional argument. The required arguments are 'name',
@@ -45,10 +46,16 @@ function authority_install(){
   // After all of the properties we want have been added, we simply need to save
   // the property.
   $entity_type->save();
+
+  $bundle = new Bundle();
+  $bundle->name = 'authority_bundle';
+  $bundle->label = 'authority bundle';
+  $bundle->entity_type = $entity_type->name;
+  $bundle->save();
 }
 
 /**
- * Implements hook_uninstall(). 
+ * Implements hook_uninstall().
  */
 function authority_uninstall(){
   // Deleting and entity type, and all of its content is as easy as creating

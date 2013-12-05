@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Cepal Session feature.
+ */
+
+include_once 'cepal_session.features.inc';
