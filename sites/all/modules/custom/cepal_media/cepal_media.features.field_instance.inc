@@ -39,7 +39,7 @@ function cepal_media_field_default_field_instances() {
     ),
     'entity_type' => 'file',
     'field_name' => 'field_file_lang_sade',
-    'label' => 'SADE lang',
+    'label' => 'Language of the file',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -216,7 +216,7 @@ function cepal_media_field_default_field_instances() {
   t('Alt Text');
   t('Alternative text is used by screen readers, search engines, and when the image cannot be loaded. By adding alt text you improve accessibility and search engine optimization.');
   t('Credits');
-  t('SADE lang');
+  t('Language of the file');
   t('The author(s) of this image.');
   t('Title Text');
   t('Title text is used in the tool tip when a user hovers their mouse over the image. Adding title text makes it easier to understand the context of an image and improves usability.');

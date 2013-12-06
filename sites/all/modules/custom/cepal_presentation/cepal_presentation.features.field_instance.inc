@@ -46,7 +46,7 @@ function cepal_presentation_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 9,
+      'weight' => 11,
     ),
   );
 
@@ -90,7 +90,7 @@ function cepal_presentation_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete_tags',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -118,7 +118,7 @@ function cepal_presentation_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_presentation_body',
     'label' => 'Body',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'text_processing' => 1,
@@ -131,7 +131,7 @@ function cepal_presentation_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -185,7 +185,7 @@ function cepal_presentation_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -194,7 +194,7 @@ function cepal_presentation_field_default_field_instances() {
     'bundle' => 'cepal_presentation',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Ingrese el nombre del evento relacionado con esta presentación.
+    'description' => 'NO USAR este campo, por favor usar el campo de arriba.
 TEMPORAL. TODO: Update with reference to event.
 ',
     'display' => array(
@@ -228,13 +228,63 @@ TEMPORAL. TODO: Update with reference to event.
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_presentation-field_presentation_event_ref'
+  $field_instances['node-cepal_presentation-field_presentation_event_ref'] = array(
+    'bundle' => 'cepal_presentation',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'An event related with this <em>presentation</em>.
+',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 22,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_presentation_event_ref',
+    'label' => 'Event',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 1,
+        'references_dialog_edit' => 1,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 8,
     ),
   );
 
   // Exported field_instance: 'node-cepal_presentation-field_presentation_files'
   $field_instances['node-cepal_presentation-field_presentation_files'] = array(
     'bundle' => 'cepal_presentation',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => 'Is possible to add attached files files to this <em>Presentation</em>.',
     'display' => array(
@@ -258,7 +308,7 @@ TEMPORAL. TODO: Update with reference to event.
     'required' => 0,
     'settings' => array(
       'description_field' => 1,
-      'entity_translation_sync' => FALSE,
+      'entity_translation_sync' => 0,
       'file_directory' => 'presentation/files',
       'file_extensions' => 'pdf doc docx odt ppt pptx xls xlsx epub mobi',
       'max_filesize' => '',
@@ -266,12 +316,27 @@ TEMPORAL. TODO: Update with reference to event.
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'file',
+      'module' => 'media',
       'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'file_generic',
-      'weight' => 13,
+      'type' => 'media_generic',
+      'weight' => 15,
     ),
   );
 
@@ -337,7 +402,7 @@ TEMPORAL. TODO: Update with reference to event.
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -378,7 +443,7 @@ TEMPORAL. TODO: Update with reference to event.
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -387,7 +452,7 @@ TEMPORAL. TODO: Update with reference to event.
     'bundle' => 'cepal_presentation',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Insert URL references where this column has been published.',
+    'description' => 'Insert URL references where this <em>presentation</em> has been published or useful links on the Internet related to the <em>presentation</em>.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -433,7 +498,7 @@ TEMPORAL. TODO: Update with reference to event.
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 14,
+      'weight' => 16,
     ),
   );
 
@@ -474,7 +539,51 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_presentation-field_related'
+  $field_instances['node-cepal_presentation-field_related'] = array(
+    'bundle' => 'cepal_presentation',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Is possible to add references to another content on this site.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 23,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_related',
+    'label' => 'Related Content',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete_tags',
+      'weight' => 17,
     ),
   );
 
@@ -514,7 +623,7 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 11,
+      'weight' => 13,
     ),
   );
 
@@ -554,7 +663,7 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 12,
     ),
   );
 
@@ -594,13 +703,59 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 12,
+      'weight' => 14,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_presentation-title_field'
+  $field_instances['node-cepal_presentation-title_field'] = array(
+    'bundle' => 'cepal_presentation',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 21,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'title_field',
+    'label' => 'Title',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'hide_label' => array(
+        'entity' => 'entity',
+        'page' => 0,
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 0,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('A reference to a public authority it his/her biografy in this website.');
+  t('An event related with this <em>presentation</em>.
+');
   t('Author');
   t('Body');
   t('Country');
@@ -608,14 +763,16 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
   t('Event');
   t('Files');
   t('Image');
-  t('Ingrese el nombre del evento relacionado con esta presentación.
-TEMPORAL. TODO: Update with reference to event.
-');
-  t('Insert URL references where this column has been published.');
+  t('Insert URL references where this <em>presentation</em> has been published or useful links on the Internet related to the <em>presentation</em>.');
   t('Insert a description text for this <em>Presentation</em>.');
   t('Insert a teaser for this <em>Presentation</em>.');
   t('Is possible to add attached files files to this <em>Presentation</em>.');
+  t('Is possible to add references to another content on this site.');
+  t('NO USAR este campo, por favor usar el campo de arriba.
+TEMPORAL. TODO: Update with reference to event.
+');
   t('Referenced');
+  t('Related Content');
   t('Select a country asociated with this <em>content</em>.');
   t('Select a image asociated to this <em>Presentation</em>. This image could be showed in lists and front pages.');
   t('Select a special topic for classifcation if needed.');
@@ -626,6 +783,7 @@ TEMPORAL. TODO: Update with reference to event.
 MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update to workgroup.');
   t('Special Topic');
   t('Teaser');
+  t('Title');
   t('Topic');
   t('UNBIS');
   t('Work Area');

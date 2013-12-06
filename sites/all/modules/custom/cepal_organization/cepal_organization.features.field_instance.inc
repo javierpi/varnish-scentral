@@ -10,6 +10,70 @@
 function cepal_organization_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-cepal_organization-field_address'
+  $field_instances['node-cepal_organization-field_address'] = array(
+    'bundle' => 'cepal_organization',
+    'default_value' => array(
+      0 => array(
+        'element_key' => 'node|cepal_organization|field_address|und|0',
+        'thoroughfare' => '',
+        'premise' => '',
+        'postal_code' => '',
+        'locality' => '',
+        'country' => 'CL',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'The postal address for this <em>organization</em>.
+The first address should be filled as "Dag Hammarskjold 3477".
+A second address is optional for tell more details about the place as "Room 108".
+Postal code of the place is not mandatory.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'addressfield',
+        'settings' => array(
+          'format_handlers' => array(
+            0 => 'address',
+          ),
+          'use_widget_handlers' => 1,
+        ),
+        'type' => 'addressfield_default',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_address',
+    'label' => 'Address',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'addressfield',
+      'settings' => array(
+        'available_countries' => array(),
+        'format_handlers' => array(
+          'address' => 'address',
+          'address-hide-country' => 0,
+          'organisation' => 0,
+          'name-oneline' => 0,
+          'name-full' => 0,
+        ),
+      ),
+      'type' => 'addressfield_standard',
+      'weight' => 40,
+    ),
+  );
+
   // Exported field_instance: 'node-cepal_organization-field_country'
   $field_instances['node-cepal_organization-field_country'] = array(
     'bundle' => 'cepal_organization',
@@ -88,47 +152,6 @@ function cepal_organization_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 32,
-    ),
-  );
-
-  // Exported field_instance: 'node-cepal_organization-field_organization_adress'
-  $field_instances['node-cepal_organization-field_organization_adress'] = array(
-    'bundle' => 'cepal_organization',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Street address for this organzation.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 7,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_organization_adress',
-    'label' => 'Address',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 38,
     ),
   );
 
@@ -359,6 +382,50 @@ function cepal_organization_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-cepal_organization-title_field'
+  $field_instances['node-cepal_organization-title_field'] = array(
+    'bundle' => 'cepal_organization',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'title_field',
+    'label' => 'Title',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'hide_label' => array(
+        'entity' => 'entity',
+        'page' => 0,
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => -5,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('A contact e-mail for this <em>organization</em>.');
@@ -374,8 +441,12 @@ function cepal_organization_field_default_field_instances() {
   t('Link');
   t('Select the country where this <em>organization</em> is based.');
   t('Select the type of this organization.');
-  t('Street address for this organzation.');
   t('Telephone');
+  t('The postal address for this <em>organization</em>.
+The first address should be filled as "Dag Hammarskjold 3477".
+A second address is optional for tell more details about the place as "Room 108".
+Postal code of the place is not mandatory.');
+  t('Title');
   t('Type');
 
   return $field_instances;
