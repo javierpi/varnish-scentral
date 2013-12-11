@@ -430,7 +430,7 @@ Postal code of the place is not mandatory.',
       'entity_translation_sync' => 0,
       'file_directory' => 'events/files',
       'file_extensions' => 'pdf doc docx odt ppt pptx xls xlsx',
-      'max_filesize' => '8 MB',
+      'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
