@@ -46,7 +46,7 @@ function cepal_session_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -86,7 +86,51 @@ function cepal_session_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-session-field_session_conference'
+  $field_instances['node-session-field_session_conference'] = array(
+    'bundle' => 'session',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'The conference this session belongs to. Search by title on the text field above.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 14,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_session_conference',
+    'label' => 'Conference',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 1,
     ),
   );
 
@@ -140,7 +184,7 @@ function cepal_session_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -183,7 +227,7 @@ function cepal_session_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -227,7 +271,7 @@ function cepal_session_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -268,7 +312,7 @@ function cepal_session_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -311,7 +355,7 @@ function cepal_session_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -366,7 +410,7 @@ function cepal_session_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -421,7 +465,7 @@ function cepal_session_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -461,7 +505,7 @@ function cepal_session_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -501,7 +545,7 @@ function cepal_session_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -541,7 +585,7 @@ function cepal_session_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -592,6 +636,7 @@ function cepal_session_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Area');
+  t('Conference');
   t('Country');
   t('Date');
   t('Description');
@@ -601,6 +646,7 @@ function cepal_session_field_default_field_instances() {
   t('Session\'s Title');
   t('Speakers');
   t('Special Topic');
+  t('The conference this session belongs to. Search by title on the text field above.');
   t('Topic');
   t('UNBIS');
   t('Url streaming');

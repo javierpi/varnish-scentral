@@ -93,7 +93,7 @@ function cepal_session_strongarm() {
           'weight' => '-5',
         ),
         'path' => array(
-          'weight' => '13',
+          'weight' => '14',
         ),
       ),
       'display' => array(),
