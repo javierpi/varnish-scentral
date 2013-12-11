@@ -15,6 +15,8 @@ function cepal_organization_user_default_permissions() {
     'name' => 'create cepal_organization content',
     'roles' => array(
       'administrator' => 'administrator',
+      'contributor' => 'contributor',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -33,6 +35,7 @@ function cepal_organization_user_default_permissions() {
     'name' => 'delete own cepal_organization content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
