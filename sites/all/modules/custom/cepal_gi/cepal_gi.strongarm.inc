@@ -159,21 +159,21 @@ function cepal_gi_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_cepal_graphic_info_en_pattern';
-  $strongarm->value = 'informationsheet/[node:created:custom:Y]/[node:created:custom:d]/[node:created:custom:m]/[node:title_field]';
+  $strongarm->value = 'informationsheet/[node:title_field]';
   $export['pathauto_node_cepal_graphic_info_en_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_cepal_graphic_info_es_pattern';
-  $strongarm->value = 'hojainformativa/[node:created:custom:Y]/[node:created:custom:d]/[node:created:custom:m]/[node:title_field]';
+  $strongarm->value = 'hojainformativa/[node:title_field]';
   $export['pathauto_node_cepal_graphic_info_es_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_cepal_graphic_info_pattern';
-  $strongarm->value = 'hojainformativa/[node:created:custom:Y]/[node:created:custom:d]/[node:created:custom:m]/[node:title_field]';
+  $strongarm->value = 'hojainformativa/[node:title_field]';
   $export['pathauto_node_cepal_graphic_info_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
