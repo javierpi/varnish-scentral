@@ -114,7 +114,8 @@ function cepal_banner_node_info() {
     'banner' => array(
       'name' => t('Banner'),
       'base' => 'node_content',
-      'description' => '',
+      'description' => t('@TODO : traducir
+Pieza gráfica para promoción de contenidos internos y externos.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
