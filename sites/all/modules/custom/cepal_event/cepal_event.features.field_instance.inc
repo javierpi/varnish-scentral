@@ -364,7 +364,7 @@ Postal code of the place is not mandatory.',
     'bundle' => 'cepal_event',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'A brief description about this <em>event</em>.',
+    'description' => 'A brief description about this <em>event</em>. You may add here time or any extra relevant information about this <em>event</em>.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -382,7 +382,7 @@ Postal code of the place is not mandatory.',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_event_description',
-    'label' => 'Description',
+    'label' => 'Body',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -396,7 +396,7 @@ Postal code of the place is not mandatory.',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -758,47 +758,6 @@ TODO: Actualizar traducciones de interfaz.',
     ),
   );
 
-  // Exported field_instance: 'node-cepal_event-field_event_schedule'
-  $field_instances['node-cepal_event-field_event_schedule'] = array(
-    'bundle' => 'cepal_event',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'The schedule for this <em>event</em>.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_event_schedule',
-    'label' => 'Schedule',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 6,
-    ),
-  );
-
   // Exported field_instance: 'node-cepal_event-field_event_scope'
   $field_instances['node-cepal_event-field_event_scope'] = array(
     'bundle' => 'cepal_event',
@@ -878,6 +837,47 @@ Seleccione un órgano subsidiario si corresponde.',
       ),
       'type' => 'options_select',
       'weight' => 18,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_event-field_event_teaser'
+  $field_instances['node-cepal_event-field_event_teaser'] = array(
+    'bundle' => 'cepal_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'A basic introduction about what is the <em>event</em> about. To be shown on list or quick review of many events.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 27,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_event_teaser',
+    'label' => 'Teaser',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 5,
     ),
   );
 
@@ -1299,14 +1299,15 @@ Seleccione un órgano subsidiario si corresponde.',
   // Translatables
   // Included for use with string extractors like potx.
   t('A URL where to register in this event, if exist.');
-  t('A brief description about this <em>event</em>.');
+  t('A basic introduction about what is the <em>event</em> about. To be shown on list or quick review of many events.');
+  t('A brief description about this <em>event</em>. You may add here time or any extra relevant information about this <em>event</em>.');
   t('A representative image or a logo for this <em>event</em>.');
   t('Address');
   t('Audience Type');
+  t('Body');
   t('Coordinator');
   t('Country');
   t('Date');
-  t('Description');
   t('Event URL');
   t('Files');
   t('Geo Info');
@@ -1327,7 +1328,6 @@ Seleccione un órgano subsidiario si corresponde.');
   t('Registration URL');
   t('Related Content');
   t('Related Links');
-  t('Schedule');
   t('Scope');
   t('Select a country asociated with this <em>event</em>.');
   t('Select a organization to be the contact (as organizer) for this <em>event</em>.');
@@ -1340,6 +1340,7 @@ TODO: Actualizar traducciones de interfaz.');
 TODO: Actualizar traducciones listado');
   t('Special Topic');
   t('Subsidiary Bodies');
+  t('Teaser');
   t('The date and time of this <em>Event</em>.  If the event lasts more than one day the start time should be from the first day and the end time from the last day.');
   t('The event URL if this <em>event</em> has a website.');
   t('The georeferenced information about where this happend.');
@@ -1348,7 +1349,6 @@ TODO: Actualizar traducciones listado');
 Is possible to use the name of a organization as "Economic Commission for Latin America" (optional) and a street address as "Dag Hammarskjold 3477".<br>
 A second address is optional for tell more details about the place as "Room 101".
 Postal code of the place is not mandatory.');
-  t('The schedule for this <em>event</em>.');
   t('The type of audience to whom it is addressed this event.');
   t('The type of this <em>event</em>.');
   t('Title');
