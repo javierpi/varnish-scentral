@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Code for the Banner feature.
+ * Code for the cepal_banner feature.
  */
 
 include_once 'cepal_banner.features.inc';

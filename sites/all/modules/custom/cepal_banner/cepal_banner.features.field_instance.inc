@@ -10,25 +10,31 @@
 function cepal_banner_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'bean-banner-field_banner_area_ref'
-  $field_instances['bean-banner-field_banner_area_ref'] = array(
+  // Exported field_instance: 'node-banner-field_banner_behavior'
+  $field_instances['node-banner-field_banner_behavior'] = array(
     'bundle' => 'banner',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'You must select where the banner is going to be shown.',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 5,
+        'weight' => 16,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
-    'entity_type' => 'bean',
-    'field_name' => 'field_banner_area_ref',
-    'label' => 'Working Area',
-    'required' => 0,
+    'entity_type' => 'node',
+    'field_name' => 'field_banner_behavior',
+    'label' => 'Behavior',
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
@@ -36,66 +42,54 @@ function cepal_banner_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => 0,
-      ),
-      'type' => 'options_select',
-      'weight' => 5,
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 11,
     ),
   );
 
-  // Exported field_instance: 'bean-banner-field_banner_external_url'
-  $field_instances['bean-banner-field_banner_external_url'] = array(
+  // Exported field_instance: 'node-banner-field_banner_destination_type'
+  $field_instances['node-banner-field_banner_destination_type'] = array(
     'bundle' => 'banner',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Is this banner pointing to an external page or a page in this site?',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'link',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 2,
+        'type' => 'list_default',
+        'weight' => 17,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
-    'entity_type' => 'bean',
-    'field_name' => 'field_banner_external_url',
-    'label' => 'External Url',
-    'required' => 0,
+    'entity_type' => 'node',
+    'field_name' => 'field_banner_destination_type',
+    'label' => 'Link destination type',
+    'required' => 1,
     'settings' => array(
-      'attributes' => array(
-        'class' => '',
-        'configurable_title' => 0,
-        'rel' => '',
-        'target' => 'user',
-        'title' => '',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
       'entity_translation_sync' => FALSE,
-      'rel_remove' => 'default',
-      'title' => 'required',
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
       'user_register_form' => FALSE,
-      'validate_url' => 1,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'link',
+      'active' => 1,
+      'module' => 'options',
       'settings' => array(),
-      'type' => 'link_field',
-      'weight' => 10,
+      'type' => 'options_buttons',
+      'weight' => 8,
     ),
   );
 
-  // Exported field_instance: 'bean-banner-field_banner_image'
-  $field_instances['bean-banner-field_banner_image'] = array(
+  // Exported field_instance: 'node-banner-field_banner_image_main_slide'
+  $field_instances['node-banner-field_banner_image_main_slide'] = array(
     'bundle' => 'banner',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -104,22 +98,92 @@ function cepal_banner_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => 'thumbnail',
+          'image_style' => 'slide_home',
         ),
         'type' => 'image',
+        'weight' => 11,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
     ),
-    'entity_type' => 'bean',
-    'field_name' => 'field_banner_image',
-    'label' => 'Image',
+    'entity_type' => 'node',
+    'field_name' => 'field_banner_image_main_slide',
+    'label' => 'Image main slide',
+    'required' => 1,
+    'settings' => array(
+      'alt_field' => 1,
+      'default_image' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => 'banner/images',
+      'file_extensions' => 'png jpg jpeg',
+      'imagecrop' => array(
+        'main_slide' => 'main_slide',
+        'promotion' => 0,
+        'slide_home' => 0,
+        'top_page' => 0,
+      ),
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance: 'node-banner-field_banner_image_promotion'
+  $field_instances['node-banner-field_banner_image_promotion'] = array(
+    'bundle' => 'banner',
+    'default_value' => array(),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'promotion',
+        ),
+        'type' => 'image',
+        'weight' => 14,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_banner_image_promotion',
+    'label' => 'Image Promotion',
     'required' => 1,
     'settings' => array(
       'alt_field' => 0,
       'default_image' => 0,
       'entity_translation_sync' => FALSE,
-      'file_directory' => 'banner',
+      'file_directory' => 'banner/images',
       'file_extensions' => 'png gif jpg jpeg',
+      'imagecrop' => array(
+        'main_slide' => 0,
+        'promotion' => 'promotion',
+        'slide_home' => 0,
+        'top_page' => 0,
+      ),
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
@@ -128,198 +192,105 @@ function cepal_banner_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'media',
+      'module' => 'image',
       'settings' => array(
-        'allowed_schemes' => array(
-          'public' => 'public',
-        ),
-        'allowed_types' => array(
-          'audio' => 0,
-          'document' => 0,
-          'image' => 'image',
-          'video' => 0,
-        ),
-        'browser_plugins' => array(
-          'media_default--media_browser_1' => 0,
-          'media_default--media_browser_my_files' => 0,
-          'media_internet' => 0,
-          'upload' => 0,
-        ),
+        'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'media_generic',
-      'weight' => 11,
+      'type' => 'image_image',
+      'weight' => 13,
     ),
   );
 
-  // Exported field_instance: 'bean-banner-field_banner_observatory'
-  $field_instances['bean-banner-field_banner_observatory'] = array(
+  // Exported field_instance: 'node-banner-field_banner_image_top_page'
+  $field_instances['node-banner-field_banner_image_top_page'] = array(
     'bundle' => 'banner',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 6,
-      ),
-    ),
-    'entity_type' => 'bean',
-    'field_name' => 'field_banner_observatory',
-    'label' => 'Observatory',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => 0,
-      ),
-      'type' => 'options_select',
-      'weight' => 7,
-    ),
-  );
-
-  // Exported field_instance: 'bean-banner-field_banner_related_content'
-  $field_instances['bean-banner-field_banner_related_content'] = array(
-    'bundle' => 'banner',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 9,
-      ),
-    ),
-    'entity_type' => 'bean',
-    'field_name' => 'field_banner_related_content',
-    'label' => 'Related Content',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 12,
-    ),
-  );
-
-  // Exported field_instance: 'bean-banner-field_banner_short_text'
-  $field_instances['bean-banner-field_banner_short_text'] = array(
-    'bundle' => 'banner',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'top_page',
+        ),
+        'type' => 'image',
+        'weight' => 15,
+      ),
+      'teaser' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
-    'entity_type' => 'bean',
-    'field_name' => 'field_banner_short_text',
-    'label' => 'Short text',
+    'entity_type' => 'node',
+    'field_name' => 'field_banner_image_top_page',
+    'label' => 'Image top page',
     'required' => 0,
     'settings' => array(
-      'display_summary' => 0,
+      'alt_field' => 0,
+      'default_image' => 0,
       'entity_translation_sync' => FALSE,
-      'text_processing' => 1,
+      'file_directory' => 'banner/images',
+      'file_extensions' => 'png gif jpg jpeg',
+      'imagecrop' => array(
+        'main_slide' => 0,
+        'promotion' => 0,
+        'slide_home' => 0,
+        'top_page' => 'top_page',
+      ),
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'text',
+      'module' => 'image',
       'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
       ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 4,
+      'type' => 'image_image',
+      'weight' => 14,
     ),
   );
 
-  // Exported field_instance: 'bean-banner-field_banner_subsidiary_bodies'
-  $field_instances['bean-banner-field_banner_subsidiary_bodies'] = array(
+  // Exported field_instance: 'node-banner-field_banner_link'
+  $field_instances['node-banner-field_banner_link'] = array(
     'bundle' => 'banner',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 7,
-      ),
-    ),
-    'entity_type' => 'bean',
-    'field_name' => 'field_banner_subsidiary_bodies',
-    'label' => 'Subsidiary Bodies',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => 0,
-      ),
-      'type' => 'options_select',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'bean-banner-field_banner_url'
-  $field_instances['bean-banner-field_banner_url'] = array(
-    'bundle' => 'banner',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Internal url',
+    'description' => 'External link. Must be written like "http://www.google.com" with the "http://" before the address.',
     'display' => array(
       'default' => array(
         'label' => 'above',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 1,
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
-    'entity_type' => 'bean',
-    'field_name' => 'field_banner_url',
-    'label' => 'Url',
+    'entity_type' => 'node',
+    'field_name' => 'field_banner_link',
+    'label' => 'Link',
     'required' => 0,
     'settings' => array(
       'attributes' => array(
         'class' => '',
         'configurable_title' => 0,
         'rel' => '',
-        'target' => 'default',
+        'target' => '_blank',
         'title' => '',
       ),
       'display' => array(
@@ -340,26 +311,243 @@ function cepal_banner_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 13,
+      'weight' => 9,
     ),
   );
 
-  // Exported field_instance: 'bean-banner-field_country'
-  $field_instances['bean-banner-field_country'] = array(
+  // Exported field_instance: 'node-banner-field_banner_observatories'
+  $field_instances['node-banner-field_banner_observatories'] = array(
+    'bundle' => 'banner',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'MIGRACION. Seleccione un observatorio si el comunicado pertenece a alguno.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_banner_observatories',
+    'label' => 'Observatory',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-banner-field_banner_related_content'
+  $field_instances['node-banner-field_banner_related_content'] = array(
     'bundle' => 'banner',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => 1,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_banner_related_content',
+    'label' => 'Related Content',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-banner-field_banner_short_text'
+  $field_instances['node-banner-field_banner_short_text'] = array(
+    'bundle' => 'banner',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'This text is not shown for most banner types.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_banner_short_text',
+    'label' => 'Short text',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-banner-field_banner_subsidiary_bodies'
+  $field_instances['node-banner-field_banner_subsidiary_bodies'] = array(
+    'bundle' => 'banner',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'MIGRATION.
+Seleccione un órgano subsidiario si corresponde.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_banner_subsidiary_bodies',
+    'label' => 'Subsidiary Bodies',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-banner-field_banner_workarea'
+  $field_instances['node-banner-field_banner_workarea'] = array(
+    'bundle' => 'banner',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Select the work area for this content.
+MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update to workgroup.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_banner_workarea',
+    'label' => 'Work Area',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-banner-field_country'
+  $field_instances['node-banner-field_country'] = array(
+    'bundle' => 'banner',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
         'module' => 'countries',
         'settings' => array(),
         'type' => 'country_default',
-        'weight' => 10,
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
-    'entity_type' => 'bean',
+    'entity_type' => 'node',
     'field_name' => 'field_country',
     'label' => 'Country',
     'required' => 0,
@@ -374,26 +562,32 @@ function cepal_banner_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 5,
     ),
   );
 
-  // Exported field_instance: 'bean-banner-field_special_topic'
-  $field_instances['bean-banner-field_special_topic'] = array(
+  // Exported field_instance: 'node-banner-field_special_topic'
+  $field_instances['node-banner-field_special_topic'] = array(
     'bundle' => 'banner',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 8,
       ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
-    'entity_type' => 'bean',
+    'entity_type' => 'node',
     'field_name' => 'field_special_topic',
     'label' => 'Special Topic',
     'required' => 0,
@@ -408,29 +602,74 @@ function cepal_banner_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 9,
+      'weight' => 7,
     ),
   );
 
-  // Exported field_instance: 'bean-banner-title_field'
-  $field_instances['bean-banner-title_field'] = array(
+  // Exported field_instance: 'node-banner-field_topic'
+  $field_instances['node-banner-field_topic'] = array(
     'bundle' => 'banner',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'The Title of the block.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
-    'entity_type' => 'bean',
+    'entity_type' => 'node',
+    'field_name' => 'field_topic',
+    'label' => 'Topic',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-banner-title_field'
+  $field_instances['node-banner-title_field'] = array(
+    'bundle' => 'banner',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
     'field_name' => 'title_field',
     'label' => 'Title',
-    'required' => FALSE,
+    'required' => TRUE,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'hide_label' => array(
@@ -446,25 +685,36 @@ function cepal_banner_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 0,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Behavior');
   t('Country');
-  t('External Url');
-  t('Image');
-  t('Internal url');
+  t('External link. Must be written like "http://www.google.com" with the "http://" before the address.');
+  t('Image Promotion');
+  t('Image main slide');
+  t('Image top page');
+  t('Is this banner pointing to an external page or a page in this site?');
+  t('Link');
+  t('Link destination type');
+  t('MIGRACION. Seleccione un observatorio si el comunicado pertenece a alguno.');
+  t('MIGRATION.
+Seleccione un órgano subsidiario si corresponde.');
   t('Observatory');
   t('Related Content');
+  t('Select the work area for this content.
+MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update to workgroup.');
   t('Short text');
   t('Special Topic');
   t('Subsidiary Bodies');
-  t('The Title of the block.');
+  t('This text is not shown for most banner types.');
   t('Title');
-  t('Url');
-  t('Working Area');
+  t('Topic');
+  t('Work Area');
+  t('You must select where the banner is going to be shown.');
 
   return $field_instances;
 }
