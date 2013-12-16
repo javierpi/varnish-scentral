@@ -155,8 +155,39 @@ function cepal_session_field_default_field_bases() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'text_with_summary',
+  );
+
+  // Exported field_base: 'field_session_external_content'
+  $field_bases['field_session_external_content'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_session_external_content',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'link',
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'rel' => '',
+        'target' => 'default',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'entity_translation_sync' => FALSE,
+      'title' => 'optional',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+    ),
+    'translatable' => 0,
+    'type' => 'link_field',
   );
 
   // Exported field_base: 'field_session_presentation'
@@ -197,6 +228,58 @@ function cepal_session_field_default_field_bases() {
         ),
         'target_bundles' => array(
           'cepal_presentation' => 'cepal_presentation',
+          'cepal_speech' => 'cepal_speech',
+        ),
+      ),
+      'target_type' => 'node',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'field_session_related_content'
+  $field_bases['field_session_related_content'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_session_related_content',
+    'foreign keys' => array(
+      'node' => array(
+        'columns' => array(
+          'target_id' => 'nid',
+        ),
+        'table' => 'node',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'direction' => 'ASC',
+          'property' => 'title',
+          'type' => 'property',
+        ),
+        'target_bundles' => array(
+          'cepal_article' => 'cepal_article',
+          'cepal_graphic_info' => 'cepal_graphic_info',
+          'cepal_news' => 'cepal_news',
+          'cepal_pr' => 'cepal_pr',
+          'cepal_project' => 'cepal_project',
+          'cepal_publication' => 'cepal_publication',
         ),
       ),
       'target_type' => 'node',
@@ -243,11 +326,11 @@ function cepal_session_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_session_speakers',
     'foreign keys' => array(
-      'eck_authority' => array(
+      'node' => array(
         'columns' => array(
-          'target_id' => 'id',
+          'target_id' => 'nid',
         ),
-        'table' => 'eck_authority',
+        'table' => 'node',
       ),
     ),
     'indexes' => array(
@@ -268,14 +351,14 @@ function cepal_session_field_default_field_bases() {
         ),
         'sort' => array(
           'direction' => 'ASC',
-          'property' => 'lastname',
+          'property' => 'title',
           'type' => 'property',
         ),
         'target_bundles' => array(
-          'authority_bundle' => 'authority_bundle',
+          'cepal_person' => 'cepal_person',
         ),
       ),
-      'target_type' => 'authority',
+      'target_type' => 'node',
     ),
     'translatable' => 0,
     'type' => 'entityreference',

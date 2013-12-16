@@ -21,7 +21,8 @@ function cepal_session_node_info() {
     'session' => array(
       'name' => t('Session'),
       'base' => 'node_content',
-      'description' => '',
+      'description' => t('@TODO : traducir
+Cada una de las juntas de una conferencia, caracterizada por tener uno o varios ponentes en una ubicación determinada, con una hora de inicio y de fin.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

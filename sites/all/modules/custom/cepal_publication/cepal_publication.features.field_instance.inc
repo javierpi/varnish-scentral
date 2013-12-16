@@ -10,6 +10,100 @@
 function cepal_publication_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-cepal_publication-field_id_sade'
+  $field_instances['node-cepal_publication-field_id_sade'] = array(
+    'bundle' => 'cepal_publication',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 30,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_id_sade',
+    'label' => 'ID SADE',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 31,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_publication-field_id_sade_maestro'
+  $field_instances['node-cepal_publication-field_id_sade_maestro'] = array(
+    'bundle' => 'cepal_publication',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 31,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_id_sade_maestro',
+    'label' => 'ID SADE Maestro',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 32,
+    ),
+  );
+
   // Exported field_instance: 'node-cepal_publication-field_publication_abstract'
   $field_instances['node-cepal_publication-field_publication_abstract'] = array(
     'bundle' => 'cepal_publication',
@@ -47,7 +141,7 @@ function cepal_publication_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -88,7 +182,7 @@ function cepal_publication_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => 1,
     ),
   );
 
@@ -129,7 +223,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 16,
+      'weight' => 14,
     ),
   );
 
@@ -138,14 +232,16 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
     'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 33,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -157,61 +253,25 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
     'entity_type' => 'node',
     'field_name' => 'field_publication_author',
     'label' => 'Author',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'text',
+      'module' => 'entityreference',
       'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 1,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
         'size' => 60,
       ),
-      'type' => 'text_textfield',
-      'weight' => 7,
-    ),
-  );
-
-  // Exported field_instance: 'node-cepal_publication-field_publication_coordinator'
-  $field_instances['node-cepal_publication-field_publication_coordinator'] = array(
-    'bundle' => 'cepal_publication',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'TEMPORAL, debe ser reemplazado con una referencia a otra entidad autor.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 7,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_publication_coordinator',
-    'label' => 'Coordinator',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 10,
+      'type' => 'entityreference_autocomplete',
+      'weight' => 6,
     ),
   );
 
@@ -251,7 +311,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 17,
+      'weight' => 16,
     ),
   );
 
@@ -305,23 +365,25 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
-  // Exported field_instance: 'node-cepal_publication-field_publication_director'
-  $field_instances['node-cepal_publication-field_publication_director'] = array(
+  // Exported field_instance: 'node-cepal_publication-field_publication_donor'
+  $field_instances['node-cepal_publication-field_publication_donor'] = array(
     'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'TEMPORAL, debe ser reemplazado con una referencia a otra entidad autor.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 8,
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 37,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -331,22 +393,21 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_publication_director',
-    'label' => 'Director',
+    'field_name' => 'field_publication_donor',
+    'label' => 'Donor',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'text',
+      'module' => 'options',
       'settings' => array(
-        'size' => 60,
+        'apply_chosen' => 0,
       ),
-      'type' => 'text_textfield',
-      'weight' => 11,
+      'type' => 'options_select',
+      'weight' => 20,
     ),
   );
 
@@ -401,23 +462,23 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 23,
+      'weight' => 24,
     ),
   );
 
-  // Exported field_instance: 'node-cepal_publication-field_publication_editor'
-  $field_instances['node-cepal_publication-field_publication_editor'] = array(
+  // Exported field_instance: 'node-cepal_publication-field_publication_editorial'
+  $field_instances['node-cepal_publication-field_publication_editorial'] = array(
     'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 6,
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 39,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -427,22 +488,22 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_publication_editor',
-    'label' => 'Editor',
+    'field_name' => 'field_publication_editorial',
+    'label' => 'Editorial',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'text',
+      'active' => 0,
+      'module' => 'taxonomy',
       'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'text_textfield',
-      'weight' => 9,
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 7,
     ),
   );
 
@@ -484,7 +545,51 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 27,
+      'weight' => 28,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_publication-field_publication_file_language'
+  $field_instances['node-cepal_publication-field_publication_file_language'] = array(
+    'bundle' => 'cepal_publication',
+    'default_value' => array(
+      0 => array(
+        'value' => 'es',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 38,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_publication_file_language',
+    'label' => 'File language',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 23,
     ),
   );
 
@@ -510,7 +615,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
     ),
     'entity_type' => 'node',
     'field_name' => 'field_publication_files',
-    'label' => 'Files',
+    'label' => 'File',
     'required' => 0,
     'settings' => array(
       'description_field' => 0,
@@ -596,47 +701,6 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
     ),
   );
 
-  // Exported field_instance: 'node-cepal_publication-field_publication_inst_author'
-  $field_instances['node-cepal_publication-field_publication_inst_author'] = array(
-    'bundle' => 'cepal_publication',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_publication_inst_author',
-    'label' => 'Institutional Author',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 8,
-    ),
-  );
-
   // Exported field_instance: 'node-cepal_publication-field_publication_isbn'
   $field_instances['node-cepal_publication-field_publication_isbn'] = array(
     'bundle' => 'cepal_publication',
@@ -674,7 +738,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
         'size' => 13,
       ),
       'type' => 'text_textfield',
-      'weight' => 13,
+      'weight' => 9,
     ),
   );
 
@@ -715,7 +779,103 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
         'size' => 13,
       ),
       'type' => 'text_textfield',
-      'weight' => 14,
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_publication-field_publication_license_type'
+  $field_instances['node-cepal_publication-field_publication_license_type'] = array(
+    'bundle' => 'cepal_publication',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'CAMPO PROVISORIO: Se debe cambiar posteriormente a la definición definitiva de las licencias.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 34,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_publication_license_type',
+    'label' => 'License type',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_publication-field_publication_license_url'
+  $field_instances['node-cepal_publication-field_publication_license_url'] = array(
+    'bundle' => 'cepal_publication',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'CAMPO PROVISORIO: se debe cambiar posteriormente a la definición exacta de las licencias.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 35,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_publication_license_url',
+    'label' => 'License URL',
+    'required' => 0,
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => '_blank',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'entity_translation_sync' => FALSE,
+      'rel_remove' => 'default',
+      'title' => 'none',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 13,
     ),
   );
 
@@ -770,7 +930,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 25,
+      'weight' => 26,
     ),
   );
 
@@ -821,7 +981,47 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 26,
+      'weight' => 27,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_publication-field_publication_observatory'
+  $field_instances['node-cepal_publication-field_publication_observatory'] = array(
+    'bundle' => 'cepal_publication',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 36,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_publication_observatory',
+    'label' => 'Observatory',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 15,
     ),
   );
 
@@ -872,7 +1072,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 15,
+      'weight' => 11,
     ),
   );
 
@@ -914,7 +1114,7 @@ Campo condicional, si es publicación de tipo proyecto.',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 28,
+      'weight' => 29,
     ),
   );
 
@@ -955,10 +1155,14 @@ Campo condicional, si es publicación de tipo proyecto.',
       'settings' => array(
         'match_operator' => 'CONTAINS',
         'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 24,
+      'weight' => 25,
     ),
   );
 
@@ -998,7 +1202,7 @@ Campo condicional, si es publicación de tipo proyecto.',
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 19,
+      'weight' => 18,
     ),
   );
 
@@ -1039,7 +1243,7 @@ Campo condicional, si es publicación de tipo proyecto.',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 12,
+      'weight' => 8,
     ),
   );
 
@@ -1079,7 +1283,7 @@ Campo condicional, si es publicación de tipo proyecto.',
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 18,
+      'weight' => 17,
     ),
   );
 
@@ -1114,8 +1318,9 @@ Campo condicional, si es publicación de tipo proyecto.',
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'shs',
+      'module' => 'options',
       'settings' => array(
+        'apply_chosen' => 0,
         'shs' => array(
           'create_new_levels' => 0,
           'create_new_terms' => 0,
@@ -1124,8 +1329,8 @@ Campo condicional, si es publicación de tipo proyecto.',
           'use_chosen' => 'never',
         ),
       ),
-      'type' => 'taxonomy_shs',
-      'weight' => 3,
+      'type' => 'options_select',
+      'weight' => 2,
     ),
   );
 
@@ -1165,7 +1370,7 @@ Campo condicional, si es publicación de tipo proyecto.',
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 20,
+      'weight' => 19,
     ),
   );
 
@@ -1206,7 +1411,51 @@ Campo condicional, si es publicación de tipo proyecto.',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_publication-title_field'
+  $field_instances['node-cepal_publication-title_field'] = array(
+    'bundle' => 'cepal_publication',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 32,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'title_field',
+    'label' => 'Title',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'hide_label' => array(
+        'entity' => 0,
+        'page' => 0,
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 0,
     ),
   );
 
@@ -1216,12 +1465,16 @@ Campo condicional, si es publicación de tipo proyecto.',
   t('Alternative Title');
   t('An abstract about this <em>Publication</em>.');
   t('Author');
+  t('CAMPO PROVISORIO: Se debe cambiar posteriormente a la definición definitiva de las licencias.');
+  t('CAMPO PROVISORIO: se debe cambiar posteriormente a la definición exacta de las licencias.');
   t('Conference');
-  t('Coordinator');
   t('Country');
-  t('Director');
-  t('Editor');
-  t('Files');
+  t('Donor');
+  t('Editorial');
+  t('File');
+  t('File language');
+  t('ID SADE');
+  t('ID SADE Maestro');
   t('ISBN');
   t('ISSN');
   t('Image');
@@ -1229,12 +1482,14 @@ Campo condicional, si es publicación de tipo proyecto.',
   t('Insert the <em>table of contents</em> for this <em>publication</em>.');
   t('Insert the number of pages for this publication.');
   t('Insert the publication date.');
-  t('Institutional Author');
   t('Is possible to add link references for this <em>publication</em>.');
   t('Is possible to add references to another content on this site.');
   t('Is possible to add some attached files to this <em>publication</em> as a complementary information.');
+  t('License URL');
+  t('License type');
   t('Links');
   t('Number');
+  t('Observatory');
   t('Pages');
   t('Please insert the ISBN code for this publication if exists.');
   t('Please insert the ISSN code if exists.');
@@ -1251,15 +1506,14 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.');
   t('Select associated topics for this <em>Publication</em>.');
   t('Select the <em>publication</em> type.');
   t('Special Topic');
-  t('TEMPORAL, debe ser reemplazado con una referencia a otra entidad autor.');
   t('TEMPORAL, debe ser reemplazado con una referencia a otra entidad de tipo Proyecto.
 Campo condicional, si es publicación de tipo proyecto.');
   t('TEMPORAL, debe ser reemplazado con una referencia a otra entidad de tipo evento.
 Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).');
-  t('TEMPORAL, debe ser reemplazado con una referencia a otra entidad.');
   t('Table of contents');
   t('The code indentifier for this <em>Publication</em>.');
   t('The number of in the Series for this <em>publication</em>.');
+  t('Title');
   t('Topic');
   t('UN Symbol');
   t('UNBIS');

@@ -116,7 +116,7 @@ function cepal_session_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_session_conference',
     'label' => 'Conference',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
@@ -127,6 +127,10 @@ function cepal_session_field_default_field_instances() {
       'settings' => array(
         'match_operator' => 'CONTAINS',
         'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
@@ -177,7 +181,7 @@ function cepal_session_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
-        'input_format' => 'm/d/Y - H:i:s',
+        'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
@@ -231,6 +235,61 @@ function cepal_session_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-session-field_session_external_content'
+  $field_instances['node-session-field_session_external_content'] = array(
+    'bundle' => 'session',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'url formal example: http://www.google.com',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 17,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_session_external_content',
+    'label' => 'External content',
+    'required' => 0,
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'configurable_title' => 0,
+        'rel' => 'nofollow',
+        'target' => '_blank',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 0,
+      'entity_translation_sync' => FALSE,
+      'rel_remove' => 'default',
+      'title' => 'required',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 16,
+    ),
+  );
+
   // Exported field_instance: 'node-session-field_session_presentation'
   $field_instances['node-session-field_session_presentation'] = array(
     'bundle' => 'session',
@@ -256,7 +315,7 @@ function cepal_session_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_session_presentation',
-    'label' => 'Presentation',
+    'label' => 'Presentation/Speech',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -268,10 +327,62 @@ function cepal_session_field_default_field_instances() {
       'settings' => array(
         'match_operator' => 'CONTAINS',
         'path' => '',
+        'references_dialog_add' => 1,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance: 'node-session-field_session_related_content'
+  $field_instances['node-session-field_session_related_content'] = array(
+    'bundle' => 'session',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Related internal content.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 16,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_session_related_content',
+    'label' => 'Related Content',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 15,
     ),
   );
 
@@ -321,17 +432,16 @@ function cepal_session_field_default_field_instances() {
     'bundle' => 'session',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Press Ctrl + click to select/unselect multiple Speakers.',
     'display' => array(
       'default' => array(
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
-          'links' => 1,
-          'view_mode' => 'francort_view_mode',
+          'link' => FALSE,
         ),
-        'type' => 'entityreference_entity_view',
-        'weight' => 3,
+        'type' => 'entityreference_label',
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -343,18 +453,24 @@ function cepal_session_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_session_speakers',
     'label' => 'Speakers',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'entityreference',
       'settings' => array(
-        'apply_chosen' => 0,
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 1,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
       ),
-      'type' => 'options_select',
+      'type' => 'entityreference_autocomplete',
       'weight' => 4,
     ),
   );
@@ -640,8 +756,12 @@ function cepal_session_field_default_field_instances() {
   t('Country');
   t('Date');
   t('Description');
+  t('External content');
   t('Initial and final date for this Session.');
-  t('Presentation');
+  t('Presentation/Speech');
+  t('Press Ctrl + click to select/unselect multiple Speakers.');
+  t('Related Content');
+  t('Related internal content.');
   t('Room');
   t('Session\'s Title');
   t('Speakers');
@@ -651,6 +771,7 @@ function cepal_session_field_default_field_instances() {
   t('UNBIS');
   t('Url streaming');
   t('Url video');
+  t('url formal example: http://www.google.com');
 
   return $field_instances;
 }
