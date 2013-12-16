@@ -15,6 +15,7 @@ function cepal_pages_user_default_permissions() {
     'name' => 'create cepal_page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -51,6 +52,7 @@ function cepal_pages_user_default_permissions() {
     'name' => 'edit own cepal_page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
