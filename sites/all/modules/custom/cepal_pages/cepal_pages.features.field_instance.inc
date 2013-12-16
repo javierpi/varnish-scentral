@@ -79,7 +79,7 @@ function cepal_pages_field_default_field_instances() {
     'settings' => array(
       'description_field' => 1,
       'entity_translation_sync' => FALSE,
-      'file_directory' => 'pages',
+      'file_directory' => 'pages/files',
       'file_extensions' => 'pdf doc docx odt ppt pptx xls xlsx',
       'max_filesize' => '',
       'user_register_form' => FALSE,
@@ -89,13 +89,20 @@ function cepal_pages_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
-          0 => 'public',
-          1 => 'private',
+          'public' => 'public',
         ),
         'allowed_types' => array(
-          0 => 'image',
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
         ),
-        'browser_plugins' => array(),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
