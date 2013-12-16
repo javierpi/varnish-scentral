@@ -419,7 +419,7 @@ function cepal_pages_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'title_field',
-    'label' => 'Título',
+    'label' => 'Title',
     'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -461,7 +461,7 @@ function cepal_pages_field_default_field_instances() {
 @TODO:TEMPORAL/MIGRACION, este campo será reemplazado.');
   t('The work area that this page belongs to.
 @TODO:TEMPORAL/MIGRACION, este campo será reemplazado.');
-  t('Título');
+  t('Title');
   t('Work Area');
 
   return $field_instances;
