@@ -48,44 +48,6 @@ function cepal_banner_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-banner-field_banner_destination_type'
-  $field_instances['node-banner-field_banner_destination_type'] = array(
-    'bundle' => 'banner',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Is this banner pointing to an external page or a page in this site?',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 17,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_banner_destination_type',
-    'label' => 'Link destination type',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 8,
-    ),
-  );
-
   // Exported field_instance: 'node-banner-field_banner_image_main_slide'
   $field_instances['node-banner-field_banner_image_main_slide'] = array(
     'bundle' => 'banner',
@@ -113,7 +75,7 @@ function cepal_banner_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_banner_image_main_slide',
     'label' => 'Image main slide',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'alt_field' => 1,
       'default_image' => 0,
@@ -165,7 +127,7 @@ function cepal_banner_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_banner_image_promotion',
     'label' => 'Image Promotion',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'alt_field' => 0,
       'default_image' => 0,
@@ -253,7 +215,7 @@ function cepal_banner_field_default_field_instances() {
     'bundle' => 'banner',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'External link. Must be written like "http://www.google.com" with the "http://" before the address.',
+    'description' => 'External link. Should be written like "http://www.google.com" with the "http://" before the address. Internal links should be relative: example "/news/todays-headlines"',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -277,8 +239,8 @@ function cepal_banner_field_default_field_instances() {
       'attributes' => array(
         'class' => '',
         'configurable_title' => 0,
-        'rel' => '',
-        'target' => '_blank',
+        'rel' => 'nofollow',
+        'target' => 'default',
         'title' => '',
       ),
       'display' => array(
@@ -286,7 +248,7 @@ function cepal_banner_field_default_field_instances() {
       ),
       'enable_tokens' => 1,
       'entity_translation_sync' => FALSE,
-      'rel_remove' => 'default',
+      'rel_remove' => 'rel_remove_internal',
       'title' => 'none',
       'title_maxlength' => 128,
       'title_value' => '',
@@ -340,54 +302,6 @@ function cepal_banner_field_default_field_instances() {
       ),
       'type' => 'options_select',
       'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'node-banner-field_banner_related_content'
-  $field_instances['node-banner-field_banner_related_content'] = array(
-    'bundle' => 'banner',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => 1,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 10,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_banner_related_content',
-    'label' => 'Related Content',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'references_dialog_add' => 0,
-        'references_dialog_edit' => 0,
-        'references_dialog_search' => 0,
-        'references_dialog_search_view' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 10,
     ),
   );
 
@@ -681,18 +595,15 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
   // Included for use with string extractors like potx.
   t('Behavior');
   t('Country');
-  t('External link. Must be written like "http://www.google.com" with the "http://" before the address.');
+  t('External link. Should be written like "http://www.google.com" with the "http://" before the address. Internal links should be relative: example "/news/todays-headlines"');
   t('Image Promotion');
   t('Image main slide');
   t('Image top page');
-  t('Is this banner pointing to an external page or a page in this site?');
   t('Link');
-  t('Link destination type');
   t('MIGRACION. Seleccione un observatorio si el comunicado pertenece a alguno.');
   t('MIGRATION.
 Seleccione un órgano subsidiario si corresponde.');
   t('Observatory');
-  t('Related Content');
   t('Select the work area for this content.
 MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update to workgroup.');
   t('Short text');
