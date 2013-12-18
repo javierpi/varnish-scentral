@@ -46,7 +46,7 @@ function cepal_donor_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 37,
+      'weight' => 9,
     ),
   );
 
@@ -87,7 +87,7 @@ function cepal_donor_field_default_field_instances() {
         'size' => 30,
       ),
       'type' => 'text_textfield',
-      'weight' => 32,
+      'weight' => 5,
     ),
   );
 
@@ -128,7 +128,7 @@ function cepal_donor_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 31,
+      'weight' => 4,
     ),
   );
 
@@ -168,7 +168,7 @@ function cepal_donor_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 34,
+      'weight' => 7,
     ),
   );
 
@@ -219,6 +219,7 @@ function cepal_donor_field_default_field_instances() {
           'public' => 'public',
         ),
         'allowed_types' => array(
+          0 => 0,
           'audio' => 0,
           'document' => 0,
           'image' => 'image',
@@ -233,7 +234,7 @@ function cepal_donor_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 33,
+      'weight' => 6,
     ),
   );
 
@@ -274,7 +275,7 @@ function cepal_donor_field_default_field_instances() {
         'size' => 20,
       ),
       'type' => 'text_textfield',
-      'weight' => 35,
+      'weight' => 8,
     ),
   );
 
@@ -314,7 +315,7 @@ function cepal_donor_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 39,
+      'weight' => 3,
     ),
   );
 
@@ -369,7 +370,7 @@ function cepal_donor_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 38,
+      'weight' => 10,
     ),
   );
 
@@ -413,7 +414,7 @@ function cepal_donor_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => -5,
+      'weight' => 0,
     ),
   );
 
