@@ -23,7 +23,7 @@ function cepal_speech_node_info() {
       'base' => 'node_content',
       'description' => t('Use this content type to publish a <em>speech</em> from some person with its associated information.'),
       'has_title' => '1',
-      'title_label' => t('Título'),
+      'title_label' => t('Title'),
       'help' => '',
     ),
   );
