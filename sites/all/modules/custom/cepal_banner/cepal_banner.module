@@ -76,7 +76,7 @@ function cepal_banner_checkbox(&$form, $dependee, $dependent, $value = TRUE){
     ':input[name="' . $dependee . '"]' => array('checked' => $value)
   );
   $form[$dependent]['#states'] = array(
-    'visible' => $condition,
+    'visible'  => $condition,
     'required' => $condition
   );
 }

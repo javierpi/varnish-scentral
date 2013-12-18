@@ -38,33 +38,6 @@ function cepal_banner_field_default_field_bases() {
     'type' => 'list_integer',
   );
 
-  // Exported field_base: 'field_banner_destination_type'
-  $field_bases['field_banner_destination_type'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_banner_destination_type',
-    'foreign keys' => array(),
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        1 => 'Internal',
-        2 => 'External',
-      ),
-      'allowed_values_function' => '',
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'list_integer',
-  );
-
   // Exported field_base: 'field_banner_image_main_slide'
   $field_bases['field_banner_image_main_slide'] = array(
     'active' => 1,
@@ -191,7 +164,7 @@ function cepal_banner_field_default_field_bases() {
       'title_value' => '',
       'url' => 0,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'link_field',
   );
 
@@ -223,62 +196,6 @@ function cepal_banner_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'list_integer',
-  );
-
-  // Exported field_base: 'field_banner_related_content'
-  $field_bases['field_banner_related_content'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_banner_related_content',
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-          'target_id' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
-    'indexes' => array(
-      'target_id' => array(
-        0 => 'target_id',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'entityreference',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'handler' => 'base',
-      'handler_settings' => array(
-        'behaviors' => array(
-          'views-select-list' => array(
-            'status' => 0,
-          ),
-        ),
-        'sort' => array(
-          'direction' => 'ASC',
-          'property' => 'title',
-          'type' => 'property',
-        ),
-        'target_bundles' => array(
-          'cepal_article' => 'cepal_article',
-          'cepal_event' => 'cepal_event',
-          'cepal_graphic_info' => 'cepal_graphic_info',
-          'cepal_news' => 'cepal_news',
-          'cepal_page' => 'cepal_page',
-          'cepal_pr' => 'cepal_pr',
-          'cepal_presentation' => 'cepal_presentation',
-          'cepal_project' => 'cepal_project',
-          'cepal_publication' => 'cepal_publication',
-          'cepal_speech' => 'cepal_speech',
-          'session' => 'session',
-        ),
-      ),
-      'target_type' => 'node',
-    ),
-    'translatable' => 0,
-    'type' => 'entityreference',
   );
 
   // Exported field_base: 'field_banner_short_text'
