@@ -46,7 +46,7 @@ function cepal_speech_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 12,
     ),
   );
 
@@ -86,7 +86,7 @@ function cepal_speech_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 14,
     ),
   );
 
@@ -127,7 +127,7 @@ function cepal_speech_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 15,
+      'weight' => 9,
     ),
   );
 
@@ -168,7 +168,7 @@ function cepal_speech_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 6,
     ),
   );
 
@@ -209,7 +209,7 @@ function cepal_speech_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 13,
+      'weight' => 8,
     ),
   );
 
@@ -250,7 +250,7 @@ function cepal_speech_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 12,
+      'weight' => 7,
     ),
   );
 
@@ -304,7 +304,7 @@ function cepal_speech_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 2,
+      'weight' => 4,
     ),
   );
 
@@ -345,13 +345,14 @@ function cepal_speech_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 17,
+      'weight' => 11,
     ),
   );
 
   // Exported field_instance: 'node-cepal_speech-field_speech_files'
   $field_instances['node-cepal_speech-field_speech_files'] = array(
     'bundle' => 'cepal_speech',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => 'Is possible to add attached files files to this <em>Speech</em>.',
     'display' => array(
@@ -383,12 +384,20 @@ function cepal_speech_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'file',
+      'module' => 'media',
       'settings' => array(
+        'allowed_schemes' => array(
+          0 => 'public',
+          1 => 'private',
+        ),
+        'allowed_types' => array(
+          0 => 'image',
+        ),
+        'browser_plugins' => array(),
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'file_generic',
-      'weight' => 5,
+      'type' => 'media_generic',
+      'weight' => 16,
     ),
   );
 
@@ -454,7 +463,7 @@ function cepal_speech_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 1,
+      'weight' => 3,
     ),
   );
 
@@ -495,7 +504,7 @@ function cepal_speech_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 16,
+      'weight' => 10,
     ),
   );
 
@@ -536,7 +545,7 @@ function cepal_speech_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 3,
+      'weight' => 5,
     ),
   );
 
@@ -576,7 +585,7 @@ function cepal_speech_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 13,
     ),
   );
 
@@ -616,7 +625,51 @@ function cepal_speech_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 9,
+      'weight' => 15,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_speech-title_field'
+  $field_instances['node-cepal_speech-title_field'] = array(
+    'bundle' => 'cepal_speech',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'title_field',
+    'label' => 'Title',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'hide_label' => array(
+        'entity' => 'entity',
+        'page' => 0,
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 0,
     ),
   );
 
@@ -648,6 +701,7 @@ function cepal_speech_field_default_field_instances() {
   t('TEMPORAL, debe ser reemplazado con una referencia a otra entidad.');
   t('TEMPORAL. Información de contacto institucional, se debe reemplazar con otro campo.');
   t('Teaser');
+  t('Title');
   t('Topic');
   t('UNBIS');
 

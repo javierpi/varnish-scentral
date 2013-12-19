@@ -95,10 +95,10 @@ function cepal_donor_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'path' => array(
-          'weight' => '30',
+          'weight' => '2',
         ),
         'language' => array(
-          'weight' => '5',
+          'weight' => '1',
         ),
       ),
       'display' => array(),

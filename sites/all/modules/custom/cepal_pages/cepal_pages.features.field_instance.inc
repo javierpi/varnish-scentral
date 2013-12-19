@@ -144,8 +144,8 @@ function cepal_pages_field_default_field_instances() {
       'file_directory' => 'page/images',
       'file_extensions' => 'png jpg jpeg',
       'max_filesize' => '520 KB',
-      'max_resolution' => '800x800',
-      'min_resolution' => '400x400',
+      'max_resolution' => '800x600',
+      'min_resolution' => '400x200',
       'title_field' => 0,
       'user_register_form' => FALSE,
     ),
@@ -157,6 +157,7 @@ function cepal_pages_field_default_field_instances() {
           'public' => 'public',
         ),
         'allowed_types' => array(
+          0 => 0,
           'audio' => 0,
           'document' => 0,
           'image' => 'image',

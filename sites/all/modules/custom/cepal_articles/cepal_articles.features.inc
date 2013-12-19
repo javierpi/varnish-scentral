@@ -23,7 +23,7 @@ function cepal_articles_node_info() {
       'base' => 'node_content',
       'description' => t('Use this content type to create an <em>Opinion Columns</em> or <em>Messages</em> from authorities.'),
       'has_title' => '1',
-      'title_label' => t('Título'),
+      'title_label' => t('Title'),
       'help' => '',
     ),
   );

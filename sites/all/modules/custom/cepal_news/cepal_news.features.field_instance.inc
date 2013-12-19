@@ -283,6 +283,7 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
   // Exported field_instance: 'node-cepal_news-field_news_files'
   $field_instances['node-cepal_news-field_news_files'] = array(
     'bundle' => 'cepal_news',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => 'Is possible to add attached files files to this content as a complement.',
     'display' => array(
@@ -306,7 +307,7 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
     'required' => 0,
     'settings' => array(
       'description_field' => 1,
-      'entity_translation_sync' => FALSE,
+      'entity_translation_sync' => 0,
       'file_directory' => 'news/files',
       'file_extensions' => 'pdf doc docx odt ppt pptx xls xlsx',
       'max_filesize' => '',
@@ -314,11 +315,26 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'file',
+      'module' => 'media',
       'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'file_generic',
+      'type' => 'media_generic',
       'weight' => 15,
     ),
   );
@@ -353,7 +369,7 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
     'settings' => array(
       'alt_field' => 1,
       'default_image' => 0,
-      'entity_translation_sync' => FALSE,
+      'entity_translation_sync' => 0,
       'file_directory' => 'news/images',
       'file_extensions' => 'png jpg jpeg',
       'max_filesize' => '600 KB',
@@ -367,14 +383,20 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
-          0 => 'public',
-          1 => 'private',
+          'public' => 'public',
         ),
         'allowed_types' => array(
-          0 => 'image',
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
         ),
-        'browser_plugins' => array(),
-        'preview_image_style' => 'thumbnail',
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
@@ -541,6 +563,50 @@ Seleccione un órgano subsidiario si corresponde.',
       ),
       'type' => 'options_select',
       'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_news-field_related'
+  $field_instances['node-cepal_news-field_related'] = array(
+    'bundle' => 'cepal_news',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Is possible to add references to another content on this site.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 19,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_related',
+    'label' => 'Related Content',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete_tags',
+      'weight' => 19,
     ),
   );
 
@@ -721,12 +787,14 @@ Seleccione un órgano subsidiario si corresponde.',
   t('Insert a teaser text for this content.');
   t('Insert the body text for this content.');
   t('Is possible to add attached files files to this content as a complement.');
+  t('Is possible to add references to another content on this site.');
   t('MIGRACION. Seleccione un observatorio si la noticia pertenece a alguno.');
   t('MIGRATION.
 Seleccione un órgano subsidiario si corresponde.');
   t('Migration field.');
   t('Migration field. DON\'t touch.');
   t('Observatories');
+  t('Related Content');
   t('Select a "special topic" if is needed.');
   t('Select a country asociated with this <em>content</em>.');
   t('Select a image asociated to this <em>New</em>. This image could be showed in the press releases lists and front pages.');

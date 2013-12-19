@@ -149,6 +149,7 @@ function cepal_articles_field_default_field_instances() {
   // Exported field_instance: 'node-cepal_article-field_article_files'
   $field_instances['node-cepal_article-field_article_files'] = array(
     'bundle' => 'cepal_article',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => 'Is possible to add attached files files to this <em>Article</em>.',
     'display' => array(
@@ -180,11 +181,26 @@ function cepal_articles_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'file',
+      'module' => 'media',
       'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'file_generic',
+      'type' => 'media_generic',
       'weight' => 12,
     ),
   );
@@ -645,6 +661,50 @@ function cepal_articles_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-cepal_article-title_field'
+  $field_instances['node-cepal_article-title_field'] = array(
+    'bundle' => 'cepal_article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'title_field',
+    'label' => 'Title',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'hide_label' => array(
+        'entity' => 'entity',
+        'page' => 0,
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => -5,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Author');
@@ -672,6 +732,7 @@ function cepal_articles_field_default_field_instances() {
   t('Special Topic');
   t('TEMPORAL, debe ser reemplazado con una referencia a otra entidad.');
   t('Teaser');
+  t('Title');
   t('Topic');
   t('Type');
   t('UNBIS');
