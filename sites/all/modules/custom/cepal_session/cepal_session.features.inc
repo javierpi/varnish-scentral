@@ -22,7 +22,7 @@ function cepal_session_node_info() {
       'name' => t('Session'),
       'base' => 'node_content',
       'description' => t('@TODO : traducir
-Cada una de las juntas de una conferencia, caracterizada por tener uno o varios ponentes en una ubicación determinada, con una hora de inicio y de fin.'),
+Cada una de las partes, charlas, mesas redondas, discursos o cualquier otra actividad de una conferencia caracterizada por tener una hora de inicio y fin en el mismo día, con uno o varios ponentes o participantes y en una misma sala. Siempre va asociada a una conferencia.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
