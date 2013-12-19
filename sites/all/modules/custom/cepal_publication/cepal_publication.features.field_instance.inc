@@ -53,7 +53,7 @@ function cepal_publication_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 31,
+      'weight' => 32,
     ),
   );
 
@@ -100,7 +100,7 @@ function cepal_publication_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 32,
+      'weight' => 33,
     ),
   );
 
@@ -223,7 +223,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -271,7 +271,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -311,7 +311,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -407,7 +407,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 20,
+      'weight' => 21,
     ),
   );
 
@@ -462,7 +462,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 24,
+      'weight' => 25,
     ),
   );
 
@@ -503,7 +503,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -545,7 +545,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 28,
+      'weight' => 29,
     ),
   );
 
@@ -589,7 +589,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 23,
+      'weight' => 24,
     ),
   );
 
@@ -632,7 +632,48 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 22,
+      'weight' => 23,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_publication-field_publication_highlight'
+  $field_instances['node-cepal_publication-field_publication_highlight'] = array(
+    'bundle' => 'cepal_publication',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 40,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_publication_highlight',
+    'label' => 'Highlight',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 100,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 6,
     ),
   );
 
@@ -697,7 +738,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 21,
+      'weight' => 22,
     ),
   );
 
@@ -738,7 +779,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
         'size' => 13,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -779,7 +820,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
         'size' => 13,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -820,7 +861,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -875,7 +916,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -930,7 +971,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 26,
+      'weight' => 27,
     ),
   );
 
@@ -981,7 +1022,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 27,
+      'weight' => 28,
     ),
   );
 
@@ -1021,7 +1062,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -1072,7 +1113,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -1114,7 +1155,7 @@ Campo condicional, si es publicación de tipo proyecto.',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 29,
+      'weight' => 30,
     ),
   );
 
@@ -1162,7 +1203,7 @@ Campo condicional, si es publicación de tipo proyecto.',
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 25,
+      'weight' => 26,
     ),
   );
 
@@ -1202,7 +1243,7 @@ Campo condicional, si es publicación de tipo proyecto.',
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 18,
+      'weight' => 19,
     ),
   );
 
@@ -1243,7 +1284,7 @@ Campo condicional, si es publicación de tipo proyecto.',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -1283,7 +1324,7 @@ Campo condicional, si es publicación de tipo proyecto.',
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 17,
+      'weight' => 18,
     ),
   );
 
@@ -1370,7 +1411,7 @@ Campo condicional, si es publicación de tipo proyecto.',
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 19,
+      'weight' => 20,
     ),
   );
 
@@ -1473,6 +1514,7 @@ Campo condicional, si es publicación de tipo proyecto.',
   t('Editorial');
   t('File');
   t('File language');
+  t('Highlight');
   t('ID SADE');
   t('ID SADE Maestro');
   t('ISBN');
