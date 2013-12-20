@@ -49,6 +49,16 @@ function cepal_publication_form_alter(&$form, &$form_state, $form_id){
     )
   );
 
+  $form['field_publication_observatory']['#states'] = array(
+    'invisible'  => array(
+      $dependee => array('value' => $tids[UUID_FLAGSHIP])
+    )
+  );
+
+
+
+
+
   //$form['#validate'][] = 'cepal_publication_node_form_validate';
 }
 
