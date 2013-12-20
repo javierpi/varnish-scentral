@@ -255,7 +255,6 @@ function cepal_session_field_default_field_bases() {
         ),
         'target_bundles' => array(
           'cepal_presentation' => 'cepal_presentation',
-          'cepal_speech' => 'cepal_speech',
         ),
       ),
       'target_type' => 'node',
