@@ -134,7 +134,7 @@ function cepal_session_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 2,
+      'weight' => 1,
     ),
   );
 
@@ -188,7 +188,7 @@ function cepal_session_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
@@ -231,7 +231,7 @@ function cepal_session_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
@@ -290,16 +290,16 @@ function cepal_session_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-session-field_session_has_sheet'
-  $field_instances['node-session-field_session_has_sheet'] = array(
+  // Exported field_instance: 'node-session-field_session_is_pause'
+  $field_instances['node-session-field_session_is_pause'] = array(
     'bundle' => 'session',
     'default_value' => array(
       0 => array(
-        'value' => 1,
+        'value' => 0,
       ),
     ),
     'deleted' => 0,
-    'description' => 'If a session does not have sheet then it means it is a coffe break or similar activity.',
+    'description' => 'Check this if this content is a coffee break or similar activity.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -316,8 +316,8 @@ function cepal_session_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_session_has_sheet',
-    'label' => 'Session has sheet',
+    'field_name' => 'field_session_is_pause',
+    'label' => 'Is Pause',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -330,7 +330,7 @@ function cepal_session_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 1,
+      'weight' => 5,
     ),
   );
 
@@ -467,7 +467,7 @@ function cepal_session_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 4,
     ),
   );
 
@@ -497,7 +497,7 @@ function cepal_session_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_session_speakers',
     'label' => 'Speakers',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
@@ -515,7 +515,7 @@ function cepal_session_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -796,19 +796,19 @@ function cepal_session_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Area');
+  t('Check this if this content is a coffee break or similar activity.');
   t('Conference');
   t('Country');
   t('Date');
   t('Description');
   t('External content');
-  t('If a session does not have sheet then it means it is a coffe break or similar activity.');
   t('Initial and final date for this Session.');
+  t('Is Pause');
   t('Presentation/Speech');
   t('Press Ctrl + click to select/unselect multiple Speakers.');
   t('Related Content');
   t('Related internal content.');
   t('Room');
-  t('Session has sheet');
   t('Session\'s Title');
   t('Speakers');
   t('Special Topic');
