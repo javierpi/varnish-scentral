@@ -60,7 +60,7 @@ function cepal_banner_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => 'slide_home',
+          'image_style' => 'main_slide',
         ),
         'type' => 'image',
         'weight' => 9,
