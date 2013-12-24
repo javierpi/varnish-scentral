@@ -5,7 +5,7 @@
  */
 
 include_once 'cepal_banner.features.inc';
-/*
+
 function cepal_banner_form_alter(&$form, &$form_state, $form_id){
   if($form_id !== "banner_node_form") return;
 
@@ -80,4 +80,3 @@ function cepal_banner_checkbox(&$form, $dependee, $dependent, $value = TRUE){
     'required' => $condition
   );
 }
-*/
