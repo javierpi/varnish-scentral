@@ -290,6 +290,7 @@ function cepal_pr_field_default_field_instances() {
   // Exported field_instance: 'node-cepal_pr-field_pr_files'
   $field_instances['node-cepal_pr-field_pr_files'] = array(
     'bundle' => 'cepal_pr',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => 'Is possible to add attached files files to this <em>Press Release</em>.',
     'display' => array(
@@ -313,7 +314,7 @@ function cepal_pr_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'description_field' => 1,
-      'entity_translation_sync' => FALSE,
+      'entity_translation_sync' => 0,
       'file_directory' => 'pr/files',
       'file_extensions' => 'pdf doc docx odt ppt pptx xls xlsx epub mobi',
       'max_filesize' => '',
@@ -321,11 +322,26 @@ function cepal_pr_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'file',
+      'module' => 'media',
       'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'file_generic',
+      'type' => 'media_generic',
       'weight' => 15,
     ),
   );
