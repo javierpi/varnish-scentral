@@ -46,7 +46,54 @@ function cepal_presentation_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 11,
+      'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_presentation-field_id_sade'
+  $field_instances['node-cepal_presentation-field_id_sade'] = array(
+    'bundle' => 'cepal_presentation',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Migration field.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 24,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_id_sade',
+    'label' => 'ID SADE',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => 0,
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 19,
     ),
   );
 
@@ -90,7 +137,7 @@ function cepal_presentation_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete_tags',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -131,7 +178,7 @@ function cepal_presentation_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -185,7 +232,7 @@ function cepal_presentation_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -228,7 +275,7 @@ TEMPORAL. TODO: Update with reference to event.
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -277,7 +324,7 @@ TEMPORAL. TODO: Update with reference to event.
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -336,7 +383,7 @@ TEMPORAL. TODO: Update with reference to event.
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -402,7 +449,7 @@ TEMPORAL. TODO: Update with reference to event.
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -443,7 +490,47 @@ TEMPORAL. TODO: Update with reference to event.
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_presentation-field_presentation_type'
+  $field_instances['node-cepal_presentation-field_presentation_type'] = array(
+    'bundle' => 'cepal_presentation',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Select a kind of presentation to create.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 25,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_presentation_type',
+    'label' => 'Type',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 3,
     ),
   );
 
@@ -498,7 +585,7 @@ TEMPORAL. TODO: Update with reference to event.
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -539,7 +626,7 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -583,7 +670,7 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete_tags',
-      'weight' => 17,
+      'weight' => 18,
     ),
   );
 
@@ -623,7 +710,7 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -663,7 +750,7 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -703,7 +790,7 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -762,12 +849,14 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
   t('Date');
   t('Event');
   t('Files');
+  t('ID SADE');
   t('Image');
   t('Insert URL references where this <em>presentation</em> has been published or useful links on the Internet related to the <em>presentation</em>.');
   t('Insert a description text for this <em>Presentation</em>.');
   t('Insert a teaser for this <em>Presentation</em>.');
   t('Is possible to add attached files files to this <em>Presentation</em>.');
   t('Is possible to add references to another content on this site.');
+  t('Migration field.');
   t('NO USAR este campo, por favor usar el campo de arriba.
 TEMPORAL. TODO: Update with reference to event.
 ');
@@ -775,6 +864,7 @@ TEMPORAL. TODO: Update with reference to event.
   t('Related Content');
   t('Select a country asociated with this <em>content</em>.');
   t('Select a image asociated to this <em>Presentation</em>. This image could be showed in lists and front pages.');
+  t('Select a kind of presentation to create.');
   t('Select a special topic for classifcation if needed.');
   t('Select an UNBIS classification for this <em>Presentation</em>.');
   t('Select associated topics for this <em>Presentation</em>.');
@@ -785,6 +875,7 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
   t('Teaser');
   t('Title');
   t('Topic');
+  t('Type');
   t('UNBIS');
   t('Work Area');
 
