@@ -39,6 +39,7 @@ features[field_base][] = field_presentation_url_reference
 features[field_base][] = field_presentation_workarea
 features[field_instance][] = node-cepal_presentation-field_country
 features[field_instance][] = node-cepal_presentation-field_id_sade
+features[field_instance][] = node-cepal_presentation-field_id_sade_maestro
 features[field_instance][] = node-cepal_presentation-field_presentation_author
 features[field_instance][] = node-cepal_presentation-field_presentation_body
 features[field_instance][] = node-cepal_presentation-field_presentation_date
