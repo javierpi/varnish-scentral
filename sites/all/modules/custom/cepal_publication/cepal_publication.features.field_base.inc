@@ -65,7 +65,7 @@ function cepal_publication_field_default_field_bases() {
       'entity_translation_sync' => FALSE,
       'max_length' => 255,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'text',
   );
 
@@ -211,7 +211,7 @@ function cepal_publication_field_default_field_bases() {
       'todate' => '',
       'tz_handling' => 'none',
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'date',
   );
 
@@ -288,7 +288,7 @@ function cepal_publication_field_default_field_bases() {
       'title_value' => '',
       'url' => 0,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'link_field',
   );
 
@@ -358,38 +358,10 @@ function cepal_publication_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_publication_file_language'
-  $field_bases['field_publication_file_language'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_publication_file_language',
-    'foreign keys' => array(),
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        'es' => 'Español',
-        'en' => 'Inglés',
-        'pt-br' => 'Portugués',
-      ),
-      'allowed_values_function' => '',
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'list_text',
-  );
-
   // Exported field_base: 'field_publication_files'
   $field_bases['field_publication_files'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_publication_files',
@@ -418,6 +390,26 @@ function cepal_publication_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'file',
+  );
+
+  // Exported field_base: 'field_publication_files_url'
+  $field_bases['field_publication_files_url'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_publication_files_url',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'field_collection',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'hide_blank_items' => 1,
+      'path' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'field_collection',
   );
 
   // Exported field_base: 'field_publication_highlight'
@@ -509,7 +501,7 @@ function cepal_publication_field_default_field_bases() {
       'entity_translation_sync' => FALSE,
       'max_length' => 255,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'text',
   );
 
@@ -539,7 +531,7 @@ function cepal_publication_field_default_field_bases() {
       'entity_translation_sync' => FALSE,
       'max_length' => 255,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'text',
   );
 
@@ -680,7 +672,7 @@ function cepal_publication_field_default_field_bases() {
       'entity_translation_sync' => FALSE,
     ),
     'translatable' => 0,
-    'type' => 'list_float',
+    'type' => 'list_integer',
   );
 
   // Exported field_base: 'field_publication_pages'
@@ -697,7 +689,7 @@ function cepal_publication_field_default_field_bases() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'number_integer',
   );
 
@@ -729,48 +721,6 @@ function cepal_publication_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text',
-  );
-
-  // Exported field_base: 'field_publication_refereces'
-  $field_bases['field_publication_refereces'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_publication_refereces',
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-          'target_id' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
-    'indexes' => array(
-      'target_id' => array(
-        0 => 'target_id',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'entityreference',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'handler' => 'base',
-      'handler_settings' => array(
-        'behaviors' => array(
-          'views-select-list' => array(
-            'status' => 0,
-          ),
-        ),
-        'sort' => array(
-          'type' => 'none',
-        ),
-        'target_bundles' => array(),
-      ),
-      'target_type' => 'node',
-    ),
-    'translatable' => 0,
-    'type' => 'entityreference',
   );
 
   // Exported field_base: 'field_publication_special_topic'
@@ -972,7 +922,7 @@ function cepal_publication_field_default_field_bases() {
       'entity_translation_sync' => FALSE,
       'max_length' => 50,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'text',
   );
 

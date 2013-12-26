@@ -53,7 +53,7 @@ function cepal_publication_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 32,
+      'weight' => 33,
     ),
   );
 
@@ -100,7 +100,7 @@ function cepal_publication_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 33,
+      'weight' => 34,
     ),
   );
 
@@ -545,57 +545,14 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 29,
-    ),
-  );
-
-  // Exported field_instance: 'node-cepal_publication-field_publication_file_language'
-  $field_instances['node-cepal_publication-field_publication_file_language'] = array(
-    'bundle' => 'cepal_publication',
-    'default_value' => array(
-      0 => array(
-        'value' => 'es',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 38,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_publication_file_language',
-    'label' => 'File language',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => 0,
-      ),
-      'type' => 'options_select',
-      'weight' => 24,
+      'weight' => 30,
     ),
   );
 
   // Exported field_instance: 'node-cepal_publication-field_publication_files'
   $field_instances['node-cepal_publication-field_publication_files'] = array(
     'bundle' => 'cepal_publication',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => 'Is possible to add some attached files to this <em>publication</em> as a complementary information.',
     'display' => array(
@@ -615,7 +572,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
     ),
     'entity_type' => 'node',
     'field_name' => 'field_publication_files',
-    'label' => 'File',
+    'label' => 'Files',
     'required' => 0,
     'settings' => array(
       'description_field' => 0,
@@ -627,12 +584,64 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'file',
+      'module' => 'media',
       'settings' => array(
+        'allowed_schemes' => array(
+          0 => 'public',
+          1 => 'private',
+        ),
+        'allowed_types' => array(
+          0 => 'image',
+        ),
+        'browser_plugins' => array(),
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'file_generic',
+      'type' => 'media_generic',
       'weight' => 23,
+    ),
+  );
+
+  // Exported field_instance: 'node-cepal_publication-field_publication_files_url'
+  $field_instances['node-cepal_publication-field_publication_files_url'] = array(
+    'bundle' => 'cepal_publication',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'External urls to download files. It should have file\'s language.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Agregar',
+          'delete' => 'Eliminar',
+          'description' => TRUE,
+          'edit' => 'Editar',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 41,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_publication_files_url',
+    'label' => 'Files URL',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 24,
     ),
   );
 
@@ -971,7 +980,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 27,
+      'weight' => 28,
     ),
   );
 
@@ -1022,7 +1031,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 28,
+      'weight' => 29,
     ),
   );
 
@@ -1038,7 +1047,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 36,
+        'weight' => 42,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1050,13 +1059,12 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
     'entity_type' => 'node',
     'field_name' => 'field_publication_observatory',
     'label' => 'Observatory',
-    'required' => 0,
+    'required' => FALSE,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
       'module' => 'options',
       'settings' => array(
         'apply_chosen' => 0,
@@ -1155,55 +1163,7 @@ Campo condicional, si es publicación de tipo proyecto.',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 30,
-    ),
-  );
-
-  // Exported field_instance: 'node-cepal_publication-field_publication_refereces'
-  $field_instances['node-cepal_publication-field_publication_refereces'] = array(
-    'bundle' => 'cepal_publication',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Is possible to add references to another content on this site.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 22,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_publication_refereces',
-    'label' => 'Refereces',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'references_dialog_add' => 0,
-        'references_dialog_edit' => 0,
-        'references_dialog_search' => 0,
-        'references_dialog_search_view' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 26,
+      'weight' => 31,
     ),
   );
 
@@ -1456,6 +1416,50 @@ Campo condicional, si es publicación de tipo proyecto.',
     ),
   );
 
+  // Exported field_instance: 'node-cepal_publication-field_related'
+  $field_instances['node-cepal_publication-field_related'] = array(
+    'bundle' => 'cepal_publication',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 43,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_related',
+    'label' => 'Related Content',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete_tags',
+      'weight' => 27,
+    ),
+  );
+
   // Exported field_instance: 'node-cepal_publication-title_field'
   $field_instances['node-cepal_publication-title_field'] = array(
     'bundle' => 'cepal_publication',
@@ -1512,8 +1516,9 @@ Campo condicional, si es publicación de tipo proyecto.',
   t('Country');
   t('Donor');
   t('Editorial');
-  t('File');
-  t('File language');
+  t('External urls to download files. It should have file\'s language.');
+  t('Files');
+  t('Files URL');
   t('Highlight');
   t('ID SADE');
   t('ID SADE Maestro');
@@ -1525,7 +1530,6 @@ Campo condicional, si es publicación de tipo proyecto.',
   t('Insert the number of pages for this publication.');
   t('Insert the publication date.');
   t('Is possible to add link references for this <em>publication</em>.');
-  t('Is possible to add references to another content on this site.');
   t('Is possible to add some attached files to this <em>publication</em> as a complementary information.');
   t('License URL');
   t('License type');
@@ -1538,7 +1542,7 @@ Campo condicional, si es publicación de tipo proyecto.',
   t('Project');
   t('Publication Date');
   t('Publication Type');
-  t('Refereces');
+  t('Related Content');
   t('Seleccione el área de trabajo del proyecto.
 TEMPORAL, debe ser reemplazado con una referencia a otra entidad.');
   t('Select a <em>Special Topic</em> for classificatation if needed.');
