@@ -284,6 +284,33 @@ function cepal_presentation_field_default_field_bases() {
     'type' => 'text_long',
   );
 
+  // Exported field_base: 'field_presentation_type'
+  $field_bases['field_presentation_type'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_presentation_type',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        1 => 'Presentation',
+        2 => 'Speech',
+      ),
+      'allowed_values_function' => '',
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_integer',
+  );
+
   // Exported field_base: 'field_presentation_url_reference'
   $field_bases['field_presentation_url_reference'] = array(
     'active' => 1,

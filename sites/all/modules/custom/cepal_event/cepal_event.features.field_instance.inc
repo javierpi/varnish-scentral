@@ -534,7 +534,7 @@ Postal code of the place is not mandatory.',
       ),
     ),
     'deleted' => 0,
-    'description' => 'Is this a ECLAC event?',
+    'description' => 'Is this an ECLAC event?',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1318,7 +1318,7 @@ Seleccione un órgano subsidiario si corresponde.',
   t('Is possible to add external link references about this <em>event</em>.');
   t('Is possible to add references to another content on this site.');
   t('Is possible to add some coordinator(s) for this event.');
-  t('Is this a ECLAC event?');
+  t('Is this an ECLAC event?');
   t('MIGRACION. Seleccione un evento si el comunicado pertenece a alguno.');
   t('MIGRATION.
 Seleccione un órgano subsidiario si corresponde.');
