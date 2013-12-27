@@ -93,7 +93,7 @@ function cepal_presentation_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 19,
+      'weight' => 20,
     ),
   );
 
@@ -229,6 +229,47 @@ function cepal_presentation_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-cepal_presentation-field_presentation_city'
+  $field_instances['node-cepal_presentation-field_presentation_city'] = array(
+    'bundle' => 'cepal_presentation',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'The city where this presentation was given.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 27,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_presentation_city',
+    'label' => 'City',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 13,
+    ),
+  );
+
   // Exported field_instance: 'node-cepal_presentation-field_presentation_date'
   $field_instances['node-cepal_presentation-field_presentation_date'] = array(
     'bundle' => 'cepal_presentation',
@@ -280,49 +321,6 @@ function cepal_presentation_field_default_field_instances() {
       ),
       'type' => 'date_popup',
       'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'node-cepal_presentation-field_presentation_event'
-  $field_instances['node-cepal_presentation-field_presentation_event'] = array(
-    'bundle' => 'cepal_presentation',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'NO USAR este campo, por favor usar el campo de arriba.
-TEMPORAL. TODO: Update with reference to event.
-',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 20,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_presentation_event',
-    'label' => 'Event',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 10,
     ),
   );
 
@@ -430,7 +428,7 @@ TEMPORAL. TODO: Update with reference to event.
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -632,7 +630,7 @@ TEMPORAL. TODO: Update with reference to event.
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 17,
+      'weight' => 18,
     ),
   );
 
@@ -717,7 +715,7 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete_tags',
-      'weight' => 18,
+      'weight' => 19,
     ),
   );
 
@@ -757,7 +755,7 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -797,7 +795,7 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -837,7 +835,7 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -892,6 +890,7 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
 ');
   t('Author');
   t('Body');
+  t('City');
   t('Country');
   t('Date');
   t('Event');
@@ -906,9 +905,6 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
   t('Is possible to add references to another content on this site.');
   t('Migration field.');
   t('Migration field. DON\'t touch.');
-  t('NO USAR este campo, por favor usar el campo de arriba.
-TEMPORAL. TODO: Update with reference to event.
-');
   t('Referenced');
   t('Related Content');
   t('Select a country asociated with this <em>content</em>.');
@@ -922,6 +918,7 @@ TEMPORAL. TODO: Update with reference to event.
 MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update to workgroup.');
   t('Special Topic');
   t('Teaser');
+  t('The city where this presentation was given.');
   t('Title');
   t('Topic');
   t('Type');
