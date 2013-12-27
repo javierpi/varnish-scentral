@@ -290,6 +290,64 @@ function cepal_session_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-session-field_session_files'
+  $field_instances['node-session-field_session_files'] = array(
+    'bundle' => 'session',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 19,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_session_files',
+    'label' => 'Files',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => 'session/files',
+      'file_extensions' => 'pdf doc docx odt ppt pptx xls xlsx',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'media_generic',
+      'weight' => 18,
+    ),
+  );
+
   // Exported field_instance: 'node-session-field_session_is_pause'
   $field_instances['node-session-field_session_is_pause'] = array(
     'bundle' => 'session',
@@ -802,6 +860,7 @@ function cepal_session_field_default_field_instances() {
   t('Date');
   t('Description');
   t('External content');
+  t('Files');
   t('Initial and final date for this Session.');
   t('Is Pause');
   t('Presentation/Speech');

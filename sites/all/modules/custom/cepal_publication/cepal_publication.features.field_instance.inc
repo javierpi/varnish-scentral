@@ -10,6 +10,89 @@
 function cepal_publication_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'field_collection_item-field_publication_files_url-field_publication_file_url_lang'
+  $field_instances['field_collection_item-field_publication_files_url-field_publication_file_url_lang'] = array(
+    'bundle' => 'field_publication_files_url',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_publication_file_url_lang',
+    'label' => 'File language',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_publication_files_url-field_publication_file_url_url'
+  $field_instances['field_collection_item-field_publication_files_url-field_publication_file_url_url'] = array(
+    'bundle' => 'field_publication_files_url',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_publication_file_url_url',
+    'label' => 'File url',
+    'required' => 0,
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'entity_translation_sync' => FALSE,
+      'rel_remove' => 'default',
+      'title' => 'optional',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-cepal_publication-field_id_sade'
   $field_instances['node-cepal_publication-field_id_sade'] = array(
     'bundle' => 'cepal_publication',
@@ -232,7 +315,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
     'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Search authors by lastname.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -264,13 +347,9 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
       'settings' => array(
         'match_operator' => 'CONTAINS',
         'path' => '',
-        'references_dialog_add' => 1,
-        'references_dialog_edit' => 0,
-        'references_dialog_search' => 0,
-        'references_dialog_search_view' => '',
         'size' => 60,
       ),
-      'type' => 'entityreference_autocomplete',
+      'type' => 'entityreference_autocomplete_tags',
       'weight' => 7,
     ),
   );
@@ -1517,6 +1596,8 @@ Campo condicional, si es publicación de tipo proyecto.',
   t('Donor');
   t('Editorial');
   t('External urls to download files. It should have file\'s language.');
+  t('File language');
+  t('File url');
   t('Files');
   t('Files URL');
   t('Highlight');
@@ -1543,6 +1624,7 @@ Campo condicional, si es publicación de tipo proyecto.',
   t('Publication Date');
   t('Publication Type');
   t('Related Content');
+  t('Search authors by lastname.');
   t('Seleccione el área de trabajo del proyecto.
 TEMPORAL, debe ser reemplazado con una referencia a otra entidad.');
   t('Select a <em>Special Topic</em> for classificatation if needed.');
