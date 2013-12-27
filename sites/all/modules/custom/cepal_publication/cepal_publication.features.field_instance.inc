@@ -315,7 +315,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
     'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Search authors by lastname.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -347,13 +347,9 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
       'settings' => array(
         'match_operator' => 'CONTAINS',
         'path' => '',
-        'references_dialog_add' => 1,
-        'references_dialog_edit' => 0,
-        'references_dialog_search' => 0,
-        'references_dialog_search_view' => '',
         'size' => 60,
       ),
-      'type' => 'entityreference_autocomplete',
+      'type' => 'entityreference_autocomplete_tags',
       'weight' => 7,
     ),
   );
@@ -1628,6 +1624,7 @@ Campo condicional, si es publicación de tipo proyecto.',
   t('Publication Date');
   t('Publication Type');
   t('Related Content');
+  t('Search authors by lastname.');
   t('Seleccione el área de trabajo del proyecto.
 TEMPORAL, debe ser reemplazado con una referencia a otra entidad.');
   t('Select a <em>Special Topic</em> for classificatation if needed.');

@@ -136,20 +136,17 @@ function cepal_publication_field_default_field_bases() {
     'module' => 'entityreference',
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'handler' => 'base',
+      'handler' => 'views',
       'handler_settings' => array(
         'behaviors' => array(
           'views-select-list' => array(
-            'status' => 0,
+            'status' => 1,
           ),
         ),
-        'sort' => array(
-          'direction' => 'ASC',
-          'property' => 'lastname',
-          'type' => 'property',
-        ),
-        'target_bundles' => array(
-          'authority_bundle' => 'authority_bundle',
+        'view' => array(
+          'args' => array(),
+          'display_name' => 'entityreference_1',
+          'view_name' => 'publication_authorities',
         ),
       ),
       'target_type' => 'authority',
