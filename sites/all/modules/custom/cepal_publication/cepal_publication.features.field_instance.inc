@@ -98,7 +98,7 @@ function cepal_publication_field_default_field_instances() {
     'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'No tocar!',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -145,7 +145,7 @@ function cepal_publication_field_default_field_instances() {
     'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'No tocar!',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -224,7 +224,7 @@ function cepal_publication_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -265,7 +265,7 @@ function cepal_publication_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -306,7 +306,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -350,7 +350,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete_tags',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -390,7 +390,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 17,
+      'weight' => 18,
     ),
   );
 
@@ -444,7 +444,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -486,7 +486,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 21,
+      'weight' => 22,
     ),
   );
 
@@ -541,7 +541,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 25,
+      'weight' => 26,
     ),
   );
 
@@ -582,7 +582,7 @@ TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -676,7 +676,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 23,
+      'weight' => 24,
     ),
   );
 
@@ -720,7 +720,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 24,
+      'weight' => 25,
     ),
   );
 
@@ -761,7 +761,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
         'size' => 100,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -812,21 +812,22 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
           'public' => 'public',
         ),
         'allowed_types' => array(
+          0 => 0,
           'audio' => 0,
           'document' => 0,
           'image' => 'image',
           'video' => 0,
         ),
         'browser_plugins' => array(
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
-          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
           'media_internet' => 0,
           'upload' => 'upload',
         ),
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 22,
+      'weight' => 23,
     ),
   );
 
@@ -867,7 +868,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
         'size' => 13,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -908,7 +909,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
         'size' => 13,
       ),
       'type' => 'text_textfield',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -949,7 +950,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -1004,7 +1005,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -1149,7 +1150,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -1200,7 +1201,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -1282,7 +1283,7 @@ Campo condicional, si es publicación de tipo proyecto.',
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 19,
+      'weight' => 20,
     ),
   );
 
@@ -1323,7 +1324,7 @@ Campo condicional, si es publicación de tipo proyecto.',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -1363,7 +1364,7 @@ Campo condicional, si es publicación de tipo proyecto.',
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 18,
+      'weight' => 19,
     ),
   );
 
@@ -1410,7 +1411,7 @@ Campo condicional, si es publicación de tipo proyecto.',
         ),
       ),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -1450,7 +1451,7 @@ Campo condicional, si es publicación de tipo proyecto.',
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 20,
+      'weight' => 21,
     ),
   );
 
@@ -1491,7 +1492,7 @@ Campo condicional, si es publicación de tipo proyecto.',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -1615,6 +1616,7 @@ Campo condicional, si es publicación de tipo proyecto.',
   t('License URL');
   t('License type');
   t('Links');
+  t('No tocar!');
   t('Number');
   t('Observatory');
   t('Pages');

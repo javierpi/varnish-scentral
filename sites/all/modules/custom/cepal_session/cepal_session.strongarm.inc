@@ -13,6 +13,13 @@ function cepal_session_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'additional_settings__active_tab_session';
+  $strongarm->value = 'edit-workflow';
+  $export['additional_settings__active_tab_session'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_session';
   $strongarm->value = 0;
   $export['comment_anonymous_session'] = $strongarm;
@@ -62,6 +69,61 @@ function cepal_session_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_session';
+  $strongarm->value = 0;
+  $export['diff_enable_revisions_page_node_session'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_session';
+  $strongarm->value = 0;
+  $export['diff_show_preview_changes_node_session'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_session';
+  $strongarm->value = '';
+  $export['diff_view_mode_preview_node_session'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_comment_filter_session';
+  $strongarm->value = 0;
+  $export['entity_translation_comment_filter_session'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_hide_translation_links_session';
+  $strongarm->value = 0;
+  $export['entity_translation_hide_translation_links_session'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_node_metadata_session';
+  $strongarm->value = '0';
+  $export['entity_translation_node_metadata_session'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_settings_node__session';
+  $strongarm->value = array(
+    'default_language' => 'xx-et-current',
+    'hide_language_selector' => 0,
+    'exclude_language_none' => 1,
+    'lock_language' => 1,
+    'shared_fields_original_only' => 1,
+  );
+  $export['entity_translation_settings_node__session'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__session';
   $strongarm->value = array(
     'view_modes' => array(
@@ -93,7 +155,10 @@ function cepal_session_strongarm() {
           'weight' => '-5',
         ),
         'path' => array(
-          'weight' => '15',
+          'weight' => '16',
+        ),
+        'language' => array(
+          'weight' => '1',
         ),
       ),
       'display' => array(),
@@ -105,7 +170,7 @@ function cepal_session_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_session';
-  $strongarm->value = '0';
+  $strongarm->value = '4';
   $export['language_content_type_session'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -144,6 +209,41 @@ function cepal_session_strongarm() {
   $strongarm->name = 'node_submitted_session';
   $strongarm->value = 0;
   $export['node_submitted_session'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_session_en_pattern';
+  $strongarm->value = 'session/[node:title_field]';
+  $export['pathauto_node_session_en_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_session_es_pattern';
+  $strongarm->value = 'sesion/[node:title_field]';
+  $export['pathauto_node_session_es_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_session_pattern';
+  $strongarm->value = 'sesion/[node:title_field]';
+  $export['pathauto_node_session_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_session_und_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_session_und_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'save_continue_session';
+  $strongarm->value = 'Save and add fields';
+  $export['save_continue_session'] = $strongarm;
 
   return $export;
 }
