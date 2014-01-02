@@ -736,7 +736,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 40,
+        'weight' => 44,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -751,16 +751,16 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'size' => 100,
+        'rows' => 5,
       ),
-      'type' => 'text_textfield',
+      'type' => 'text_textarea',
       'weight' => 7,
     ),
   );
@@ -1157,25 +1157,16 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
   // Exported field_instance: 'node-cepal_publication-field_publication_pages'
   $field_instances['node-cepal_publication-field_publication_pages'] = array(
     'bundle' => 'cepal_publication',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Insert the number of pages for this publication.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
-        'weight' => 13,
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 45,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1190,17 +1181,16 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'max' => '',
-      'min' => 0,
-      'prefix' => '',
-      'suffix' => '',
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
       'weight' => 13,
     ),
   );
@@ -1609,7 +1599,6 @@ Campo condicional, si es publicación de tipo proyecto.',
   t('Image');
   t('Insert an alternative title for this publication.');
   t('Insert the <em>table of contents</em> for this <em>publication</em>.');
-  t('Insert the number of pages for this publication.');
   t('Insert the publication date.');
   t('Is possible to add link references for this <em>publication</em>.');
   t('Is possible to add some attached files to this <em>publication</em> as a complementary information.');
