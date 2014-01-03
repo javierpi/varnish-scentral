@@ -188,47 +188,6 @@ function cepal_presentation_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-cepal_presentation-field_presentation_body'
-  $field_instances['node-cepal_presentation-field_presentation_body'] = array(
-    'bundle' => 'cepal_presentation',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Insert a description text for this <em>Presentation</em>.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_presentation_body',
-    'label' => 'Body',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 7,
-    ),
-  );
-
   // Exported field_instance: 'node-cepal_presentation-field_presentation_city'
   $field_instances['node-cepal_presentation-field_presentation_city'] = array(
     'bundle' => 'cepal_presentation',
@@ -889,7 +848,6 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
   t('An event related with this <em>presentation</em>.
 ');
   t('Author');
-  t('Body');
   t('City');
   t('Country');
   t('Date');
@@ -899,7 +857,6 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
   t('ID SADE Maestro');
   t('Image');
   t('Insert URL references where this <em>presentation</em> has been published or useful links on the Internet related to the <em>presentation</em>.');
-  t('Insert a description text for this <em>Presentation</em>.');
   t('Insert a teaser for this <em>Presentation</em>.');
   t('Is possible to add attached files files to this <em>Presentation</em>.');
   t('Is possible to add references to another content on this site.');
