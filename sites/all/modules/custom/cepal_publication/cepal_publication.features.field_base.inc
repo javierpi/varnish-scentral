@@ -385,6 +385,36 @@ function cepal_publication_field_default_field_bases() {
     'type' => 'list_text',
   );
 
+  // Exported field_base: 'field_publication_file_url_type'
+  $field_bases['field_publication_file_url_type'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_publication_file_url_type',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        1 => 'pdf',
+        2 => 'mobi',
+        3 => 'pdf',
+        4 => 'doc',
+        5 => 'docx',
+      ),
+      'allowed_values_function' => '',
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_integer',
+  );
+
   // Exported field_base: 'field_publication_file_url_url'
   $field_bases['field_publication_file_url_url'] = array(
     'active' => 1,

@@ -44,6 +44,40 @@ function cepal_publication_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_publication_files_url-field_publication_file_url_type'
+  $field_instances['field_collection_item-field_publication_files_url-field_publication_file_url_type'] = array(
+    'bundle' => 'field_publication_files_url',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_publication_file_url_type',
+    'label' => 'File type',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_publication_files_url-field_publication_file_url_url'
   $field_instances['field_collection_item-field_publication_files_url-field_publication_file_url_url'] = array(
     'bundle' => 'field_publication_files_url',
@@ -1584,6 +1618,7 @@ Campo condicional, si es publicación de tipo proyecto.',
   t('Editorial');
   t('External urls to download files. It should have file\'s language.');
   t('File language');
+  t('File type');
   t('File url');
   t('Files');
   t('Files URL');
