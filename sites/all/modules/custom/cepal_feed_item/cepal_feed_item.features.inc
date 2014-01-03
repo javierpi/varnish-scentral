@@ -19,9 +19,9 @@ function cepal_feed_item_ctools_plugin_api($module = NULL, $api = NULL) {
 function cepal_feed_item_node_info() {
   $items = array(
     'cepal_feed_item' => array(
-      'name' => t('Cepal News Feed item'),
+      'name' => t('News Feed item'),
       'base' => 'node_content',
-      'description' => t('This content type is being used for automatically aggregated content from feeds.'),
+      'description' => t('This content type is being used for automatically aggregated content from feeds or copies of referenced external news.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

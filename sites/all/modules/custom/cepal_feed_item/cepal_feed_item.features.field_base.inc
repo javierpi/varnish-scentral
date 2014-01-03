@@ -10,6 +10,37 @@
 function cepal_feed_item_field_default_field_bases() {
   $field_bases = array();
 
+  // Exported field_base: 'field_cfi_date'
+  $field_bases['field_cfi_date'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_cfi_date',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'date',
+    'settings' => array(
+      'cache_count' => 1,
+      'cache_enabled' => 1,
+      'entity_translation_sync' => FALSE,
+      'granularity' => array(
+        'day' => 'day',
+        'hour' => 0,
+        'minute' => 0,
+        'month' => 'month',
+        'second' => 0,
+        'year' => 'year',
+      ),
+      'timezone_db' => '',
+      'todate' => '',
+      'tz_handling' => 'none',
+    ),
+    'translatable' => 0,
+    'type' => 'date',
+  );
+
   // Exported field_base: 'field_cfi_description'
   $field_bases['field_cfi_description'] = array(
     'active' => 1,
@@ -32,7 +63,9 @@ function cepal_feed_item_field_default_field_bases() {
     ),
     'locked' => 0,
     'module' => 'text',
-    'settings' => array(),
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
     'translatable' => 1,
     'type' => 'text_with_summary',
   );
@@ -60,6 +93,7 @@ function cepal_feed_item_field_default_field_bases() {
     'locked' => 0,
     'module' => 'text',
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'max_length' => 255,
     ),
     'translatable' => 0,
@@ -87,6 +121,7 @@ function cepal_feed_item_field_default_field_bases() {
         'url_cutoff' => 80,
       ),
       'enable_tokens' => 1,
+      'entity_translation_sync' => FALSE,
       'title' => 'optional',
       'title_maxlength' => 128,
       'title_value' => '',
