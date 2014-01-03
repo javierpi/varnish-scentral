@@ -404,9 +404,7 @@ function cepal_publication_field_default_field_bases() {
       'allowed_values' => array(
         1 => 'pdf',
         2 => 'mobi',
-        3 => 'pdf',
-        4 => 'doc',
-        5 => 'docx',
+        3 => 'epub',
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
