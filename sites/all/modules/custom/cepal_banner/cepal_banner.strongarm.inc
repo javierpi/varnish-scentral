@@ -113,7 +113,7 @@ function cepal_banner_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'entity_translation_settings_node__banner';
   $strongarm->value = array(
-    'default_language' => 'und',
+    'default_language' => 'xx-et-current',
     'hide_language_selector' => 0,
     'exclude_language_none' => 1,
     'lock_language' => 1,
