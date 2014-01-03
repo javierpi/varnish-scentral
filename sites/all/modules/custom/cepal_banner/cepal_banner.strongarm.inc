@@ -152,7 +152,10 @@ function cepal_banner_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'path' => array(
-          'weight' => '15',
+          'weight' => '14',
+        ),
+        'language' => array(
+          'weight' => '1',
         ),
       ),
       'display' => array(),
