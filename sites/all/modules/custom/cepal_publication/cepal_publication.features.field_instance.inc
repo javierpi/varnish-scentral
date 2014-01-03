@@ -274,7 +274,7 @@ function cepal_publication_field_default_field_instances() {
     'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Seleccione el área de trabajo del proyecto.
+    'description' => 'Seleccione el área de trabajo de la publicación
 TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
     'display' => array(
       'default' => array(
@@ -1067,11 +1067,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
   // Exported field_instance: 'node-cepal_publication-field_publication_number'
   $field_instances['node-cepal_publication-field_publication_number'] = array(
     'bundle' => 'cepal_publication',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => 'The number of in the Series for this <em>publication</em>.',
     'display' => array(
@@ -1242,7 +1238,7 @@ Campo condicional, si es publicación de tipo proyecto.',
     'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Select a <em>Special Topic</em> for classificatation if needed.',
+    'description' => 'Select a <em>Special Topic</em> for classification if needed.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1616,9 +1612,9 @@ Campo condicional, si es publicación de tipo proyecto.',
   t('Publication Type');
   t('Related Content');
   t('Search authors by lastname.');
-  t('Seleccione el área de trabajo del proyecto.
+  t('Seleccione el área de trabajo de la publicación
 TEMPORAL, debe ser reemplazado con una referencia a otra entidad.');
-  t('Select a <em>Special Topic</em> for classificatation if needed.');
+  t('Select a <em>Special Topic</em> for classification if needed.');
   t('Select a country associated with this publication.');
   t('Select a representative image for this <em>Publication</em>.');
   t('Select an UNBIS classification for this <em>Publication</em>.');

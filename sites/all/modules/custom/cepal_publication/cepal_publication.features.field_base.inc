@@ -376,6 +376,7 @@ function cepal_publication_field_default_field_bases() {
         'es' => 'Spanish',
         'pt-br' => 'Brazilian Portuguese',
         'fr' => 'French',
+        'cn' => 'Chinese',
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
