@@ -44,6 +44,40 @@ function cepal_publication_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_publication_files_url-field_publication_file_url_type'
+  $field_instances['field_collection_item-field_publication_files_url-field_publication_file_url_type'] = array(
+    'bundle' => 'field_publication_files_url',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_publication_file_url_type',
+    'label' => 'File type',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_publication_files_url-field_publication_file_url_url'
   $field_instances['field_collection_item-field_publication_files_url-field_publication_file_url_url'] = array(
     'bundle' => 'field_publication_files_url',
@@ -274,7 +308,7 @@ function cepal_publication_field_default_field_instances() {
     'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Seleccione el área de trabajo del proyecto.
+    'description' => 'Seleccione el área de trabajo de la publicación
 TEMPORAL, debe ser reemplazado con una referencia a otra entidad.',
     'display' => array(
       'default' => array(
@@ -1067,11 +1101,7 @@ Campo condicional al tipo de publicación, debe ser de tipo Evento(conferencia).
   // Exported field_instance: 'node-cepal_publication-field_publication_number'
   $field_instances['node-cepal_publication-field_publication_number'] = array(
     'bundle' => 'cepal_publication',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => 'The number of in the Series for this <em>publication</em>.',
     'display' => array(
@@ -1242,7 +1272,7 @@ Campo condicional, si es publicación de tipo proyecto.',
     'bundle' => 'cepal_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Select a <em>Special Topic</em> for classificatation if needed.',
+    'description' => 'Select a <em>Special Topic</em> for classification if needed.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1588,6 +1618,7 @@ Campo condicional, si es publicación de tipo proyecto.',
   t('Editorial');
   t('External urls to download files. It should have file\'s language.');
   t('File language');
+  t('File type');
   t('File url');
   t('Files');
   t('Files URL');
@@ -1616,9 +1647,9 @@ Campo condicional, si es publicación de tipo proyecto.',
   t('Publication Type');
   t('Related Content');
   t('Search authors by lastname.');
-  t('Seleccione el área de trabajo del proyecto.
+  t('Seleccione el área de trabajo de la publicación
 TEMPORAL, debe ser reemplazado con una referencia a otra entidad.');
-  t('Select a <em>Special Topic</em> for classificatation if needed.');
+  t('Select a <em>Special Topic</em> for classification if needed.');
   t('Select a country associated with this publication.');
   t('Select a representative image for this <em>Publication</em>.');
   t('Select an UNBIS classification for this <em>Publication</em>.');

@@ -376,12 +376,41 @@ function cepal_publication_field_default_field_bases() {
         'es' => 'Spanish',
         'pt-br' => 'Brazilian Portuguese',
         'fr' => 'French',
+        'cn' => 'Chinese',
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
     ),
     'translatable' => 0,
     'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_publication_file_url_type'
+  $field_bases['field_publication_file_url_type'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_publication_file_url_type',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        1 => 'pdf',
+        2 => 'mobi',
+        3 => 'epub',
+      ),
+      'allowed_values_function' => '',
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_integer',
   );
 
   // Exported field_base: 'field_publication_file_url_url'
