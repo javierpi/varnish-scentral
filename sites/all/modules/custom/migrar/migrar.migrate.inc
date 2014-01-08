@@ -19,8 +19,8 @@ function migrar_migrate_api() {
     'api' => 2,
     'migrations' => array(
       //'ProyectoXML'   => array('class_name' => 'ProyectoXMLMigration'),
-      'ComunicadoXML' => array('class_name' => 'ComunicadoXMLMigration'),
-      //'NoticiaXML'    => array('class_name' => 'NoticiaXMLMigration'),
+      //'ComunicadoXML' => array('class_name' => 'ComunicadoXMLMigration'),
+      'NoticiaXML'    => array('class_name' => 'NoticiaXMLMigration'),
       //'ArticuloXML'   => array('class_name' => 'ArticuloXMLMigration'),
     ),
   );

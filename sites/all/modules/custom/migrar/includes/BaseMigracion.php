@@ -13,7 +13,7 @@
  *
  * Se basa en el framework provisto por el modulo Migrate.
  */
-abstract class BaseMigracion extends XMLMigration {
+class BaseMigracion extends XMLMigration {
 
   /**
    * Atributo que debe contener la configuracion obtenida desde xml.
@@ -32,8 +32,11 @@ abstract class BaseMigracion extends XMLMigration {
    */
   protected $type;
 
+  protected $nMigracion;
 
-
+  public function __construct($arguments) {
+    parent::__construct($arguments);
+  }
   /**
    * Inicializa la variable $config dado un objeto que ya tiene definido $type.
    *
@@ -41,7 +44,7 @@ abstract class BaseMigracion extends XMLMigration {
    */
   protected function init() {
     //@todo borrar
-    //if($this->type !== "comunicado") return;
+    //if($this->type !== "noticia") return;
 
     /* Si no se define el atributo type, lanza una excepcion */
     if (is_null($this->type)) {
@@ -71,6 +74,14 @@ abstract class BaseMigracion extends XMLMigration {
     $this->getXMLFeed();
 
     $items_url = $this->getXMLFilePath();
+    $xml = simplexml_load_file((string) $items_url);
+    $atributos = $xml->attributes();
+    $this->nMigracion = (int)$atributos->id_migracion;
+
+    drush_print_r($this->nMigracion);
+    drush_print_r($this->type);
+
+
     $item_xpath = $this->getXPath();
 
     $item_ID_xpath = $this->getXPathId();
@@ -112,7 +123,7 @@ abstract class BaseMigracion extends XMLMigration {
    * datos de migracion por otro de origen inmediato.
    */
   protected function getXMLFeed() {
-    if($this->type !== "comunicado") return;
+    //if($this->type !== "comunicado") return;
     $url = $this->getWebServiceQuery();
 
     $xml = file_get_contents($url);
@@ -122,7 +133,7 @@ abstract class BaseMigracion extends XMLMigration {
       /*
        * @todo Descomentar el unlink.
        */
-      //unlink($file_path);
+      unlink($file_path);
     }
 
     $file = fopen($file_path, "wb");
@@ -226,6 +237,9 @@ abstract class BaseMigracion extends XMLMigration {
     $query_str = http_build_query($query_params, '', '&');
 
     $url = $endpoint . "?" . $query_str;
+
+    drush_print("hola");
+    drush_print_r($url);
 
     return $url;
   }
@@ -517,7 +531,7 @@ abstract class BaseMigracion extends XMLMigration {
 
 
 
-  protected function insertarImagen($imagen, $idioma, $uid = 0){
+  protected function insertarImagen($imagen, $idioma, $uid = 1){
     /**
      * @todo se debe insertar con uid
      * @todo Hay que parametrizar $wd_type
@@ -563,11 +577,17 @@ abstract class BaseMigracion extends XMLMigration {
       $image_entity->{$f_credit}[$idioma][0]['safe_value'] = $credit_val;
       $image_entity->{$f_credit}[$idioma][0]['format']     = 'plain_text';
 
-      $image_entity->translations->original = $idioma;
-      $trans = array_pop($image_entity->translations->data);
-      $trans['language'] = $idioma;
-      $image_entity->translations->data[$idioma] = $trans;
+      drush_print_r($idioma);
 
+      if(!isset($image_entity->translations)){
+        $image_entity->translations = new stdClass();
+      }
+      $image_entity->translations->original = $idioma;
+      if(is_array($image_entity->translations->data) && !empty($image_entity->translations->data)){
+        $trans = array_pop($image_entity->translations->data);
+        $trans['language'] = $idioma;
+        $image_entity->translations->data[$idioma] = $trans;
+      }
       field_attach_update('file', $image_entity);
 
       return $file;
@@ -584,7 +604,7 @@ abstract class BaseMigracion extends XMLMigration {
 
 
 
-  protected function insertarArchivo($archivo, $uid = 0){
+  protected function insertarArchivo($archivo, $uid = 1){
     /**
      * @todo se debe insertar con uid
      * @todo Hay que parametrizar $wd_type
@@ -784,5 +804,22 @@ abstract class BaseMigracion extends XMLMigration {
         }
       }
     }
+  }
+
+
+
+  public function getTraducciones($id_sade){
+    $path_xml = $this->getXMLFilePath();
+    $entidades = simplexml_load_file($path_xml);
+
+    $traducciones = array();
+    foreach($entidades as $entidad){
+      $id_sade_entidad = (int)$entidad->id_sade_maestro;
+      if($id_sade == $id_sade_entidad){
+        $traducciones[] = (int)$entidad->id_sade;
+      }
+    }
+
+    return $traducciones;
   }
 }

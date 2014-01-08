@@ -1,4 +1,9 @@
 <?php
+
+require_once 'Imagenes.php';
+
+$noticias_migradas = 0;
+
 /**
  * @file
  * Este archivo define la clase que migra noticias
@@ -17,7 +22,8 @@ class NoticiaXMLMigration extends BaseMigracion implements BaseMigracionInterfac
   /**
   * Constructor sin parametros.
   */
-  public function __construct() {
+  public function __construct($arguments) {
+    parent::__construct($arguments);
     $this->type = "noticia";
     $this->init();
     $this->description = t('Importar noticias desde archivo XML');
@@ -41,36 +47,36 @@ class NoticiaXMLMigration extends BaseMigracion implements BaseMigracionInterfac
    * @return boolean
    */
   public function prepareRow($current_row) {
+    global $noticias_migradas;
+    drush_print ($noticias_migradas++);
     $is_original = is_numeric(trim($current_row->xml->id_sade_maestro));
     $idioma = (string)$current_row->xml->idioma;
 
     $id_sade = (int) $current_row->xml->id_sade;
-    $imagesNoticia = new Imagenes('imagenesNoticia');
+    $imagesNoticia = new Imagenes('noticia');
     $imagenes = $imagesNoticia->getImagenesByIdSade($id_sade);
     unset($imagesNoticia);
 
-    $archivosNoticia = new ArchivosNoticia('archivosNoticia');
+    //$archivosNoticia = new Archivos('archivosNoticia');
+    $archivosNoticia = new Archivos('noticia');
     $archivos = $archivosNoticia->getArchivosByIdSade($id_sade);
     if($is_original){
-      $traducciones = $this->getNoticiasTraducciones($id_sade);
+      $traducciones = $this->getTraducciones($id_sade);
+      if(count($traducciones)){
+        drush_print("tiene traducciones, sade_id: " . $id_sade);
+      }
       foreach($traducciones as $id_sade_translation){
         $archivos += $archivosNoticia->getArchivosByIdSade($id_sade_translation);
       }
     }
     unset($archivosNoticia);
 
-
-
-
-
-
-
-
-
+    //drush_print_r($current_row->xml->fecha);
+    //drush_print_r($current_row->xml->fecha_actualizacion);
 
     $aux = explode(" ", $current_row->xml->fecha);
     $pieces = explode("-", $aux[0]);
-    $created = mktime(0, 0, 0, $pieces[1], $pieces[0], $pieces[2]);
+    $created = mktime(0, 0, 0, $pieces[1], $pieces[2], $pieces[0]);
 
     $current_row->fecha           = $created;
     $current_row->field_news_date = $pieces[2] . "-" . $pieces[1] . "-" . $pieces[0] . "T00:00:00";
@@ -80,20 +86,30 @@ class NoticiaXMLMigration extends BaseMigracion implements BaseMigracionInterfac
     $changed = mktime(0, 0, 0, $pieces2[1], $pieces2[0], $pieces2[2]);
 
     $current_row->fecha_actualizacion = $changed;
+    if($is_original){
+      $this->insertarTraduccion($current_row);
 
+      return FALSE;
+    }
+    else{
+      $current_row->xml->id_sade_maestro = 0;
+    }
 
+    if(count($imagenes) > 0){
+      /* Solo se inserta una imagen */
+      $imagen = array_shift($imagenes);
+      $current_imagen = $this->insertarImagen($imagen, $idioma, $uid);
+      if($current_imagen !== FALSE){
+        $current_row->imagen = $current_imagen;
+      }
+    }
 
-
-
-
-
-
-
-
-
-
-
-
+    if(is_array($archivos)){
+      foreach($archivos as $archivo){
+        $current_archivo = $this->insertarArchivo($archivo, $uid);
+        $current_row->archivos[] = $current_archivo;
+      }
+    }
 
     return TRUE;
   }
@@ -202,6 +218,106 @@ class NoticiaXMLMigration extends BaseMigracion implements BaseMigracionInterfac
 
 
   protected function getXMLFeed() {
+
+  }
+
+
+
+  public function complete($entity, stdClass $row) {
+    drush_print ("nid: " . $entity->nid . " -- sade_id: " . $row->xml->id_sade);
+    $lng = $entity->language;
+    $uid = $this->retrieveUid($row);
+
+    $fid = 0;
+    if(isset($row->imagen)){
+      $image = $row->imagen;
+      $fid = (int) $image->fid;
+    }
+
+    if($fid > 0){
+      $image->uid = $uid;
+      $field_image = array($lng => array('0' => (array)$image));
+      $entity->field_news_image = $field_image;
+    }
+    $files = $row->archivos;
+    if(count($files) > 0){
+      $entity->field_news_files = array();
+      $entity->field_news_files[$lng] = array();
+      $i = 0;
+      foreach($files as $file){
+        $file->uid = $uid;
+        $entity->field_news_files[$lng][$i++] = (array)$file;
+      }
+    }
+    else{
+      //drush_print("esto no tenia archivos");
+    }
+
+    $entity->uid = $uid;
+
+    node_save($entity);
+  }
+
+
+  protected function insertarTraduccion($currentRow){
+
+    /****   Crear el nodo   ****/
+    $id_sade_maestro = $currentRow->xml->id_sade_maestro;
+    $id_sade         = $currentRow->xml->id_sade;
+    $field_name = "field_id_sade";
+    $node = $this->loadNodeByIdSade($id_sade_maestro, $field_name);
+    if(!$node) return FALSE;
+    $idioma = (string)$currentRow->xml->idioma;
+
+    if($idioma == $node->language) return FALSE;
+
+    $teaser = check_plain($currentRow->xml->bajada);
+    $body   = $this->filterHTML($currentRow->xml->cuerpo);
+    $title  = check_plain($currentRow->xml->titulo);
+    //$date   = $currentRow->xml->fecha;
+
+
+    drush_print_r("nid: " . $node->nid . " -- sade_id: " . $id_sade . " -- lang: " . $idioma);
+
+    /* Se guarda cada uno de los campos traducidos para el nodo padre */
+    $this->setNodeTitle($node, $idioma, $title);
+    $this->setNodeBody($node, $idioma, $body, 'field_news_body');
+    $this->setNodeTeaser($node, $idioma, $teaser, 'field_news_teaser');
+    //$this->setNodeDate($node, $idioma, $date, 'field_pr_date');
+
+    $node->field_id_sade[$idioma][0]['value']         = $id_sade;
+    $node->field_id_sade_maestro[$idioma][0]['value'] = $id_sade_maestro;
+
+    $this->addUserToNodeByEmail($node, $currentRow);
+
+    node_save($node);
+
+    /* se inserta la nueva traduccion como "hecha" */
+    $this->insertEntityTranslation($node, $idioma);
+
+    /****   Crear alias para el nuevo nodo en el nuevo idioma    ****/
+    $node_path = $this->generatePath($node, $idioma);
+    if($node_path){
+      path_save($node_path);
+    }
+
+
+    //cambiar los apostrofes de titulo en la base de datos
+
+
+    $search = "&#039;";
+    $replace = "'";
+
+    db_update('field_data_title_field')
+      ->expression(
+          'title_field_value', 'replace(title_field_value, :search, :replace)',
+          array(
+            ':search'  => $search,
+            ':replace' => $replace
+          )
+        )
+      ->execute()
+      ;
 
   }
 }

@@ -20,7 +20,8 @@ class ComunicadoXMLMigration extends BaseMigracion implements BaseMigracionInter
   /**
   * Constructor sin parametros.
   */
-  public function __construct() {
+  public function __construct($arguments) {
+    parent::__construct($arguments);
     $this->type = "comunicado";
     $this->init();
     $this->description = t('Importar comunicados desde archivo XML');
