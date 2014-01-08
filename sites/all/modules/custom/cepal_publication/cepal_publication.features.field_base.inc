@@ -376,12 +376,41 @@ function cepal_publication_field_default_field_bases() {
         'es' => 'Spanish',
         'pt-br' => 'Brazilian Portuguese',
         'fr' => 'French',
+        'cn' => 'Chinese',
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
     ),
     'translatable' => 0,
     'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_publication_file_url_type'
+  $field_bases['field_publication_file_url_type'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_publication_file_url_type',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        1 => 'pdf',
+        2 => 'mobi',
+        3 => 'epub',
+      ),
+      'allowed_values_function' => '',
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_integer',
   );
 
   // Exported field_base: 'field_publication_file_url_url'
@@ -493,10 +522,9 @@ function cepal_publication_field_default_field_bases() {
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'max_length' => 500,
     ),
     'translatable' => 1,
-    'type' => 'text',
+    'type' => 'text_long',
   );
 
   // Exported field_base: 'field_publication_image'
@@ -739,15 +767,27 @@ function cepal_publication_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_publication_pages',
-    'foreign keys' => array(),
-    'indexes' => array(),
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
     'locked' => 0,
-    'module' => 'number',
+    'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
+      'max_length' => 255,
     ),
     'translatable' => 1,
-    'type' => 'number_integer',
+    'type' => 'text',
   );
 
   // Exported field_base: 'field_publication_project_rel'

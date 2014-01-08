@@ -44,7 +44,7 @@ function cepal_banner_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 11,
+      'weight' => 10,
     ),
   );
 
@@ -96,7 +96,7 @@ function cepal_banner_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 12,
+      'weight' => 11,
     ),
   );
 
@@ -148,7 +148,7 @@ function cepal_banner_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 13,
+      'weight' => 12,
     ),
   );
 
@@ -200,7 +200,7 @@ function cepal_banner_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 14,
+      'weight' => 13,
     ),
   );
 
@@ -295,7 +295,7 @@ function cepal_banner_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -336,7 +336,7 @@ function cepal_banner_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -377,7 +377,7 @@ Seleccione un órgano subsidiario si corresponde.',
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -418,7 +418,7 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -458,7 +458,7 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -498,7 +498,7 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -538,7 +538,7 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
