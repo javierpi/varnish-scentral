@@ -277,7 +277,6 @@ class NoticiaXMLMigration extends BaseMigracion implements BaseMigracionInterfac
     //$date   = $currentRow->xml->fecha;
 
 
-    drush_print_r("nid: " . $node->nid . " -- sade_id: " . $id_sade . " -- lang: " . $idioma);
 
     /* Se guarda cada uno de los campos traducidos para el nodo padre */
     $this->setNodeTitle($node, $idioma, $title);

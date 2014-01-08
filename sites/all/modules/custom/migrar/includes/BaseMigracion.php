@@ -78,10 +78,6 @@ class BaseMigracion extends XMLMigration {
     $atributos = $xml->attributes();
     $this->nMigracion = (int)$atributos->id_migracion;
 
-    drush_print_r($this->nMigracion);
-    drush_print_r($this->type);
-
-
     $item_xpath = $this->getXPath();
 
     $item_ID_xpath = $this->getXPathId();
@@ -238,8 +234,6 @@ class BaseMigracion extends XMLMigration {
 
     $url = $endpoint . "?" . $query_str;
 
-    drush_print("hola");
-    drush_print_r($url);
 
     return $url;
   }
@@ -576,8 +570,6 @@ class BaseMigracion extends XMLMigration {
       $image_entity->{$f_credit}[$idioma][0]['value']      = $credit_val;
       $image_entity->{$f_credit}[$idioma][0]['safe_value'] = $credit_val;
       $image_entity->{$f_credit}[$idioma][0]['format']     = 'plain_text';
-
-      drush_print_r($idioma);
 
       if(!isset($image_entity->translations)){
         $image_entity->translations = new stdClass();
