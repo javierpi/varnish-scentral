@@ -1,0 +1,41 @@
+<?php
+
+function cepal_id_sade_menu(){
+  $items = array();
+
+  $items['id_sade/%'] = array(
+    'title' => '',
+    'page callback' => 'cepal_id_sade_redirect',
+    'page arguments' => array(1),
+    'access arguments' => array('access content'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+
+
+function cepal_id_sade_redirect($id_sade){
+  if(!is_numeric($id_sade)){
+    drupal_access_denied();
+  }
+
+  $result = db_select('field_data_field_id_sade', 'f')
+    ->fields('f')
+    ->condition('field_id_sade_value', $id_sade, '=')
+    ->condition('deleted', 0, '=')
+    ->condition('entity_type', 'node','=')
+    ->execute()
+    ->fetchAssoc();
+
+  if(!isset($result['entity_id'])) drupal_not_found();
+  $nid = $result['entity_id'];
+  $path = "node/" . $nid;
+  //$path_language = $result['language'];
+  //$alias = drupal_get_path_alias($path, $path_language);
+
+  $alias = $path;
+
+  drupal_goto($alias);
+}

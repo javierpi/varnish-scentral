@@ -1,0 +1,5 @@
+name = "CEPAL ID"
+description = "Muestra nodos por id_sade o id_sade_maestro"
+package = "Cepal"
+core = 7.x
+version = "7.x-dev"
