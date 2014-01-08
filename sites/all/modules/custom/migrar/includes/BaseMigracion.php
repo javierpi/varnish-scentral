@@ -604,6 +604,10 @@ class BaseMigracion extends XMLMigration {
     $path_source      = $this->getPathSourceFiles();
     $path_destination = $this->getPathDestinationFiles();
 
+    db_delete('file_managed')
+      ->condition('uri', $path_destination)
+      ->execute();
+
     $fileName = $archivo['NewFileName'];
 
     $source      = $path_source      . "/" . $fileName;
