@@ -467,6 +467,7 @@ class BaseMigracion extends XMLMigration {
   protected function setNodeBody($node, $idioma, $body, $fieldName, $teaserField=false){
     $body = $this->quitarCDATA($body);
     $body = $this->quitarImagenes($body);
+    if($body == "") $body = "<p> </p>";
     $node->{$fieldName}[$idioma][0]['value']        = $body;
     $node->{$fieldName}[$idioma][0]['save_value']   = $body;
     $node->{$fieldName}[$idioma][0]['format'] = 'filtered_html';
@@ -537,6 +538,10 @@ class BaseMigracion extends XMLMigration {
 
     $source      = $path_source      . "/" . $fileName;
     $destination = $path_destination . "/" . $fileName;
+
+    db_delete('file_managed')
+      ->condition('filename', $fileName)
+      ->execute();
 
     if(file_exists($source)){
       $data = file_get_contents($source);
@@ -610,7 +615,7 @@ class BaseMigracion extends XMLMigration {
     $destination = $path_destination . "/" . $fileName;
 
     db_delete('file_managed')
-      ->condition('uri', $destination)
+      ->condition('filename', $fileName)
       ->execute();
 
     if(file_exists($source)){
@@ -620,13 +625,20 @@ class BaseMigracion extends XMLMigration {
 
       $file->uri         = $destination;
       $file->uid         = $uid;
-      $file->filename    = $fileName;
+      $file->filename    = $archivo['descripcion'];
       $file->description = $archivo['descripcion'];
       $file->display = 1;
       /* En este caso el idioma es indefinido, el campo no se traduce */
-      $file->field_file_sade_lang['und'][0]['value'] = $archivo['idioma'];
-
       file_save($file);
+
+      $entity_type = "file";
+      $entity_file = entity_load_single($entity_type, $file->fid);
+
+      $entity_file->field_file_lang_sade['und'][0]['value'] = $archivo['idioma'];
+      $entity_file->field_file_lang_sade['es'][0]['value'] = $archivo['idioma'];
+      $entity_file->filename = $archivo['descripcion'];
+      entity_save($entity_type, $entity_file);
+      field_attach_update($entity_type, $entity_file);
 
       return $file;
     }
@@ -765,6 +777,15 @@ class BaseMigracion extends XMLMigration {
 
 
 
+  /**
+   *
+   * @param type $entity
+   * La entidad que se va a eliminar
+   * @param type $field_name
+   * el nombre del campo de imagen de la entidad
+   * @param type $base_path
+   * ??
+   */
   protected function eliminarImagenes($entity, $field_name, $base_path){
     $entity_type = "node";
 

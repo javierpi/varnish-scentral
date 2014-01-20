@@ -32,6 +32,34 @@ class NoticiaXMLMigration extends BaseMigracion implements BaseMigracionInterfac
     $this->addFieldMapping('field_news_date', 'fecha');
     $this->addFieldMapping('changed', 'fecha_actualizacion');
 
+    //$this->addFieldMapping('field_topic', 'categorias_tematicas')
+     //->separator(';');
+
+    $this->addFieldMapping('field_topic', 'categorias_tematicas_id')
+          ->xpath('categorias_tematicas_id')
+          ->arguments(array('source_type' => 'tid'))
+          ->separator(',')
+      ;
+
+    $this->addFieldMapping('field_unbis', 'unbis_desc')
+          ->xpath('unbis_desc')
+          ->separator(',')
+      ;
+
+    $this->addFieldMapping('field_country', 'pais_id')
+          ->xpath('pais_id')
+          ->separator(',')
+      ;
+
+/*
+ *
+ * <area_trabajo>Desarrollo Económico</area_trabajo>
+ * <area_trabajo>Desarrollo Productivo</area_trabajo>
+ * <area_trabajo>Financiamiento para el Desarrollo</area_trabajo>
+
+
+ */
+
   }
 
 
@@ -47,12 +75,24 @@ class NoticiaXMLMigration extends BaseMigracion implements BaseMigracionInterfac
    * @return boolean
    */
   public function prepareRow($current_row) {
+    if(trim($current_row->xml->cuerpo) == ""){
+      $current_row->xml->cuerpo = "<p> </p>";
+    }
     global $noticias_migradas;
     drush_print ($noticias_migradas++);
+
+    if($current_row->area_trabajo_sig == 0){
+      unset($current_row->area_trabajo_sig);
+    }
+    if($current_row->observatorio_sig == 0){
+      unset($current_row->observatorio_sig);
+    }
+
     $is_original = is_numeric(trim($current_row->xml->id_sade_maestro));
     $idioma = (string)$current_row->xml->idioma;
 
     $id_sade = (int) $current_row->xml->id_sade;
+    drush_print("id_sade: " . $id_sade);
     $imagesNoticia = new Imagenes('noticia');
     $imagenes = $imagesNoticia->getImagenesByIdSade($id_sade);
     unset($imagesNoticia);
@@ -60,19 +100,21 @@ class NoticiaXMLMigration extends BaseMigracion implements BaseMigracionInterfac
     //$archivosNoticia = new Archivos('archivosNoticia');
     $archivosNoticia = new Archivos('noticia');
     $archivos = $archivosNoticia->getArchivosByIdSade($id_sade);
-    if($is_original){
+    $current_row->archivos = array();
+    if(!$is_original){
       $traducciones = $this->getTraducciones($id_sade);
       if(count($traducciones)){
-        drush_print("tiene traducciones, sade_id: " . $id_sade);
+        drush_print("tiene ". count($traducciones) ." traducciones, sade_id: " . $id_sade);
       }
       foreach($traducciones as $id_sade_translation){
-        $archivos += $archivosNoticia->getArchivosByIdSade($id_sade_translation);
+        $archivos_traduccion = $archivosNoticia->getArchivosByIdSade($id_sade_translation);
+        if(!empty($archivos_traduccion)){
+          $archivos = array_merge($archivos, $archivos_traduccion);
+        }
       }
+      drush_print_r($archivos);
     }
     unset($archivosNoticia);
-
-    //drush_print_r($current_row->xml->fecha);
-    //drush_print_r($current_row->xml->fecha_actualizacion);
 
     $aux = explode(" ", $current_row->xml->fecha);
     $pieces = explode("-", $aux[0]);
@@ -133,7 +175,9 @@ class NoticiaXMLMigration extends BaseMigracion implements BaseMigracionInterfac
       'idioma'              => t('Idioma'),
       'area_de_trabajo'     => t('field_news_area_ref?'),
       'mail_grupo_usuarios' => t('Email de duenio del contenido'),
-      'id_division'         => t('Identificador de la division duenia')
+      'id_division'         => t('Identificador de la division duenia'),
+      'categorias_tematicas' => t('Categorias tematicas'),
+      'unbis_desc'          => t('Nombre UNBIS'),
     );
   }
 
@@ -150,13 +194,13 @@ class NoticiaXMLMigration extends BaseMigracion implements BaseMigracionInterfac
     $unmgtDests += parent::getUnmigratedDestinations();
 
 
-    self::taxonomyFieldUnmigrated('field_topic', $unmgtDests);
+    //self::taxonomyFieldUnmigrated('field_topic', $unmgtDests);
     self::taxonomyFieldUnmigrated('field_special_topic', $unmgtDests);
-    self::taxonomyFieldUnmigrated('field_unbis', $unmgtDests);
+    //self::taxonomyFieldUnmigrated('field_unbis', $unmgtDests);
 
-    $unmgtDests[] = 'field_country';
-    $unmgtDests[] = 'field_news_observatories';
-    $unmgtDests[] = 'field_news_subsidiary_bodies';
+    //$unmgtDests[] = 'field_country';
+    //$unmgtDests[] = 'field_news_observatories';
+    //$unmgtDests[] = 'field_news_subsidiary_bodies';
 
     unset($unmgtDests[array_search ( 'created' , $unmgtDests )]);
     unset($unmgtDests[array_search ( 'changed' , $unmgtDests )]);
@@ -185,7 +229,7 @@ class NoticiaXMLMigration extends BaseMigracion implements BaseMigracionInterfac
       'language'        => array('field' => 'idioma', 'callback' => ''),
       'field_news_body'   => array('field' => 'cuerpo', 'callback' => 'filterHTML'),
       'field_news_body:language'   => array('field' => 'idioma'),
-      'field_news_area_ref'   => array('field' => 'area_de_trabajo'),
+      'field_news_area_ref'   => array('field' => 'area_trabajo_sig', 'callback' => 'zeroDefault'),
       'field_news_teaser' => array('field' => 'bajada', 'callback' => 'filterHTML'),
       'field_news_teaser:language' => array('field' => 'idioma'),
 
@@ -193,7 +237,16 @@ class NoticiaXMLMigration extends BaseMigracion implements BaseMigracionInterfac
       'title_field:language' => array('field' => 'idioma'),
       'field_id_sade' => array('field' => 'id_sade'),
       'field_id_sade_maestro' => array('field' => 'id_sade_maestro'),
+
+      'field_news_observatories' => array('field' => 'observatorio_sig', 'callback' => 'zeroDefault'),
     );
+  }
+
+
+
+  protected function zeroDefault($id){
+    if(!is_numeric($id)) return 0;
+    return $id;
   }
 
 
@@ -225,6 +278,7 @@ class NoticiaXMLMigration extends BaseMigracion implements BaseMigracionInterfac
 
   public function complete($entity, stdClass $row) {
     drush_print ("nid: " . $entity->nid . " -- sade_id: " . $row->xml->id_sade);
+    $entity_type = "node";
     $lng = $entity->language;
     $uid = $this->retrieveUid($row);
 
@@ -256,6 +310,7 @@ class NoticiaXMLMigration extends BaseMigracion implements BaseMigracionInterfac
     $entity->uid = $uid;
 
     node_save($entity);
+    field_attach_update($entity_type, $entity);
   }
 
 
@@ -319,4 +374,48 @@ class NoticiaXMLMigration extends BaseMigracion implements BaseMigracionInterfac
       ;
 
   }
+
+
+
+  public function prepareRollback($entity_id) {
+    $entities = entity_load('node', array($entity_id));
+    foreach($entities as $entity){
+      $this->eliminarFileManaged($entity);
+    }
+  }
+
+
+
+  public function eliminarFileManaged($entity){
+    $entity_type = 'node';
+    $field_name_images = 'field_news_image';
+    $field_name_files  = 'field_news_files';
+
+    $images = field_get_items($entity_type, $entity, $field_name_images);
+    if(!is_array($images)) $images = array();
+
+    foreach ($images as $file_array){
+      $file = file_load($file_array['fid']);
+      if($file) file_delete($file, FALSE);
+      $this->deleteMultipleFileManagedByFilename($file_array['filename']);
+    }
+    unset($images);
+    $files  = field_get_items($entity_type, $entity, $field_name_files);
+    if(!is_array($files)) $files = array();
+
+    foreach ($files as $file){
+      $file = file_load($file_array['fid']);
+      if($file) file_delete($file, FALSE);
+      $this->deleteMultipleFileManagedByFilename($file['filename']);
+    }
+  }
+
+
+
+  public function deleteMultipleFileManagedByFilename($filename){
+    db_delete('file_managed')
+             ->condition('filename', $filename)
+             ->execute();
+  }
+
 }
