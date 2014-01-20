@@ -289,9 +289,11 @@ MIGRATION, debe ser reemplazado con una referencia a otra entidad. TODO: update 
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'file',
-        'settings' => array(),
-        'type' => 'file_default',
+        'module' => 'file_entity',
+        'settings' => array(
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'file_rendered',
         'weight' => 8,
       ),
       'teaser' => array(

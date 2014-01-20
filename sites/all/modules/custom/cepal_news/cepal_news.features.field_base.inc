@@ -202,6 +202,7 @@ function cepal_news_field_default_field_bases() {
         3 => 'OIG',
         4 => 'ASIA-PACIFICO',
         5 => 'BANDA ANCHA',
+        6 => 'ECLAC 2015',
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
