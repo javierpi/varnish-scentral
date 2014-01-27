@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Cepal LDAP feature.
+ */
+
+include_once 'cepal_ldap.features.inc';
