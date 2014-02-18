@@ -123,6 +123,13 @@
         <xml_file_path>/home/francort/xml/archivos_comunicado.xml</xml_file_path>
     </archivosComunicado>
 
+    <imagenesArticulo>
+        <xml_images_path>/home/francort/xml/imagenes_articulos.xml</xml_images_path>
+    </imagenesArticulo>
+    <archivosArticulo>
+        <xml_files_path>/home/francort/xml/archivos_articulos.xml</xml_files_path>
+    </archivosArticulo>
+
     <imagenesNoticia>
         <xml_file_path>/home/francort/xml/imagenes_noticia.xml</xml_file_path>
     </imagenesNoticia>

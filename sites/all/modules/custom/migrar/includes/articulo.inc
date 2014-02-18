@@ -14,6 +14,9 @@ define("COLUMNA_OPINON", 2);
 
 
 class ArticuloXMLMigration extends BaseMigracion implements BaseMigracionInterface {
+  const ARTICLE_IMAGES_PATH = "/sites/default/files/styles/[style]/public/article/images";
+
+
   const MENSAJE_SECRETARIO_GENERAL = 1;
   const COLUMNA_OPINON             = 2;
   /**
@@ -68,8 +71,6 @@ class ArticuloXMLMigration extends BaseMigracion implements BaseMigracionInterfa
       }
     }
     unset($archivosArticulo);
-
-
 
     $tipo = (int) $current_row->xml->tipodearticulo;
     if($tipo == self::MENSAJE_SECRETARIO_GENERAL) {
@@ -205,7 +206,8 @@ class ArticuloXMLMigration extends BaseMigracion implements BaseMigracionInterfa
       'field_article_author' => array('field' => 'autor'),
       'field_article_author:language' => array('field' => 'idioma'),
       'field_article_type'   => array('field' => 'tipodearticulo'),
-      'field_article_id_sade' => array('field' => 'id_sade'),
+      'field_id_sade' => array('field' => 'id_sade'),
+      'field_id_sade_maestro' => array('field' => 'id_sade_maestro'),
     );
   }
 
@@ -288,9 +290,9 @@ class ArticuloXMLMigration extends BaseMigracion implements BaseMigracionInterfa
 
     /* Se guarda cada uno de los campos traducidos para el nodo padre */
     $this->setNodeTitle($node, $idioma, $title);
-    $this->setNodeBody($node, $idioma, $body, 'field_pr_body');
-    $this->setNodeTeaser($node, $idioma, $teaser, 'field_pr_teaser');
-    $this->setNodeDate($node, $idioma, $date, 'field_pr_date');
+    $this->setNodeBody($node, $idioma, $body, 'field_article_body');
+    $this->setNodeTeaser($node, $idioma, $teaser, 'field_article_teaser');
+    $this->setNodeDate($node, $idioma, $date, 'field_article_date');
 
     $node->field_id_sade[$idioma][0]['value']         = $id_sade;
     $node->field_id_sade_maestro[$idioma][0]['value'] = $id_sade_maestro;
@@ -328,5 +330,26 @@ class ArticuloXMLMigration extends BaseMigracion implements BaseMigracionInterfa
 
   }
 
+
+
+  /**
+   * Se borran datos de imagenes y archivos.
+   *
+   * En particular los datos de imagenes tales como los archivos fisicos de las
+   * imagenes cuando se pueda y las relaciones en base de datos de las imagenes
+   * "managed".
+   *
+   * @param int $entity_id
+   */
+  public function prepareRollback($entity_id) {
+    parent::prepareRollback($entity_id);
+
+    $field_name = "field_article_image";
+    $entity_type = "node";
+    $base_path  = DRUPAL_ROOT;
+    $base_path .= self::ARTICLE_IMAGES_PATH;
+    $entity = entity_load_single($entity_type, $entity_id);
+    $this->eliminarImagenes($entity, $field_name, $base_path);
+  }
 
 }
