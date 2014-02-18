@@ -73,7 +73,7 @@ class BaseMigracion extends XMLMigration {
     /* Se actualiza el archivo xml con la info de los objetos a migrar */
     $this->getXMLFeed();
 
-    $items_url = $this->getXMLFilePath();
+    $items_url = (string) $this->getXMLFilePath();
     $xml = simplexml_load_file((string) $items_url);
     $atributos = $xml->attributes();
     $this->nMigracion = (int)$atributos->id_migracion;
