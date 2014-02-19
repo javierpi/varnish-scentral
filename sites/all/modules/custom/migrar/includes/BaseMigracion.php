@@ -454,6 +454,12 @@ class BaseMigracion extends XMLMigration {
   }
 
 
+  protected function buildTeaser($body){
+    $teaser_text = htmlspecialchars_decode(strip_tags(text_summary($body, 'plain_text')));
+    return $teaser_text;
+  }
+
+
 
   protected function setNodeTitle($node, $idioma, $title){
     $title_text = htmlspecialchars_decode($title);
@@ -619,6 +625,9 @@ class BaseMigracion extends XMLMigration {
       ->execute();
 
     if(file_exists($source)){
+      if(strlen(trim($archivo['descripcion'])) == 0){
+        $archivo['descripcion'] = $fileName;
+      }
       $data = file_get_contents($source);
       $file = file_save_data($data, array(), $destination);
       file_move($file, $destination);

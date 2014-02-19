@@ -1,56 +1,32 @@
 <?php
-/**
- * @file
- * Este archivo define la clase que migra articulos
- *
- * La clase se basa en BaseMigracion e implementa BaseMigracionInterface.
- * BaseMigracion extiende desde el framework que provee el modulo migrate.
- */
+$discursos_migrados = 0;
 
-$articulos_migrados = 0;
+class DiscursoXMLMigration extends BaseMigracion implements BaseMigracionInterface {
+  const PRESENTATION_IMAGES_PATH = "/sites/default/files/styles/[style]/public/presentation/images";
+  const PRESENTATION_TYPE_PRESENTATION = 1;
+  const PRESENTATION_TYPE_SPEECH       = 2;
 
-define("MENSAJE_SECRETARIO_GENERAL", 1);
-define("COLUMNA_OPINON", 2);
-
-
-class ArticuloXMLMigration extends BaseMigracion implements BaseMigracionInterface {
-  const ARTICLE_IMAGES_PATH = "/sites/default/files/styles/[style]/public/article/images";
-
-
-  const MENSAJE_SECRETARIO_GENERAL = 1;
-  const COLUMNA_OPINON             = 2;
   /**
   * Constructor sin parametros.
   */
   public function __construct() {
-    $this->type = "articulo";
+    $this->type = "discurso";
     $this->init();
-    $this->description = t('Importar articulos desde archivo XML');
+    $this->description = t('Importar discursos desde archivo XML');
 
     $this->addFieldMapping('created', 'fecha');
     $this->addFieldMapping('changed', 'fecha_actualizacion');
 
     $arguments = DateMigrateFieldHandler::arguments('America/Santiago');
-    $this->addFieldMapping('field_article_date', 'fecha_actualizacion')
+    $this->addFieldMapping('field_presentation_date', 'fecha_actualizacion')
       ->xpath('fecha_actualizacion')
       ->arguments($arguments);
   }
 
 
-
-  /**
-   * Esta funcion se usa para preparar algunos atributos antes de insercion.
-   *
-   * Existen atributos tales como fechas o atributos multivalorados que
-   * requieren un proceso antes de ser insertados en la base de datos. En esta
-   * funcion se hace ese proceso.
-   *
-   * @param mixed $current_row
-   * @return boolean
-   */
   public function prepareRow($current_row) {
-    global $articulos_migrados;
-    drush_print ($articulos_migrados++);
+    global $discursos_migrados;
+    drush_print ($discursos_migrados++);
 
     $uid = $this->retrieveUid($current_row);
     $is_original = is_numeric(trim($current_row->xml->id_sade_maestro));
@@ -58,33 +34,20 @@ class ArticuloXMLMigration extends BaseMigracion implements BaseMigracionInterfa
 
 
     $id_sade = (int) $current_row->xml->id_sade;
-    $imagesArticulo = new Imagenes('imagenesArticulo');
-    $imagenes = $imagesArticulo->getImagenesByIdSade($id_sade);
-    unset($imagesArticulo);
+    $imagesDiscurso = new Imagenes('imagenesDiscurso');
+    $imagenes = $imagesDiscurso->getImagenesByIdSade($id_sade);
+    unset($imagesDiscurso);
 
-    $archivosArticulo = new Archivos('archivosArticulo');
-    $archivos = $archivosArticulo->getArchivosByIdSade($id_sade);
+    $archivosDiscurso = new Archivos('archivosDiscurso');
+    $archivos = $archivosDiscurso->getArchivosByIdSade($id_sade);
     if($is_original){
       $traducciones = $this->getTraducciones($id_sade);
       foreach($traducciones as $id_sade_translation){
-        $archivos += $archivosArticulo->getArchivosByIdSade($id_sade_translation);
+        $archivos += $archivosDiscurso->getArchivosByIdSade($id_sade_translation);
       }
     }
-    unset($archivosArticulo);
+    unset($archivosDiscurso);
 
-    $tipo = (int) $current_row->xml->tipodearticulo;
-    if($tipo == self::MENSAJE_SECRETARIO_GENERAL) {
-      $current_row->xml->tipodearticulo = 1;
-    }
-    else if($tipo == self::COLUMNA_OPINON){
-      $current_row->xml->tipodearticulo = 0;
-    }
-    else {
-      /**
-       * Si no es una columna o un mensaje, no se migra.
-       */
-      return FALSE;
-    }
     $aux = explode(" ", $current_row->xml->fecha);
     $pieces = explode("-", $aux[0]);
     $created = mktime(0, 0, 0, $pieces[1], $pieces[0], $pieces[2]);
@@ -126,8 +89,7 @@ class ArticuloXMLMigration extends BaseMigracion implements BaseMigracionInterfa
   }
 
 
-
- /**
+  /**
   * Funcion que describe los campos del xml.
   *
   * @return array
@@ -135,19 +97,15 @@ class ArticuloXMLMigration extends BaseMigracion implements BaseMigracionInterfa
   static public function getXMLFields() {
     return array(
       'id_sade'             => t('Identificador de SADE'),
-      'titulo'              => t('Titulo del comunicado'),
-      'bajada'              => t('Summary de body'),
-      //'epigrafe'            => t('Fecha y hora?'),
+      'idioma'              => t('Idioma'),
+      'id_division'         => t('Division publicadora'),
       'fecha'               => t('created'),
       'fecha_actualizacion' => t('updated'),
+      'titulo'              => t('Titulo del comunicado'),
       'cuerpo'              => t('body'),
-      'idioma'              => t('Idioma'),
-
-      'autor'                 =>  t('autor del articulo?'),
-      'tipodearticulo'        => t('Columna de opinion o articulo'),
-      'SADE_misc_division'    => t('division publicadora'),
-      'contacto_persona'      => t('persona de contacto para la publicacion'),
-      'contacto_organizacion' => t('contacto organizacion'),
+      'autor'               =>  t('autor del discurso'),
+      'lugar_pais_iso2'     =>  t('codigo ISO2 del pais'),
+      'lugar_ciudad'        =>  t('Nombre de la ciudad'),
     );
   }
 
@@ -163,21 +121,26 @@ class ArticuloXMLMigration extends BaseMigracion implements BaseMigracionInterfa
     $unmgtDests = array();
     $unmgtDests += parent::getUnmigratedDestinations();
 
-    self::fileFieldUnmigrated('field_article_files', $unmgtDests);
+    self::fileFieldUnmigrated('field_presentation_files', $unmgtDests);
 
-    self::imageFieldUnmigrated('field_article_image', $unmgtDests);
+    self::imageFieldUnmigrated('field_presentation_image', $unmgtDests);
 
-    self::taxonomyFieldUnmigrated('field_article_topic', $unmgtDests);
-    self::taxonomyFieldUnmigrated('field_article_unbis', $unmgtDests);
+    self::taxonomyFieldUnmigrated('field_special_topic', $unmgtDests);
+    self::taxonomyFieldUnmigrated('field_unbis', $unmgtDests);
+    self::taxonomyFieldUnmigrated('field_topic', $unmgtDests);
+
+    self::urlFieldUnmigrated('field_presentation_url_reference', $unmgtDests);
 
     unset($unmgtDests[array_search ( 'created' , $unmgtDests )]);
     unset($unmgtDests[array_search ( 'changed' , $unmgtDests )]);
     unset($unmgtDests[array_search ( 'language' , $unmgtDests )]);
 
-    $unmgtDests[] = 'field_article_country';
+    $unmgtDests[] = 'field_presentation_event_ref';
+    $unmgtDests[] = 'field_related';
 
     return $unmgtDests;
   }
+
 
 
 
@@ -196,36 +159,34 @@ class ArticuloXMLMigration extends BaseMigracion implements BaseMigracionInterfa
 
     return array(
       'title'           => array('field' => 'titulo', 'callback' => ''),
+      'title_field'           => array('field' => 'titulo', 'callback' => ''),
+      'title_field:language' => array('field' => 'idioma'),
       'language'        => array('field' => 'idioma', 'callback' => ''),
-      'field_article_body' => array('field' => 'cuerpo', 'callback' => 'filterHTML'),
-      'field_article_body:language' => array('field' => 'idioma'),
+      'field_presentation_body' => array('field' => 'cuerpo', 'callback' => 'filterHTML'),
+      'field_presentation_body:language' => array('field' => 'idioma'),
 
-      'field_article_teaser' => array('field' => 'bajada', 'callback' => 'filterHTML'),
-      'field_article_teaser:language' => array('field' => 'idioma'),
+      'field_presentation_teaser' => array('field' => 'cuerpo', 'callback' => 'buildTeaser'),
+      'field_presentation_teaser:language' => array('field' => 'idioma'),
 
-      'field_article_author' => array('field' => 'autor'),
-      'field_article_author:language' => array('field' => 'idioma'),
-      'field_article_type'   => array('field' => 'tipodearticulo'),
+      'field_presentation_author' => array('field' => 'autor_id'),
+      'field_presentation_author:language' => array('field' => 'idioma'),
       'field_id_sade' => array('field' => 'id_sade'),
       'field_id_sade_maestro' => array('field' => 'id_sade_maestro'),
+
+      'field_country' => array('field' => 'lugar_pais_iso2'),
+      'field_presentation_city' => array('field' => 'lugar_ciudad'),
+      'field_presentation_city:language' => array('field' => 'idioma'),
+      'field_presentation_workarea' => array('field' => 'id_division'),
+
     );
   }
 
-
-
- /**
-  * Devuelve un arreglo con todos los campos que tienen un valor fijo.
-  *
-  * Si un valor es independiente del xml entonces una de las opciones posiles
-  * es que sea fijo. Si tal es el caso, esta es la funcion que debe usarse.
-  *
-  * @return type
-  */
   static public function getDefaultEquivalences() {
 
     return array(
       'translate' => TRUE,
-      'field_article_body:format' => 'filtered_html',
+      'field_presentation_body:format' => 'filtered_html',
+      'field_presentation_type' => self::PRESENTATION_TYPE_SPEECH,
     );
   }
 
@@ -233,10 +194,9 @@ class ArticuloXMLMigration extends BaseMigracion implements BaseMigracionInterfa
 
   }
 
-
   public function complete($entity, stdClass $row) {
     drush_print ("nid: " . $entity->nid . " -- sade_id: " . $row->xml->id_sade);
-    $lng = LANGUAGE_NONE;
+    $lng = $entity->language;
     $uid = $this->retrieveUid($row);
 
     $fid = 0;
@@ -248,17 +208,17 @@ class ArticuloXMLMigration extends BaseMigracion implements BaseMigracionInterfa
     if($fid > 0){
       $image->uid = $uid;
       $field_image = array($lng => array('0' => (array)$image));
-      $entity->field_article_image = $field_image;
+      $entity->field_presentation_image = $field_image;
     }
     $files = array();
     if(isset($row->archivos)) $files = $row->archivos;
     if(count($files) > 0){
-      $entity->field_article_files = array();
-      $entity->field_article_files[$lng] = array();
+      $entity->field_presentation_files = array();
+      $entity->field_presentation_files[$lng] = array();
       $i = 0;
       foreach($files as $file){
         $file->uid = $uid;
-        $entity->field_article_files[$lng][$i++] = (array)$file;
+        $entity->field_presentation_files[$lng][$i++] = (array)$file;
       }
     }
     else{
@@ -269,6 +229,7 @@ class ArticuloXMLMigration extends BaseMigracion implements BaseMigracionInterfa
 
     node_save($entity);
   }
+
 
   protected function insertarTraduccion($currentRow){
     /****   Crear el nodo   ****/
@@ -281,8 +242,9 @@ class ArticuloXMLMigration extends BaseMigracion implements BaseMigracionInterfa
 
     if($idioma == $node->language) return FALSE;
 
-    $teaser = check_plain($currentRow->xml->bajada);
+    //$teaser = check_plain($currentRow->xml->bajada);
     $body   = $this->filterHTML($currentRow->xml->cuerpo);
+    $teaser = text_summary($body, 'plain_text', 200);
     $title  = check_plain($currentRow->xml->titulo);
     $date   = $currentRow->xml->fecha;
 
@@ -291,9 +253,9 @@ class ArticuloXMLMigration extends BaseMigracion implements BaseMigracionInterfa
 
     /* Se guarda cada uno de los campos traducidos para el nodo padre */
     $this->setNodeTitle($node, $idioma, $title);
-    $this->setNodeBody($node, $idioma, $body, 'field_article_body');
-    $this->setNodeTeaser($node, $idioma, $teaser, 'field_article_teaser');
-    $this->setNodeDate($node, $idioma, $date, 'field_article_date');
+    $this->setNodeBody($node, $idioma, $body, 'field_presentation_body');
+    $this->setNodeTeaser($node, $idioma, $teaser, 'field_presentation_teaser');
+    $this->setNodeDate($node, $idioma, $date, 'field_presentation_date');
 
     $node->field_id_sade[$idioma][0]['value']         = $id_sade;
     $node->field_id_sade_maestro[$idioma][0]['value'] = $id_sade_maestro;
@@ -345,12 +307,13 @@ class ArticuloXMLMigration extends BaseMigracion implements BaseMigracionInterfa
   public function prepareRollback($entity_id) {
     parent::prepareRollback($entity_id);
 
-    $field_name = "field_article_image";
+    $field_name = "field_presentation_image";
     $entity_type = "node";
     $base_path  = DRUPAL_ROOT;
-    $base_path .= self::ARTICLE_IMAGES_PATH;
+    $base_path .= self::PRESENTATION_IMAGES_PATH;
     $entity = entity_load_single($entity_type, $entity_id);
     $this->eliminarImagenes($entity, $field_name, $base_path);
   }
+
 
 }

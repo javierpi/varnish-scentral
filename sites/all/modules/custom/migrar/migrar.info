@@ -19,6 +19,7 @@ files[] = includes/proyecto.inc
 ;files[] = includes/comunicado.inc
 files[] = includes/articulo.inc
 files[] = includes/noticia.inc
+files[] = includes/discurso.inc
 
 version = "7.x-dev"
 core = "7.x"

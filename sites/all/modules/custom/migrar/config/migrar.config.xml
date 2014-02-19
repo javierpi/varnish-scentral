@@ -75,6 +75,7 @@
         <xml_images_path>/home/francort/xml/imagenes_noticia.xml</xml_images_path>
         <xml_files_path>/home/francort/xml/archivos_noticia.xml</xml_files_path>
     </noticia>
+
     <articulo>
         <destination_node>cepal_article</destination_node>
         <xml_file_path>/home/francort/xml/articulo.xml</xml_file_path>
@@ -92,6 +93,25 @@
         <destination_files>public://article/files</destination_files>
         <source_files>/home/francort/archivos_articulos</source_files>
     </articulo>
+
+    <discurso>
+        <destination_node>cepal_presentation</destination_node>
+        <xml_file_path>/home/francort/xml/discurso.xml</xml_file_path>
+        <x_path>/GetSpeechs/speech</x_path>
+        <id_x_path>id_sade</id_x_path>
+        <service_endpoint>http://10.0.29.37/sade_ws/service1.asmx/GetSpeechs</service_endpoint>
+        <service_parameters>
+            <service_parameter>
+                <name>id_sade</name>
+                <value></value>
+            </service_parameter>
+        </service_parameters>
+        <destination_images>public://presentation/images</destination_images>
+        <source_images>/home/francort/imagenes_discurso</source_images>
+        <destination_files>public://presentation/files</destination_files>
+        <source_files>/home/francort/archivos_discurso</source_files>
+    </discurso>
+
     <imagen>
         <destination_node>image</destination_node>
         <xml_file_path>/home/francort/xml/imagenes_comunicados.xml</xml_file_path>
@@ -129,6 +149,13 @@
     <archivosArticulo>
         <xml_files_path>/home/francort/xml/archivos_articulos.xml</xml_files_path>
     </archivosArticulo>
+
+    <imagenesDiscurso>
+        <xml_images_path>/home/francort/xml/imagenes_discurso.xml</xml_images_path>
+    </imagenesDiscurso>
+    <archivosDiscurso>
+        <xml_files_path>/home/francort/xml/archivos_discurso.xml</xml_files_path>
+    </archivosDiscurso>
 
     <imagenesNoticia>
         <xml_file_path>/home/francort/xml/imagenes_noticia.xml</xml_file_path>
