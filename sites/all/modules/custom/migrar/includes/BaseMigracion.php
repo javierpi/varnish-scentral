@@ -434,6 +434,27 @@ class BaseMigracion extends XMLMigration {
   }
 
 
+  protected function plainText($html){
+    $html_original = $html;
+
+    $html = $this->quitarCDATA($html);
+    $html = strip_tags($html);
+    $html_filtered = check_markup($html, 'plain_text');
+
+    $html_amp = str_replace("&amp;", "&", $html_filtered);
+
+    $html = $html_amp;
+    $html = $this->quitarImagenes($html);
+
+    if($html !== ""){
+      drush_print_r($html);
+      drush_print_r($html_original);
+    }
+
+    return $html;
+  }
+
+
   protected function loadNodeByIdSade($id_sade, $fieldName){
     $node_type = $this->getDestinationNode();
     $query = new EntityFieldQuery();

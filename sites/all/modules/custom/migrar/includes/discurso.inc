@@ -162,10 +162,10 @@ class DiscursoXMLMigration extends BaseMigracion implements BaseMigracionInterfa
       'title_field'           => array('field' => 'titulo', 'callback' => ''),
       'title_field:language' => array('field' => 'idioma'),
       'language'        => array('field' => 'idioma', 'callback' => ''),
-      'field_presentation_body' => array('field' => 'cuerpo', 'callback' => 'filterHTML'),
-      'field_presentation_body:language' => array('field' => 'idioma'),
+      //'field_presentation_body' => array('field' => 'cuerpo', 'callback' => 'filterHTML'),
+      //'field_presentation_body:language' => array('field' => 'idioma'),
 
-      'field_presentation_teaser' => array('field' => 'cuerpo', 'callback' => 'buildTeaser'),
+      'field_presentation_teaser' => array('field' => 'cuerpo', 'callback' => 'plainText'),
       'field_presentation_teaser:language' => array('field' => 'idioma'),
 
       'field_presentation_author' => array('field' => 'autor_id'),
@@ -243,8 +243,9 @@ class DiscursoXMLMigration extends BaseMigracion implements BaseMigracionInterfa
     if($idioma == $node->language) return FALSE;
 
     //$teaser = check_plain($currentRow->xml->bajada);
-    $body   = $this->filterHTML($currentRow->xml->cuerpo);
-    $teaser = text_summary($body, 'plain_text', 200);
+    //$body   = $this->filterHTML($currentRow->xml->cuerpo);
+    //$teaser = text_summary($body, 'plain_text', 200);
+    $teaser = $this->plainText($currentRow->xml->cuerpo);
     $title  = check_plain($currentRow->xml->titulo);
     $date   = $currentRow->xml->fecha;
 
@@ -253,8 +254,8 @@ class DiscursoXMLMigration extends BaseMigracion implements BaseMigracionInterfa
 
     /* Se guarda cada uno de los campos traducidos para el nodo padre */
     $this->setNodeTitle($node, $idioma, $title);
-    $this->setNodeBody($node, $idioma, $body, 'field_presentation_body');
-    $this->setNodeTeaser($node, $idioma, $teaser, 'field_presentation_teaser');
+    $this->setNodeBody($node, $idioma, $teaser, 'field_presentation_teaser');
+    //$this->setNodeTeaser($node, $idioma, $teaser, 'field_presentation_teaser');
     $this->setNodeDate($node, $idioma, $date, 'field_presentation_date');
 
     $node->field_id_sade[$idioma][0]['value']         = $id_sade;
