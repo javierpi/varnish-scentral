@@ -340,6 +340,26 @@ if (std.tolower(req.url) == "/desastres/default.asp?idioma=in") { error 750 "/en
 if (std.tolower(req.url) == "/dppo/") { error 750 "/es/cooperacion";}
 if (std.tolower(req.url) == "/dppo/default.asp") { error 750 "/es/cooperacion";}
 ### if (std.tolower(req.url) == "/dppo/default.asp?idioma=es") { error 750 "/es/cooperacion";}
+if (std.tolower(req.url) == "/oig/afisica/") { error 751 "http://oig.cepal.org/es/autonomias/autonomia-fisica";}
+if (std.tolower(req.url) == "/oig/afisica/default.asp") { error 751 "http://oig.cepal.org/es/autonomias/autonomia-fisica";}
+### if (std.tolower(req.url) == "/oig/afisica/default.asp?idioma=es") { error 751 "http://oig.cepal.org/es/autonomias/autonomia-fisica";}
+if (std.tolower(req.url) == "/oig/aeconomica/") { error 751 "http://oig.cepal.org/es/autonomias/autonomia-economica";}
+if (std.tolower(req.url) == "/oig/aeconomica/default.asp") { error 751 "http://oig.cepal.org/es/autonomias/autonomia-economica";}
+### if (std.tolower(req.url) == "/oig/aeconomica/default.asp?idioma=es") { error 751 "http://oig.cepal.org/es/autonomias/autonomia-economica";}
+if (std.tolower(req.url) == "/oig/") { error 751 "http://oig.cepal.org/es";}
+if (std.tolower(req.url) == "/oig/default.asp") { error 751 "http://oig.cepal.org/es";}
+### if (std.tolower(req.url) == "/oig/default.asp?idioma=es") { error 751 "http://oig.cepal.org/es";}
+if (std.tolower(req.url) == "/oig/adecisiones/") { error 751 "http://oig.cepal.org/es/autonomias/autonomia-la-toma-decisiones";}
+if (std.tolower(req.url) == "/oig/adecisiones/default.asp") { error 751 "http://oig.cepal.org/es/autonomias/autonomia-la-toma-decisiones";}
+### if (std.tolower(req.url) == "/oig/adecisiones/default.asp?idioma=es") { error 751 "http://oig.cepal.org/es/autonomias/autonomia-la-toma-decisiones";}
+if (std.tolower(req.url) == "/oig/afisica/default.asp?idioma=in") { error 751 "http://oig.cepal.org/en/autonomies/physical-autonomy";}
+if (std.tolower(req.url) == "/oig/aeconomica/default.asp?idioma=in") { error 751 "http://oig.cepal.org/en/autonomies/economic-autonomy";}
+if (std.tolower(req.url) == "/oig/default.asp?idioma=in") { error 751 "http://oig.cepal.org/en";}
+if (std.tolower(req.url) == "/oig/adecisiones/default.asp?idioma=in") { error 751 "http://oig.cepal.org/en/autonomies/autonomy-decision-making";}
+if (std.tolower(req.url) ~ "/oig/agrupadores_xml/aes779.xml") { error 751 "http://oig.cepal.org/es/documentos";}
+if (std.tolower(req.url) ~ "/oig/agrupadores_xml/aes854.xml") { error 751 "http://oig.cepal.org/es/politicas-justas";}
+if (std.tolower(req.url) ~ "/oig/agrupadores_xml/ain854.xml") { error 751 "http://oig.cepal.org/en/fair-policies";}
+if (std.tolower(req.url) ~ "/oig/agrupadores_xml/ain779.xml") { error 751 "http://oig.cepal.org/en/documents";}
 if (std.tolower(req.url) == "/aecid/") { error 751 "http://www.cepal.org/es/proyectos/programa-cooperacion-tecnica-cepal-aecid";}
 if (std.tolower(req.url) == "/aecid/default.asp") { error 751 "http://www.cepal.org/es/proyectos/programa-cooperacion-tecnica-cepal-aecid";}
 ### if (std.tolower(req.url) == "/aecid/default.asp?idioma=es") { error 751 "http://www.cepal.org/es/proyectos/programa-cooperacion-tecnica-cepal-aecid";}
@@ -516,4 +536,32 @@ if (std.tolower(req.url) == "/erecc/homepresent.html") { error 750 "/en/topics/d
 if (std.tolower(req.url) == "/pobrezaurbana") { error 750 "/es/temas/asentamientos-humanos";}
 if (std.tolower(req.url) == "/caf") { error 750 "/es/areas-de-trabajo/desarrollo-sostenible-y-asentamientos-humanos";}
 if (std.tolower(req.url) == "/esalc") { error 750 "/es/areas-de-trabajo/desarrollo-sostenible-y-asentamientos-humanos";}
+if (std.tolower(req.url) == "/oig/default.asp?idioma=pr") { error 750 "http://oig.cepal.org/pt";}
+if (std.tolower(req.url) == "/oig/default.asp?idioma=fr") { error 750 "http://oig.cepal.org/es";}
+if (std.tolower(req.url) == "/oig/afisica/default.asp?idioma=pr") { error 750 "http://oig.cepal.org/pt/autonomias/autonomia-fisica";}
+if (std.tolower(req.url) == "/oig/afisica/default.asp?idioma=fr") { error 750 "http://oig.cepal.org/es/autonomias/autonomia-fisica";}
+if (std.tolower(req.url) == "/oig/aeconomica/default.asp?idioma=pr") { error 750 "http://oig.cepal.org/pt/autonomias/autonomia-economica";}
+if (std.tolower(req.url) == "/oig/aeconomica/default.asp?idioma=fr") { error 750 "http://oig.cepal.org/es/autonomias/autonomia-economica";}
+if (std.tolower(req.url) == "/oig/adecisiones/default.asp?idioma=pr") { error 750 "http://oig.cepal.org/pt/autonomias/autonomia-na-tomada-decisoes";}
+if (std.tolower(req.url) == "/oig/adecisiones/default.asp?idioma=fr") { error 750 "http://oig.cepal.org/es/autonomias/autonomia-la-toma-decisiones";}
+if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/oig/agrupadores_xml/aes779.xml&xsl=/oig/agrupadores_xml/agrupa_listado-p.xsl&base=/oig/tpl-p/top-bottom.xsl") { error 750 "http://oig.cepal.org/pt/documentos";}
+if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/oig/agrupadores_xml/aes779.xml&xsl=/oig/agrupadores_xml/agrupa_listado-f.xsl&base=/oig/tpl-f/top-bottom.xsl") { error 750 "http://oig.cepal.org/es/documentos";}
+if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/oig/noticias/paginas/5/36135/p36135.xml&xsl=/oig/tpl/p18f.xsl&base=/oig/tpl/top-bottom-decisiones.xsl") { error 750 "http://oig.cepal.org/es/leyes/leyes-de-cuotas";}
+if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/oig/noticias/paginas/2/36362/p36362.xml&xsl=/oig/tpl-i/p18f.xsl&base=/oig/tpl-i/top-bottom-decisiones.xsl") { error 750 "http://oig.cepal.org/en/laws/quota-legislation";}
+if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/oig/noticias/paginas/8/36598/p36598.xml&xsl=/oig/tpl/p18f.xsl&base=/oig/tpl-p/top-bottom-decisiones.xsl") { error 750 "http://oig.cepal.org/pt/leis/leis-de-cotas";}
+if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/oig/noticias/paginas/6/36676/p36676.xml&xsl=/oig/tpl/p18f.xsl&base=/oig/tpl-f/top-bottom-decisiones.xsl") { error 750 "http://oig.cepal.org/es/leyes/leyes-de-cuotas";}
+if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/oig/noticias/paginas/1/46121/p46121.xml&xsl=/oig/tpl/p18f.xsl&base=/oig/tpl/top-bottom-fisica.xsl") { error 750 "http://oig.cepal.org/es/leyes/leyes-de-violencia";}
+if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/oig/noticias/paginas/6/46486/p46486.xml&xsl=/oig/tpl-i/p18f.xsl&base=/oig/tpl-i/top-bottom-fisica.xsl") { error 750 "http://oig.cepal.org/en/laws/violence-laws";}
+if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/oig/noticias/paginas/7/35037/p35037.xml&xsl=/oig/tpl/p18f.xsl&base=/oig/tpl-p/top-bottom-fisica.xsl") { error 750 "http://oig.cepal.org/pt/leis/leis-de-violencia";}
+if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/oig/noticias/paginas/0/36670/p36670.xml&xsl=/oig/tpl/p18f.xsl&base=/oig/tpl-f/top-bottom-fisica.xsl") { error 750 "http://oig.cepal.org/es/leyes/leyes-de-violencia";}
+if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/oig/noticias/paginas/2/46652/p46652.xml&xsl=/oig/tpl/p18f.xsl&base=/oig/tpl/top-bottom-economica.xsl") { error 750 "http://oig.cepal.org/es/leyes/leyes-de-cuidado";}
+if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/oig/noticias/paginas/2/47072/p47072.xml&xsl=/oig/tpl-i/p18f.xsl&base=/oig/tpl-i/top-bottom-economica.xsl") { error 750 "http://oig.cepal.org/en/laws/care-related-policies-laws";}
+if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/oig/noticias/paginas/7/36607/p36607.xml&xsl=/oig/tpl/p18f.xsl&base=/oig/tpl-p/top-bottom-economica.xsl") { error 750 "http://oig.cepal.org/pt/leis/leis-de-cuidado";}
+if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/oig/noticias/paginas/6/35036/p35036.xml&xsl=/oig/tpl/p18f.xsl&base=/oig/tpl-f/top-bottom-economica.xsl") { error 750 "http://oig.cepal.org/es/leyes/leyes-de-cuidado";}
+if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/oig/noticias/paginas/8/50478/p50478.xml&xsl=/oig/tpl/p18f.xsl&base=/oig/tpl/top-bottom-fisica.xsl") { error 750 "http://oig.cepal.org/es/leyes/leyes-sobre-aborto";}
+if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/oig/noticias/paginas/9/50479/p50479.xml&xsl=/oig/tpl-i/p18f.xsl&base=/oig/tpl-i/top-bottom-fisica.xsl") { error 750 "http://oig.cepal.org/en/laws/abortion-laws";}
+if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/oig/noticias/paginas/0/50480/p50480.xml&xsl=/oig/tpl/p18f.xsl&base=/oig/tpl-p/top-bottom-fisica.xsl") { error 750 "http://oig.cepal.org/pt/leis/leis-de-aborto";}
+if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/oig/noticias/paginas/7/50477/p50477.xml&xsl=/oig/tpl/p18f.xsl&base=/oig/tpl-f/top-bottom-fisica.xsl") { error 750 "http://oig.cepal.org/es/leyes/leyes-sobre-aborto";}
+if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/oig/agrupadores_xml/aes854.xml&xsl=/oig/agrupadores_xml/agrupa_listado-p.xsl&base=/oig/tpl-p/top-bottom.xsl") { error 750 "http://oig.cepal.org/pt/politicas-justas";}
+if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/oig/agrupadores_xml/afr854.xml&xsl=/oig/agrupadores_xml/agrupa_listado-f.xsl&base=/oig/tpl-f/top-bottom.xsl") { error 750 "http://oig.cepal.org/es/politicas-justas";}
 } 
