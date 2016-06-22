@@ -253,10 +253,10 @@ if (std.tolower(req.url) == "/comercio/doc_serie_2012_2014/default.asp") { error
 if (std.tolower(req.url) == "/comercio/default.asp?idioma=in") { error 750 "/en/work-areas/international-trade-and-integration";}
 if (std.tolower(req.url) == "/comercio/equipo_trabajo_dcii/default.asp?idioma=in") { error 750 "/en/staff-international-trade-and-integration-division";}
 if (std.tolower(req.url) == "/comercio/doc_serie_2012_2014/default.asp?idioma=in") { error 750 "/en/publications/list/field_publication_type/series-8055/field_work_area_v2/international-trade-and-integration-8192/language/en";}
-if (std.tolower(req.url) == "/redatam/") { error 750 "/es/areas-de-trabajo/poblacion-y-desarrollo";}
-if (std.tolower(req.url) == "/redatam/default.asp") { error 750 "/es/areas-de-trabajo/poblacion-y-desarrollo";}
-### if (std.tolower(req.url) == "/redatam/default.asp?idioma=es") { error 750 "/es/areas-de-trabajo/poblacion-y-desarrollo";}
-if (std.tolower(req.url) == "/redatam/default.asp?idioma=in") { error 750 "/en/work-areas/population-and-development";}
+if (std.tolower(req.url) == "/redatam/") { error 750 "/es/temas/redatam";}
+if (std.tolower(req.url) == "/redatam/default.asp") { error 750 "/es/temas/redatam";}
+### if (std.tolower(req.url) == "/redatam/default.asp?idioma=es") { error 750 "/es/temas/redatam";}
+if (std.tolower(req.url) == "/redatam/default.asp?idioma=in") { error 750 "/en/topics/redatam";}
 if (std.tolower(req.url) == "/mexico/") { error 750 "/es/sedes-y-oficinas/cepal-mexico";}
 if (std.tolower(req.url) == "/mexico/default.asp") { error 750 "/es/sedes-y-oficinas/cepal-mexico";}
 ### if (std.tolower(req.url) == "/mexico/default.asp?idioma=es") { error 750 "/es/sedes-y-oficinas/cepal-mexico";}
