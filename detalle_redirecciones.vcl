@@ -564,4 +564,5 @@ if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/oig/noticias/paginas/0/50
 if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/oig/noticias/paginas/7/50477/p50477.xml&xsl=/oig/tpl/p18f.xsl&base=/oig/tpl-f/top-bottom-fisica.xsl") { error 750 "http://oig.cepal.org/es/leyes/leyes-sobre-aborto";}
 if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/oig/agrupadores_xml/aes854.xml&xsl=/oig/agrupadores_xml/agrupa_listado-p.xsl&base=/oig/tpl-p/top-bottom.xsl") { error 750 "http://oig.cepal.org/pt/politicas-justas";}
 if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/oig/agrupadores_xml/afr854.xml&xsl=/oig/agrupadores_xml/agrupa_listado-f.xsl&base=/oig/tpl-f/top-bottom.xsl") { error 750 "http://oig.cepal.org/es/politicas-justas";}
+if (std.tolower(req.url) == "/celade/redatam") { error 750 "/es/temas/redatam";}
 } 
