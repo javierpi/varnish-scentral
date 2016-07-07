@@ -19,25 +19,25 @@ if (std.tolower(req.http.host) ~ "^socinfo.cepal.org" || std.tolower(req.http.ho
 # http://apache2-q3:8080/browse/SWDEV-1137
 # OBSERVATORIOS
 #Gender Equality Observatory for Latin America and the Caribbean
-if (std.tolower(req.url) ~ "/en/observatories/gender-equality-observatory-latin-america-and-caribbean") { set req.url = "/oig/default.asp?idioma=IN" ; }
-if (std.tolower(req.url) ~ "/es/observatorio/observatorio-de-igualdad-de-genero-de-america-latina-y-el-caribe") { set req.url = "/oig/" ; }
+#if (std.tolower(req.url) ~ "/en/observatories/gender-equality-observatory-latin-america-and-caribbean") { set req.url = "/oig/default.asp?idioma=IN" ; }
+#if (std.tolower(req.url) ~ "/es/observatorio/observatorio-de-igualdad-de-genero-de-america-latina-y-el-caribe") { set req.url = "/oig/" ; }
 
 # Observatory of Latin America and the Caribbean
 if (std.tolower(req.url) ~ "/en/observatories/observatory-latin-america-and-caribbean") { set req.url = "/ofilac/default.asp?idioma=IN" ; }
 if (std.tolower(req.url) ~ "/es/observatorio/observatorio-fiscal-de-latinoamerica-y-el-caribe") { set req.url = "/ofilac/" ; }
 
 #Regional Broadband Observatory / Observatorio Regional de Banda Ancha
-if (std.tolower(req.url) ~ "/en/observatories/regional-broadband-observatory") { set req.url = "/socinfo/orba/" ; }
-if (std.tolower(req.url) ~ "/es/observatorio/observatorio-regional-de-banda-ancha") { set req.url = "/socinfo/orba/" ; }
+#if (std.tolower(req.url) ~ "/en/observatories/regional-broadband-observatory") { set req.url = "/socinfo/orba/" ; }
+#if (std.tolower(req.url) ~ "/es/observatorio/observatorio-regional-de-banda-ancha") { set req.url = "/socinfo/orba/" ; }
 
 #Organos subsidiarios
 #Caribbean Development and Cooperation Committee
-if (std.tolower(req.url) ~ "/en/subsidiary-bodies/caribbean-development-and-cooperation-committee") { set req.url = " /cgi-bin/getProd.asp?xml=/portofspain/noticias/paginas/2/42762/P42762.xml&base=/portofspain/tpl/top-bottom.xsl" ; }
-if (std.tolower(req.url) ~ "/es/organos-subsidiarios/comite-de-desarrollo-y-cooperacion-del-caribe") { set req.url = " /cgi-bin/getProd.asp?xml=/portofspain/noticias/paginas/2/42762/P42762.xml&base=/portofspain/tpl/top-bottom.xsl" ; }
+#if (std.tolower(req.url) ~ "/en/subsidiary-bodies/caribbean-development-and-cooperation-committee") { set req.url = "/cgi-bin/getProd.asp?xml=/portofspain/noticias/paginas/2/42762/P42762.xml&base=/portofspain/tpl/top-bottom.xsl" ; }
+#if (std.tolower(req.url) ~ "/es/organos-subsidiarios/comite-de-desarrollo-y-cooperacion-del-caribe") { set req.url = "/cgi-bin/getProd.asp?xml=/portofspain/noticias/paginas/2/42762/P42762.xml&base=/portofspain/tpl/top-bottom.xsl" ; }
 
 # Committee on South-South Cooperation
-if (std.tolower(req.url) ~ "/en/subsidiary-bodies/committee-south-south-cooperation") { set req.url = "/cgi-bin/getProd.asp?xml=/cooperacion/noticias/paginas/4/25934/P25934.xml&xsl=/cooperacion/tpl/p18f.xsl&base=/cooperacion/tpl-i/top-bottom.xsl" ; }
-if (std.tolower(req.url) ~ "/es/organos-subsidiarios/comite-de-cooperacion-sur-sur") { set req.url = "/cgi-bin/getprod.asp?xml=/cooperacion/noticias/paginas/6/25916/P25916.xml&xsl=/cooperacion/tpl/p18f.xsl&base=/cooperacion/tpl/top-bottom.xsl" ; }
+#if (std.tolower(req.url) ~ "/en/subsidiary-bodies/committee-south-south-cooperation") { set req.url = "/cgi-bin/getProd.asp?xml=/cooperacion/noticias/paginas/4/25934/P25934.xml&xsl=/cooperacion/tpl/p18f.xsl&base=/cooperacion/tpl-i/top-bottom.xsl" ; }
+#if (std.tolower(req.url) ~ "/es/organos-subsidiarios/comite-de-cooperacion-sur-sur") { set req.url = "/cgi-bin/getprod.asp?xml=/cooperacion/noticias/paginas/6/25916/P25916.xml&xsl=/cooperacion/tpl/p18f.xsl&base=/cooperacion/tpl/top-bottom.xsl" ; }
 
 if (std.tolower(req.url) ~ "/en/subsidiary-bodies/regional-conference-women-latin-america-and-caribbean") { set req.url = "/cgi-bin/getprod.asp?xml=/mujer/noticias/paginas/8/28478/P28478.xml&xsl=/mujer/tpl/p18f-st.xsl&base=/tpl/e-mail.xsl" ; }
 if (std.tolower(req.url) ~ "/es/organos-subsidiarios/conferencia-regional-sobre-la-mujer-de-america-latina-y-el-caribe") { set req.url = "/cgi-bin/getprod.asp?xml=/mujer/noticias/paginas/8/28478/P28478.xml&xsl=/mujer/tpl/p18f-st.xsl&base=/tpl/e-mail.xsl" ; }
@@ -80,12 +80,10 @@ if (std.tolower(req.url) ~ "^/fr/projects/list*") { error 750 "http://www.cepal.
 } 
 sub ProyectosQueQuedanenSADE{
 	if (
-		#std.tolower(req.url) ~ "/celade/migracion/migracion_interna/" || 
-		#std.tolower(req.url) ~ "/celade/depualc/" ||
-		#std.tolower(req.url) ~ "/celade/migracion/imila/"  ||
 		std.tolower(req.url) ~ "/comercio/ecdata2/"  ||
 		std.tolower(req.url) ~ "/comercio/hhibysector/"  ||
-		std.tolower(req.url) ~ "/comercio/observatorio/" 
+		std.tolower(req.url) ~ "/comercio/observatorio/" ||
+		std.tolower(req.url) ~ "/drni/biee/" 
 		
 	) 
 	{ 

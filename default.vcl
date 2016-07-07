@@ -90,14 +90,16 @@ backend sade
    #.port = "80";
    
    ## SADE Producción Front directo con IP Interna
-   #.host = "192.168.40.52";
-   #.port = "80";
+   .host = "192.168.40.52";
+   .port = "80";
+   # ---> se habilita 7 de Julio de 2016
    
    
    ## USANDO ESTE
    ## SADE Producción Front directo con IP Externa
-   .host = "200.9.3.94";
-   .port = "80";
+   #.host = "200.9.3.94";
+   #.port = "80";
+   # ---> deja de ser accesible el 7 de Julio de 2016
    
    ## Número de conecciones simultáneas al back_end
    
