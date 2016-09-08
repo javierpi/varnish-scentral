@@ -1,11 +1,14 @@
 
-## codigo para varnishd (varnish-3.0.5 revision 1a89b1f)			
-
-# This is a basic VCL configuration file for varnish.  See the vcl(7)
-# man page for details on VCL syntax and semantics.
+## Varnish para sitio central www.cepal.org
+# Usa a Drupal y SADE como servidores de backend
+# En primera instancia solicita a Drupal todas las consultas, si recibe 404 hace la consulta a SADE.
+##################
+#  ver 1.86
+#  -> Cambio de IP SADE
 #
+##################
  
-# TODO: Update internal subnet ACL and security.
+
  
 acl internal {
     ## Estas IP recibirán todos los mensajes de debug 
