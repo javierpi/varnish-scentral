@@ -631,6 +631,9 @@ sub redirecciona_a_drupal{
 		
 		## Transforma solicitud x id de SADE a solicitud x id de Drupal
 		set req.url = regsub(req.url, "id\.asp\?id=", "idxsade/");
+
+		## Quito Base
+		set req.url = regsub(req.url, "&base=\/[%.A-z0-9\/-]*", "");
 		
 		set req.http.x-Newurl = req.url;
 	}
