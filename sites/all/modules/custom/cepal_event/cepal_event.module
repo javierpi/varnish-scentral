@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Cepal Event feature.
+ */
+
+include_once 'cepal_event.features.inc';

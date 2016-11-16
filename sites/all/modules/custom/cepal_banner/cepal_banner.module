@@ -1,0 +1,82 @@
+<?php
+/**
+ * @file
+ * Code for the cepal_banner feature.
+ */
+
+include_once 'cepal_banner.features.inc';
+
+function cepal_banner_form_alter(&$form, &$form_state, $form_id){
+  if($form_id !== "banner_node_form") return;
+
+  $relations = cepal_banner_node_form_relations();
+  foreach ($relations as $dependent => $dependee){
+    cepal_banner_checkbox($form, $dependee, $dependent);
+  }
+
+  $form['#validate'][] = 'cepal_banner_node_form_validate';
+}
+
+
+
+
+
+function cepal_banner_node_form_validate($form, &$form_state){
+
+  $image_main_fid  = $form_state['values']['field_banner_image_main_slide']['und'][0]['fid'];
+  $image_prom_fid  = $form_state['values']['field_banner_image_promotion']['und'][0]['fid'];
+  $image_top_fid  = $form_state['values']['field_banner_image_top_page']['und'][0]['fid'];
+
+  $must_image = array(
+    'main' => FALSE,
+    'prom' => FALSE,
+    'page' => FALSE,
+  );
+
+  foreach($form_state['values']['field_banner_behavior']['und'] as $behavior){
+    if    ($behavior['value'] === '1') $must_image['main'] = TRUE;
+    elseif($behavior['value'] === '2') $must_image['prom'] = TRUE;
+    elseif($behavior['value'] === '3') $must_image['page'] = TRUE;
+  }
+
+  $message = t('Behavior and images must be consistent: ');
+
+  if($must_image['main'] && $image_main_fid === 0){
+    $message2 = t('on "main slide" image/behavior ');
+    $field_name = 'field_banner_image_main_slide';
+    form_set_error($field_name, $message . $message2);
+  }
+  if($must_image['prom'] && $image_prom_fid === 0){
+    $message3 = t('on "promotion" image/behavior ');
+    $field_name = 'field_banner_image_promotion';
+    form_set_error($field_name, $message . $message3);
+  }
+  if($must_image['page'] && $image_top_fid === 0){
+    $message4 = t('on "image top" image/behavior ');
+    $field_name = 'field_banner_image_top_page';
+    form_set_error($field_name, $message . $message4);
+  }
+
+}
+
+
+
+function cepal_banner_node_form_relations(){
+  return array(
+    'field_banner_image_main_slide'  => 'field_banner_behavior[und][1]',
+    'field_banner_image_promotion'   => 'field_banner_behavior[und][2]',
+    'field_banner_image_top_page'    => 'field_banner_behavior[und][3]',
+  );
+}
+
+
+
+function cepal_banner_checkbox(&$form, $dependee, $dependent, $value = TRUE){
+  $condition =  array(
+    ':input[name="' . $dependee . '"]' => array('checked' => $value)
+  );
+  $form[$dependent]['#states'] = array(
+    'visible'  => $condition,
+    'required' => $condition
+  );
+}

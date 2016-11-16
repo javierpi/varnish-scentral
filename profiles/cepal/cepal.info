@@ -1,0 +1,104 @@
+name = Cepal Distro
+description = Install with commonly used modules and features for build a Cepal website.
+version = VERSION
+core = 7.x
+dependencies[] = block
+dependencies[] = comment
+dependencies[] = contextual
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = taxonomy
+dependencies[] = dblog
+dependencies[] = search
+;dependencies[] = shortcut
+;dependencies[] = overlay
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = rdf
+
+; Contrib
+dependencies[] = admin_menu
+dependencies[] = admin_menu_toolbar
+dependencies[] = chosen
+dependencies[] = ckeditor
+dependencies[] = ckeditor_link
+dependencies[] = ckeditor_link_file
+dependencies[] = countries
+dependencies[] = ctools
+dependencies[] = diff
+dependencies[] = date
+dependencies[] = date_api
+dependencies[] = date_popup
+dependencies[] = devel
+;dependencies[] = devel_image_provider
+dependencies[] = eck
+dependencies[] = entity
+dependencies[] = entityreference
+dependencias[] = entity_translation
+dependencies[] = features
+dependencies[] = field_group
+dependencies[] = file_entity
+dependencies[] = geocoder
+dependencies[] = geofield
+dependencies[] = geophp
+;dependencies[] = globalredirect
+dependencies[] = i18n
+dependencies[] = jquery_update
+dependencies[] = l10n_update
+dependencies[] = libraries
+dependencies[] = link
+dependencies[] = media
+dependencies[] = media_internet
+dependencies[] = module_filter
+dependencies[] = pathauto
+dependencies[] = references_dialog
+dependencies[] = speedy
+dependencies[] = strongarm
+dependencies[] = title
+dependencies[] = token
+dependencies[] = transliteration
+dependencies[] = uuid
+dependencies[] = uuid_features
+dependencies[] = variable
+dependencies[] = views
+dependencies[] = views_ui
+dependencies[] = workbench
+
+; Features
+; Add a list of common used features
+dependencies[] = commons_wysiwyg
+; define user roles
+dependencies[] = debut
+;
+dependencies[] = authority
+dependencies[] = cepal_base
+dependencies[] = cepal_common
+dependencies[] = cepal_media
+dependencies[] = cepal_person
+dependencies[] = cepal_contact_person
+dependencies[] = cepal_donor
+dependencies[] = cepal_organization
+dependencies[] = cepal_event
+dependencies[] = cepal_event_taxonomies
+dependencies[] = cepal_articles
+;dependencies[] = cepal_banner
+dependencies[] = cepal_gi
+dependencies[] = cepal_news
+dependencies[] = cepal_feed_item
+dependencies[] = cepal_pages
+dependencies[] = cepal_pr
+dependencies[] = cepal_presentation
+dependencies[] = cepal_publication
+dependencies[] = cepal_geo
+
+
+; Themes
+; Add some custom or base theme for the distribution
+; theme = example
+
+files[] = cepal.profile
+

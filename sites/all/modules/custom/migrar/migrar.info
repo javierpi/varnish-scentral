@@ -1,0 +1,26 @@
+name = "Test migracion"
+description = "Test migracion proyectos Cepal"
+package = "CEPAL"
+core = 7.x
+
+dependencies[] = migrate
+dependencies[] = "date_migrate"
+
+files[] = migrar.module
+files[] = includes/BaseMigracion.php
+files[] = includes/BaseMigracionInterface.php
+files[] = includes/ImagenesComunicado.php
+files[] = includes/ArchivosComunicado.php
+files[] = includes/Imagenes.php
+files[] = includes/Archivos.php
+files[] = includes/ArchivosXML.php
+files[] = includes/ImagenesXML.php
+files[] = includes/proyecto.inc
+;files[] = includes/comunicado.inc
+files[] = includes/articulo.inc
+files[] = includes/noticia.inc
+files[] = includes/discurso.inc
+
+version = "7.x-dev"
+core = "7.x"
+project = "migrar"

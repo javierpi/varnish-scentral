@@ -1,0 +1,90 @@
+<?php
+/**
+ * @file
+ * Code for the Cepal Publication feature.
+ */
+define('UUID_SERIES'  , "11812ac1-2ccc-426a-bf52-e0e80402619b");
+define('UUID_DOC_CONF', "5589088d-d3a7-40e0-816a-897959d5cda7");
+define('UUID_DOC_PROY', "c4dc39a6-993b-4a71-b50b-9f305e6f85ad");
+define('UUID_FLAGSHIP', "b3c653bb-bd3a-4625-bda2-91c3ab34a771");
+
+include_once 'cepal_publication.features.inc';
+
+//entity_get_id_by_uuid($entity_type, $uuids, $revision = FALSE)
+
+
+function cepal_publication_form_alter(&$form, &$form_state, $form_id){
+  if($form_id !== "cepal_publication_node_form") return;
+
+  $uuids = array(UUID_SERIES, UUID_DOC_CONF, UUID_DOC_PROY, UUID_FLAGSHIP);
+
+  $tids = cepal_publication_get_tids_by_uuid($uuids);
+
+  $dependee = ':input[name="field_publication_type[und]"]';
+
+  $dependents = array(
+    "field_publication_event_rel",
+    "field_publication_project_rel",
+    "field_publication_event_rel",
+    "field_publication_highlight",
+  );
+  $values = array(
+    $tids[UUID_DOC_CONF],
+    $tids[UUID_DOC_PROY],
+    $tids[UUID_DOC_CONF],
+    $tids[UUID_FLAGSHIP],
+  );
+
+  foreach($dependents as $i => $dependent){
+    cepal_publication_taxonomy_states($form, $values[$i], $dependee, $dependent);
+  }
+
+  //Visibilidad OR logico, para series o flagships
+  $form['field_publication_number']['#states'] = array(
+    'visible'  => array(
+      $dependee => array(
+        array('value' => $tids[UUID_FLAGSHIP]),
+        array('value' => $tids[UUID_SERIES]),
+      )
+    )
+  );
+
+  $form['field_publication_observatory']['#states'] = array(
+    'invisible'  => array(
+      $dependee => array('value' => $tids[UUID_FLAGSHIP])
+    )
+  );
+
+
+
+
+
+  //$form['#validate'][] = 'cepal_publication_node_form_validate';
+}
+
+
+function cepal_publication_taxonomy_states(&$form, $value, $dependee, $dependent){
+  $condition =  array(
+    $dependee => array('value' => $value)
+  );
+
+  $form[$dependent]['#states'] = array(
+    'visible'  => $condition
+  );
+}
+
+
+function cepal_publication_get_tids_by_uuid($uuids) {
+  $tids = db_select("taxonomy_term_data", 't')
+    ->fields('t', array('uuid', 'tid'))
+    ->condition('uuid', array_values($uuids), 'IN')
+    ->execute()
+    ->fetchAllKeyed();
+
+  return $tids;
+}
+
+
+function cepal_publication_node_form_validate($form, &$form_state){
+
+}

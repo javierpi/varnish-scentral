@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Cepal Presentation feature.
+ */
+
+include_once 'cepal_presentation.features.inc';

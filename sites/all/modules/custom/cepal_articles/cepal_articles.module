@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the cepal_articles feature.
+ */
+
+include_once 'cepal_articles.features.inc';

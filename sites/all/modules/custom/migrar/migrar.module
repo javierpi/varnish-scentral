@@ -1,0 +1,8 @@
+<?php
+/**
+ * @file
+ * Archivo principal del modulo migrar.
+ * 
+ * Como es un modulo de migracion este archivo va vacio. El archivo que contiene
+ * la "magia" es migrar.migrate.inc.
+ */
