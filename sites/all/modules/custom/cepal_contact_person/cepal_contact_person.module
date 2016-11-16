@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Cepal Contact Person feature.
- */
-
-include_once 'cepal_contact_person.features.inc';

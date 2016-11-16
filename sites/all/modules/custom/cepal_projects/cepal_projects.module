@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the cepal_projects feature.
- */
-
-include_once 'cepal_projects.features.inc';

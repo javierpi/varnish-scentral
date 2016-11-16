@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Graphic Information feature.
- */
-
-include_once 'cepal_gi.features.inc';

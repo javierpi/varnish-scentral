@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Cepal Media feature.
- */
-
-include_once 'cepal_media.features.inc';
