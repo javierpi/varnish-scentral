@@ -16,7 +16,7 @@ acl internal {
    # "10.0.17.116";  ## Javier
   
 }
-generando un error de compilacion
+#generando un error de compilacion
 
 #
 # Versión 1.84
@@ -217,7 +217,10 @@ sub vcl_recv {
 	#	}
     #}
 	#################################################################
-	
+	if ( (req.http.host ~ "^(?i)cepal.org" || req.http.host ~ "^(?i)www.cepal.org") && req.http.X-Forwarded-Proto !~ "(?i)https") {
+        set req.http.x-Redir-Url = "https://" + req.http.host + req.url;
+        error 751 req.http.x-Redir-Url;
+    }
 	## if (req.url ~ "PURGE") {
 	if (req.url ~ "PURGE" || req.request == "PURGE") {
 		# set req.http.x-mensaje = req.http.x-mensaje + "(Solicita PURGE)";
