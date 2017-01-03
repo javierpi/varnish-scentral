@@ -70,9 +70,13 @@ backend drupal
    .max_connections = 200;
    ###
    
-   .connect_timeout = 10s;
-   .first_byte_timeout = 120s;
-   .between_bytes_timeout = 120s;
+   #.connect_timeout = 10s;
+   #.first_byte_timeout = 120s;
+   #.between_bytes_timeout = 120s;
+   .connect_timeout = 3.5s;
+   .first_byte_timeout = 60s;
+   .between_bytes_timeout = 60s;
+   
 }
 
 #}
@@ -217,10 +221,7 @@ sub vcl_recv {
 	#	}
     #}
 	#################################################################
-	if ( (req.http.host ~ "^(?i)cepal.org" || req.http.host ~ "^(?i)www.cepal.org") && req.http.X-Forwarded-Proto !~ "(?i)https") {
-        set req.http.x-Redir-Url = "https://" + req.http.host + req.url;
-        error 751 req.http.x-Redir-Url;
-    }
+	
 	## if (req.url ~ "PURGE") {
 	if (req.url ~ "PURGE" || req.request == "PURGE") {
 		# set req.http.x-mensaje = req.http.x-mensaje + "(Solicita PURGE)";
@@ -318,11 +319,7 @@ sub vcl_recv {
 	#-------------------------------------------
 	
 	} else { 
-		# set req.http.x-mensaje = req.http.x-mensaje + "(1. Entrando a area servidores)";
 		
-		##### Sacar este texto
-		# set req.http.x-mensaje =  req.http.x-mensaje +"(req.url=>" + req.url + ") ";
-		##### Sacar este texto
 		
 		#  No cachear post a SADE 
 		if (req.request == "POST" && req.url ~ "\.(asmx|asp)") {
@@ -350,13 +347,22 @@ sub vcl_recv {
 		#-------------------------------------------
 		
 		if (req.restarts == 0) {
+				
+
 			#############################################
 			## es primera solicitud-> debe ir a drupal
 			#############################################
 			#  Se guarda solicitud 
 			set req.http.x-url = req.url;
 			# set req.http.x-mensaje = req.http.x-mensaje + "(Restart 0: Llego a Drupalh)";
+			
 			set req.backend = drupal;
+			
+			if (!req.backend.healthy) {
+				unset req.http.Cookie;
+				# Allow the backend to serve up stale content if it is responding slowly.
+				set req.grace = 6h;
+			}
 			
 			call redirecciona_a_drupal;
 						
@@ -605,6 +611,7 @@ sub redirecciona_a_drupal{
 		set req.url = regsub(req.url, "cgi-bin\/getprod\.asp\?", "");
 		## Quito Base
 		set req.url = regsub(req.url, "&base=\/[%.A-z0-9\/-]*", "");
+		set req.url = regsub(req.url, "%26base%3D\/[%.A-z0-9\/-]*", "");
 		## Quito el xsl
 		set req.url = regsub(req.url, "[&]xsl=\/[%.A-z0-9\/-]+", "");
 		
@@ -674,6 +681,8 @@ sub redirecciona_a_drupal{
 		set req.url = regsub(req.url, "\/[%.A-z0-9\/-]+\/[0-9]\/", "");
 		# elimino todo el resto luego del slash
 		set req.url = regsub(req.url, "\/[%.A-z0-9\/-]+", "");
+		## Quito Base
+		set req.url = regsub(req.url, "&base=\/[%.A-z0-9\/-]*", "");
 		# Hago búsqueda en Drupal
 		set req.url = "/idxsade/" + req.url ;
 		
@@ -825,14 +834,22 @@ sub vcl_deliver {
 	if ( beresp.backend.name == "sade") {
 		# if (std.tolower(req.url) ~ "(?i)\.(asc|dat|txt|ppt|tgz|csv|png|gif|jpeg|jpg|ico|css|js)(\?.*)?$") {
 		# if (std.tolower(bereq.url) ~ ".*\.(?:asc|dat|txt|ppt|tgz|csv|png|gif|jpeg|jpg|jpg|ico|css|js|swf)(?=\?|&|$)") {
-		if (std.tolower(req.url)   ~ "(?i)\.(asc|dat|txt|ppt|tgz|csv|png|gif|jpeg|jpg|jpg|ico|css|js|swf)(\?.*)?$") {
+		#if (std.tolower(req.url)   ~ "(?i)\.(asc|dat|txt|ppt|tgz|csv|png|gif|jpeg|jpg|jpg|ico|css|js|swf)(\?.*)?$") {
 			#set beresp.ttl = 1209600 s;
 			set beresp.ttl = 1209600s;
 			set beresp.http.Cache-Control = "public, max-age=1209600";
 			# set req.http.x-mensaje = req.http.x-mensaje + "(Se define TTL a objeto SADE)";
-		}
+		#}
 	}
-	
+	# No cookies on Drupal 7.21 image derivatives
+	  if ( req.url ~ "(\?itok=)([a-zA-Z0-9]+)?$") {
+		unset beresp.http.set-cookie;
+	}
+	# Si tiempo de vida es menor a 120 seg. se ajusta a 120 segundos
+	if (beresp.ttl < 120s) {
+		#std.log("Adjusting TTL");
+		set beresp.ttl = 120s;
+	}
 	
 	
 
