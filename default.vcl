@@ -644,6 +644,7 @@ sub redirecciona_a_drupal{
 
 		## Quito Base
 		set req.url = regsub(req.url, "&base=\/[%.A-z0-9\/-]*", "");
+		set req.url = regsub(req.url, "%26base%3D\/[%.A-z0-9\/-]*", "");
 		
 		set req.http.x-Newurl = req.url;
 	}
