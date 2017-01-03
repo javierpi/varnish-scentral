@@ -337,6 +337,14 @@ if (std.tolower(req.url) == "/desastres/") { error 750 "/es/temas/desastres";}
 if (std.tolower(req.url) == "/desastres/default.asp") { error 750 "/es/temas/desastres";}
 ### if (std.tolower(req.url) == "/desastres/default.asp?idioma=es") { error 750 "/es/temas/desastres";}
 if (std.tolower(req.url) == "/desastres/default.asp?idioma=in") { error 750 "/en/topics/disasters";}
+if (std.tolower(req.url) == "/perfil/") { error 751 "http://perfil.cepal.org/l/es/start.html";}
+if (std.tolower(req.url) == "/perfil/default.asp") { error 751 "http://perfil.cepal.org/l/es/start.html";}
+### if (std.tolower(req.url) == "/perfil/default.asp?idioma=es") { error 751 "http://perfil.cepal.org/l/es/start.html";}
+if (std.tolower(req.url) == "/perfil/default.asp?idioma=in") { error 751 "http://perfil.cepal.org/l/en/start.html";}
+if (std.tolower(req.url) == "/perfil/agenda/") { error 751 "http://perfil.cepal.org/l/es/start.html";}
+if (std.tolower(req.url) == "/perfil/agenda/default.asp") { error 751 "http://perfil.cepal.org/l/es/start.html";}
+###if (std.tolower(req.url) == "/perfil/agenda/default.asp?idioma=es") { error 751 "http://perfil.cepal.org/l/es/start.html";}
+if (std.tolower(req.url) == "/perfil/agenda/default.asp?idioma=in") { error 751 "http://perfil.cepal.org/l/en/start.html";}
 if (std.tolower(req.url) == "/dppo/") { error 750 "/es/cooperacion";}
 if (std.tolower(req.url) == "/dppo/default.asp") { error 750 "/es/cooperacion";}
 ### if (std.tolower(req.url) == "/dppo/default.asp?idioma=es") { error 750 "/es/cooperacion";}
