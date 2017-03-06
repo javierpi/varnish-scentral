@@ -140,6 +140,10 @@ sub analiza_sitio_cerrado_sade{
 	if (std.tolower(req.url) ~ "^/oig" || std.tolower(req.url) ~ "=/oig/" ) {
 		error 750 "http://oig.cepal.org/";
 	}
+	# http://soporteweb.cepal.org:8088/browse/SWDEV-3180
+	if (std.tolower(req.url) ~ "^/elac2015" || std.tolower(req.url) ~ "=/elac2015/" ) {
+		error 750 "/es/proyectos/elac2018";
+	}
 	
 	
 	
