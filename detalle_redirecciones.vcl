@@ -574,4 +574,5 @@ if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/oig/agrupadores_xml/aes85
 if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/oig/agrupadores_xml/afr854.xml&xsl=/oig/agrupadores_xml/agrupa_listado-f.xsl&base=/oig/tpl-f/top-bottom.xsl") { error 750 "http://oig.cepal.org/es/politicas-justas";}
 if (std.tolower(req.url) == "/celade/redatam") { error 750 "/es/temas/redatam";}
 if (std.tolower(req.url) == "/argentina-indicadores-desarrollo") { error 750 "http://indides.cepal.org";}
+if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/noticias/vacantes/default.xml&xsl=/acerca/opor-tra.xsl&base=/tpl/top-bottom_acerca.xsl") { error 750 "/es/oportunidades-de-empleo";}
 } 
