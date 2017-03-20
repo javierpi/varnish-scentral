@@ -575,4 +575,5 @@ if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/oig/agrupadores_xml/afr85
 if (std.tolower(req.url) == "/celade/redatam") { error 750 "/es/temas/redatam";}
 if (std.tolower(req.url) == "/argentina-indicadores-desarrollo") { error 750 "http://indides.cepal.org";}
 if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/noticias/vacantes/default.xml&xsl=/acerca/opor-tra.xsl&base=/tpl/top-bottom_acerca.xsl") { error 750 "/es/oportunidades-de-empleo";}
+if (std.tolower(req.url) == "/default.asp?idioma=fr") { error 750 "/es";}
 } 
