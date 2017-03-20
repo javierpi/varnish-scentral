@@ -144,6 +144,10 @@ sub analiza_sitio_cerrado_sade{
 	if (std.tolower(req.url) ~ "^/elac2015" || std.tolower(req.url) ~ "=/elac2015/" ) {
 		error 750 "/es/proyectos/elac2018";
 	}
+	# http://soporteweb.cepal.org:8088/browse/VSC-3
+	if (std.tolower(req.url) ~ "^/perfil" || std.tolower(req.url) ~ "=/perfil/" ) {
+		error 751 "http://perfil.cepal.org/l/en/start.html";
+	}
 	
 	
 	
