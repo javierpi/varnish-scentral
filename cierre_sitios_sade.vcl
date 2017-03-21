@@ -152,6 +152,10 @@ sub analiza_sitio_cerrado_sade{
 	if (std.tolower(req.url) ~ "^/aecid" || std.tolower(req.url) ~ "=/aecid/" ) {
 		error 750 "/es/proyectos/programa-cooperacion-tecnica-cepal-aecid";
 	}
+	# http://soporteweb.cepal.org:8088/browse/VSC-8
+	if (std.tolower(req.url) ~ "^/analisis" || std.tolower(req.url) ~ "=/analisis/" ) {
+		error 750 "/es/publications/list";
+	}
 	
 	
 	
