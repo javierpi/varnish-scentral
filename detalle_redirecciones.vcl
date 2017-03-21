@@ -425,14 +425,14 @@ if (std.tolower(req.url) ~ "/uruguay/noticias/paginas/3/10423/p10423.xml") { err
 if (std.tolower(req.url) ~ "/dds/noticias/paginas/5/32865/p32865.xml") { error 750 "/es/areas-de-trabajo/desarrollo-social";}
 if (std.tolower(req.url) ~ "/noticias/paginas/7/33137/p33137.xml") { error 750 "/es/registro-de-proveedores";}
 if (std.tolower(req.url) ~ "/noticias/paginas/7/37307/p37307.xml") { error 750 "/es/equipo/antonio-prado";}
-if (std.tolower(req.url) ~ "/noticias/paginas/0/37310/p37310.xml") { error 750 "/es/equipo/antonio-prado";}
 if (std.tolower(req.url) ~ "/noticias/paginas/4/33494/p33494.xml") { error 750 "/es/equipo/alicia-barcena";}
 if (std.tolower(req.url) ~ "/noticias/paginas/9/33499/p33499.xml") { error 750 "/en/about/office-of-the-executive-secretary";}
-if (std.tolower(req.url) ~ "/prensa/noticias/comunicados/0/37330/p37330.xml") { error 750 "/en/staff/antonio-prado";}
 if (std.tolower(req.url) ~ "/noticias/paginas/8/33638/p33638.xml") { error 750 "/es/presentaciones/5";}
 if (std.tolower(req.url) ~ "/celade/noticias/paginas/7/36157/p36157.xml") { error 750 "/es/temas/censos-de-poblacion-y-vivienda";}
 if (std.tolower(req.url) ~ "/noticias/paginas/8/21208/p21208.xml") { error 750 "/en/staff/alicia-barcena";}
+if (std.tolower(req.url) ~ "/noticias/paginas/5/13975/p13975.xml") { error 750 "/es/node/18571";}
 if (std.tolower(req.url) ~ "/argentina/noticias/paginas/3/14033/p14033.xml") { error 750 "/es/publications/list/field_country%253aname/Argentina";}
+if (std.tolower(req.url) ~ "/noticias/paginas/5/14295/p14295.xml") { error 750 "/en/node/18571";}
 if (std.tolower(req.url) ~ "/noticias/paginas/6/21346/p21346.xml") { error 750 "/es/equipo/antonio-prado";}
 if (std.tolower(req.url) ~ "/celade/noticias/paginas/9/19819/p19819.xml") { error 750 "/es/areas-de-trabajo/poblacion-y-desarrollo";}
 if (std.tolower(req.url) ~ "/noticias/paginas/4/21324/p21324.xml") { error 750 "/es/acerca";}
@@ -454,6 +454,8 @@ if (std.tolower(req.url) ~ "/revista/noticias/paginas/1/36601/p36601.xml") { err
 if (std.tolower(req.url) ~ "/revista/noticias/paginas/2/36602/p36602.xml") { error 750 "/es/equipo/miguel-torres";}
 if (std.tolower(req.url) ~ "/revista/noticias/paginas/6/36436/p36436.xml") { error 750 "/en/editorial-council";}
 if (std.tolower(req.url) ~ "/revista/noticias/paginas/8/36438/p36438.xml") { error 750 "/en/about-cepal-review";}
+if (std.tolower(req.url) ~ "/noticias/paginas/0/37310/p37310.xml") { error 750 "/es/equipo/antonio-prado";}
+if (std.tolower(req.url) ~ "/prensa/noticias/comunicados/0/37330/p37330.xml") { error 750 "/en/staff/antonio-prado";}
 if (std.tolower(req.url) ~ "/deype/agenda/6/37356/p37356.xml") { error 751 "http://repositorio.cepal.org/handle/11362/37356";}
 if (std.tolower(req.url) ~ "/brasil/noticias/paginas/2/38422/p38422.xml") { error 750 "/pt-br/events/past/course-country/BR";}
 if (std.tolower(req.url) ~ "/noticias/paginas/1/39501/p39501.xml") { error 750 "/es/presentaciones/131";}
