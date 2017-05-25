@@ -25,7 +25,7 @@ sub error_404{
         <div class="container">
           <div class="un-link col-6">
             <a href="http://www.un.org/" target="_blank">
-              <img alt="ONU logo" src="images/united-nations-emblem.svg" />
+              <img alt="ONU logo" src="http://www.cepal.org/sites/all/themes/cepal/images/united-nations-emblem.svg" />
               <p>United Nations</p>
               </a>
           </div>
@@ -35,7 +35,7 @@ sub error_404{
           <div class="container">
             <div class="row justify-content-center">
               <div class="col-4 col-sm-2">
-                <a href="/" title="Home" rel="home" class="site-logo"><img class="img-fluid" alt="Home" src="images/cepal-eclac-logo.svg" /></a>
+                <a href="/" title="Home" rel="home" class="site-logo"><img class="img-fluid" alt="Home" src="http://www.cepal.org/sites/all/themes/cepal/images/cepal-eclac-logo.svg" /></a>
               </div>
               <div class="col-12 col-sm-10">
                 <h1 class="display-3">Page Not Found / P&aacute;gina no encontrada (Error 404)</h1>
@@ -81,7 +81,7 @@ sub error_403{
         <div class="container">
           <div class="un-link col-6">
             <a href="http://www.un.org/" target="_blank">
-              <img alt="ONU logo" src="images/united-nations-emblem.svg" />
+              <img alt="ONU logo" src="http://www.cepal.org/sites/all/themes/cepal/images/united-nations-emblem.svg" />
               <p>United Nations</p>
               </a>
           </div>
@@ -91,7 +91,7 @@ sub error_403{
           <div class="container">
             <div class="row justify-content-center">
               <div class="col-4 col-sm-2">
-                <a href="/" title="Home" rel="home" class="site-logo"><img class="img-fluid" alt="Home" src="images/cepal-eclac-logo.svg" /></a>
+                <a href="/" title="Home" rel="home" class="site-logo"><img class="img-fluid" alt="Home" src="http://www.cepal.org/sites/all/themes/cepal/images/cepal-eclac-logo.svg" /></a>
               </div>
               <div class="col-12 col-sm-10">
                 <h1 class="display-3">Forbidden / Prohibido (Error 403)</h1>
@@ -138,7 +138,7 @@ sub error_500{
         <div class="container">
           <div class="un-link col-6">
             <a href="http://www.un.org/" target="_blank">
-              <img alt="ONU logo" src="images/united-nations-emblem.svg" />
+              
               <p>United Nations</p>
               </a>
           </div>
@@ -148,7 +148,7 @@ sub error_500{
           <div class="container">
             <div class="row justify-content-center">
               <div class="col-4 col-sm-2">
-                <a href="/" title="Home" rel="home" class="site-logo"><img class="img-fluid" alt="Home" src="images/cepal-eclac-logo.svg" /></a>
+                <a href="/" title="Home" rel="home" class="site-logo">Home</a>
               </div>
               <div class="col-12 col-sm-10">
                 <h1 class="display-3">Internal server error/ Error Interno del Servidor (Error 500)</h1>
@@ -194,7 +194,7 @@ sub error_503{
         <div class="container">
           <div class="un-link col-6">
             <a href="http://www.un.org/" target="_blank">
-              <img alt="ONU logo" src="images/united-nations-emblem.svg" />
+              
               <p>United Nations</p>
               </a>
           </div>
@@ -204,7 +204,7 @@ sub error_503{
           <div class="container">
             <div class="row justify-content-center">
               <div class="col-4 col-sm-2">
-                <a href="/" title="Home" rel="home" class="site-logo"><img class="img-fluid" alt="Home" src="images/cepal-eclac-logo.svg" /></a>
+                <a href="/" title="Home" rel="home" class="site-logo">Home</a>
               </div>
               <div class="col-12 col-sm-10">
                 <h1 class="display-3">Service Unavailable/ Servicio no disponible (Error 503)</h1>
