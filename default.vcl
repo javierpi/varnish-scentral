@@ -38,83 +38,34 @@ acl purge {
 #DEFAULT Back End -- CEPALWEB
 backend drupal
 {
-	## servidor webtesting.cepal.org
-	#.host = "10.0.29.30"; 
-	#.port = "80";
-	
-	
-	## servidor webpre.cepal.org ---> QA
-	#.host = "10.0.25.42"; 
-	#.port = "80";
-	
-	
-	##---> USAR ESTE PARA PRODUCCION
-	## servidor webpro.cepal.org ---> PRO
-	## 25-03-15-> No se usan más IP sinó nombre máquina. Los cambios se harán en /etc/hosts
-	##                                                   ----------------------------------
 	.host = "webpro.cepal.org"; 
 	.port = "80";
-	##--------------------------------------------------------------------------------------
-   
-  
-   
-#  #.probe = {
-#  #  .request = "GET status.php";
-#  #  .interval = 600s;
-#  #  .timeout = 300s;
-#  #}
-
-
-	## Número de conecciones simultáneas al back_end
-	# habilitado el 20-mayo-2015 en desarrollo
-   .max_connections = 200;
-   ###
-   
+    .max_connections = 200;
    #.connect_timeout = 10s;
    #.first_byte_timeout = 120s;
    #.between_bytes_timeout = 120s;
    .connect_timeout = 3.5s;
    .first_byte_timeout = 60s;
    .between_bytes_timeout = 60s;
-   
+}
+backend drupal443
+{
+	.host = "webpro.cepal.org"; 
+	.port = "8443";
+    .max_connections = 200;
+    .connect_timeout = 3.5s;
+    .first_byte_timeout = 60s;
+    .between_bytes_timeout = 60s;
 }
 
-#}
+
+
 
 #SADE
 backend sade 
 {
-   # SADE Desarrollo back
-   #.host = "10.0.29.37";
-   #.port = "80";
-   
-   ## SADE Desarrollo Front
-   #.host = "10.0.29.132";
-   #.port = "80";
-   
-   ## SADE Producción Front pasando por varnish e1
-   #.host = "200.9.3.94";
-   #.port = "80";
-   
-   ## SADE Producción Front directo con IP Interna
-   # ---> se habilita 7 de Julio de 2016
-   #.host = "192.168.40.52"; ## Dejado de usar el 07-sept-2016, cambio de ip a SADE Front, queda 10.0.40.52
-
    .host = "10.0.40.52";
    .port = "80";
-   ############
-   
-   
-   ## USANDO ESTE
-   ## SADE Producción Front directo con IP Externa
-   #.host = "200.9.3.94";
-   #.port = "80";
-   # ---> deja de ser accesible el 7 de Julio de 2016
-   
-   ## Número de conecciones simultáneas al back_end
-   
-   #.max_connections = 300;
-   
    .connect_timeout = 5s;
    .first_byte_timeout = 120s;
    .between_bytes_timeout = 120s;
@@ -355,8 +306,19 @@ sub vcl_recv {
 			#  Se guarda solicitud 
 			set req.http.x-url = req.url;
 			# set req.http.x-mensaje = req.http.x-mensaje + "(Restart 0: Llego a Drupalh)";
+
+			### Cambio transitorio 
+			##  es solamente mientras se da servicio por puerto 80 y 9443 simultáneamente
+			##  usando subdominio speedy.cepal.org
+			############################
+			if (server.port == 9443) {
+			   set req.backend = drupal443;
+			}
+			  else {
+			   set req.backend = drupal;
+			}
+			############################
 			
-			set req.backend = drupal;
 			
 			if (!req.backend.healthy) {
 				unset req.http.Cookie;
