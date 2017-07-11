@@ -39,8 +39,8 @@ if (std.tolower(req.url) ~ "/es/observatorio/observatorio-fiscal-de-latinoameric
 #if (std.tolower(req.url) ~ "/en/subsidiary-bodies/committee-south-south-cooperation") { set req.url = "/cgi-bin/getProd.asp?xml=/cooperacion/noticias/paginas/4/25934/P25934.xml&xsl=/cooperacion/tpl/p18f.xsl&base=/cooperacion/tpl-i/top-bottom.xsl" ; }
 #if (std.tolower(req.url) ~ "/es/organos-subsidiarios/comite-de-cooperacion-sur-sur") { set req.url = "/cgi-bin/getprod.asp?xml=/cooperacion/noticias/paginas/6/25916/P25916.xml&xsl=/cooperacion/tpl/p18f.xsl&base=/cooperacion/tpl/top-bottom.xsl" ; }
 
-if (std.tolower(req.url) ~ "/en/subsidiary-bodies/regional-conference-women-latin-america-and-caribbean") { set req.url = "/cgi-bin/getprod.asp?xml=/mujer/noticias/paginas/8/28478/P28478.xml&xsl=/mujer/tpl/p18f-st.xsl&base=/tpl/e-mail.xsl" ; }
-if (std.tolower(req.url) ~ "/es/organos-subsidiarios/conferencia-regional-sobre-la-mujer-de-america-latina-y-el-caribe") { set req.url = "/cgi-bin/getprod.asp?xml=/mujer/noticias/paginas/8/28478/P28478.xml&xsl=/mujer/tpl/p18f-st.xsl&base=/tpl/e-mail.xsl" ; }
+#if (std.tolower(req.url) ~ "/en/subsidiary-bodies/regional-conference-women-latin-america-and-caribbean") { set req.url = "/cgi-bin/getprod.asp?xml=/mujer/noticias/paginas/8/28478/P28478.xml&xsl=/mujer/tpl/p18f-st.xsl&base=/tpl/e-mail.xsl" ; }
+#if (std.tolower(req.url) ~ "/es/organos-subsidiarios/conferencia-regional-sobre-la-mujer-de-america-latina-y-el-caribe") { set req.url = "/cgi-bin/getprod.asp?xml=/mujer/noticias/paginas/8/28478/P28478.xml&xsl=/mujer/tpl/p18f-st.xsl&base=/tpl/e-mail.xsl" ; }
 
 #Regional Council for Planning of ILPES 
 ##########--> en redirect de Drupal NO INDICAR IDIOMA ORIGEN !!
