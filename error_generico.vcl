@@ -20,12 +20,12 @@ sub error_404{
     </head>
     <body class="page-404">
     <!--[if lte IE 7]>
-    <p class="chromeframe">You are using an outdated browser! <a href="http://browsehappy.com">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe?redirect=true">install Google Chrome Frame</a> to better experience this site.</p><![endif]-->
+    <p class="chromeframe">You are using an outdated browser! <a href="https://browsehappy.com">Upgrade your browser today</a> or <a href="https://www.google.com/chromeframe?redirect=true">install Google Chrome Frame</a> to better experience this site.</p><![endif]-->
       <div class="container-fluid">
         <div class="container">
           <div class="un-link col-6">
-            <a href="http://www.un.org/" target="_blank">
-              <img alt="ONU logo" src="http://www.cepal.org/sites/all/themes/cepal/images/united-nations-emblem.svg" />
+            <a href="https://www.un.org/" target="_blank">
+              <img alt="ONU logo" src="https://www.cepal.org/sites/all/themes/cepal/images/united-nations-emblem.svg" />
               <p>United Nations</p>
               </a>
           </div>
@@ -35,13 +35,13 @@ sub error_404{
           <div class="container">
             <div class="row justify-content-center">
               <div class="col-4 col-sm-2">
-                <a href="/" title="Home" rel="home" class="site-logo"><img class="img-fluid" alt="Home" src="http://www.cepal.org/sites/all/themes/cepal/images/cepal-eclac-logo.svg" /></a>
+                <a href="/" title="Home" rel="home" class="site-logo"><img class="img-fluid" alt="Home" src="https://www.cepal.org/sites/all/themes/cepal/images/cepal-eclac-logo.svg" /></a>
               </div>
               <div class="col-12 col-sm-10">
                 <h1 class="display-3">Page Not Found / P&aacute;gina no encontrada (Error 404)</h1>
                 <p>Sorry but we could not find what you are looking for / Lo sentimos pero no pudimos encontrar lo que buscas</p>
                 <hr class="my-4">
-                <p><a class="btn btn-secondary btn-lg" href="http://www.cepal.org" role="button">Go to home page / Ir a la portada</a></p>
+                <p><a class="btn btn-secondary btn-lg" href="https://www.cepal.org" role="button">Go to home page / Ir a la portada</a></p>
               </div>
             </div>
           </div>
@@ -76,12 +76,12 @@ sub error_403{
     </head>
     <body class="page-403">
     <!--[if lte IE 7]>
-    <p class="chromeframe">You are using an outdated browser! <a href="http://browsehappy.com">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe?redirect=true">install Google Chrome Frame</a> to better experience this site.</p><![endif]-->
+    <p class="chromeframe">You are using an outdated browser! <a href="https://browsehappy.com">Upgrade your browser today</a> or <a href="https://www.google.com/chromeframe?redirect=true">install Google Chrome Frame</a> to better experience this site.</p><![endif]-->
       <div class="container-fluid">
         <div class="container">
           <div class="un-link col-6">
-            <a href="http://www.un.org/" target="_blank">
-              <img alt="ONU logo" src="http://www.cepal.org/sites/all/themes/cepal/images/united-nations-emblem.svg" />
+            <a href="https://www.un.org/" target="_blank">
+              <img alt="ONU logo" src="https://www.cepal.org/sites/all/themes/cepal/images/united-nations-emblem.svg" />
               <p>United Nations</p>
               </a>
           </div>
@@ -91,13 +91,13 @@ sub error_403{
           <div class="container">
             <div class="row justify-content-center">
               <div class="col-4 col-sm-2">
-                <a href="/" title="Home" rel="home" class="site-logo"><img class="img-fluid" alt="Home" src="http://www.cepal.org/sites/all/themes/cepal/images/cepal-eclac-logo.svg" /></a>
+                <a href="/" title="Home" rel="home" class="site-logo"><img class="img-fluid" alt="Home" src="https://www.cepal.org/sites/all/themes/cepal/images/cepal-eclac-logo.svg" /></a>
               </div>
               <div class="col-12 col-sm-10">
                 <h1 class="display-3">Forbidden / Prohibido (Error 403)</h1>
                 <p>You don't have permission to access / Usted no tiene permiso para acceder</p>
                 <hr class="my-4">
-                <p><a class="btn btn-secondary btn-lg" href="http://www.cepal.org" role="button">Go to home page / Ir a la portada</a></p>
+                <p><a class="btn btn-secondary btn-lg" href="https://www.cepal.org" role="button">Go to home page / Ir a la portada</a></p>
               </div>
             </div>
           </div>
@@ -133,11 +133,11 @@ sub error_500{
     </head>
     <body class="page-500">
     <!--[if lte IE 7]>
-    <p class="chromeframe">You are using an outdated browser! <a href="http://browsehappy.com">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe?redirect=true">install Google Chrome Frame</a> to better experience this site.</p><![endif]-->
+    <p class="chromeframe">You are using an outdated browser! <a href="https://browsehappy.com">Upgrade your browser today</a> or <a href="https://www.google.com/chromeframe?redirect=true">install Google Chrome Frame</a> to better experience this site.</p><![endif]-->
       <div class="container-fluid">
         <div class="container">
           <div class="un-link col-6">
-            <a href="http://www.un.org/" target="_blank">
+            <a href="https://www.un.org/" target="_blank">
               
               <p>United Nations</p>
               </a>
@@ -153,7 +153,7 @@ sub error_500{
               <div class="col-12 col-sm-10">
                 <h1 class="display-3">Internal server error/ Error Interno del Servidor (Error 500)</h1>
                 <hr class="my-4">
-                <p><a class="btn btn-secondary btn-lg" href="http://www.cepal.org" role="button">Go to home page / Ir a la portada</a></p>
+                <p><a class="btn btn-secondary btn-lg" href="https://www.cepal.org" role="button">Go to home page / Ir a la portada</a></p>
               </div>
             </div>
           </div>
@@ -189,11 +189,11 @@ sub error_503{
     </head>
     <body class="page-503">
     <!--[if lte IE 7]>
-    <p class="chromeframe">You are using an outdated browser! <a href="http://browsehappy.com">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe?redirect=true">install Google Chrome Frame</a> to better experience this site.</p><![endif]-->
+    <p class="chromeframe">You are using an outdated browser! <a href="https://browsehappy.com">Upgrade your browser today</a> or <a href="https://www.google.com/chromeframe?redirect=true">install Google Chrome Frame</a> to better experience this site.</p><![endif]-->
       <div class="container-fluid">
         <div class="container">
           <div class="un-link col-6">
-            <a href="http://www.un.org/" target="_blank">
+            <a href="https://www.un.org/" target="_blank">
               
               <p>United Nations</p>
               </a>
@@ -210,7 +210,7 @@ sub error_503{
                 <h1 class="display-3">Service Unavailable/ Servicio no disponible (Error 503)</h1>
                 <p>The server is currently unavailable / El servidor no est&Aacute; disponible actualmente</p>
                 <hr class="my-4">
-                <p><a class="btn btn-secondary btn-lg" href="http://www.cepal.org" role="button">Go to home page / Ir a la portada</a></p>
+                <p><a class="btn btn-secondary btn-lg" href="https://www.cepal.org" role="button">Go to home page / Ir a la portada</a></p>
               </div>
             </div>
           </div>
