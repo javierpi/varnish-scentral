@@ -220,7 +220,6 @@ sub vcl_recv {
 		std.tolower(req.url) ~ "^/badepro*" 	||  
 		# std.tolower(req.url) ~ "^/biblioteca*" 	||  
 		std.tolower(req.url) ~ "^/cap_comercio*" 	||  
-		std.tolower(req.url) ~ "^/celade/migracion/imila*" 	||  
 		std.tolower(req.url) ~ "^/celade/migracion/migracion_interna*" 	||  
 		std.tolower(req.url) ~ "^/comercio/aftis*" 	||  
 		std.tolower(req.url) ~ "^/dds/InnovacionSocial*" 	||  

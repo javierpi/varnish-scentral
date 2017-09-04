@@ -575,7 +575,6 @@ if (std.tolower(req.url) == "/ues/") { error 750 "/es/temas/financiamiento-para-
 if (std.tolower(req.url) == "/adquisiciones") { error 750 "/es/registro-de-proveedores";}
 if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/noticias/vacantes/default.xml&xsl=/acerca/opor-tra.xsl&base=/tpl/top-bottom.xsl") { error 750 "/es/oportunidades-de-empleo";}
 if (std.tolower(req.url) == "/celade/antecedentes50.htm") { error 750 "/es/acerca-de-poblacion-y-desarrollo";}
-if (std.tolower(req.url) == "/cgi-bin/getprod2.asp?xml=/1.xml&xsl=/revista/search/pbusca_p.xslt") { error 750 "/es/publicaciones/tipo/revista-cepal";}
 if (std.tolower(req.url) == "/socinfo/") { error 750 "/es/temas/tecnologias-de-la-informacion-y-las-comunicaciones-tic";}
 if (std.tolower(req.url) == "/socinfo/default.asp?idioma=in") { error 750 "/en/topics/information-and-communications-technologies-icts";}
 if (std.tolower(req.url) == "/socinfo/orba/") { error 750 "/es/observatorio-regional-de-banda-ancha";}
@@ -586,7 +585,6 @@ if (std.tolower(req.url) == "/biblioteca/default.asp?xml=xml/geninfo.xml&lang=en
 if (std.tolower(req.url) == "/biblioteca/default.asp?xml=xml/geninfo.xml&lang=spa") { error 750 "/es/biblioteca";}
 if (std.tolower(req.url) == "/deype/ceacepal/reunioncea2015.htm") { error 750 "http://cea.cepal.org/es";}
 if (std.tolower(req.url) == "/deype/ceacepal/meetingsca2015.htm") { error 750 "http://cea.cepal.org/en";}
-if (std.tolower(req.url) == "/celade/proyecciones/basedatos_bd.htm") { error 750 "/es/estimaciones-proyecciones-poblacion-largo-plazo-1950-2100";}
 if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/noticias/vacantes/default.xml&xsl=/acerca/opor-tra-i.xsl&base=/tpl-i/top-bottom.xsl") { error 750 "/en/oportunidades-de-empleo";}
 if (std.tolower(req.url) == "/dds/innovacionsocial") { error 750 "/es/temas/innovacion-social";}
 if (std.tolower(req.url) == "/dds/innovacionsocial/") { error 750 "/es/temas/innovacion-social";}
@@ -636,6 +634,6 @@ if (std.tolower(req.url) == "/celade/redatam") { error 750 "/es/temas/redatam";}
 if (std.tolower(req.url) == "/argentina-indicadores-desarrollo") { error 750 "http://indides.cepal.org";}
 if (std.tolower(req.url) == "/cgi-bin/getprod.asp?xml=/noticias/vacantes/default.xml&xsl=/acerca/opor-tra.xsl&base=/tpl/top-bottom_acerca.xsl") { error 750 "/es/oportunidades-de-empleo";}
 if (std.tolower(req.url) == "/default.asp?idioma=fr") { error 750 "/es";}
-if (std.tolower(req.url) ~ "^/celade/depualc/*") { error 750 "http://celade.cepal.org/bdcelade/depualc/";}
-if (std.tolower(req.url) ~ "^/migracion/imila/*") { error 750 "http://celade.cepal.org/bdcelade/imila/";}
+if (std.tolower(req.url) == "/celade/migracion/imila/") { error 750 "http://celade.cepal.org/bdcelade/imila/";}
+if (std.tolower(req.url) == "/celade/depualc/") { error 750 "http://celade.cepal.org/bdcelade/depualc/";}
 } 
