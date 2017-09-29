@@ -5,7 +5,7 @@ sub error_404{
     <html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#" class="js"><!--<![endif]-->
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Economic Commission for Latin America and the Caribbean | Comisi&oacuten Econ&oacutemica para Am&eacuterica Latina y el Caribe</title>
+    <title>Economic Commission for Latin America and the Caribbean | Comisi&oacute;n Econ&oacute;mica para Am&eacute;rica Latina y el Caribe</title>
     <meta charset="utf-8">
     <meta http-equiv="cleartype" content="on">
     <link rel="shortcut icon" href="images/favicon.png" type="image/png">
@@ -61,7 +61,7 @@ sub error_403{
     <html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#" class="js"><!--<![endif]-->
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Economic Commission for Latin America and the Caribbean | Comisi&oacuten Econ&oacutemica para Am&eacuterica Latina y el Caribe</title>
+    <title>Economic Commission for Latin America and the Caribbean | Comisi&oacute;n Econ&oacute;mica para Am&eacute;rica Latina y el Caribe</title>
     <meta charset="utf-8">
     <meta http-equiv="cleartype" content="on">
     <link rel="shortcut icon" href="images/favicon.png" type="image/png">
@@ -118,7 +118,7 @@ sub error_500{
     <html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#" class="js"><!--<![endif]-->
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Economic Commission for Latin America and the Caribbean | Comisi&oacuten Econ&oacutemica para Am&eacuterica Latina y el Caribe</title>
+    <title>Economic Commission for Latin America and the Caribbean | Comisi&oacute;n Econ&oacute;mica para Am&eacute;rica Latina y el Caribe</title>
     <meta charset="utf-8">
     <meta http-equiv="cleartype" content="on">
     <link rel="shortcut icon" href="images/favicon.png" type="image/png">
@@ -174,7 +174,7 @@ sub error_503{
     <html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#" class="js"><!--<![endif]-->
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Economic Commission for Latin America and the Caribbean | Comisi&oacuten Econ&oacutemica para Am&eacuterica Latina y el Caribe</title>
+    <title>Economic Commission for Latin America and the Caribbean | Comisi&oacute;n Econ&oacute;mica para Am&eacute;rica Latina y el Caribe</title>
     <meta charset="utf-8">
     <meta http-equiv="cleartype" content="on">
     <link rel="shortcut icon" href="images/favicon.png" type="image/png">
