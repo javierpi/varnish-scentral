@@ -5,7 +5,9 @@ stages:
 
 test:
   stage: test
-  script: echo "Running tests"
+  script: 
+    - echo "Running tests"
+    - ssh -p22 "cd /etc/varnish  && varnishd -C -f default.vcl"
 
 build:
   stage: build
