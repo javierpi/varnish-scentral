@@ -20,7 +20,7 @@ deploy_staging:
     - echo "Deploy to staging server"
   environment:
     name: staging
-    url: https://staging.example.com
+    url: http://varnish-d1.cepal.org
   only:
   - master
 
