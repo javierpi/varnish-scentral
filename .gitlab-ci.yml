@@ -8,6 +8,7 @@ test:
   script: 
     - echo "Running tests"
     - echo $DEPLOYER_PRIVATE_KEY
+    - ssh-add <(echo "$DEPLOYER_PRIVATE_KEY")
     - ssh -p22 deployer@varnish-d1.cepal.org "cd /etc/varnish  && varnishd -C -f default.vcl"
 
 build:
