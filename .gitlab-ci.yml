@@ -7,7 +7,7 @@ test:
   stage: test
   script: 
     - echo "Running tests"
-    - ssh -p22 "cd /etc/varnish  && varnishd -C -f default.vcl"
+    - ssh -p22 root@varnish-d1.cepal.org "cd /etc/varnish  && varnishd -C -f default.vcl"
 
 build:
   stage: build
