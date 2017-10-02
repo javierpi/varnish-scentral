@@ -1,0 +1,10 @@
+stages:
+  - test
+
+test:
+  script:
+#    - ssh-add <(echo "$STAGING_PRIVATE_KEY")
+    - scp -P22 -r * deployer@varnish-d1.cepal.org:/etc/varnish
+#    - ssh -p22 deployer@varnish-d1.cepal.org "mkdir htdocs/wp-content/themes/_tmp"
+#    - scp -P22 -r build/* deployer@varnish-d1.cepal.org:htdocs/wp-content/themes/_tmp
+#    - ssh -p22 deployer@varnish-d1.cepal.org "mv htdocs/wp-content/themes/live htdocs/wp-content/themes/_old && mv htdocs/wp-content/themes/_tmp htdocs/wp-content/themes/live"
