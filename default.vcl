@@ -52,7 +52,7 @@ backend drupal443
 {
 	.host = "webpro.cepal.org"; 
 	.port = "8443";
-    .max_connections = 200;
+    .max_connections = 400;
     .connect_timeout = 3.5s;
     .first_byte_timeout = 60s;
     .between_bytes_timeout = 60s;
@@ -64,7 +64,7 @@ backend drupal443
 #SADE
 backend sade 
 {
-   .host = "10.0.40.52";
+   .host = "10.0.9.56";
    .port = "80";
    .connect_timeout = 5s;
    .first_byte_timeout = 120s;
