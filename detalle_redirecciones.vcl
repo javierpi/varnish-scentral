@@ -669,4 +669,6 @@ if (std.tolower(req.url) == "/mdg/documentosrelevantes/") { error 750 "/es/node/
 if (std.tolower(req.url) == "/mdg/metadata/") { error 750 "/es/node/42869";}
 if (std.tolower(req.url) == "/mdg/publicaciones/") { error 750 "/es/taxonomy/term/74";}
 if (std.tolower(req.url) == "/mdg/") { error 750 "/es/taxonomy/term/74";}
+if (std.tolower(req.url) == "/deype/ceacepal/") { error 750 "/es/taxonomy/term/8177/";}
+if (std.tolower(req.url) == "/deype/ceacepal/index2.htm") { error 750 "/en/taxonomy/term/8177/";}
 } 
