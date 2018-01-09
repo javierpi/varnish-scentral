@@ -197,8 +197,8 @@ sub vcl_recv {
 	call centraliza_dominios;
 	
 	# Force client.ip forwarding
-	remove req.http.X-Forwarded-For;
-	set req.http.X-Forwarded-For = client.ip;
+	#remove req.http.X-Forwarded-For;
+	#set req.http.X-Forwarded-For = client.ip;
 	
 	# ###################################################################
 	# para version 1.57
@@ -704,7 +704,7 @@ sub vcl_deliver {
 		
 		remove resp.http.x-BackServerName;
 		remove resp.http.X-Drupal-Cache;
-		remove resp.http.X-Forwarded-For;
+		#remove resp.http.X-Forwarded-For;
 		remove resp.http.x-host;
 		remove resp.http.X-IE-Device;
 		remove resp.http.X-UA-Compatible;
