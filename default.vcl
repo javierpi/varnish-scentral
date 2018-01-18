@@ -240,7 +240,7 @@ sub vcl_recv {
 		std.tolower(req.url) ~ "^/povertystatistics*" 	||  
 		#std.tolower(req.url) ~ "^/presentaciones*" 	||  
 		std.tolower(req.url) ~ "^/pses31foto*" 	||  
-		std.tolower(req.url) ~ "^/publicaciones/catalogo*" 	||  
+		## std.tolower(req.url) ~ "^/publicaciones/catalogo*" 	||   ## eliminado por http://jira-p1.cepal.org:8088/browse/DEVOPS-215
 		std.tolower(req.url) ~ "^/publicaciones/mail*" 	||  
 		std.tolower(req.url) ~ "^/iydws*" 	||  
 		std.tolower(req.url) ~ "^/magicws*" 	||  
