@@ -7,9 +7,9 @@ deploy_test:
   stage: test
   script: 
     - echo "Deploy to staging server"
-#    - echo "Running tests, check de root"
-#    - echo $DEPLOYER_PRIVATE_KEY
-#    - ssh -p22 root@varnish-d1.cepal.org "cd /etc/varnish  && varnishd -C -f default.vcl"
+    - echo "Running tests, check de root"
+    - echo $DEPLOYER_PRIVATE_KEY
+    - ssh -p22 root@varnish-d1.cepal.org "cd /etc/varnish  && varnishd -C -f default.vcl"
   environment:
     name: staging
     url: http://varnish-d1.cepal.org
