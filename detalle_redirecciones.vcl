@@ -672,4 +672,7 @@ if (std.tolower(req.url) == "/mdg/") { error 750 "/es/taxonomy/term/74";}
 if (std.tolower(req.url) == "/deype/ceacepal/") { error 750 "/es/taxonomy/term/8177/";}
 if (std.tolower(req.url) == "/deype/ceacepal/index2.htm") { error 750 "/en/taxonomy/term/8177/";}
 if (std.tolower(req.url) == "/publicaciones/catalogo/") { error 750 "/es/publicaciones/41752-catalogo-publicaciones-2017";}
+if (std.tolower(req.url) == "/publicaciones/xml/") { error 750 "/es/publicaciones/";}
+if (std.tolower(req.url) == "/municipalizacionodm/odm/") { error 750 "/es/temas/objetivos-de-desarrollo-del-milenio-odm";}
+if (std.tolower(req.url) == "/leyes/") { error 750 "/es";}
 } 
