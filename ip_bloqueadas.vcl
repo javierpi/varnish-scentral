@@ -57,11 +57,16 @@ acl ataca {
 	"54.36.148.129";
 	"54.36.148.0"/24;
 	"54.36.149.0"/24;
+	"192.151.157.0/24";
 
 }
 
 sub bad_agent{
-	if (req.http.User-Agent ~ "(?i)ahrefs") { 
+	if (
+		req.http.User-Agent ~ "(?i)ahrefs" ||
+		req.http.User-Agent ~ "(?i)mj12bot"
+
+		) { 
 		error 753 "";
 	} 
 }
