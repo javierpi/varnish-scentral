@@ -717,7 +717,7 @@ sub vcl_deliver {
 		remove resp.http.X-Varnish;
 		remove resp.http.Age;
 		remove resp.http.Server;
-		# remove resp.http.x-mensaje;
+		remove resp.http.x-mensaje;
 		remove resp.http.Via;
 		remove resp.http.X-Cache-Varnish;
 		remove resp.http.x-req.url;
