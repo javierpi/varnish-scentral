@@ -156,7 +156,10 @@ sub analiza_sitio_cerrado_sade{
 	if (std.tolower(req.url) ~ "^/analisis" || std.tolower(req.url) ~ "=/analisis/" ) {
 		error 750 "/es/publications/list";
 	}
-	
+	# http://soporteweb.cepal.org:8088/browse/SWDEV-3705
+	if (std.tolower(req.url) ~ "^/deype" || std.tolower(req.url) ~ "=/deype/" ) {
+		error 750 "/es/areas-de-trabajo/estadisticas";
+	}
 	
 	
 	## Evaluando !!!

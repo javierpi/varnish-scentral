@@ -9,6 +9,9 @@ sub DireccionesEnSade{
 ## error 750 es redirección permanente, con código 301 que llega al visitante. Indique URL completa, protocolo://xxx.xxxx.xx:[puerto]/url
 ## error 751 es redirección temporal, se enviará código 302 que llega al visitante. Indique URL completa, protocolo://xxx.xxxx.xx:[puerto]/url
 
+## ISSUE: https://gitlabpro-d.cepal.org/uweb/seo/issues/2
+# if (std.tolower(req.http.host) ~ "^cea.cepal.org") { error 750 "https://www.cepal.org/es/organos-subsidiarios/conferencia-estadistica-americas" ;} 
+
 ## Caso especial
 # http://apache2-q3:8080/browse/SWFNC-286
 ## solo www.ilpes.org/"  será redirigido a /es/areas-de-trabajo/planificacion-para-el-desarrollo

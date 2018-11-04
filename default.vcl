@@ -202,8 +202,8 @@ sub vcl_recv {
 	call centraliza_dominios;
 	
 	# Force client.ip forwarding
-	remove req.http.X-Forwarded-For;
-	set req.http.X-Forwarded-For = client.ip;
+	#remove req.http.X-Forwarded-For;
+	#set req.http.X-Forwarded-For = client.ip;
 	
 	# ###################################################################
 	# para version 1.57
@@ -223,7 +223,6 @@ sub vcl_recv {
 		
 		std.tolower(req.url) ~ "^/aecid/memoriaaecid*" 	||  
 		std.tolower(req.url) ~ "^/badepro*" 	||  
-		# std.tolower(req.url) ~ "^/biblioteca*" 	||  
 		std.tolower(req.url) ~ "^/cap_comercio*" 	||  
 		std.tolower(req.url) ~ "^/celade/migracion/migracion_interna*" 	||  
 		std.tolower(req.url) ~ "^/comercio/aftis*" 	||  
@@ -243,9 +242,7 @@ sub vcl_recv {
 		std.tolower(req.url) ~ "^/notas_p*" 	||  
 		std.tolower(req.url) ~ "^/notes*" 	||  
 		std.tolower(req.url) ~ "^/povertystatistics*" 	||  
-		#std.tolower(req.url) ~ "^/presentaciones*" 	||  
 		std.tolower(req.url) ~ "^/pses31foto*" 	||  
-		std.tolower(req.url) ~ "^/publicaciones/catalogo*" 	||  
 		std.tolower(req.url) ~ "^/publicaciones/mail*" 	||  
 		std.tolower(req.url) ~ "^/iydws*" 	||  
 		std.tolower(req.url) ~ "^/magicws*" 	||  
@@ -709,7 +706,7 @@ sub vcl_deliver {
 		
 		remove resp.http.x-BackServerName;
 		remove resp.http.X-Drupal-Cache;
-		remove resp.http.X-Forwarded-For;
+		#remove resp.http.X-Forwarded-For;
 		remove resp.http.x-host;
 		remove resp.http.X-IE-Device;
 		remove resp.http.X-UA-Compatible;
