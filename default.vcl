@@ -77,7 +77,7 @@ backend sade
  include "error_generico.vcl";
  include "cierre_sitios_sade.vcl";
  include "ip_bloqueadas.vcl";
-
+ 
 
 
 sub centraliza_dominios{
@@ -141,6 +141,11 @@ sub limpia_url{
 	
 	if (client.ip ~ ataca) {
 		error 753 "";
+	}
+	if (req.http.User-Agent ~ bad_agent) {
+		error 753 "";
+	}else{
+		set req.http.x-mensaje = req.http.x-mensaje + " Agent: " + req.http.User-Agent;
 	}
 
 }
