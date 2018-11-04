@@ -142,12 +142,10 @@ sub limpia_url{
 	if (client.ip ~ ataca) {
 		error 753 "";
 	}
-	if (req.http.User-Agent ~ bad_agent) {
-		error 753 "";
-	}else{
-		set req.http.x-mensaje = req.http.x-mensaje + " Agent: " + req.http.User-Agent;
-	}
-
+	## revisa entrada por agente
+	call bad_agent;
+	###
+	
 }
 # Respond to incoming requests.
 sub vcl_recv {

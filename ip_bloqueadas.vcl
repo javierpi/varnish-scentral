@@ -58,6 +58,12 @@ acl ataca {
 
 }
 
-acl bad_agent {
-        "146.155.28.108"; 
+sub bad_agent{
+	if (req.http.User-Agent ~ "(?i)ahrefs") { 
+		error 753 "";
+	} else {
+		set req.http.x-mensaje = req.http.x-mensaje + "Agente: " + req.http.User-Agent;
+	}
+
+
 }
