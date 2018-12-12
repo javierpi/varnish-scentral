@@ -2,4 +2,4 @@ image: basi/varnish3
 
 test:
   script:
-  - /usr/local/sbin/varnishd -C -f default1.vcl
+  - /usr/local/sbin/varnishd -C -f default.vcl

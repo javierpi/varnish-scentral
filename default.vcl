@@ -591,7 +591,7 @@ sub redirecciona_a_drupal{
 		}else{
 			# set req.http.x-mensaje =  req.http.x-mensaje +"(Tratamiento normal de busqueda en Drupal)";
 			## Hago búsqueda en Drupal. Habilitar solo para buscar errores
-			set req.url = "/idxsade" + req.url ;
+			set req.url = "/es/idxsade" + req.url ;
 			set req.http.x-Newurl = req.url;
 		}
 	
@@ -601,7 +601,7 @@ sub redirecciona_a_drupal{
 		# set req.http.x-mensaje =  req.http.x-mensaje +"(Caso 2: que sea solicitud por ID => /id.asp?id) ";
 		
 		## Transforma solicitud x id de SADE a solicitud x id de Drupal
-		set req.url = regsub(req.url, "id\.asp\?id=", "idxsade/");
+		set req.url = regsub(req.url, "id\.asp\?id=", "/es/idxsade/");
 
 		## Quito Base
 		set req.url = regsub(req.url, "&base=\/[%.A-z0-9\/-]*", "");
@@ -646,7 +646,7 @@ sub redirecciona_a_drupal{
 		## Quito Base
 		set req.url = regsub(req.url, "&base=\/[%.A-z0-9\/-]*", "");
 		# Hago búsqueda en Drupal
-		set req.url = "/idxsade/" + req.url ;
+		set req.url = "/es/idxsade/" + req.url ;
 		
 	}
 	# Caso 5: Caso de portadas o agrupadores que tienen una dirección en drupal
