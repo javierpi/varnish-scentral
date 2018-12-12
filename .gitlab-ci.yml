@@ -1,5 +1,11 @@
 image: basi/varnish3
 
-test:
+stages:
+  - test
+
+compiling:
+  stage: test
   script:
-  - /usr/local/sbin/varnishd -C -f default.vcl
+    - cd /etc/varnish
+    - /usr/local/sbin/varnishd -C -f default.vcl
+
