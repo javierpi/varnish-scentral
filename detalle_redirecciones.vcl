@@ -675,4 +675,5 @@ if (std.tolower(req.url) == "/publicaciones/catalogo/") { error 750 "/es/publica
 if (std.tolower(req.url) ~ "^/publicaciones/xml/*") { error 750 "/es/publicaciones/";}
 if (std.tolower(req.url) ~ "^/municipalizacionodm/odm/*") { error 750 "/es/temas/objetivos-de-desarrollo-del-milenio-odm";}
 if (std.tolower(req.url) ~ "^/leyes/*") { error 750 "/es";}
+if (std.tolower(req.url) == "/sites/default/files/events/files/dinamicas_tendencias_y_variabilidad_climatica_y_el_caribe.pdf") { error 750 "/es/publicaciones/3955-efectos-cambio-climatico-la-costa-america-latina-caribe-dinamicas-tendencias";}
 } 
