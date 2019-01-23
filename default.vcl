@@ -123,7 +123,7 @@ sub vcl_recv {
 	# Force client.ip forwarding
 	#remove req.http.X-Forwarded-For;
 	#set req.http.X-Forwarded-For = client.ip;
-	
+	# 		std.tolower(req.url) ~ "^/drni/biee*" 	||  	
 	if (
 		##
 		# CU-03 Análisis de Aplicaciones en el servidor back_sade
@@ -135,7 +135,6 @@ sub vcl_recv {
 		std.tolower(req.url) ~ "^/celade/migracion/migracion_interna*" 	||  
 		std.tolower(req.url) ~ "^/comercio/aftis*" 	||  
 		std.tolower(req.url) ~ "^/dds/InnovacionSocial*" 	||  
-		std.tolower(req.url) ~ "^/drni/biee*" 	||  
 		std.tolower(req.url) ~ "^/drni/proyectos*" 	||  
 		std.tolower(req.url) ~ "^/indicadores*" 	||  
 		std.tolower(req.url) ~ "^/magicplus*" 	||  
