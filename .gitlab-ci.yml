@@ -1,14 +1,67 @@
-image: basi/varnish3
+image: alpine:latest
+
+before_script:
+  - apk update 
+#  - apk add rsync 
+  - apk add --update --no-cache openssh sshpass
 
 stages:
-  - test
+  - deploy
+  - deploy_dev
+  - deploy_qa
+  - deploy_pro
 
-# compiling:
-#   stage: test
-#   script:
-#     - cd /etc/varnish
-#     - /usr/local/sbin/varnishd -C -f default.vcl
-
-test:
+pages:
+  stage: deploy
   script:
-   - echo "test"
+  - mkdir .public
+  - cp -r * .public
+  - mv .public public
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
+  
+deploy_dev:
+  stage: deploy_dev
+  environment: varnish-d1
+  script:
+    - echo "Deploy to staging server"
+    - cd public
+    - ls
+    - sshpass -V
+    - export SSHPASS=$DEPLOYER_PASS
+    - sshpass -e scp -o stricthostkeychecking=no -r . deployer@10.0.29.68://etc/varnish/
+  when: manual
+  only:
+  - master
+
+deploy_qa:
+  stage: deploy_qa
+  environment: varnish-q1
+  script:
+    - echo "Deploy to staging server"
+    - cd public
+    - ls
+    - sshpass -V
+    - export SSHPASS=$DEPLOYER_PASS
+    - sshpass -e scp -o stricthostkeychecking=no -r . deployer@10.0.25.140://etc/varnish/
+  when: manual
+  only:
+  - master
+  
+
+deploy_pro:
+  stage: deploy_pro
+  environment: varnish-e5
+  script:
+    - echo "Deploy to production server"
+    - cd public
+    - ls
+    - sshpass -V
+    - export SSHPASS=$DEPLOYER_PASS
+#    - sshpass -e scp -o stricthostkeychecking=no -r . deployer@varnish-e5.cepal.org://etc/varnish/
+  when: manual
+  only:
+  - master
