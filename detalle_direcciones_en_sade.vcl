@@ -56,7 +56,7 @@ sub ProyectosQueQuedanenSADE{
 	if (
 		std.tolower(req.url) ~ "/comercio/ecdata2/"  ||
 		std.tolower(req.url) ~ "/comercio/hhibysector/"  ||
-		std.tolower(req.url) ~ "/comercio/observatorio/" ||
+		std.tolower(req.url) ~ "/comercio/observatorio/" 
 		
 	) 
 	{ 
