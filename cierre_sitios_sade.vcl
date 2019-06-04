@@ -130,4 +130,8 @@ sub analiza_sitio_cerrado_sade{
 		error 750 "/es/areas-de-trabajo/estadisticas";
 	}
 	## 
+	## https://gitlab.cepal.org/uweb/web/issues/47
+	if (std.tolower(req.url) ~ "^/celade" || std.tolower(req.url) ~ "=/celade/" ) {
+		error 750 "/es/areas-de-trabajo/poblacion-y-desarrollo";
+	}
 }
