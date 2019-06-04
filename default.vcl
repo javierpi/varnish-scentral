@@ -127,12 +127,12 @@ sub vcl_recv {
 	if (
 		##
 		# CU-03 Análisis de Aplicaciones en el servidor back_sade
+		# std.tolower(req.url) ~ "^/celade/migracion/migracion_interna*" 	||  
 		##
 		
 		std.tolower(req.url) ~ "^/aecid/memoriaaecid*" 	||  
 		std.tolower(req.url) ~ "^/badepro*" 	||  
 		std.tolower(req.url) ~ "^/cap_comercio*" 	||  
-		std.tolower(req.url) ~ "^/celade/migracion/migracion_interna*" 	||  
 		std.tolower(req.url) ~ "^/comercio/aftis*" 	||  
 		std.tolower(req.url) ~ "^/dds/InnovacionSocial*" 	||  
 		std.tolower(req.url) ~ "^/drni/proyectos*" 	||  

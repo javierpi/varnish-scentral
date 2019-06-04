@@ -678,4 +678,6 @@ if (std.tolower(req.url) ~ "^/leyes/*") { error 750 "/es";}
 if (std.tolower(req.url) == "/sites/default/files/events/files/dinamicas_tendencias_y_variabilidad_climatica_y_el_caribe.pdf") { error 750 "/es/publicaciones/3955-efectos-cambio-climatico-la-costa-america-latina-caribe-dinamicas-tendencias";}
 if (std.tolower(req.url) ~ "^/drni/biee/*") { error 750 "/es/proyectos/programa-biee-base-de-indicadores-de-eficiencia-energetica";}
 if (std.tolower(req.url) == "/celade/migracion/migracion_interna/") { error 750 "https://celade.cepal.org/bdcelade/mialc/";}
+if (std.tolower(req.url) == "/celade/migracion/migracion_interna/seleccion.asp") { error 750 "https://celade.cepal.org/bdcelade/mialc/";}
+if (std.tolower(req.url) == "/celade/migracion/migracion_interna/default.asp") { error 750 "https://celade.cepal.org/bdcelade/mialc/";}
 } 
